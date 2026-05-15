@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-05-15T09:12:00",
+  "summary": "The pipeline is operationally healthy — 5 clean runs per day, no open bugs, all scripts exit 0. The highest-urgency issue is a logic drift between config.toml (which describes the high-odds lay cap as unconditional) and the code in paper_tracker.py and digest.py (which retains a 20pp edge exception after the config key was removed in BUG-062). Three further findings are structurally risky: a wrong filename in the Claude repair prompt renders its guard instruction ineffective, distribution_logger.py uses a non-atomic write that can corrupt edge_distribution.json if the process is killed mid-write, and _check_matchbook() in check_resolutions.py contains the exact wrong API parameter that BUG-017's fix record claims was corrected (the function is dead code but the fix was not applied). Recommended first action: patch the high_odds_lay_cap logic in paper_tracker.py:225 and digest.py:323 to remove the implicit 20pp edge exception.",
+  "findings": [
+    {
+      "id": "AUDIT-001",
+      "severity": "high",
+      "category": "logic-drift",
+      "affected_file": "multiple",
+      "description": "config.toml line 106 describes `high_odds_lay_cap` as 'unconditional — no edge exception' and its companion key `high_odds_min_edge_pct` was explicitly removed in BUG-062 (noted in config.toml line 68). However, paper_tracker.py:138 and digest.py:316 both still call `config.get('thresholds', {}).get('high_odds_min_edge_pct', 20.0)`, falling back silently to 20.0. At paper_tracker.py:225 (`if side_check == 'lay' and decimal_odds_check > high_odds_cap and edge < high_odds_min_edge`) and digest.py:323 (same condition), a lay at >4.0 odds is NOT blocked when its edge exceeds 20pp. This contradicts the documented unconditional cap and creates a live-phase execution risk that the circuit-breaker cannot anticipate.",
+      "proposed_fix": "In paper_tracker.py:225 change the condition from `if side_check == 'lay' and decimal_odds_check > high_odds_cap and edge < high_odds_min_edge:` to `if side_check == 'lay' and decimal_odds_check > high_odds_cap:`. Remove the `high_odds_min_edge` variable assignment at paper_tracker.py:138 entirely. Apply the same change to digest.py:_passes_odds_filter() at line 323 (same two-line pattern). Also delete the now-dead `high_odds_min_edge` variable at digest.py:316.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-002",
+      "severity": "high",
+      "category": "bug",
+      "affected_file": "scripts/repair_runner.py",
+      "description": "repair_runner.py:209 in `build_repair_prompt()` contains the instruction `'- Do NOT modify config/config.toml or data/paper_trades.json.'`. The file `data/paper_trades.json` does not exist; the actual paper trading tracker is `data/paper_tracker.json`. When Claude Code runs a repair session, the guard instruction references a phantom file, leaving `data/paper_tracker.json` completely unprotected from accidental modification during an automated repair run. This is a silent failure: the instruction appears valid but provides no protection.",
+      "proposed_fix": "In repair_runner.py line 209, change `data/paper_trades.json` to `data/paper_tracker.json` in the hard rules string.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-003",
+      "severity": "high",
+      "category": "operational-risk",
+      "affected_file": "scripts/distribution_logger.py",
+      "description": "distribution_logger.py `save_distribution()` at lines 53-56 writes directly to `edge_distribution.json` with a plain `open(DIST_FILE, 'w')` call. If the process is killed or the Pi loses power mid-write (the JSON can be hundreds of lines), the file is truncated to a partial-JSON state and will silently return an empty list on next load (line 49: `except json.JSONDecodeError: return []`). All distribution data accumulated since the last clean write is lost with no error. By contrast, paper_tracker.py and scanner.py use `tempfile.mkstemp()` + `os.replace()` for atomic writes. The distribution log is the primary input for the improvement loop and loss of it is unrecoverable without a Google Drive restore.",
+      "proposed_fix": "Replace the body of `save_distribution()` in distribution_logger.py with the same atomic-write pattern used in paper_tracker.py `_write()`: create a tempfile in `DIST_FILE.parent`, write JSON, call `os.replace(tmp_path, DIST_FILE)`. Add `import os, tempfile` if not already present.",
+      "effort_estimate": "small",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-004",
+      "severity": "medium",
+      "category": "bug",
+      "affected_file": "scripts/weekly_summary.py",
+      "description": "weekly_summary.py lines 49-53 compute `resolved_this_week` as trades where `t.get('resolved_at', '')[:10] >= now.strftime('%G')`. `strftime('%G')` returns the ISO year as a 4-digit string (e.g., `'2026'`), while `resolved_at[:10]` is a full ISO date (`'2026-05-15'`). Because `'2026-05-15' > '2026'` is always True under Python string comparison, the filter never excludes any resolved trade — every resolved trade in the entire year satisfies the condition. The variable `resolved_this_week` is also never referenced downstream in the function (the message uses `summary` cumulative totals instead), so this bug has zero runtime effect. However, it represents dead code masking a logical error.",
+      "proposed_fix": "Either delete `resolved_this_week` and its filter entirely (it is unused), or fix the format string: change `now.strftime('%G')` to `now.strftime('%G-W%V')` to match the ISO week string format used for the filename. If weekly trade count is wanted in the message, wire `resolved_this_week` to the message body.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-005",
+      "severity": "medium",
+      "category": "logic-drift",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "analyze_research.py:429 hardcodes `'platforms_scanned': ['betfair', 'matchbook']` in the `run_metadata` output block, but the research brief that analyze_research.py reads is produced by researcher.py, which at line 161 sets `platforms = ['matchbook']` and loads only Matchbook snapshots. Betfair snapshot data is loaded in analyze_research.py itself (line 385) but only to build `snapshot_markets`, and no Betfair markets appear in the brief. The `signals_by_platform` breakdown (line 436) always shows `betfair: 0` in practice. Every downstream consumer of the research JSON — the dashboard, the improvement loop, the audit script — will over-report Betfair coverage. The comment in run_routine.sh line 42 acknowledges this mismatch (`BUG-069`) but the metadata was never corrected.",
+      "proposed_fix": "In analyze_research.py main() around line 429, replace the hardcoded list with `brief_data.get('run_metadata', {}).get('platforms', ['matchbook'])` to mirror what researcher.py actually scanned. Also update the `snapshot_files.betfair` field to reflect that Betfair snapshots were not used in this analysis pass (set to `None` or remove).",
+      "effort_estimate": "small",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-006",
+      "severity": "medium",
+      "category": "bug",
+      "affected_file": "scripts/check_resolutions.py",
+      "description": "BUGS.md BUG-017 fix record (dated 2026-05-07) explicitly states `states=graded changed to states=settled`. However, check_resolutions.py:317 still contains `'states': 'graded'` in the `_check_matchbook()` request parameters. The function is currently dead code — in paper_mode it is bypassed entirely (line 1067 goes straight to `_check_stale_via_web()`), and in live_mode it is replaced by `_check_matchbook_settled_bets()` (line 1059). If either branch is ever changed to re-route through `_check_matchbook()`, the wrong API parameter will silently return 0 settled events (as BUG-017 originally observed).",
+      "proposed_fix": "Either apply the documented fix — change `'states': 'graded'` to `'states': 'settled'` at check_resolutions.py:317 — or delete `_check_matchbook()` entirely (lines 289-371) since it is unreachable in all current execution paths. Deletion is lower risk because the function has never been called successfully and its two callers were removed.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-007",
+      "severity": "medium",
+      "category": "maintenance",
+      "affected_file": "scripts/watchdog.py",
+      "description": "watchdog.py `parse_log()` at line 141 has the signature `def parse_log(log_path: Path, since_epoch: float) -> list:` with docstring `'Return list of issues found in log_path, filtered to lines after since_epoch.'` The `since_epoch` parameter is accepted but never used inside the function — no timestamp is parsed from log lines, no comparison is made, and all lines are scanned unconditionally. The docstring is factually wrong. In the current deployment this is harmless because each routine run writes a fresh timestamped log file (e.g., `routine_2026-05-15_0600.log`) that contains only lines from the current run. However, if log rotation or the log filename convention ever changes so that a persistent log file is passed, stale errors from previous runs will trigger fresh repair attempts.",
+      "proposed_fix": "Either implement the filtering: parse the timestamp from each log line (the format is `%(asctime)s`) and skip lines where the parsed timestamp's epoch < since_epoch; or remove the `since_epoch` parameter from `parse_log()` and update its call sites in `run_watchdog()` and the docstring to reflect that per-run filtering is achieved by the caller passing a per-run log path.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-008",
+      "severity": "low",
+      "category": "maintenance",
+      "affected_file": "scripts/digest.py",
+      "description": "digest.py:509 hardcodes `'scans_run': 5` in the `daily_summary()` Telegram payload. The routine is scheduled 5 times per day but can be skipped by the watchdog lock (run_routine.sh lines 94-107), an early-exit failure (both scanners fail), or Pi reboot. In those cases the daily Telegram summary will still report `Scans run: 5/5` even when only 3 or 4 routines completed.",
+      "proposed_fix": "Read the actual run count from `run_log.txt` (already loaded via `get_recent_runs()` in `run_digest()`). Count lines in `recent_runs` that match today's date prefix (first 10 chars of each line). Use `scans_today = sum(1 for l in recent_runs if l.startswith(today_str[:7]))` or similar and pass `scans_today` instead of the hardcoded `5`.",
+      "effort_estimate": "small",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-009",
+      "severity": "low",
+      "category": "maintenance",
+      "affected_file": "scripts/run_routine.sh",
+      "description": "run_routine.sh line 42 contains the comment `# (researcher.py only loads matchbook snapshots — BUG-069)`. BUGS.md header states `69 fully fixed (BUG-067/068/069/070 in MOD-069)`. However, researcher.py line 161 still contains `platforms = ['matchbook']` — Betfair snapshots are not loaded by researcher.py. Either BUG-069's fix in MOD-069 was something other than making researcher.py load Betfair snapshots (the fix may have been that Betfair is intentionally excluded), or the comment was not updated after resolution. In either case the comment now actively misleads future maintainers: it implies this is an open known issue when BUGS.md marks it closed.",
+      "proposed_fix": "If Betfair-only research is intentional by design (Betfair market IDs are used only for execution, not research), update the comment to explain the rationale, e.g. `# researcher.py intentionally uses only Matchbook snapshots — Betfair markets researched via dual-entry when available`. Remove the BUG-069 reference. If Betfair research is desired, open a new bug and do not modify run_routine.sh until the fix is implemented.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    },
+    {
+      "id": "AUDIT-010",
+      "severity": "low",
+      "category": "maintenance",
+      "affected_file": "scripts/check_resolutions.py",
+      "description": "`_check_matchbook()` (check_resolutions.py lines 289-371, approximately 83 lines) is dead code. In paper_mode the run() function at line 1067 bypasses it and calls `_check_stale_via_web()` directly. In live_mode (line 1054-1063) it is replaced by `_check_matchbook_settled_bets()`. The function has never been called successfully (it was broken as-documented in BUG-017), its states parameter is wrong (see AUDIT-006), and both callers were removed. It occupies ~83 lines of maintenance surface and will confuse any future reader who sees a plausible-looking Matchbook settlement function that is silently inert.",
+      "proposed_fix": "Delete `_check_matchbook()` (lines 289-371) and the `_MB_WIN_STATUS` constant at line 286. Verify no remaining call sites via grep before deletion.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low"
+    }
+  ]
+}
