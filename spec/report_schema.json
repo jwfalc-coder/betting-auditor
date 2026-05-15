@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Schema for betting-auditor cloud research reports",
+  "type": "object",
+  "required": ["date", "run_slot", "snapshot_date", "findings"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "UTC date of this run (YYYY-MM-DD)"
+    },
+    "run_slot": {
+      "type": "string",
+      "description": "Approximate UTC time of run (HHMM)",
+      "examples": ["0800", "1200", "1600", "2000", "2300"]
+    },
+    "snapshot_date": {
+      "type": "string",
+      "description": "Date of the daily_snapshot.json used (YYYY-MM-DD)"
+    },
+    "findings": {
+      "type": "array",
+      "description": "List of findings. May be empty if nothing material found.",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "title", "evidence", "external_context", "confidence"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Sequential ID within this report (F001, F002, ...)"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["platform", "edge_band", "bet_type", "market_type", "external", "threshold"]
+          },
+          "title": {
+            "type": "string",
+            "description": "One-line summary of the finding"
+          },
+          "evidence": {
+            "type": "string",
+            "description": "What the snapshot data shows — quote specific numbers"
+          },
+          "external_context": {
+            "type": "string",
+            "description": "What external research found to explain or contextualise the evidence"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "speculative"],
+            "description": "high=well-supported by data+research, medium=plausible, speculative=low-n or weak evidence"
+          },
+          "suggested_action": {
+            "type": "string",
+            "description": "Optional: a concrete action for the Pi's model audit to consider"
+          }
+        }
+      }
+    },
+    "no_findings_reason": {
+      "type": ["string", "null"],
+      "description": "Explanation if findings is empty. Null if findings were found."
+    }
+  }
+}
