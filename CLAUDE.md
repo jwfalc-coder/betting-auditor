@@ -39,8 +39,16 @@ Match your run slot to the corresponding Pi log from the **previous day** (the s
 | 20:00     | `routine_[snapshot_date]_1800.log` |
 | 23:00     | `routine_[snapshot_date]_2300.log` |
 
-The snapshot date is in `data/daily_snapshot.json` under the `"date"` field.
-If the exact log doesn't exist, use the closest earlier one from the same date.
+**The `"date"` field in `data/daily_snapshot.json` is the generation date (when the snapshot was pushed, typically around 03:00 UTC today). The snapshot_date — the actual date of the Pi data — is one day prior: `date - 1 day`.**
+
+For example: if `daily_snapshot.json["date"]` = `"2026-05-16"`, the snapshot_date is `"2026-05-15"`.
+
+Use snapshot_date for:
+- Your audit filename (`audits/[snapshot_date]_[slot].md`)
+- The `snapshot_date` field in your report JSON
+- Looking up the correct Pi routine log
+
+If the exact log doesn't exist, use the closest earlier one from the same snapshot_date.
 
 ---
 
