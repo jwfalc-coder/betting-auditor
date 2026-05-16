@@ -103,4 +103,26 @@ Example filename: `audits/2026-05-15_0800.md`
 - Edge = implied probability gap between bot's assessment and market odds
 - Lay = betting against an outcome; Back = betting for an outcome
 - Current thresholds: 10pp minimum edge, lays strongly preferred over backs
-- Platforms: Betfair (primary, 72 trades), Matchbook (secondary, 6 trades), Smarkets (unlocking)
+
+---
+
+## Platform activation pipeline — READ BEFORE RAISING PLATFORM FINDINGS
+
+The bot has a staged activation plan. **Weight your findings accordingly.**
+
+**Current state: Matchbook paper trading phase**
+- Matchbook is the only platform actively feeding signals into the model
+- The immediate goal is proving consistent paper trading performance on Matchbook before going live
+- Betfair scanner runs but **for data collection only** — it is not live because full API access costs £500, which requires justification from live profits first
+- Smarkets integration is in progress ("unlocking") but not yet active
+
+**Activation order:**
+1. **Matchbook** — paper trading → live (current priority)
+2. **Smarkets** — unlocks at £150 cumulative paper profit (flat 2% commission, no API fee)
+3. **Betfair** — unlocks at £500 cumulative profit (covers API subscription cost)
+
+**What this means for your audit:**
+- Matchbook performance and pipeline issues are the highest-priority findings
+- Betfair market opportunities (e.g. specific event markets) are noted for future reference but are **not immediately actionable** — do not flag them as urgent
+- Smarkets findings are medium priority; focus on whether the integration is ready to activate at the £150 threshold
+- If Betfair data is showing something structurally important (scanner bugs, data quality), that is still worth flagging — just frame it correctly as a data-collection concern, not a live-trading concern
