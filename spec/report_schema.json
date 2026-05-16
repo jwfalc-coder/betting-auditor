@@ -1,21 +1,32 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Schema for betting-auditor cloud research reports",
+  "description": "Schema for betting-auditor daily cloud research reports",
   "type": "object",
-  "required": ["date", "run_slot", "snapshot_date", "findings"],
+  "required": ["date", "snapshot_date", "logs_analysed", "findings"],
   "properties": {
     "date": {
       "type": "string",
-      "description": "UTC date of this run (YYYY-MM-DD)"
-    },
-    "run_slot": {
-      "type": "string",
-      "description": "Approximate UTC time of run (HHMM)",
-      "examples": ["0800", "1200", "1600", "2000", "2300"]
+      "description": "UTC date of this audit run (YYYY-MM-DD)"
     },
     "snapshot_date": {
       "type": "string",
-      "description": "Date of the daily_snapshot.json used (YYYY-MM-DD)"
+      "description": "Date of the Pi data analysed — one day prior to the snapshot push (YYYY-MM-DD)"
+    },
+    "logs_analysed": {
+      "type": "array",
+      "description": "List of routine log filenames that were available and read",
+      "items": { "type": "string" },
+      "examples": [["routine_2026-05-15_0600.log", "routine_2026-05-15_1000.log", "routine_2026-05-15_1400.log", "routine_2026-05-15_1800.log", "routine_2026-05-15_2300.log"]]
+    },
+    "pipeline_health": {
+      "type": "object",
+      "description": "Summary of the day's pipeline status across all runs",
+      "properties": {
+        "runs_expected": { "type": "integer" },
+        "runs_with_logs": { "type": "integer" },
+        "errors_detected": { "type": "integer" },
+        "notes": { "type": "string" }
+      }
     },
     "findings": {
       "type": "array",
