@@ -77,6 +77,8 @@ audits/                           ← recent reports (skim last 3 to avoid repet
 6. Write one audit report to `audits/YYYY-MM-DD_HHMM.md`
 7. Commit and push: `git add audits/ && git commit -m "audit: YYYY-MM-DD_HHMM" && git push`
 
+**The run is not complete until step 7 is done.** Writing the audit file and pushing the commit is the only deliverable — every run must end with a committed file in `audits/`, even if `findings: []`. Do not stop after research or after writing the file without committing.
+
 ---
 
 ## Report format
