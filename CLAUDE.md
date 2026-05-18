@@ -107,7 +107,7 @@ Because you now have the full day's data, your report should:
 
 ## What the bot looks like
 
-- Scans **sports markets** (golf, football) and **political/elections markets** (council elections, referendums, by-elections) across Matchbook and Betfair
+- Scans **sports markets** (golf, football) across Matchbook and Betfair; and **political/elections markets** (council elections, referendums, by-elections) on **Betfair only** — Matchbook is a sports exchange and does not offer political markets
 - Edge = implied probability gap between bot's Claude probability assessment and market odds
 - Lay = betting against an outcome; Back = betting for an outcome
 - Current thresholds: **12pp minimum for lay bets**, **15pp minimum for back bets** (raised from 10pp after calibration data showed 10-11pp band losing money)
@@ -127,7 +127,7 @@ The bot has a staged activation plan. **Weight your findings accordingly.**
 
 **Activation order:**
 1. **Matchbook** — paper trading → live (current priority). No API cost barrier.
-2. **Smarkets** — activates at £150 cumulative paper profit (access cost paid from that profit). Flat 2% commission.
+2. **Smarkets** — activates at £150 cumulative **live** profit (access cost paid from live earnings, not paper P&L). Flat 2% commission.
 3. **Betfair live execution** — activates when **Matchbook + Smarkets combined profits** reach £500 (funds the £499 one-off live API key purchase).
 
 **Note on P&L figures (important for trend interpretation):** From May 2026 onwards, the paper_pnl figures include a retroactive backtest component — MOD-075 (graduated stakes) and MOD-076 (Betfair cross-reference) were applied to historical trades to simulate what the P&L would have been under the updated model. The absolute PnL figure is therefore higher than purely organic paper trading would show. When assessing performance trends, weight the **direction and recent trade-level results** more than the absolute cumulative figure.
