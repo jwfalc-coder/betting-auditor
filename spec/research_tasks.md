@@ -22,11 +22,13 @@ Last updated: 2026-05-15
 
 **Data:** Matchbook at 16.7% win rate (6 trades), -£21.86 PnL. Betfair at 68.1% win rate (72 trades), +£124.18 PnL.
 
+**Note:** Matchbook is a sports exchange only — it does not offer political markets. All Matchbook underperformance is in sports markets.
+
 **Research questions:**
-- Is Matchbook known for thinner liquidity in political markets that distorts price discovery?
-- Are Matchbook political market prices less efficient than Betfair's?
-- Could the bot's edge detection be calibrated against Betfair-style pricing, making it systematically wrong on Matchbook?
-- Search: "Matchbook vs Betfair liquidity political markets", "Matchbook market efficiency 2025 2026"
+- Is Matchbook known for thinner liquidity in sports markets that distorts price discovery?
+- Are Matchbook sports market prices less efficient than Betfair's?
+- Could the bot's edge detection be calibrated against Betfair-style pricing, making it systematically wrong on Matchbook sports?
+- Search: "Matchbook vs Betfair liquidity sports markets", "Matchbook market efficiency 2025 2026"
 
 ---
 
