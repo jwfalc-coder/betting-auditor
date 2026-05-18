@@ -107,10 +107,12 @@ Because you now have the full day's data, your report should:
 
 ## What the bot looks like
 
-- Scans political/elections markets (council elections, referendums, by-elections)
-- Edge = implied probability gap between bot's assessment and market odds
+- Scans **sports markets** (golf, football) and **political/elections markets** (council elections, referendums, by-elections) across Matchbook and Betfair
+- Edge = implied probability gap between bot's Claude probability assessment and market odds
 - Lay = betting against an outcome; Back = betting for an outcome
-- Current thresholds: 10pp minimum edge, lays strongly preferred over backs
+- Current thresholds: **12pp minimum for lay bets**, **15pp minimum for back bets** (raised from 10pp after calibration data showed 10-11pp band losing money)
+- **Graduated stake scaling** (MOD-075, May 2026): signals between the 10pp hard floor and the threshold get linearly reduced stakes rather than being blocked outright. Hard blocks: lays above 4.0 decimal odds (liability too asymmetric), edge below 10pp floor, effective stake below £0.50.
+- Lays are strongly preferred over backs. Back bets have historically underperformed on Matchbook sports markets.
 
 ---
 
@@ -119,18 +121,19 @@ Because you now have the full day's data, your report should:
 The bot has a staged activation plan. **Weight your findings accordingly.**
 
 **Current state: Matchbook paper trading phase**
-- Matchbook is the only platform actively feeding signals into the model
-- The immediate goal is proving consistent paper trading performance on Matchbook before going live
-- Betfair scanner runs but **for data collection only** — it is not live because full API access costs £500, which requires justification from live profits first
-- Smarkets integration is in progress ("unlocking") but not yet active
+- **Matchbook** is the primary and only live-execution platform. The Matchbook API has no per-call cost and no subscription fee — access is via credentials only.
+- **Betfair** runs as a **cross-reference validator** for Matchbook signals (MOD-076, May 2026). When a Matchbook signal is generated, the bot looks up the same runner's odds on Betfair's outright markets. For back bets where Betfair disagrees (shows no edge), the paper stake is halved. Betfair is **never used for execution** — it uses a free delayed API key. Do not flag Betfair scanner issues as blocking live trading; flag them as data-quality or cross-reference concerns.
+- **Smarkets** integration is architecturally ready. Activates when cumulative paper profit hits £150 — that profit funds the Smarkets access cost. Flat 2% commission once live.
 
 **Activation order:**
-1. **Matchbook** — paper trading → live (current priority)
-2. **Smarkets** — unlocks at £150 cumulative paper profit (flat 2% commission, no API fee)
-3. **Betfair** — unlocks at £500 cumulative profit (covers API subscription cost)
+1. **Matchbook** — paper trading → live (current priority). No API cost barrier.
+2. **Smarkets** — activates at £150 cumulative paper profit (access cost paid from that profit). Flat 2% commission.
+3. **Betfair live execution** — activates when **Matchbook + Smarkets combined profits** reach £500 (funds the £499 one-off live API key purchase).
+
+**Note on P&L figures (important for trend interpretation):** From May 2026 onwards, the paper_pnl figures include a retroactive backtest component — MOD-075 (graduated stakes) and MOD-076 (Betfair cross-reference) were applied to historical trades to simulate what the P&L would have been under the updated model. The absolute PnL figure is therefore higher than purely organic paper trading would show. When assessing performance trends, weight the **direction and recent trade-level results** more than the absolute cumulative figure.
 
 **What this means for your audit:**
 - Matchbook performance and pipeline issues are the highest-priority findings
-- Betfair market opportunities (e.g. specific event markets) are noted for future reference but are **not immediately actionable** — do not flag them as urgent
-- Smarkets findings are medium priority; focus on whether the integration is ready to activate at the £150 threshold
-- If Betfair data is showing something structurally important (scanner bugs, data quality), that is still worth flagging — just frame it correctly as a data-collection concern, not a live-trading concern
+- Betfair scanner findings should be framed as cross-reference data quality issues, not live-trading blockers
+- Smarkets findings are medium priority — the integration is ready and activates at the £150 threshold; flag anything that would block a clean Smarkets go-live
+- Sports back bet performance on Matchbook is a standing concern — the model was calibrated on Betfair political lays and may overstate edge on Matchbook sports backs
