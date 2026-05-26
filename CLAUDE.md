@@ -107,12 +107,15 @@ Because you now have the full day's data, your report should:
 
 ## What the bot looks like
 
-- Scans **sports markets** (golf, football) across Matchbook and Betfair; and **political/elections markets** (council elections, referendums, by-elections) on **Betfair only** — Matchbook is a sports exchange and does not offer political markets
+- **Currently active on Matchbook sports markets only** — this is the sole paper-trading and (future) live-trading platform right now
+- Scans sports markets (golf, football, tennis) on Matchbook; Betfair is used only as a cross-reference price validator (MOD-076), not for signal generation or paper trading
+- Political/elections markets (by-elections, referendums) have historically been traded on Betfair and performed well (n=69, 69.6% WR), but **Betfair political paper trading is intentionally paused** pending the Matchbook go-live gate being met. Do not flag upcoming political markets (e.g. Makerfield) as pipeline gaps — the pipeline is behaving correctly by not acting on them. They are future-opportunity context only.
 - Edge = implied probability gap between bot's Claude probability assessment and market odds
 - Lay = betting against an outcome; Back = betting for an outcome
-- Current thresholds: **12pp minimum for lay bets**, **15pp minimum for back bets** (raised from 10pp after calibration data showed 10-11pp band losing money)
-- **Graduated stake scaling** (MOD-075, May 2026): signals between the 10pp hard floor and the threshold get linearly reduced stakes rather than being blocked outright. Hard blocks: lays above 4.0 decimal odds (liability too asymmetric), edge below 10pp floor, effective stake below £0.50.
-- Lays are strongly preferred over backs. Back bets have historically underperformed on Matchbook sports markets.
+- Current thresholds: **15pp minimum for both lay and back bets on Matchbook**
+- **Graduated stake scaling** (MOD-075, May 2026): signals between the 10pp hard floor and the threshold get linearly reduced stakes rather than being blocked outright. Hard blocks: lays above 4.5 decimal odds (liability too asymmetric), edge below 10pp floor, effective stake below £0.50.
+- Lays are preferred over backs on Matchbook sports. Backs on Match Odds / Moneyline markets at odds ≥ 2.0 are now also allowed (MOD-117/118, May 2026).
+- Backs on outright markets (Top X Finish, Winner) remain blocked on Matchbook — poor historical WR on short-odds favourites.
 
 ---
 
@@ -121,8 +124,8 @@ Because you now have the full day's data, your report should:
 The bot has a staged activation plan. **Weight your findings accordingly.**
 
 **Current state: Matchbook paper trading phase**
-- **Matchbook** is the primary and only live-execution platform. The Matchbook API has no per-call cost and no subscription fee — access is via credentials only.
-- **Betfair** runs as a **cross-reference validator** for Matchbook signals (MOD-076, May 2026). When a Matchbook signal is generated, the bot looks up the same runner's odds on Betfair's outright markets. For back bets where Betfair disagrees (shows no edge), the paper stake is halved. Betfair is **never used for execution** — it uses a free delayed API key. Do not flag Betfair scanner issues as blocking live trading; flag them as data-quality or cross-reference concerns.
+- **Matchbook** is the primary and only active platform — all paper trading and (future) live execution happens here. Sports markets only.
+- **Betfair** runs as a **cross-reference validator** for Matchbook signals (MOD-076, May 2026). When a Matchbook signal is generated, the bot looks up the same runner's odds on Betfair's outright markets. For back bets where Betfair disagrees (shows no edge), the paper stake is halved. Betfair is **never used for signal generation, paper trading, or execution** — it uses a free delayed API key. Do not flag Betfair scanner detections (e.g. political markets) as missed opportunities or pipeline gaps — the pipeline is correctly ignoring them.
 - **Smarkets** integration is architecturally ready. Activates when cumulative paper profit hits £150 — that profit funds the Smarkets access cost. Flat 2% commission once live.
 
 **Activation order:**
