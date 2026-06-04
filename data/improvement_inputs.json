@@ -1,420 +1,522 @@
 {
-  "generated_at": "2026-05-15T07:28:56.332674",
+  "generated_at": "2026-06-03T06:30:30.541297",
   "gating_stats": {
-    "days_since_last_run": null,
-    "resolved_trades_since_last": 78,
-    "resolved_trades_total": 78
+    "days_since_last_run": 18.96,
+    "resolved_trades_since_last": 130,
+    "resolved_trades_total": 208
   },
-  "resolved_total": 78,
-  "overall_win_rate_pct": 64.1,
-  "paper_pnl_total": 102.32,
+  "resolved_total": 208,
+  "overall_win_rate_pct": 61.5,
+  "paper_pnl_total": 326.39,
   "by_band": {
     "12pp+": {
-      "n": 62,
-      "wins": 42,
-      "pnl": 159.94,
-      "win_rate_pct": 67.7
+      "n": 161,
+      "wins": 99,
+      "pnl": 306.98,
+      "win_rate_pct": 61.5
     },
     "10-11pp": {
-      "n": 16,
-      "wins": 8,
-      "pnl": -57.62,
-      "win_rate_pct": 50.0
+      "n": 35,
+      "wins": 19,
+      "pnl": 20.43,
+      "win_rate_pct": 54.3
+    },
+    "7-9pp": {
+      "n": 12,
+      "wins": 10,
+      "pnl": -1.02,
+      "win_rate_pct": 83.3
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 72,
-      "wins": 49,
-      "pnl": 124.18,
-      "win_rate_pct": 68.1
+      "n": 125,
+      "wins": 86,
+      "pnl": 339.46,
+      "win_rate_pct": 68.8
     },
     "matchbook": {
-      "n": 6,
-      "wins": 1,
-      "pnl": -21.86,
-      "win_rate_pct": 16.7
+      "n": 83,
+      "wins": 42,
+      "pnl": -13.07,
+      "win_rate_pct": 50.6
     }
   },
   "by_recommendation": {
     "lay": {
-      "n": 69,
-      "wins": 48,
-      "pnl": 129.28,
-      "win_rate_pct": 69.6
+      "n": 144,
+      "wins": 99,
+      "pnl": 306.43,
+      "win_rate_pct": 68.8
     },
     "back": {
-      "n": 9,
-      "wins": 2,
-      "pnl": -26.96,
-      "win_rate_pct": 22.2
+      "n": 64,
+      "wins": 29,
+      "pnl": 19.96,
+      "win_rate_pct": 45.3
     }
   },
   "recent_30": [
     {
-      "market_name": "Westminster City Council - Majority Control?",
+      "market_name": "Top 20 Finish",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 32.07,
+      "edge_pct": 14.34,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.767611"
+    },
+    {
+      "market_name": "Top 20 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 18.04,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.780639"
+    },
+    {
+      "market_name": "Top 20 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 17.86,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.793623"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.85,
       "was_correct": false,
-      "paper_pnl": -2.8,
-      "resolved_at": "2026-05-08T08:00:18.974869"
+      "paper_pnl": -0.85,
+      "resolved_at": "2026-05-31T22:30:11.409418"
     },
     {
-      "market_name": "Westminster City Council - Majority Control?",
+      "market_name": "Winner",
       "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 18.53,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T08:00:19.113665"
-    },
-    {
-      "market_name": "Westminster City Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 49.54,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T08:00:19.208970"
-    },
-    {
-      "market_name": "West Surrey Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 36.75,
+      "rec": "back",
+      "edge_pct": 18.7,
       "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-05-08T21:19:09.796296"
+      "paper_pnl": -5.0,
+      "resolved_at": "2026-05-31T13:03:10.909480"
     },
     {
-      "market_name": "West Surrey Council - Majority Control?",
+      "market_name": "Match Odds",
       "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 18.78,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T21:19:09.828293"
-    },
-    {
-      "market_name": "West Surrey Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 50.44,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T21:19:09.833926"
-    },
-    {
-      "market_name": "2nd Most Seats",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 13.93,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-09T21:46:40.086776"
-    },
-    {
-      "market_name": "2nd Most Seats",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 34.69,
-      "was_correct": false,
-      "paper_pnl": -1.5,
-      "resolved_at": "2026-05-09T21:46:40.093350"
-    },
-    {
-      "market_name": "Most Seats-Labour v Conservatives",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 14.25,
-      "was_correct": false,
-      "paper_pnl": -0.9,
-      "resolved_at": "2026-05-09T21:46:40.099643"
-    },
-    {
-      "market_name": "Wandsworth Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 58.14,
-      "was_correct": false,
-      "paper_pnl": -0.05,
-      "resolved_at": "2026-05-08T17:03:42.763046"
-    },
-    {
-      "market_name": "Wandsworth Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 25.99,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T17:03:42.792111"
-    },
-    {
-      "market_name": "Wandsworth Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 58.14,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T17:03:42.797649"
-    },
-    {
-      "market_name": "Hampshire County Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 33.69,
+      "rec": "back",
+      "edge_pct": 10.65,
       "was_correct": false,
       "paper_pnl": -0.65,
-      "resolved_at": "2026-05-08T08:00:19.305221"
-    },
-    {
-      "market_name": "Hampshire County Council - Majority Control?",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 17.3,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-08T08:00:19.414619"
+      "resolved_at": "2026-05-27T13:03:06.989893"
     },
     {
       "market_name": "Match Odds",
-      "platform": "matchbook",
+      "platform": "betfair",
       "rec": "back",
-      "edge_pct": 15.91,
+      "edge_pct": 11.13,
       "was_correct": false,
-      "paper_pnl": -5.0,
-      "resolved_at": "2026-05-10T08:29:32.726886"
+      "paper_pnl": -1.15,
+      "resolved_at": "2026-05-27T21:05:47.308218"
+    },
+    {
+      "market_name": "5f Claim Stks",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.41,
+      "was_correct": false,
+      "paper_pnl": -1.4,
+      "resolved_at": "2026-05-27T17:03:04.961949"
     },
     {
       "market_name": "Top 20 Finish",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 50.33,
+      "edge_pct": 16.94,
       "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:14.965094"
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-05-31T13:03:10.981152"
     },
     {
       "market_name": "Top 20 Finish",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 47.62,
+      "edge_pct": 14.47,
       "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.003067"
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-05-31T13:03:11.050676"
     },
     {
       "market_name": "Top 20 Finish",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 46.4,
+      "edge_pct": 15.02,
       "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.010532"
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-05-31T13:03:11.063383"
     },
     {
       "market_name": "Top 20 Finish",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 39.99,
+      "edge_pct": 12.91,
       "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.017830"
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-05-31T13:03:11.076168"
     },
     {
       "market_name": "Top 20 Finish",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 41.6,
+      "edge_pct": 13.36,
       "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.025212"
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-05-31T13:03:11.088895"
     },
     {
-      "market_name": "Top 20 Finish",
+      "market_name": "Daniel Hillier v Nathan Kimsey",
       "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 35.13,
+      "rec": "back",
+      "edge_pct": 14.9,
       "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.032479"
-    },
-    {
-      "market_name": "Top 10 Finish",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 29.88,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.039771"
+      "paper_pnl": 4.14,
+      "resolved_at": "2026-05-31T13:03:11.101764"
     },
     {
       "market_name": "Top 10 Finish",
       "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 27.46,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.077124"
-    },
-    {
-      "market_name": "Top 10 Finish",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 26.46,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.084462"
-    },
-    {
-      "market_name": "Top 10 Finish",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 21.33,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.091797"
-    },
-    {
-      "market_name": "Top 10 Finish",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 21.33,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.099098"
-    },
-    {
-      "market_name": "Top 10 Finish",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 16.25,
-      "was_correct": true,
-      "paper_pnl": 4.9,
-      "resolved_at": "2026-05-10T22:30:15.106573"
+      "rec": "back",
+      "edge_pct": 12.17,
+      "was_correct": false,
+      "paper_pnl": -2.15,
+      "resolved_at": "2026-06-01T05:03:12.806475"
     },
     {
       "market_name": "Match Odds",
-      "platform": "matchbook",
+      "platform": "betfair",
       "rec": "back",
-      "edge_pct": 12.43,
+      "edge_pct": 3.36,
       "was_correct": true,
-      "paper_pnl": 3.14,
-      "resolved_at": "2026-05-13T05:07:23.675679"
+      "paper_pnl": 0.66,
+      "resolved_at": "2026-05-28T22:03:52.070066"
     },
     {
-      "market_name": "Moneyline",
-      "platform": "matchbook",
-      "rec": "back",
-      "edge_pct": 12.73,
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 17.66,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.873574"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 25.37,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.886352"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 14.86,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.899257"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 14.73,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.912192"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 14.73,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.925016"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 15.13,
+      "was_correct": true,
+      "paper_pnl": 4.75,
+      "resolved_at": "2026-06-01T05:03:12.937812"
+    },
+    {
+      "market_name": "Daniel Hillier v Nathan Kimsey",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 28.77,
       "was_correct": false,
       "paper_pnl": -5.0,
-      "resolved_at": "2026-05-13T05:07:25.061354"
+      "resolved_at": "2026-05-31T13:03:11.167978"
     },
     {
       "market_name": "Match Odds",
-      "platform": "matchbook",
+      "platform": "betfair",
       "rec": "back",
-      "edge_pct": 15.94,
+      "edge_pct": 8.56,
       "was_correct": false,
       "paper_pnl": -5.0,
-      "resolved_at": "2026-05-14T05:02:35.992413"
+      "resolved_at": "2026-05-29T22:03:30.603674"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.91,
+      "was_correct": true,
+      "paper_pnl": 1.35,
+      "resolved_at": "2026-05-30T19:05:12.659092"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 18.1,
+      "was_correct": false,
+      "paper_pnl": -5.0,
+      "resolved_at": "2026-05-30T22:03:36.926788"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.09,
+      "was_correct": true,
+      "paper_pnl": 0.77,
+      "resolved_at": "2026-05-31T17:03:22.977421"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 15.45,
+      "was_correct": false,
+      "paper_pnl": -5.0,
+      "resolved_at": "2026-06-01T19:21:39.091385"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.22,
+      "was_correct": true,
+      "paper_pnl": 0.84,
+      "resolved_at": "2026-06-01T19:21:38.228687"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.15,
+      "was_correct": false,
+      "paper_pnl": -1.15,
+      "resolved_at": "2026-06-02T22:03:05.766698"
     }
   ],
   "distribution": {
     "7-9pp": {
-      "total": 160,
-      "resolved": 27,
-      "wins": 9
+      "total": 253,
+      "resolved": 98,
+      "wins": 32
     },
     "12pp+": {
-      "total": 355,
-      "resolved": 171,
-      "wins": 86
+      "total": 464,
+      "resolved": 358,
+      "wins": 114
     },
     "10-11pp": {
-      "total": 67,
-      "resolved": 37,
-      "wins": 23
+      "total": 110,
+      "resolved": 45,
+      "wins": 16
+    },
+    "high_prob": {
+      "total": 18,
+      "resolved": 9,
+      "wins": 8
+    },
+    "near_certainty": {
+      "total": 6,
+      "resolved": 5,
+      "wins": 4
     }
   },
   "top_boost_words": [
     {
+      "word": "injury",
+      "count": 571
+    },
+    {
       "word": "strong",
-      "count": 83
+      "count": 460
     },
     {
-      "word": "won",
-      "count": 75
+      "word": "top",
+      "count": 244
     },
     {
-      "word": "winner",
-      "count": 38
+      "word": "leads",
+      "count": 238
     },
     {
       "word": "form",
-      "count": 23
+      "count": 181
+    },
+    {
+      "word": "rain",
+      "count": 181
+    },
+    {
+      "word": "won",
+      "count": 147
+    },
+    {
+      "word": "strokes gained",
+      "count": 116
+    },
+    {
+      "word": "injured",
+      "count": 97
+    },
+    {
+      "word": "winner",
+      "count": 92
+    },
+    {
+      "word": "contender",
+      "count": 90
     },
     {
       "word": "challenge",
-      "count": 21
+      "count": 67
+    },
+    {
+      "word": "scoring",
+      "count": 52
+    },
+    {
+      "word": "ahead",
+      "count": 44
+    },
+    {
+      "word": "consistent",
+      "count": 40
+    },
+    {
+      "word": "fit",
+      "count": 27
+    },
+    {
+      "word": "favorites",
+      "count": 26
+    },
+    {
+      "word": "ranked",
+      "count": 26
+    },
+    {
+      "word": "withdrawal",
+      "count": 23
+    },
+    {
+      "word": "absent",
+      "count": 23
+    },
+    {
+      "word": "dominant",
+      "count": 22
+    },
+    {
+      "word": "winless",
+      "count": 20
     },
     {
       "word": "second",
       "count": 18
     },
     {
-      "word": "best",
-      "count": 13
+      "word": "home advantage",
+      "count": 17
     },
     {
-      "word": "favorites",
-      "count": 13
+      "word": "doubt",
+      "count": 16
+    }
+  ],
+  "external_audits": [
+    {
+      "filename": "2026-05-21.md",
+      "date": "2026-05-21",
+      "content": "```json\n{\n  \"date\": \"2026-05-22\",\n  \"snapshot_date\": \"2026-05-21\",\n  \"logs_analysed\": [\n    \"routine_2026-05-21_0600.log\",\n    \"routine_2026-05-21_1000.log\",\n    \"routine_2026-05-21_1400.log\",\n    \"routine_2026-05-21_1800.log\",\n    \"routine_2026-05-21_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Zero researcher crashes, zero WATCHDOG alerts, zero repair runs \u2014 a clean recovery after the May 20 researcher NameError crash (May 20 F004). Both Betfair and Matchbook scanners exited 0 in all 5 runs. Researcher and analyzer exited 0 in all 5 runs (15 markets, 60 credits each). The Betfair politics catalogue returned 2 markets for sport ID 2378961 in all 5 runs (the Irish D\u00e1il by-elections: Dublin Central and Galway West, voting today 22 May 2026). Despite detecting these markets, the researcher correctly selected 0 politics/current-affairs in all 5 runs \u2014 consistent with the 3 open paper trades already placed on these markets on May 20 triggering the already-open dedup at the research-selection stage. Signals were generated in 3 of 5 runs (0 at 0600 and 1400; 2 each at 1000, 1800, and 2300) but zero new paper trades were logged: all signals were blocked by the high-odds lay cap (Top 6 Finish @ 4.20 odds, cap 4.0), the already-open dedup (Top 6 Finish and Top 4 Finish), or the Matchbook market-type edge cap (Top 4 Finish edge >= 25.0pp). Balance held at \u00a3271.25 (Reserved \u00a375.59) throughout the day \u2014 the third consecutive day with zero new resolutions. The resolver checked 2 open-trade markets per run (SC Freiburg vs Aston Villa and one other); the SC Freiburg market remained stale in all 5 runs. 'WARNING: could not find injection point in HTML' appears in every dashboard deploy \u2014 cosmetic issue documented in prior audits, no functional impact. Distribution REVIEW DUE alert fires twice per run (7-9pp band, 33 resolved entries, threshold 12) \u2014 unactioned for day 7+. consec_losses=1 persisted throughout the day from the prior Match Odds loss.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"platform\",\n      \"title\": \"Betfair cross-ref index producing false confirmations: Brentford/Sunderland market-type mismatch shows 85-87pp phantom edge\",\n      \"evidence\": \"The 1000 run analyzer log contains: 'BF cross-ref: Brentford MB=29.4% BF=97.1% claude=11.2% bf_edge=85.9pp confirms=True' and 'BF cross-ref: Sunderland MB=23.8% BF=96.2% claude=9.1% bf_edge=87.1pp confirms=True'. These same two cross-ref entries appeared in the May 20 2300 run and the May 20 2012 run (noted as a 'notable non-finding' in the May 20 audit narrative). The entries return confirms=True \u2014 meaning the cross-ref validator treats them as signal confirmations. No additional signals were generated from these entries (the Brentford and Sunderland signals at 11.2% and 9.1% Claude probability are both below the 12pp threshold). However,"
     },
     {
-      "word": "favorite",
-      "count": 11
+      "filename": "2026-05-22.md",
+      "date": "2026-05-22",
+      "content": "```json\n{\n  \"date\": \"2026-05-23\",\n  \"snapshot_date\": \"2026-05-22\",\n  \"logs_analysed\": [\n    \"routine_2026-05-22_0600.log\",\n    \"routine_2026-05-22_1000.log\",\n    \"routine_2026-05-22_1400.log\",\n    \"routine_2026-05-22_1800.log\",\n    \"routine_2026-05-22_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Zero researcher crashes, zero WATCHDOG alerts, zero repair runs \u2014 second clean day in a row after the May 20 NameError crash and first completely routine day in the audit series. Both Betfair and Matchbook scanners exited 0 in all 5 runs; researcher and analyzer exited 0 in all 5 runs (15 markets, 60 credits each per run). Signal generation: 2 at 0600, 3 at 1000 (1 high-odds lay filtered: Match Odds @ 4.40), 3 at 1400 (1 high-odds lay filtered: Match Odds @ 4.30), 0 at 1800, 2 at 2300 \u2014 all blocked, zero new paper trades logged across the entire day. Balance held at \u00a3271.25 (Reserved \u00a375.59, Available \u00a3195.66) throughout \u2014 unchanged from May 19. This is the fourth consecutive day of zero resolved trades and zero balance change, making May 19\u201322 the longest observed snapshot freeze in the audit series. Betfair politics catalogue: returned 2 markets for sport ID 2378961 at the 0600 run (Dublin Central and Galway West, polls opening at 07:00 BST = 06:00 UTC), then 0 markets in all subsequent runs (1000\u20132300), consistent with Betfair suspending these markets once voting opened. Resolver: 17 open trades checked each run, 2 Betfair exchange markets checked per run; SC Freiburg vs Aston Villa stale across all 5 runs (Day 3); French Open Winner skipped as unknown competition in all 5 runs; 0 settled markets for the day. Matchbook tradeable volume scaled through the day (382 \u2192 490 \u2192 667 \u2192 740 \u2192 547), slightly higher than May 21 (376 \u2192 461 \u2192 592 \u2192 672 \u2192 492), consistent with a busier Friday fixture calendar. Dashboard 'WARNING: could not find injection point in HTML' appears in every deploy run \u2014 cosmetic issue, no functional impact, continuing from prior days. Distribution REVIEW DUE alert fires twice per run (7-9pp band, 33 resolved entries, threshold 12) \u2014 unactioned for Day 8. consec_losses=1 persisted throughout from the prior Match Odds BACK loss on May 18.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"external\",\n      \"title\": \"Irish elections voted 22 May \u2014 3 paper trades pending Saturday count; Dublin Central LAY likely loses per Polymarket count-day data\",\n      \"evidence\": \"Betfair politics catalogue (sport ID 2378961) returned 2 markets at 0600 UTC (last scan before polls opened at 07:00 BST = 06:00 UTC) and 0 markets in all subsequent runs (1000, 1400, 1800, 2300) \u2014 consistent with Betfair suspending these markets once polling began. The researcher correctly selected 0 politics/current-affairs in all 5 runs (the 3 open paper positions placed May 20 trigger the already-open dedup). The 3"
     },
     {
-      "word": "scoring",
-      "count": 11
+      "filename": "2026-05-23.md",
+      "date": "2026-05-23",
+      "content": "```json\n{\n  \"date\": \"2026-05-24\",\n  \"snapshot_date\": \"2026-05-23\",\n  \"logs_analysed\": [\n    \"routine_2026-05-23_0600.log\",\n    \"routine_2026-05-23_1000.log\",\n    \"routine_2026-05-23_1400.log\",\n    \"routine_2026-05-23_1800.log\",\n    \"routine_2026-05-23_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Zero researcher crashes, zero WATCHDOG alerts, zero repair runs \u2014 third consecutive clean day after the May 20 researcher NameError crash. Both Betfair and Matchbook scanners exited 0 in all 5 runs. Researcher and analyzer exited 0 in all 5 runs (15 markets, 59-60 credits each). Politics catalogue (sport ID 2378961): returned 0 markets in all 5 runs \u2014 the Irish by-elections were voted on May 22, their Betfair markets suspended and settled; the Makerfield UK by-election remains absent for a 16th consecutive day. Signal generation: 0 signals at 0600, 1000, 1400, and 2300; 1 signal at 1800 \u2192 1 Betfair Moneyline LAY @ 74.07% (edge: 25.8pp) logged as paper trade. Open trade count: 17 \u2192 17 \u2192 17 \u2192 19 (after 1800 trade) \u2192 20 across the five runs. Reserved balance jumped from \u00a375.59 to \u00a3109.88 after the 1800 paper trade. Resolver: SC Freiburg vs Aston Villa stale in all 5 runs (Day 4); French Open Winner skipped in all 5 runs ('unknown competition'); 0 settled markets in all 5 runs despite Dublin Central result being declared during the count day. The snapshot push at 03:00 UTC May 24 captured 39 new resolved trades (Betfair +2, Matchbook +37) \u2014 all resolution events post-date the 2300 log and were settled before the snapshot push. Dashboard 'WARNING: could not find injection point in HTML' appears in every deploy \u2014 cosmetic, continuing from prior days. Distribution REVIEW DUE alert fires twice per run (7-9pp band, 33 resolved entries) \u2014 unactioned for Day 9. consec_losses=1 persisted in all 5 run logs.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"platform\",\n      \"title\": \"Matchbook resolution batch: 37 new trades resolved, WR 49.3%, PnL -\u00a331.10 \u2014 primary platform below 50% win rate\",\n      \"evidence\": \"As of the May 23 snapshot, Matchbook has grown from n=32 (May 22) to n=69 (+37 new resolutions) \u2014 the largest single-day Matchbook resolution event in the observable history. Matchbook WR fell from 53.1% to 49.3%; PnL worsened from -\u00a313.08 to -\u00a331.10 (-\u00a318.02 new losses). The new batch of 37 Matchbook trades is estimated at: 23 lay bets (~47.8% WR, -\u00a335.50 combined lay PnL shift attributed to Matchbook) and 16 back bets (~43.75% WR, +\u00a320.63 PnL improvement). The resolved recent_signals confirm the period: Match Odds and Moneyline backs resolved May 11-16 (football markets); Winner backs resolved May 13-14; golf placement markets (Top 20 Finish at 49.5pp and 50.5pp edge, Top 5 Finish at 11.7pp, 16.2pp, 19.5pp, etc.) resolved May 15-17, consistent with the PGA Championship 2026 weekend schedule. The"
     },
     {
-      "word": "leading",
-      "count": 9
+      "filename": "2026-05-24.md",
+      "date": "2026-05-24",
+      "content": "```json\n{\n  \"date\": \"2026-05-25\",\n  \"snapshot_date\": \"2026-05-24\",\n  \"logs_analysed\": [\n    \"routine_2026-05-24_0600.log\",\n    \"routine_2026-05-24_1000.log\",\n    \"routine_2026-05-24_1400.log\",\n    \"routine_2026-05-24_1800.log\",\n    \"routine_2026-05-24_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Zero researcher crashes, zero WATCHDOG alerts, zero repair runs. Both Betfair and Matchbook scanners exited 0 in all 5 runs. Researcher and analyzer exited 0 in all 5 runs (15 markets, 59-60 credits each run). Two batch resolution events: (1) 1800 run \u2014 11 Premier League season-end trades auto-resolved via standings resolver, net +\u00a313.04, cumulative P&L moved to +\u00a3169.42; (2) 2300 run \u2014 3 Galway West By-Election trades auto-resolved via Betfair settlement API, net +\u00a313.33, cumulative P&L moved to +\u00a3182.75. Total new resolutions: 14 trades (9W/5L, 64.3% WR). Balance progression: \u00a3256.38 reserved=\u00a3104.90 available=\u00a3151.48 (0600) \u2192 \u00a3269.42 reserved=\u00a335.42 (post-1800) \u2192 \u00a3282.75 reserved=\u00a38.50 available=\u00a3274.25 (post-2300). SC Freiburg vs Aston Villa stale trade absent from all 5 May 24 logs (was present in all May 23 logs); assessed as settled overnight before 0600, consistent with 2 new Betfair resolutions in the May 24 history snapshot attributed to Dublin Central and SC Freiburg. Signal counts across runs: 0600=3, 1000=2, 1400=0, 1800=0, 2300=1 \u2014 all blocked by matchbook_no_backs (2300 Moneyline back), Top 4 Finish edge cap \u226525pp (0600: 30.6pp, 1000: 29.6pp), and already-open dedup; zero new paper trades logged. Betfair politics catalogue (sport ID 2378961): 0 markets at 0600 and 1000; 1 market detected at 1400, 1800, and 2300 \u2014 first UK politics market after 16+ consecutive zero-market days. Matchbook tradeable market volume: 563 (0600) \u2192 784 (1000) \u2192 986 (1400) \u2192 702 (1800) \u2192 396 (2300). Dashboard WARNING: could not find injection point in HTML persists in all 5 deploy runs \u2014 cosmetic, ongoing. Distribution REVIEW DUE alert fires twice per run (7-9pp band). consec_losses=1 persisted throughout.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"market_type\",\n      \"title\": \"Galway West by-election: all 3 lays WIN (+\u00a313.33) \u2014 Irish political model partially rehabilitated after Dublin Central loss\",\n      \"evidence\": \"2300 run auto-resolved 3 Galway West By-Election lays: LAY on Noel Thomas (IND Ireland) WIN +\u00a33.53; LAY on Thomas Welby (Independent) WIN +\u00a34.90; LAY on Mark Lohan (Sinn F\u00e9in) WIN +\u00a34.90. Net: +\u00a313.33. Sean Kyne (Fine Gael) won on the 11th and final count. Notably, Thomas had led throughout the count (Irish Times confirmed Thomas was ahead by ~590 votes after 4 counts on May 23 when auditing paused); Kyne overtook via Labour transfers on the final count. The Thomas LAY returned less (+\u00a33.53 vs +\u00a34.90) because Thomas held higher market-implied probability, giving a lower lay liabili"
     },
     {
-      "word": "leads",
-      "count": 9
+      "filename": "2026-05-25.md",
+      "date": "2026-05-25",
+      "content": "```json\n{\n  \"date\": \"2026-05-26\",\n  \"snapshot_date\": \"2026-05-25\",\n  \"logs_analysed\": [\n    \"routine_2026-05-25_0600.log\",\n    \"routine_2026-05-25_1000.log\",\n    \"routine_2026-05-25_1400.log\",\n    \"routine_2026-05-25_1800.log\",\n    \"routine_2026-05-25_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Zero researcher crashes, zero WATCHDOG alerts, zero repair runs \u2014 fourth consecutive clean day. Both Betfair and Matchbook scanners exited 0 in all 5 runs. Researcher and analyzer exited 0 in all 5 runs (15 markets, 60 credits each run). Betfair politics catalogue (sport ID 2378961): returned 1 market in all 5 runs \u2014 the Makerfield by-election, first detected at the May 24 1400 run, continues to be detected today. Despite this, the researcher selected 0 politics/current-affairs in all 5 runs (platforms: ['matchbook']), consistent with the MOD-076 architecture where Betfair is cross-reference-only. Signal generation: 0 signals at 0600, 1000, 1400, and 1800; 3 signals at 2300 \u2014 all blocked by matchbook_no_backs (all 3 were back bets on Winner markets). Zero new paper trades logged across the entire day. One trade resolved between the 1800 and 2300 runs (open trades: 3\u21922), confirmed as a Matchbook back bet WIN (+\u00a32.94, deduced from snapshot comparison: n=149\u2192150, matchbook n=80\u219281, back n=40\u219241, PnL \u00a3182.75\u2192\u00a3185.69). Balance remained at \u00a3282.75 (Reserved \u00a38.50\u2192\u00a37.90, Available \u00a3274.25\u2192\u00a3274.85) consistent with a single lay liability releasing at resolution. Notable infrastructure event: the 1000 run experienced a transient GitHub push failure for both smarkets-dashboard ('remote: Internal Server Error', Request ID BB38:1865A3:8EA92F:AADFB0:6A14103A, time 09:02:51Z) and betting-auditor ('remote: Internal Server Error', Request ID 9064:3DE64B:8E9CD0:AACBB9:6A14103C, time 09:02:54Z). The Pi handled this correctly: the betting-auditor commit had already been made locally (9beded6), a git fetch and rebase succeeded, and the push was retried at the 1400 run where it completed successfully (d3f400b\u21922ace1c2). No data was lost; the 1000 UTC log file is confirmed present in the repo. External search found no confirmed widespread GitHub outage on May 25, 2026, suggesting a transient infrastructure issue affecting specific repositories rather than a platform-wide event. The 2300 run's market selection was exclusively outright futures: all 15 markets were 'Winner' (0 Match Odds, 0 Moneyline, 0 Correct Score) \u2014 consistent with the late-night pattern where match-odds markets close after European fixtures end and only outright winner markets remain active. Dashboard 'WARNING: could not find injection point in HTML' appears in all 5 deploy runs \u2014 cosmetic, ongoing from prior days. Distribution REVIEW DUE alert fires twice per run (7-9pp band) in all 5 runs \u2014 unactioned for Day 12+. consec_losses=1 persisted throughout all 5 runs.\""
     },
     {
-      "word": "beat",
-      "count": 5
+      "filename": "2026-05-26.md",
+      "date": "2026-05-26",
+      "content": "```json\n{\n  \"date\": \"2026-05-27\",\n  \"snapshot_date\": \"2026-05-26\",\n  \"logs_analysed\": [\n    \"routine_2026-05-26_0600.log\",\n    \"routine_2026-05-26_1000.log\",\n    \"routine_2026-05-26_1400.log\",\n    \"routine_2026-05-26_1800.log\",\n    \"routine_2026-05-26_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 1,\n    \"notes\": \"All 5 scheduled runs present. EXIT_CODE:0 in all 5, but the 1400 run contains a silent paper_tracker crash (see F001) \u2014 the reported EXIT_CODE:0 is misleading. Scanners, researcher, and analyzer exited clean across all 5 runs (15 markets, 58\u201365 credits per run). Key intraday events: (1) Betfair politics catalogue (sport ID 2378961) showed Makerfield at 0600 and 1000 but returned 0 markets at 1400, 1800, and 2300 \u2014 intermittent presence vs 5-of-5 yesterday; (2) Large Betfair resolution batch occurred between 1400 and 1800 UTC (+19 Betfair trades, balance \u00a3282.75\u2192\u00a3379.13, +\u00a396.38); (3) Researcher platform switched from Matchbook to Betfair for the 1800 and 2300 runs, logging 3 new Betfair back paper trades at 1800; (4) 2300 run injected prior history for 14 runners across golf, football, and basketball markets. Balance progression: \u00a3282.75 reserved=\u00a37.90 (0600\u20131400) \u2192 \u00a3379.13 reserved=\u00a315.50 (post-1800 resolution + 3 new trades) \u2192 \u00a3379.13 reserved=\u00a321.00 (2300). Open trades: 2 (0600\u20131400) \u2192 4 (1800) \u2192 7 (2300). Telegram notification sent at 2300 (standard). Dashboard 'WARNING: could not find injection point in HTML' persists in all 5 deploys \u2014 cosmetic, ongoing. REVIEW DUE alert fires twice per run (7-9pp, 81 resolved entries). consec_losses transitioned from 1\u21920 after the 1800 resolution batch.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"platform\",\n      \"title\": \"paper_tracker NameError at 1400 UTC \u2014 second Matchbook signal silently dropped, EXIT_CODE:0 masks the failure\",\n      \"evidence\": \"The 1400 run paper_tracker crashed with: 'NameError: name 'mb_hard_blocked_markets' is not defined. Did you mean: 'mb_blocked_markets'?' at line 318 in _log_paper_trades_locked (paper_tracker.py). The crash sequence: 'Skipping MB back (matchbook_no_backs): Winner' was printed first (Signal 1 processed and correctly blocked), then the NameError fired at line 318 while evaluating Signal 2. The analyzer found 2 signals (10pp+) at this run; only one reached the matchbook_no_backs check before the crash terminated the loop. Signal 2 \u2014 most likely a valid Matchbook lay or an allowed back on Match Odds/Moneyline \u2014 was never evaluated for paper trading and was silently dropped. Balance remained at \u00a3282.75 (unchanged from prior runs), consistent with no settlements or new trades being logged. EXIT_CODE:0 was reported in the run summary despite the crash \u2014 the paper_tracker runs as a subprocess and its non-zero exit code was not propagated to the top-level EXIT_CODE. The 1400 run also shows 'Distribution log updated: 3 new entries added' AFTER the crash, confirming the distr"
     },
     {
-      "word": "dominated",
-      "count": 5
+      "filename": "2026-05-27.md",
+      "date": "2026-05-27",
+      "content": "```json\n{\n  \"date\": \"2026-05-28\",\n  \"snapshot_date\": \"2026-05-27\",\n  \"logs_analysed\": [\n    \"routine_2026-05-27_0600.log\",\n    \"routine_2026-05-27_1000.log\",\n    \"routine_2026-05-27_1400.log\",\n    \"routine_2026-05-27_1800.log\",\n    \"routine_2026-05-27_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Zero researcher crashes, zero WATCHDOG alerts, zero repair runs. Both Betfair and Matchbook scanners exited 0 in all 5 runs. Researcher and analyzer exited 0 in all 5 runs (15 markets, 63\u201367 credits per run). Signal counts: 10 (0600), 4 (1000), 7 (1400), 4 (1800), 8 (2300). New paper trades: 8 (0600), 3 (1000), 3 (1400), 0 (1800), 5 (2300) = 19 total. Trade resolutions: 1400 run \u2014 Match Odds BACK LOSS P&L -0.65 (Davidovich Fokina vs Tirante, French Open); 1800 run \u2014 5f Claim Stks BACK LOSS P&L -1.40 (Penny Arcade vs Lairy Mary, horse racing); a third Match Odds BACK (-1.15) resolved at 21:05 UTC between the 1800 and 2300 runs (resolver at 2300 found 0 settled, suggesting this trade was already cleared from the open queue before the 2300 check ran). Consecutive loss counter: 0 (0600), 0 (1000), 1 (1400), 2 (1800), 3 (2300) \u2014 a WARNING: CONSECUTIVE LOSSES: 3 was logged and a Telegram notification sent at the 2300 run. Balance progression: \u00a3379.13 / reserved \u00a321.00 (0600) \u2192 \u00a3379.13 / reserved \u00a366.45 (1000) \u2192 \u00a3378.48 / reserved \u00a372.30 (1400, after Match Odds loss) \u2192 \u00a3377.08 / reserved \u00a376.60 (1800, after 5f Claim Stks loss) \u2192 \u00a3375.93 / reserved \u00a375.45 (2300). Betfair sport ID 2378961 (UK politics/by-elections): 0 markets detected in all 5 runs \u2014 full-day absence, escalating from 2/5 runs absent yesterday. All 5 runs selected Betfair as the primary research platform (platforms: ['betfair']), a shift from the prior pattern where Matchbook was primary for at least 3 of 5 daily runs. Matchbook n=81 unchanged across all 5 runs \u2014 no Matchbook paper trades generated. Dashboard 'WARNING: could not find injection point in HTML' continues in all 5 deploys \u2014 cosmetic, ongoing. Distribution REVIEW DUE alert (7-9pp, 81 resolved entries) fires twice per run \u2014 Day 14+, unactioned.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"bet_type\",\n      \"title\": \"Three consecutive back bet LOSSES in 10-11pp reduced-stake band, triggering Telegram alert; back bet WR drops to 48.9%\",\n      \"evidence\": \"Three BACK bets resolved on 2026-05-27, all in the 10-11pp edge zone, all losses: (1) Match Odds BACK edge 10.65pp, P&L -0.65, resolved 1400 run (Davidovich Fokina backed vs Tirante); (2) 5f Claim Stks BACK edge 11.41pp, P&L -1.40, resolved 1800 run (Penny Arcade backed vs Lairy Mary); (3) Match Odds BACK edge 11.13pp, P&L -1.15, resolved between 1800 and 2300 runs. All three were placed at reduced stakes (13%, 28%, 23% of full stake respectively, per the MOD-075 graduated scaling between the 10pp floor and 15pp threshold)"
     },
     {
-      "word": "loss",
-      "count": 4
+      "filename": "2026-05-28.md",
+      "date": "2026-05-28",
+      "content": "```json\n{\n  \"date\": \"2026-05-29\",\n  \"snapshot_date\": \"2026-05-28\",\n  \"logs_analysed\": [\n    \"routine_2026-05-28_0600.log\",\n    \"routine_2026-05-28_1000.log\",\n    \"routine_2026-05-28_1400.log\",\n    \"routine_2026-05-28_1800.log\",\n    \"routine_2026-05-28_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Betfair and Matchbook scanners exited 0 in all 5 runs; researcher and analyzer exited 0 in all 5 runs. Betfair primary in all 5 runs \u2014 second consecutive full day of all-Betfair platform selection. Markets researched per run: 15 at 0600 (0 politics + 7 outrights + 8 other sports), 17 at 1000\u20132300 (2 politics + 7 outrights + 8 other sports). Sport ID 2378961 returned 0 markets at 0600 then 2 markets (Next President of Colombia, Maltese General Election) at 1000\u20132300 \u2014 Makerfield absent for the second full day. Signal counts (10pp+): 6 (0600), 6 (1000), 4 (1400), 3 (1800), 4 (2300). New paper trades: 2 (0600), 1 (1000), 2 (1400), 0 (1800), 0 (2300) = 5 total, all Betfair. One settlement: Match Odds BACK WIN (Madison Keys, +\u00a30.66) at 2300 run. Consecutive loss counter reset to 0 at 2300 after Madison Keys settlement (was 3 through 0600\u20131800). Two signal alerts sent at 2300: Winner 17.17pp, Top 10 Finish 17.17pp. Balance progression: \u00a3375.93 reserved \u00a3119.15 (0600) \u2192 unchanged through 1800 \u2192 \u00a3376.59 reserved \u00a3130.50 (post-settlement 2300). Matchbook n=81 unchanged for second consecutive full day \u2014 zero Matchbook paper trades. Dashboard 'WARNING: could not find injection point in HTML' present in all 5 deploys \u2014 cosmetic, ongoing. Distribution REVIEW DUE alert (7-9pp, 81\u201382 resolved entries) fires twice per run \u2014 Day 15+, unactioned.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"threshold\",\n      \"title\": \"Paper trade logged at 3.36pp edge \u2014 below the 10pp hard floor; anomalous band classification in snapshot\",\n      \"evidence\": \"The 1400 run logged: 'Logged paper trade: Match Odds - BACK @ 87.72% (edge: 3.36pp) [betfair] | available now \u00a3240.43'. The snapshot recent_signals entry confirms edge_pct: 3.36, was_correct: true, paper_pnl: 0.66, resolved_at: 2026-05-28T22:03:52 (Madison Keys defeating Antonia Ruzic 6-4 6-4 in the French Open second round). The CLAUDE.md spec states the 10pp hard floor as an absolute block: 'Hard blocks: lays above 4.5 decimal odds (liability too asymmetric), edge below 10pp floor, effective stake below \u00a30.50.' At 3.36pp this trade should have been blocked. The analyzer output for the 1400 run ('Found 4 signals (10pp+)') also does not account for a sub-10pp signal \u2014 the 3.36pp back was either passed through by a separate code path or not counted by the analyzer's threshold filter. The distribution_logger correctly classified the trade as 'near_certainty' (6 total / 4 resolved after logging, later 5 resolved after settlement), consistent with a probability-based class"
     },
     {
-      "word": "advantage",
-      "count": 3
+      "filename": "2026-05-29.md",
+      "date": "2026-05-29",
+      "content": "```json\n{\n  \"date\": \"2026-05-30\",\n  \"snapshot_date\": \"2026-05-29\",\n  \"logs_analysed\": [\n    \"routine_2026-05-29_0600.log\",\n    \"routine_2026-05-29_1000.log\",\n    \"routine_2026-05-29_1400.log\",\n    \"routine_2026-05-29_1800.log\",\n    \"routine_2026-05-29_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed with EXIT_CODE:0. Betfair and Matchbook scanners exited 0 in all 5 runs; researcher and analyzer exited 0 in all 5 runs (17\u201318 markets, 71\u201375 credits per run). All 5 runs selected Betfair as primary platform (third consecutive full day of all-Betfair primary selection); Matchbook scanned but not selected in any run. Matchbook n=81, 50.6% WR, -\u00a315.12 PnL \u2014 frozen for three consecutive full days. Signal counts (10pp+): 10 (0600), 9 (1000), 4 (1400), 2 (1800), 2 (2300). New paper trades: 7 (0600), 0 (1000), 1 (1400), 1 (1800), 0 (2300) = 9 total, all Betfair. Three settlements: two Match Odds losses resolved between 1000 and 1400 runs (balance drop \u00a3376.59\u2192\u00a3368.99, -\u00a37.60; De Minaur LAY -\u00a32.60 and one Match Odds BACK -\u00a35.00, both at ~11:00 UTC per resolved_at timestamps); one Match Odds BACK loss resolved at 2300 run (8.56pp sub-floor trade, -\u00a35.00). Total resolved on May 29: +3, all losses, -\u00a312.60 combined. Running PnL: \u00a3276.59 \u2192 \u00a3263.99. Balance at end of day: \u00a3363.99 reserved \u00a3176.00 available \u00a3187.99. Consecutive loss counter: consec_losses=1 at 2300 run after De Minaur BACK loss. Betfair cross-ref index sizes: 4888 (0600), 4502 (1000), 4770 (1400), 4546 (1800), 4127 (2300). Makerfield detected in 4/5 runs (absent at 0600, present 1000\u20132300) as 'Makerfield - Restore Britain Vote Percentage' sub-market \u2014 first Makerfield detection in 3 days (was absent all day May 27 and May 28). No Makerfield paper trade generated (Betfair political trading correctly paused). Malta General Election (May 30) and Next President of Colombia (May 31) still being researched in all/most runs \u2014 both effectively resolved by the snapshot date. Distribution REVIEW DUE alert (7-9pp, 82 resolved entries) fires twice per run \u2014 Day 16+, unactioned. Dashboard 'WARNING: could not find injection point in HTML' persists in all 5 deploys \u2014 cosmetic, ongoing.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"threshold\",\n      \"title\": \"Sub-floor paper trade at 8.56pp confirmed as recurring pattern \u2014 Day 2, -\u00a35.00 material loss at full stake\",\n      \"evidence\": \"The 1400 run logged: 'Logged paper trade: Match Odds - BACK @ 80.65% (edge: 8.56pp) [betfair] | available now \u00a3190.99'. This is the second consecutive day a trade was logged below the 10pp hard floor (May 28: 3.36pp at 87.72% probability, won +\u00a30.66; May 29: 8.56pp at 80.65% probability). The trade settled at the 2300 run (resolved_at: 2026-05-29T22:03:30): Match Odds BACK LOSS -\u00a35.00. The distribution logger classified the trade as 'high_prob' at the 1400 run (high_prob count: 15\u219216). The pap"
     },
     {
-      "word": "uncertain",
-      "count": 2
+      "filename": "2026-05-30.md",
+      "date": "2026-05-30",
+      "content": "```json\n{\n  \"date\": \"2026-05-31\",\n  \"snapshot_date\": \"2026-05-30\",\n  \"logs_analysed\": [\n    \"routine_2026-05-30_0600.log\",\n    \"routine_2026-05-30_1000.log\",\n    \"routine_2026-05-30_1400.log\",\n    \"routine_2026-05-30_1800.log\",\n    \"routine_2026-05-30_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Betfair and Matchbook scanners exited 0 in all 5 runs; researcher and analyzer exited 0 in all 5 runs (17\u201319 markets, 68\u201378 credits per run). Betfair primary in all 5 runs \u2014 Day 4 of all-Betfair primary selection. Signal counts (10pp+): 4 (0600), 2 (1000), 5 (1400), 4 (1800), 4 (2300). New paper trades: 0 (0600), 1 (1000), 1 (1400), 0 (1800), 0 (2300) = 2 total, both Betfair Match Odds backs. Match Odds BACK 11.91pp (57.14% implied, \u00a31.90 reduced stake) logged at 1000; Match Odds BACK 18.1pp (51.81% implied, \u00a35.00 stake, Mboko vs Keys) logged at 1400. 3 Telegram signal alerts at 1400 (18.1pp, 17.17pp, 15.17pp); 1 alert at 2300 (17.17pp). 1 automated settlement at 2300: Match Odds LOSS -\u00a35.00 (Selection: Victoria Mboko, Winner: Madison Keys, market=1.258704516). 2 additional Matchbook resolutions occurred during the day via automatic path (net +\u00a32.05: 1W 1L). Day P&L: +\u00a31.35 (11.91pp WIN) - \u00a35.00 (18.1pp LOSS Mboko) + \u00a32.05 (Matchbook net) = -\u00a31.60. Betfair cross-ref index sizes: 4183 (0600), 3696 (1000), 4050 (1400), 3856 (1800), 3521 (2300) \u2014 normal intraday variation. BF politics (sport ID 2378961) count: 3 markets at 0600 (Starmer June 1, Malta, Colombia, Makerfield), 2 at 1000 (Malta election settled/suspended), 1 at 1400\u20132300 (Colombia suspended pre-May-31 vote; Starmer June 1 and Makerfield remain). French Open Winner resolver skip ('unknown competition for Men's French Open 2026 - Winner \u2014 skip') present at 0600, 1000, 1400 but ABSENT from 1800 and 2300; open trade count dropped from expected 35 to 34 at 1800, consistent with FO trade removal between 1400 and 1800 runs. No sub-floor trades on May 30 (first clean day after May 28\u201329 bypass incidents). Dashboard 'WARNING: could not find injection point in HTML' persists in all 5 deploys \u2014 cosmetic, ongoing. Distribution REVIEW DUE alert (7-9pp) fires twice per run \u2014 Day 17+, unactioned.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"bet_type\",\n      \"title\": \"Back bet model accuracy: above-threshold 18.1pp BACK lost at full stake; recent above-floor run 1W/5L, -\u00a311.20\",\n      \"evidence\": \"The 1400 run logged 'Match Odds - BACK @ 51.81% (edge: 18.1pp) [betfair] | available now \u00a3181.09' (Victoria Mboko vs Madison Keys, French Open R3, Roland Garros). Madison Keys defeated Victoria Mboko 6-3, 5-7, 7-5 in 2h30m \u2014 a competitive match where Mboko trailed then led 5-5 in the third set before being broken. P&L: -\u00a35.00 (full stake). This is a fully above-threshold trade (18.1pp \u2265 15pp threshold) that lost. The bot's model assessed Mboko at ~69."
     },
     {
-      "word": "perfect",
-      "count": 2
+      "filename": "2026-05-31.md",
+      "date": "2026-05-31",
+      "content": "```json\n{\n  \"date\": \"2026-06-01\",\n  \"snapshot_date\": \"2026-05-31\",\n  \"logs_analysed\": [\n    \"routine_2026-05-31_0600.log\",\n    \"routine_2026-05-31_1000.log\",\n    \"routine_2026-05-31_1400.log\",\n    \"routine_2026-05-31_1800.log\",\n    \"routine_2026-05-31_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Betfair and Matchbook scanners exited 0 in all 5 runs; researcher and analyzer exited 0 in all 5 runs (17\u201318 markets, 71\u201375 credits per run). Betfair primary in all 5 runs \u2014 Day 5 of consecutive all-Betfair primary selection; Matchbook scanned but not selected in any run. Matchbook n=83 unchanged (no new Matchbook paper trades placed; Matchbook frozen at 50.6% WR, -\u00a313.07 PnL for second consecutive day). Signal counts (10pp+): 7 (0600), 7 (1000), 4 (1400), 5 (1800), 5 (2300). New paper trades: 1 (0600 \u2014 sub-floor bypass, 8.09pp, see F001), 0 (1000), 1 (1400 \u2014 Winner BACK 12.17pp, correctly reduced stake \u00a32.15), 0 (1800), 0 (2300) = 2 total, both Betfair. Ten settlements on May 31: 9-trade batch at 1400 run (Austrian Alpine Open and LIV Golf Korea tournament resolutions plus Hillier v Kimsey head-to-head, net +\u00a315.14), and 1 settlement at 1800 (Match Odds BACK WIN Glamorgan W cricket +\u00a30.77). Balance progression: \u00a3362.39 / \u00a3168.10 reserved / \u00a3194.29 available (0600) \u2192 \u00a3377.53 / \u00a3109.85 reserved / \u00a3267.68 available (post-1400 batch) \u2192 \u00a3378.30 / \u00a3108.90 reserved / \u00a3269.40 available (end of day, unchanged at 2300). Consecutive loss counter: started at 1, remained 1 through the 1400 settlement batch, reset to 0 at 1800 after Glamorgan W WIN. PnL improved from \u00a3262.39 (May 30 end) to \u00a3276.85 (May 31 end) = +\u00a314.46, first positive daily PnL since May 28. Betfair cross-ref index sizes: 3710 (0600), 3648 (1000), 3481 (1400), 2617 (1800), 2334 (2300) \u2014 smaller than recent days (prior range 3500\u20134800), consistent with Sunday market wind-down. Politics in researcher: Starmer Replaced by June 1st 2026 all 5 runs (resolved No on June 1, no action generated \u2014 correct behaviour with Betfair political trading paused); Makerfield - Restore Britain Vote Percentage all 5 runs (18 days to election, stable detection); Los Angeles Mayoral Election in 1400\u20132300 runs (3 of 5). Repeated REVIEW DUE alert (7-9pp band) fires twice per run \u2014 Day 18+, unactioned. Dashboard 'WARNING: could not find injection point in HTML' in all 5 deploys \u2014 cosmetic, ongoing. French Open Winner resolver skip message absent from all 5 runs \u2014 consistent with the position having been cleared between May 30 1400 and 1800 runs as noted in the May 30 audit.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"threshold\",\n      \"title\": \"Sub-floor paper trade bypass fires again \u2014 8.09pp BACK at 0600, third occurrence in 4 days, structural fix still not applied\",\n      \"evidence\": \"The 0600 run logged: 'Reduced stake: Match Odds edge 8.1pp < 12pp \u2192 \u00a33"
     },
     {
-      "word": "limited",
-      "count": 1
+      "filename": "2026-06-01.md",
+      "date": "2026-06-01",
+      "content": "```json\n{\n  \"date\": \"2026-06-02\",\n  \"snapshot_date\": \"2026-06-01\",\n  \"logs_analysed\": [\n    \"routine_2026-06-01_0600.log\",\n    \"routine_2026-06-01_1000.log\",\n    \"routine_2026-06-01_1400.log\",\n    \"routine_2026-06-01_1800.log\",\n    \"routine_2026-06-01_2300.log\"\n  ],\n  \"pipeline_health\": {\n    \"runs_expected\": 5,\n    \"runs_with_logs\": 5,\n    \"errors_detected\": 0,\n    \"notes\": \"All 5 scheduled runs present and completed cleanly (EXIT_CODE:0). Betfair and Matchbook scanners exited 0 in all 5 runs; researcher and analyzer exited 0 in all 5 runs (15\u201318 markets analyzed, 71\u201375 credits). Betfair primary in all 5 runs \u2014 Day 6 of consecutive all-Betfair primary selection; Matchbook scanned (105\u2013300 above \u00a325 tradeable) but not selected as primary in any run. Signal counts (10pp+): 5 (0600), 1 (1000), 5 (1400), 4 (1800), 5 (2300). New paper trades: 0 (0600), 0 (1000), 2 (1400 \u2014 Winner BACK 14.17pp reduced \u00a34.15, Match Odds BACK 15.45pp full \u00a35.00), 2 (1800 \u2014 Winner BACK 14.17pp reduced \u00a34.15, Match Odds BACK 9.22pp reduced \u00a34.20 \u2014 SUB-FLOOR bypass, see F002), 1 (2300 \u2014 Top 5 Finish BACK 17.17pp) = 5 total. Major batch resolution at 0600: 13 trades settled (net +\u00a354.85) from golf tournament(s) \u2014 all Top 20 Finish and Top 10 Finish market positions; resolution flagged as disputed in F001. Two additional trades (Match Odds BACK 15.45pp LOSS -\u00a35.00 and Match Odds BACK 9.22pp WIN +\u00a30.84) resolved at approximately 19:21 UTC via an apparent intra-run resolver process (not captured in a scheduled run log; balance delta at 2300 start confirms both resolved: \u00a3431.70 - \u00a35.00 + \u00a30.84 = \u00a3427.54 matches 2300 opening balance). Matchbook n=83, WR=50.6%, PnL=-\u00a313.07 \u2014 unchanged for third consecutive day (Day 6 of all-Betfair primary; no new Matchbook signals generated). Consecutive loss counter: 0 throughout all 5 runs (reset after strong batch WIN at 0600). Betfair cross-ref index sizes: 2404 (0600), 2680 (1000), 3380 (1400), 3619 (1800), 3321 (2300) \u2014 normal intraday variation. Politics (sport ID 2378961): 2 markets at 0600 (Makerfield \u2013 Restore Britain Vote Percentage, Los Angeles Mayoral Election); 3 markets at 1000\u20132300 (Makerfield, LA Mayoral, and Next Mayor of Seoul added). Makerfield present in researcher selection in all 5 runs (0600\u20132300); no paper trade generated \u2014 correct (Betfair political trading paused). REVIEW DUE alert (7-9pp, 98 resolved entries) fires twice per run \u2014 Day 19+, unactioned. Dashboard 'WARNING: could not find injection point in HTML' in all 5 deploys \u2014 cosmetic, ongoing.\"\n  },\n  \"findings\": [\n    {\n      \"id\": \"F001\",\n      \"category\": \"platform\",\n      \"title\": \"Resolver may have used incorrect tournament winner data: LAY on Russell Henley (Top 20 and Top 10 Finish) settled as WINs \u2014 Henley actually won the tournament\",\n      \"evidence\": \"The 0600 run resolver settled 13 paper trades from markets 1.258587518 (Top 20 Finish) and 1.258587520 (Top 10 Finish) with 'winner=Eric Cole (24908171)', logging a batch net of +\u00a354.85. Among the 13 resol"
     }
   ]
 }

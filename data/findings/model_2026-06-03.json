@@ -1,0 +1,38 @@
+{
+  "target_file": "scripts/paper_tracker.py",
+  "finding": "Backs at decimal odds >= 5.0 have produced 2 wins from 13 resolved trades (15.4% WR, -£8.89 net P&L) at a mean odds of 7.51. A single Valencia v Atletico Madrid back @ 5.00 carried the entire upside (+£19.00); the remaining 12 trades returned 1W/11L for -£27.89. The runtime pipeline has a defensive high-odds LAY cap (high_odds_lay_cap = 4.5 at paper_tracker.py:169) but no symmetric BACK cap, even though the offline analysis tools (scripts/filter_replay.py, scripts/backtest_replay.py) already declare a MAX_BACK_ODDS = 15.0 constant — the cap was studied but never wired into the live path.",
+  "root_cause": "The Claude probability model systematically overstates the true probability of long-shot candidates. Across the 13-trade segment the model claimed a mean edge of ~13.6pp, but the realised hit rate of 15.4% barely clears the 13.3% break-even implied by the mean odds — the supposed edge does not exist at the tails. Mechanistically, longshot pricing is dominated by tail uncertainty that LLM-generated probability estimates cannot resolve from research briefs; a 5pp absolute error at 90% market-implied loses pennies, the same 5pp error at 10% market-implied (the long-shot regime) cuts win rate roughly in half. The existing high-odds LAY cap exists for the same reason in mirror image (variance asymmetry at extreme odds) — the symmetry should hold on the BACK side too.",
+  "proposed_change": "In scripts/paper_tracker.py, add a high-odds BACK cap that mirrors the existing LAY cap. (1) At line 169, alongside `high_odds_cap = config.get('thresholds', {}).get('high_odds_lay_cap', 4.5)`, add `high_odds_back_cap = config.get('thresholds', {}).get('high_odds_back_cap', 5.0)`. (2) Thread `high_odds_back_cap` into the `_log_paper_trades_locked` signature alongside `high_odds_cap`. (3) Immediately after the existing LAY cap block at lines 366-371, insert: `if side_check == 'back' and decimal_odds_check > high_odds_back_cap: print(f'Skipping high-odds back: {signal.get(\"market_name\")} @ {decimal_odds_check:.2f} odds (cap: {high_odds_back_cap})'); continue`. (4) Operator should add `high_odds_back_cap = 5.0` under `[thresholds]` in config/config.toml. No other files need editing; digest.py reads the same signals downstream and tracker is the enforcement point.",
+  "expected_impact": "Replayed against current paper_tracker.json: removes 13 trades, lifting overall paper WR from 61.5% (128/208) to 64.6% (126/195) and adding +£8.89 to net P&L — both numbers derived from the data, not estimated. This is ~0.4pp short of the 65% go-live WR gate but a material step toward it. Forward-looking: at the recent cadence of ~6.8 resolved trades/day, expect roughly 1 trade blocked per 16 — about 8 trades blocked over the next 3-week audit window. The single Valencia-class upside is real risk being foregone, but its expected value across the population is negative.",
+  "confidence": "medium",
+  "risk": "low",
+  "test_condition": "After change, run scripts/filter_replay.py against current paper_tracker.json and confirm 13 BACK trades are now rejected (mean odds 7.51) and replayed overall WR rises to ~64.6%. Live verification: wait until at least 20 NEW resolved BACK trades have accumulated (~3-4 weeks at current 6.8/day overall cadence with ~30% BACK share); the BACK WR (currently 45.3% n=64) should rise above 52% on the new cohort. If BACK WR stays below 50% after 20 fresh trades, the model has a broader BACK-side calibration problem that this cap alone won't solve and a follow-up audit is warranted. Do NOT verdict on fewer than 20 new resolved backs.",
+  "do_not_touch": [
+    "config/config.toml",
+    "data/paper_tracker.json"
+  ],
+  "evidence": [
+    {"metric": "BACK at odds >=5.0, count", "value": "13", "source": "data/paper_tracker.json (resolved, recommendation=back, decimal_odds>=5.0)"},
+    {"metric": "BACK at odds >=5.0, win rate", "value": "15.4% (2W/11L)", "source": "data/paper_tracker.json"},
+    {"metric": "BACK at odds >=5.0, net P&L", "value": "-£8.89", "source": "data/paper_tracker.json (sum paper_pnl)"},
+    {"metric": "BACK at odds >=5.0, mean decimal odds", "value": "7.51", "source": "data/paper_tracker.json"},
+    {"metric": "BACK at odds >=5.0, implied break-even WR", "value": "13.3%", "source": "1/7.51 computed"},
+    {"metric": "BACK at odds >=8.0 sub-segment", "value": "n=4, 0% WR, -£9.00 P&L", "source": "data/paper_tracker.json — Aberg, Sepp Straka, Crystal Palace, USPGA Scheffler"},
+    {"metric": "BACK at odds 5.0-7.9 sub-segment", "value": "n=9, 22.2% WR, +£0.11 P&L (carried by Valencia +£19.00)", "source": "data/paper_tracker.json"},
+    {"metric": "BACK at odds 3.0-4.99 (kept under proposed cap)", "value": "n=14, 35.7% WR, +£30.45 P&L", "source": "data/paper_tracker.json"},
+    {"metric": "current overall paper WR", "value": "61.5% (128/208)", "source": "data/logs/improvement_inputs.json overall_win_rate_pct"},
+    {"metric": "overall paper WR after counterfactual block of segment", "value": "64.6% (126/195)", "source": "computed: (128-2)/(208-13)"},
+    {"metric": "go-live WR gate", "value": ">=65%", "source": "CLAUDE.md go-live criteria"},
+    {"metric": "all BACK bets win rate", "value": "45.3% (n=64)", "source": "data/logs/improvement_inputs.json by_recommendation.back"},
+    {"metric": "all LAY bets win rate (comparison)", "value": "68.8% (n=144)", "source": "data/logs/improvement_inputs.json by_recommendation.lay"},
+    {"metric": "existing symmetric filter on LAY side", "value": "high_odds_lay_cap = 4.5", "source": "scripts/paper_tracker.py:169 + enforcement at 366-371"},
+    {"metric": "MAX_BACK_ODDS already declared in offline tools but not wired live", "value": "15.0", "source": "scripts/filter_replay.py:10, scripts/backtest_replay.py:64"}
+  ],
+  "alternative_findings": [
+    "Outright Winner BACKs: n=9, 33.3% WR, -£13.51 P&L — driven mainly by golf tournament long-shots (Aberg, Straka, Scheffler). Heavily overlaps with the proposed odds cap (most outright BACKs are long-odds picks), so addressing odds is the cleaner lever.",
+    "Matchbook Match Odds BACKs: n=33, 48.5% WR, +£3.90 — barely positive; could justify a Matchbook-specific match-odds back filter, but smaller WR uplift than the high-odds cap.",
+    "BACK at 10-11pp graduated band: n=11, 27.3% WR, -£1.54 — supports raising the graduated stake floor for BACKs specifically, but small sample (n=11) and only marginally negative P&L.",
+    "Sub-floor BACK bypass: three trades logged below the 10pp hard floor (3.36pp, 8.09pp, 8.56pp) over May 28-31 per cloud audits. Code defect rather than calibration finding — belongs in BUGS.md, not here."
+  ],
+  "caveats": "Sample is n=13 — moderate. The realised WR (15.4%) is barely above the implied break-even (13.3%) at the mean odds, so the segment is only slightly -EV on win-rate terms; the negative P&L is amplified by stake asymmetry (most losers hit at full or near-full reduced stake while the single big winner was a coincidence not skill). The Valencia +£19.00 outlier dominates the upside — removing it would have produced -£27.89 across the other 12 trades. The cap will reject ~6% of future signals, which is small but real foregone upside if rare longshot wins recur. Confidence is medium (not high) because of sample size and outlier dominance; risk is low because the change is reversible (one config flip), mirrors an already-proven filter pattern on the LAY side, and does not touch any LAY logic where the model is performing well."
+}
