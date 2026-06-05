@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-04",
+  "title": "Matchbook coverage analysis — BF signals vs MB market availability",
+  "type": "strategic",
+  "target_file": "scripts/scanner.py",
+  "finding": "A full cross-reference of 129 resolved Betfair paper trades against current Matchbook market availability reveals that Matchbook cannot replicate the strategy that is generating the vast majority of BF P&L. Of 49 golf trades (85.7% WR, +£191.65 P&L), 45 are Top 5/10/20 Finish lay bets — the highest-performing market type in the portfolio. Matchbook lists these markets (Top 5/Top 10 Finish) for current tournaments but they have zero prices/zero liquidity; the hard block in config (matchbook_hard_blocked_market_types) is correct and justified. The remaining 37 politics trades (51.4% WR, +£58.91) are entirely absent from Matchbook — MB has no politics/current events markets live. Tennis (9 trades, 44.4% WR, -£3.19) is covered by MB but is the worst-performing sport. The one category where MB has both coverage AND reasonable BF performance is soccer match odds: 9 resolved BF soccer trades at 88.9% WR, +£51.76. MB currently has 86 live soccer events (sport_id=15) with deep match-odds liquidity and no API fee.",
+  "root_cause": "The scanner was built around Betfair's market depth and has naturally gravitated toward golf finishing-position lays (high volume, high liquidity on BF, strong model edge from positional research). These market types do not exist with any liquidity on Matchbook. Matchbook's strength — broad football coverage with no commission fee — has not been exploited because the scanner's football signal generation is opportunistic (it picks up whatever BF surfaces) rather than targeting the soccer match odds category specifically. The cross_platform field in research signals shows nearly all BF signals have also_on=null, confirming the scanner rarely finds MB counterparts for BF-originated signals.",
+  "proposed_change": "Introduce a dedicated Matchbook-first soccer match odds module. Concretely: (1) Add a scanner mode that fetches MB soccer events (sport_id=15) as the primary source rather than treating MB as a BF mirror. (2) For each MB soccer match odds market, run the existing researcher.py + analyze_research.py pipeline with soccer-specific prompting. (3) Apply MB-specific thresholds (matchbook_min_edge_pct=15, no lay cap concern for match odds). (4) Keep existing BF pipeline unchanged — the two strategies run independently. This avoids modifying any currently-working BF logic and gives MB its own signal generation path suited to its actual market depth.",
+  "expected_impact": "Current BF soccer match odds performance (n=9, 88.9% WR, +£51.76) is a small sample but strongly positive. MB's 2% flat commission vs BF's ~5% effective rate on match odds means the same edge generates materially higher net returns on MB. A dedicated MB soccer module would add a second independent signal stream without cannibalising the existing BF golf strategy. Rough estimate: if the pipeline surfaces 2-4 MB soccer signals per week at the same WR, this represents ~£15-25/week incremental paper P&L before go-live calibration.",
+  "confidence": "medium",
+  "risk": "low — proposed as an additive module, no changes to existing BF pipeline",
+  "test_condition": "After implementation, run for a minimum of 20 resolved MB soccer trades before evaluating WR. Target: MB soccer WR >= 60% over 20+ trades. Do not gate on the existing go-live criteria (those apply to MB lays, not a new soccer back/lay strategy).",
+  "do_not_touch": [
+    "config/config.toml",
+    "data/paper_tracker.json",
+    "scripts/scanner.py (existing BF path)"
+  ],
+  "evidence": [
+    {"metric": "BF golf trades (resolved)", "value": "49 trades, 85.7% WR, +£191.65", "source": "data/paper_tracker.json cross-ref 2026-06-04"},
+    {"metric": "BF golf trades blocked on MB (Top 5/10/20 Finish lays)", "value": "45/49 trades", "source": "matchbook_hard_blocked_market_types in config/config.toml + live MB API check 2026-06-04"},
+    {"metric": "MB Top 10 Finish liquidity for Memorial Tournament", "value": "0 prices (all runners None)", "source": "MB API get_runners() call 2026-06-04"},
+    {"metric": "BF politics trades (resolved)", "value": "37 trades, 51.4% WR, +£58.91", "source": "data/paper_tracker.json"},
+    {"metric": "MB politics events live", "value": "0 (sport_id=11 returns empty)", "source": "MB API get_events_paginated() 2026-06-04"},
+    {"metric": "BF soccer match odds trades (resolved)", "value": "9 trades, 88.9% WR, +£51.76", "source": "data/paper_tracker.json"},
+    {"metric": "MB live soccer events", "value": "86 (sport_id=15)", "source": "MB API get_events_paginated() 2026-06-04"},
+    {"metric": "BF tennis trades (resolved)", "value": "9 trades, 44.4% WR, -£3.19", "source": "data/paper_tracker.json"},
+    {"metric": "MB live tennis events", "value": "49 (sport_id=9)", "source": "MB API get_events_paginated() 2026-06-04"},
+    {"metric": "Cross-platform signal hits in research history", "value": "94 hits from 993 signals, almost all also_on=betfair (MB-originated), only LIV Virginia 2026 found also_on=matchbook", "source": "data/research/*_research.json cross_platform field scan 2026-06-04"},
+    {"metric": "MB commission rate", "value": "2% flat", "source": "CLAUDE.md project context"},
+    {"metric": "BF effective commission on match odds", "value": "~5%", "source": "Betfair standard 5% market base rate"}
+  ],
+  "alternative_findings": [
+    "Tennis on MB: 49 live MB tennis events confirmed, BF tennis performance is negative (-£3.19, 44.4% WR). Not recommended as a primary MB expansion target.",
+    "Cricket on MB: partial coverage, 9 BF cricket trades at 55.6% WR +£2.62. Small sample and mixed, lower priority than soccer.",
+    "Basketball on MB: MB had only 2 live basketball events at time of check. Not a viable MB target currently.",
+    "Golf Winner markets on MB: 4 unblocked BF golf Winner trades exist. MB has these (Memorial, US Open, etc.) with real prices (Scheffler 4.3 Memorial, 5.7 US Open). However MB prices differ significantly from BF for active tournaments (4.3 vs 6.0 for Memorial), meaning edge recalculates differently. The signal pipeline would need MB-native probability assessment rather than BF-derived signals to work correctly here."
+  ],
+  "caveats": "The 88.9% WR on BF soccer is n=9 — very small sample, high variance. The analysis is based on current MB market availability (2026-06-04); MB's football coverage may vary by season (thin during summer break June-July). The football-only MB model would need its own calibration pass once it accumulates 30+ trades. The existing matchbook_no_backs=true config flag would need to be revisited for a soccer-backs strategy."
+}
