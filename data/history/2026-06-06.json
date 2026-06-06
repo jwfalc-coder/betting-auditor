@@ -1,193 +1,43 @@
 {
-  "generated_at": "2026-06-06T02:07:57.659203",
+  "generated_at": "2026-06-06T12:55:42.505107",
   "date": "2026-06-06",
-  "last_routine": "Run completed: 2026-06-05 23:03:28 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n16 | Errors: 0 | Credits used: 69\n[ANALYZER] Loading research brief: 2026-06-05_22-03_brief.json\n[ANALYZER] Betfair cross-ref index: 4690 runners\n[ANALYZER] Analyzed 16 markets\n[ANALYZER] Found 4 signals (10pp+)\n[ANALYZER] Logged 11 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-05_22-03_research.json\n[ANALYZER] Appended 75 edge traces to edge_traces.json",
-  "resolved_total": 218,
-  "overall_win_rate_pct": 62.4,
-  "paper_pnl_total": 324.36,
+  "last_routine": "Run completed: 2026-06-06 12:45:59 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n16 | Errors: 0 | Credits used: 65\n[ANALYZER] Loading research brief: 2026-06-06_11-45_brief.json\n[ANALYZER] Betfair cross-ref index: 4015 runners\n[ANALYZER] Analyzed 16 markets\n[ANALYZER] Found 4 signals (10pp+)\n[ANALYZER] Logged 11 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-06_11-45_research.json\n[ANALYZER] Appended 88 edge traces to edge_traces.json\nLogged paper trade: Top 10 Finish - LAY @ 70.92% (edge: 48.02pp) [betfair] | available now \u00a395.90\nLogged paper trade: Top 10 Finish - LAY @ 57.14% (edge: 36.72pp) [betfair] | available now \u00a388.40\nLogged paper trade: Top 10 Finish - LAY @ 52.63% (edge: 30.22pp) [betfair] | available now \u00a379.40\nLogged paper trade: 2m Nov Hrd - BACK @ 71.94% (edge: 13.23pp) [betfair] | available now \u00a373.38",
+  "resolved_total": 1,
+  "overall_win_rate_pct": 100.0,
+  "paper_pnl_total": 1.11,
   "by_band": {
     "12pp+": {
-      "n": 164,
-      "wins": 100,
-      "pnl": 274.1,
-      "win_rate_pct": 61.0
-    },
-    "10-11pp": {
-      "n": 37,
-      "wins": 21,
-      "pnl": 40.28,
-      "win_rate_pct": 56.8
-    },
-    "7-9pp": {
-      "n": 17,
-      "wins": 15,
-      "pnl": 9.98,
-      "win_rate_pct": 88.2
+      "n": 1,
+      "wins": 1,
+      "pnl": 1.11,
+      "win_rate_pct": 100.0
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 135,
-      "wins": 94,
-      "pnl": 337.43,
-      "win_rate_pct": 69.6
-    },
-    "matchbook": {
-      "n": 83,
-      "wins": 42,
-      "pnl": -13.07,
-      "win_rate_pct": 50.6
+      "n": 1,
+      "wins": 1,
+      "pnl": 1.11,
+      "win_rate_pct": 100.0
     }
   },
   "by_recommendation": {
-    "lay": {
-      "n": 145,
-      "wins": 100,
-      "pnl": 311.18,
-      "win_rate_pct": 69.0
-    },
     "back": {
-      "n": 73,
-      "wins": 36,
-      "pnl": 13.18,
-      "win_rate_pct": 49.3
+      "n": 1,
+      "wins": 1,
+      "pnl": 1.11,
+      "win_rate_pct": 100.0
     }
   },
   "recent_signals": [
     {
-      "market_name": "Match Odds",
+      "market_name": "2m Nov Hrd",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 18.1,
-      "was_correct": false,
-      "paper_pnl": -5.0,
-      "resolved_at": "2026-05-30T22:03:36.926788"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.09,
+      "edge_pct": 13.23,
       "was_correct": true,
-      "paper_pnl": 0.77,
-      "resolved_at": "2026-05-31T17:03:22.977421"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 15.45,
-      "was_correct": false,
-      "paper_pnl": -5.0,
-      "resolved_at": "2026-06-01T19:21:39.091385"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.22,
-      "was_correct": true,
-      "paper_pnl": 0.84,
-      "resolved_at": "2026-06-01T19:21:38.228687"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 11.15,
-      "was_correct": false,
-      "paper_pnl": -1.15,
-      "resolved_at": "2026-06-02T22:03:05.766698"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 12.72,
-      "was_correct": true,
-      "paper_pnl": 4.75,
-      "resolved_at": "2026-06-03T09:03:00.822087"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 5.33,
-      "was_correct": true,
-      "paper_pnl": 0.13,
-      "resolved_at": "2026-06-03T17:03:09.057115"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.5,
-      "was_correct": true,
-      "paper_pnl": 1.06,
-      "resolved_at": "2026-06-04T05:02:55.337162"
-    },
-    {
-      "market_name": "2m Mdn Hrd",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 6.77,
-      "was_correct": true,
-      "paper_pnl": 0.4,
-      "resolved_at": "2026-06-03T22:03:21.380883"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.11,
-      "was_correct": true,
-      "paper_pnl": 8.67,
-      "resolved_at": "2026-06-05T17:03:15.608799"
-    },
-    {
-      "market_name": "1st Round Leader",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 15.31,
-      "was_correct": false,
-      "paper_pnl": -5.0,
-      "resolved_at": "2026-06-05T05:03:16.465956"
-    },
-    {
-      "market_name": "1m4f Listed",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.6,
-      "was_correct": true,
-      "paper_pnl": 0.74,
-      "resolved_at": "2026-06-04T22:03:28.187753"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 11.84,
-      "was_correct": true,
-      "paper_pnl": 0.9,
-      "resolved_at": "2026-06-05T05:03:16.560793"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 11.71,
-      "was_correct": true,
-      "paper_pnl": 18.95,
-      "resolved_at": "2026-06-05T17:03:15.705725"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 15.2,
-      "was_correct": false,
-      "paper_pnl": -32.63,
-      "resolved_at": "2026-06-05T17:03:15.801277"
+      "paper_pnl": 1.11,
+      "resolved_at": "2026-06-06T12:23:54.705243"
     }
   ],
   "flags": []
