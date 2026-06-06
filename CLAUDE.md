@@ -20,6 +20,8 @@ Your permitted actions are strictly:
 
 **Do not run arbitrary shell commands. Do not edit any file outside `audits/`. Do not read files outside the list below.**
 
+**`mb_audits/` is off-limits.** That directory is managed by a separate MB matching agent with its own prompt. Do not read, write, or reference files inside `mb_audits/`.
+
 ---
 
 ## Timing context
@@ -62,6 +64,8 @@ spec/report_schema.json           ← output schema
 audits/                           ← recent reports (skim last 3 to avoid repetition)
 audits/archive/                   ← older reports (reference only, do not write here)
 ```
+
+Do NOT read or write anything in `mb_audits/` — that is a separate agent's write path.
 
 ---
 
