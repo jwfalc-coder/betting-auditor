@@ -30,7 +30,7 @@ You run **once per day at 07:00 UTC**. Your job is to analyse the **full previou
 
 All data in this repo was pushed at **03:00 UTC** and reflects the **previous day's** runs.
 
-Pi routine schedule (UTC): **06:00, 10:00, 14:00, 18:00, 23:00**
+Pi routine schedule (UTC): **05:00, 09:30, 14:00, 17:00, 21:00** (= 06:00, 10:30, 15:00, 18:00, 22:00 BST)
 
 **The `"date"` field in `data/daily_snapshot.json` is the generation date (when the snapshot was pushed, typically around 03:00 UTC today). The snapshot_date — the actual date of the Pi data — is one day prior: `date - 1 day`.**
 
@@ -111,15 +111,18 @@ Because you now have the full day's data, your report should:
 
 ## What the bot looks like
 
-- **Currently active on Matchbook sports markets only** — this is the sole paper-trading and (future) live-trading platform right now
-- Scans sports markets (golf, football, tennis) on Matchbook; Betfair is used only as a cross-reference price validator (MOD-076), not for signal generation or paper trading
-- Political/elections markets (by-elections, referendums) have historically been traded on Betfair and performed well (n=69, 69.6% WR), but **Betfair political paper trading is intentionally paused** pending the Matchbook go-live gate being met. Do not flag upcoming political markets (e.g. Makerfield) as pipeline gaps — the pipeline is behaving correctly by not acting on them. They are future-opportunity context only.
+- **Currently LIVE on Betfair (Phase 0, from 2026-06-06)** — operator places bets manually from the Telegram betting slip after each routine run. `paper_mode = true` remains set; executor.py does NOT auto-place.
+- **Betfair** is the primary and only active execution platform. Scans sports and politics markets. Generates signals across all market types.
+- **Matchbook** is data-only — scanned for price data but no trades placed or logged.
 - Edge = implied probability gap between bot's Claude probability assessment and market odds
 - Lay = betting against an outcome; Back = betting for an outcome
-- Current thresholds: **15pp minimum for both lay and back bets on Matchbook**
-- **Graduated stake scaling** (MOD-075, May 2026): signals between the 10pp hard floor and the threshold get linearly reduced stakes rather than being blocked outright. Hard blocks: lays above 4.5 decimal odds (liability too asymmetric), edge below 10pp floor, effective stake below £0.50.
-- Lays are preferred over backs on Matchbook sports. Backs on Match Odds / Moneyline markets at odds ≥ 2.0 are now also allowed (MOD-117/118, May 2026).
-- Backs on outright markets (Top X Finish, Winner) remain blocked on Matchbook — poor historical WR on short-odds favourites.
+- **Signal tracks:**
+  - **Standard** (market implied < 75%): edge ≥ 10pp, backs and lays, lay cap 4.5 odds
+  - **high_prob** (market implied 75–87%): edge ≥ 5pp, back only, ≥ 4 research sources
+  - **near_certainty** (market implied 87%+): edge ≥ 3pp, back only, ≥ 5 research sources
+- **Stake sizing:** Quarter-Kelly on running live balance. Max stake = lower of £10 or 10% of balance. Min bet £2 (Betfair floor).
+- **Live balance:** £50.00 starting deposit (2026-06-06). Current running balance ~£52.21 (2 resolved trades, 2W/0L).
+- **Paper history (pre-live, read-only reference):** 218 resolved trades | 69.7% WR | +£324.36 flat | +£1,916.80 Kelly.
 
 ---
 
@@ -127,20 +130,21 @@ Because you now have the full day's data, your report should:
 
 The bot has a staged activation plan. **Weight your findings accordingly.**
 
-**Current state: Matchbook paper trading phase**
-- **Matchbook** is the primary and only active platform — all paper trading and (future) live execution happens here. Sports markets only.
-- **Betfair** runs as a **cross-reference validator** for Matchbook signals (MOD-076, May 2026). When a Matchbook signal is generated, the bot looks up the same runner's odds on Betfair's outright markets. For back bets where Betfair disagrees (shows no edge), the paper stake is halved. Betfair is **never used for signal generation, paper trading, or execution** — it uses a free delayed API key. Do not flag Betfair scanner detections (e.g. political markets) as missed opportunities or pipeline gaps — the pipeline is correctly ignoring them.
-- **Smarkets** integration is architecturally ready. Activates when cumulative paper profit hits £150 — that profit funds the Smarkets access cost. Flat 2% commission once live.
+**Current state: Phase 0 — Betfair live, manual execution**
+- **Betfair** is the proven platform. All live bets placed here by the operator manually. Goal: grow £50 → £500.
+- **Matchbook** is data-only. No signals or trades. Do not flag Matchbook as a missed opportunity — the decision to pause it is intentional while live performance on Betfair is established.
+- **Smarkets** integration is architecturally ready but uncharted — we have no live track record there. Activates at £150 cumulative live Betfair profit to fund the access cost. Treat as low priority until Betfair is well-established.
 
 **Activation order:**
-1. **Matchbook** — paper trading → live (current priority). No API cost barrier.
-2. **Smarkets** — activates at £150 cumulative **live** profit (access cost paid from live earnings, not paper P&L). Flat 2% commission.
-3. **Betfair live execution** — activates when **Matchbook + Smarkets combined profits** reach £500 (funds the £499 one-off live API key purchase).
+1. **Betfair Phase 0 → Phase 1** — grow live balance to £500, then apply for live execution API key (£499). Set `paper_mode = false`. This is the current focus.
+2. **Smarkets** — activates at £150 cumulative live Betfair profit. Flat 2% commission. Uncharted territory — approach cautiously.
+3. **Matchbook live** — no current timeline. On hold until Betfair + Smarkets are proven.
 
-**Note on P&L figures (important for trend interpretation):** From May 2026 onwards, the paper_pnl figures include a retroactive backtest component — MOD-075 (graduated stakes) and MOD-076 (Betfair cross-reference) were applied to historical trades to simulate what the P&L would have been under the updated model. The absolute PnL figure is therefore higher than purely organic paper trading would show. When assessing performance trends, weight the **direction and recent trade-level results** more than the absolute cumulative figure.
+**Note on P&L figures (important for trend interpretation):** Pre-live paper P&L figures include a retroactive backtest component (MOD-075/076). The absolute cumulative paper figure is higher than purely organic paper trading would show. Live P&L (from 2026-06-06) is the authoritative performance measure — weight this most heavily.
 
 **What this means for your audit:**
-- Matchbook performance and pipeline issues are the highest-priority findings
-- Betfair scanner findings should be framed as cross-reference data quality issues, not live-trading blockers
-- Smarkets findings are medium priority — the integration is ready and activates at the £150 threshold; flag anything that would block a clean Smarkets go-live
-- Sports back bet performance on Matchbook is a standing concern — the model was calibrated on Betfair political lays and may overstate edge on Matchbook sports backs
+- Betfair signal quality and live execution are the highest-priority findings
+- Live P&L and win rate trends are the key metrics — paper history is context only
+- Matchbook findings are low priority — data-only, no action needed unless scanner errors appear
+- Smarkets findings are low priority — unactivated, flag only critical blockers
+- Do not suggest switching platforms or activation order — the operator has decided Betfair-first
