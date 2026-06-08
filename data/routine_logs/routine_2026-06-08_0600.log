@@ -1,0 +1,159 @@
+Sent
+2026-06-08 06:00:03,041 [INFO] ============================================================
+2026-06-08 06:00:03,042 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-06-08 06:00:03,042 [INFO] ============================================================
+2026-06-08 06:00:03,439 [INFO] Using cached Betfair session token
+2026-06-08 06:00:03,573 [INFO] Catalogue: 100 markets for sport ID 1
+2026-06-08 06:00:03,681 [INFO] Catalogue: 100 markets for sport ID 2
+2026-06-08 06:00:03,803 [INFO] Catalogue: 100 markets for sport ID 7
+2026-06-08 06:00:03,911 [INFO] Catalogue: 100 markets for sport ID 4
+2026-06-08 06:00:03,991 [INFO] Catalogue: 1 markets for sport ID 2378961
+2026-06-08 06:00:04,059 [INFO] Catalogue: 0 markets for sport ID 3
+2026-06-08 06:00:04,237 [INFO] Catalogue: 74 markets for sport ID 7522
+2026-06-08 06:00:04,307 [INFO] Catalogue: 0 markets for sport ID 6423
+2026-06-08 06:00:04,308 [INFO] Betfair: fetching prices for 475 markets...
+2026-06-08 06:00:08,070 [INFO] Betfair: enriching 475 markets with price data...
+2026-06-08 06:00:08,078 [INFO] Betfair: enriched 50/475 markets, 3 tradeable so far
+2026-06-08 06:00:08,083 [INFO] Betfair: enriched 100/475 markets, 4 tradeable so far
+2026-06-08 06:00:08,086 [INFO] Betfair: enriched 150/475 markets, 5 tradeable so far
+2026-06-08 06:00:08,088 [INFO] Betfair: enriched 200/475 markets, 5 tradeable so far
+2026-06-08 06:00:08,098 [INFO] Betfair: enriched 250/475 markets, 12 tradeable so far
+2026-06-08 06:00:08,107 [INFO] Betfair: enriched 300/475 markets, 16 tradeable so far
+2026-06-08 06:00:08,109 [INFO] Betfair: enriched 350/475 markets, 25 tradeable so far
+2026-06-08 06:00:08,111 [INFO] Betfair: enriched 400/475 markets, 29 tradeable so far
+2026-06-08 06:00:08,160 [INFO] Betfair: enriched 450/475 markets, 47 tradeable so far
+2026-06-08 06:00:08,203 [INFO] Betfair: enriched 475/475 markets, 48 tradeable so far
+2026-06-08 06:00:08,205 [INFO] Betfair: 475 total markets, 48 above 100 GBP volume
+2026-06-08 06:00:08,327 [INFO] Outrights: 22 markets for sport 1
+2026-06-08 06:00:08,405 [INFO] Outrights: 6 markets for sport 3
+2026-06-08 06:00:08,479 [INFO] Outrights: 1 markets for sport 2378961
+2026-06-08 06:00:08,762 [INFO] Outrights: 27 markets above 25 GBP
+2026-06-08 06:00:08,766 [INFO] Betfair: added 27 outright markets for cross-ref
+2026-06-08 06:00:08,766 [INFO] betfair: 502 total, 75 above 100 GBP threshold
+2026-06-08 06:00:08,917 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-06-08_05-00.json
+2026-06-08 06:00:11,464 [INFO] Rotated market log to market_log_2026-W23.csv.gz
+2026-06-08 06:00:11,553 [INFO] Market log updated (betfair)
+2026-06-08 06:00:33,974 [INFO] Scanner complete for betfair. Snapshot: 2026-06-08_05-00.json
+2026-06-08 06:00:34,281 [INFO] ============================================================
+2026-06-08 06:00:34,282 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-06-08 06:00:34,282 [INFO] ============================================================
+2026-06-08 06:00:34,624 [INFO] Matchbook login attempt 1/3
+2026-06-08 06:00:34,818 [INFO] Matchbook login successful
+2026-06-08 06:00:34,819 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-06-08 06:00:34,901 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-06-08 06:00:35,142 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-06-08 06:00:35,404 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-06-08 06:00:35,683 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-06-08 06:00:35,923 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-06-08 06:00:36,154 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-06-08 06:00:36,383 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-06-08 06:00:36,893 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-06-08 06:00:37,200 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-06-08 06:00:37,453 [INFO] Matchbook: fetched page offset=180, 17 events (total so far: 197)
+2026-06-08 06:00:37,454 [INFO] Matchbook: processing 197 events
+2026-06-08 06:00:37,460 [INFO] Matchbook: processed 20/197 events, 234 markets so far
+2026-06-08 06:00:37,464 [INFO] Matchbook: processed 40/197 events, 383 markets so far
+2026-06-08 06:00:37,473 [INFO] Matchbook: processed 60/197 events, 588 markets so far
+2026-06-08 06:00:37,482 [INFO] Matchbook: processed 80/197 events, 922 markets so far
+2026-06-08 06:00:37,487 [INFO] Matchbook: processed 100/197 events, 1118 markets so far
+2026-06-08 06:00:37,490 [INFO] Matchbook: processed 120/197 events, 1211 markets so far
+2026-06-08 06:00:37,491 [INFO] Matchbook: processed 140/197 events, 1270 markets so far
+2026-06-08 06:00:37,505 [INFO] Matchbook: processed 160/197 events, 1514 markets so far
+2026-06-08 06:00:37,523 [INFO] Matchbook: processed 180/197 events, 1924 markets so far
+2026-06-08 06:00:37,528 [INFO] Matchbook: processed 197/197 events, 1972 markets so far
+2026-06-08 06:00:37,528 [INFO] Matchbook: 1973 total markets, 185 above 25 GBP volume
+2026-06-08 06:00:37,547 [INFO] matchbook: 1973 total, 185 above 25 GBP threshold
+2026-06-08 06:00:37,637 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-06-08_05-00.json
+2026-06-08 06:00:37,687 [INFO] Market log updated (matchbook)
+2026-06-08 06:01:00,495 [INFO] Scanner complete for matchbook. Snapshot: 2026-06-08_05-00.json
+2026-06-08 06:01:01,119 [RESEARCHER] Prior index loaded: 9 known runners
+2026-06-08 06:01:01,156 [RESEARCHER] betfair: 75 tradeable markets from 2026-06-08_05-00.json
+2026-06-08 06:01:01,157 [RESEARCHER] Market selection: 2 politics + 6 outrights + 9 other sports = 17 total (platforms: ['betfair'])
+2026-06-08 06:01:01,157 [RESEARCHER] [1/17] Makerfield - Restore Britain Vote Percentage
+2026-06-08 06:01:07,446 [RESEARCHER] [2/17] Maine Democratic Senate Primary Winner
+2026-06-08 06:01:13,380 [RESEARCHER] [3/17] Winner
+2026-06-08 06:01:21,692 [RESEARCHER]   Prior history injected for Portugal
+2026-06-08 06:01:21,692 [RESEARCHER] [4/17] Winner
+2026-06-08 06:01:31,221 [RESEARCHER]   Prior history injected for Scottie Scheffler
+2026-06-08 06:01:31,222 [RESEARCHER]   Prior history injected for Xander Schauffele
+2026-06-08 06:01:31,222 [RESEARCHER] [5/17] Winner
+2026-06-08 06:01:35,598 [RESEARCHER]   Prior history injected for Scottie Scheffler
+2026-06-08 06:01:35,598 [RESEARCHER]   Prior history injected for Tommy Fleetwood
+2026-06-08 06:01:35,599 [RESEARCHER]   Prior history injected for Xander Schauffele
+2026-06-08 06:01:35,599 [RESEARCHER] [6/17] Winner
+2026-06-08 06:01:39,875 [RESEARCHER]   Prior history injected for Scottie Scheffler
+2026-06-08 06:01:39,876 [RESEARCHER]   Prior history injected for Xander Schauffele
+2026-06-08 06:01:39,880 [RESEARCHER] [7/17] Winner
+2026-06-08 06:01:48,401 [RESEARCHER] [8/17] Winner
+2026-06-08 06:01:56,873 [RESEARCHER] [9/17] Match Odds
+2026-06-08 06:02:04,342 [RESEARCHER] [10/17] NBA Championship Winner
+2026-06-08 06:02:11,670 [RESEARCHER] [11/17] Winner 2026/27
+2026-06-08 06:02:18,495 [RESEARCHER] [12/17] Moneyline
+2026-06-08 06:02:26,021 [RESEARCHER] [13/17] Name the Finalists
+2026-06-08 06:02:33,706 [RESEARCHER] [14/17] Winner 2026/27
+2026-06-08 06:02:40,365 [RESEARCHER] [15/17] Winner 2026
+2026-06-08 06:02:47,367 [RESEARCHER] [16/17] Ballon d'Or Winner 2026
+2026-06-08 06:02:54,445 [RESEARCHER] [17/17] Match Odds
+2026-06-08 06:03:02,473 [RESEARCHER] Research brief written: 2026-06-08_05-03_brief.json
+2026-06-08 06:03:02,473 [RESEARCHER] Markets: 17 | Errors: 0 | Credits used: 71
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-08_05-03_brief.json
+2026-06-08 06:03:02,786 [ANALYZER] Loading research brief: 2026-06-08_05-03_brief.json
+2026-06-08 06:03:02,932 [ANALYZER] Betfair cross-ref index: 2507 runners
+2026-06-08 06:03:02,937 [ANALYZER] Analyzed 15 markets
+2026-06-08 06:03:02,938 [ANALYZER] Found 3 signals (10pp+)
+2026-06-08 06:03:02,938 [ANALYZER] Logged 10 distribution entries (7pp+)
+2026-06-08 06:03:02,952 [ANALYZER] Research output written: 2026-06-08_05-03_research.json
+2026-06-08 06:03:02,954 [ANALYZER] Appended 76 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-08_05-03_research.json
+2026-06-08 06:03:03,523 [RESOLVE] Found 4 open trade(s) to check (paper_mode=True)
+2026-06-08 06:03:03,592 [RESOLVE] Using cached Betfair session token
+2026-06-08 06:03:03,592 [RESOLVE] Betfair: checking 4 open-trade markets
+2026-06-08 06:03:14,602 [RESOLVE] Snapshot name lookup: found mappings for 3 markets
+2026-06-08 06:03:14,698 [RESOLVE] Settled markets found: 0
+2026-06-08 06:03:14,698 [RESOLVE] No open-trade markets have settled yet.
+2026-06-08 06:03:15,323 [INFO] ============================================================
+2026-06-08 06:03:15,323 [INFO] DIGEST RUN STARTED
+2026-06-08 06:03:15,323 [INFO] ============================================================
+2026-06-08 06:03:18,755 [INFO] Slip dedup: skipping Scottie Scheffler (BACK) — already open
+2026-06-08 06:03:18,755 [INFO] Slip dedup: skipping Spain (BACK) — already open
+2026-06-08 06:03:18,755 [INFO] Slip dedup: skipping New York Knicks (BACK) — already open
+2026-06-08 06:03:18,755 [INFO] Slip dedup: all signals already open — no slip sent
+2026-06-08 06:03:18,755 [INFO] Sent 3 Telegram signal alerts
+2026-06-08 06:03:18,773 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-06-08 06:03:18,821 [INFO] Period logs updated: 2026-06-08, 2026-W24, 2026-06, 2026-Q2
+2026-06-08 06:03:18,822 [INFO] Run log: [2026-06-08 05:03 UTC] status=signal | platforms=betfair,matchbook | markets=260 | signals=3 | alerts=3 | movements=10 | consec_losses=0
+2026-06-08 06:03:18,822 [INFO] Digest complete
+Kelly balance: £74.92 | Reserved: £7.05 | Available: £67.87
+Skipping (already open): Winner BACK
+Skipping (already open): Winner BACK
+Skipping (already open): NBA Championship Winner BACK
+No new paper trades to log
+Distribution log updated: 10 new entries added
+Total entries: 999
+  near_certainty: 8 total, 6 resolved
+  high_prob: 27 total, 15 resolved
+  7-9pp: 293 total, 109 resolved
+  10-11pp: 150 total, 61 resolved
+  12pp+: 521 total, 404 resolved
+
+REVIEW DUE: 7-9pp band has 109 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 109 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-06-08 06:03:21,894 [STATIC-DASH] Building dashboard data…
+2026-06-08 06:03:22,888 [STATIC-DASH] Data collected: 14 trades, 40 signals, 260 markets
+2026-06-08 06:03:23,031 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (1998KB)
+2026-06-08 06:03:23 [DEPLOY] Starting dashboard deploy...
+WARNING: could not find injection point in HTML
+HTML written OK
+2026-06-08 06:03:23 [DEPLOY] Static HTML built
+[main 51c5018] Deploy: 2026-06-08 06:03 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   b723f61..51c5018  main -> main
+2026-06-08 06:03:23 [DEPLOY] Deploy complete: Deploy: 2026-06-08 06:03 UTC
