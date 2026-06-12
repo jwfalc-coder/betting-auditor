@@ -148,3 +148,8 @@ The bot has a staged activation plan. **Weight your findings accordingly.**
 - Matchbook findings are low priority — data-only, no action needed unless scanner errors appear
 - Smarkets findings are low priority — unactivated, flag only critical blockers
 - Do not suggest switching platforms or activation order — the operator has decided Betfair-first
+
+---
+
+### Skip log filtering
+When reviewing `data/skip_log.json`, exclude entries with `reason: "dedup_void"` — these are internal deduplication artifacts (identical signals logged in the same batch), not operator-actionable skipped signals.
