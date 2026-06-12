@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-06-11T16:00:00",
+  "auditor": "claude-opus-4-6 (manual, per prompts/opus46_audit_brief.md)",
+  "summary": "CRITICAL: analyze_research.py overbook guard (BUG-122) will crash analyzer on thin-book markets. HIGH: BUG-115 fix incomplete — market_lay_price never populated, all lays use back-implied odds. Phase 1 NOT READY — executor.py has 3 blockers (back price for lays, no lay price refresh, non-atomic queue). 4 existing bugs upgraded to HIGH for live context (BUG-094, 097, 101, 117).",
+  "full_report": "reports/audits/2026-06-11_opus46_live_audit.md",
+  "findings": [
+    {
+      "id": "AUDIT-001",
+      "severity": "high",
+      "category": "bug",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "Overbook guard at lines 182-185 inside estimate_probability_from_research() references undefined variables (event_name, market_name, signals, distribution_entries) and returns a 4-tuple where a 2-tuple is expected. Will crash analyzer with NameError on any thin-book market with >130% total back probability. Different from BUG-119.",
+      "proposed_fix": "Move overbook guard from estimate_probability_from_research() into analyze_market() where the referenced variables are in scope, OR pass them as parameters and fix return to (None, []).",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low",
+      "bug_id": "BUG-122"
+    },
+    {
+      "id": "AUDIT-002",
+      "severity": "high",
+      "category": "bug",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "BUG-115 marked FIXED but market_lay_price is never set in analyze_research.py. Consumer sites in paper_tracker.py (lines 408, 501, 596) and notify.py (line 245) always get None. Every lay signal falls back to back-implied odds.",
+      "proposed_fix": "In analyze_research.py analyze_market(), when building the signal dict, read lay_price from the brief market runner data and set signal['market_lay_price'] = lay_price.",
+      "effort_estimate": "small",
+      "risk_of_fix": "low",
+      "bug_id": "BUG-115 (reopened)"
+    },
+    {
+      "id": "AUDIT-003",
+      "severity": "high",
+      "category": "bug",
+      "affected_file": "scripts/executor.py",
+      "description": "execute_signal() line 331 computes decimal_odds from market_prob for all signals including lays. _get_live_back_odds() line 210 only reads availableToBack. Phase 1 lay orders would be submitted at back price.",
+      "proposed_fix": "Add availableToLay path to _get_live_back_odds(); use actual lay price for lay orders in execute_signal().",
+      "effort_estimate": "small",
+      "risk_of_fix": "low",
+      "bug_id": "BUG-123"
+    },
+    {
+      "id": "AUDIT-005",
+      "severity": "medium",
+      "category": "logic-drift",
+      "affected_file": "scripts/check_resolutions.py",
+      "description": "kelly_pnl incremental update (line 150) adds flat P&L instead of Kelly-sized P&L. Diverges from paper_tracker._recompute_summary() full replay. Kelly balance is wrong between auto-resolution and next recompute.",
+      "proposed_fix": "Have check_resolutions import and call paper_tracker._recompute_summary() after resolution, or import paper_tracker.save_tracker().",
+      "effort_estimate": "small",
+      "risk_of_fix": "low",
+      "bug_id": "BUG-097 (upgraded to HIGH)"
+    },
+    {
+      "id": "AUDIT-006",
+      "severity": "medium",
+      "category": "logic-drift",
+      "affected_file": "scripts/executor.py",
+      "description": "Stake floor at line 361 skips signals <£2.00. paper_tracker/notify round up to £2.00. Signals appear on slip in Phase 0 but would be silently dropped in Phase 1.",
+      "proposed_fix": "Align executor with paper_tracker: round sub-£2 Kelly stakes up to £2 instead of skipping.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low",
+      "bug_id": "BUG-124"
+    },
+    {
+      "id": "AUDIT-009",
+      "severity": "medium",
+      "category": "operational-risk",
+      "affected_file": "multiple",
+      "description": "Non-atomic config.toml writes in executor._disable_live_mode (line 691), telegram_bot.do_holiday (line 824). Pi power loss mid-write truncates config.toml.",
+      "proposed_fix": "Use tempfile+os.replace pattern. Keep timestamped backup before edit.",
+      "effort_estimate": "small",
+      "risk_of_fix": "low",
+      "bug_id": "BUG-098 (upgraded to MEDIUM-HIGH)"
+    },
+    {
+      "id": "AUDIT-011",
+      "severity": "medium",
+      "category": "operational-risk",
+      "affected_file": "scripts/executor.py",
+      "description": "save_queue() at line 595 uses non-atomic open()+json.dump(). Phase 1 blocker — crash mid-write corrupts execution queue.",
+      "proposed_fix": "Use tempfile+os.replace.",
+      "effort_estimate": "trivial",
+      "risk_of_fix": "low",
+      "bug_id": null
+    }
+  ]
+}
