@@ -1,0 +1,77 @@
+{
+  "date": "2026-06-12",
+  "title": "Tennis keyword model failure — junk keywords manufacturing phantom edges",
+  "type": "critical",
+  "target_file": "scripts/analyze_research.py",
+  "finding": "A 5-loss streak (4 consecutive, 1 interrupted by a small win) from 2026-06-11 to 2026-06-12 totalling -£61.92 was traced to systematic failure in the keyword probability model for tennis. Tennis is the only sport in the red across the live ledger (4W/5L, -£25.63 net). Two compounding root causes were identified.",
+  "root_cause_1_junk_keywords": {
+    "description": "The tennis keyword set includes 'ranked' and 'fit' as mild positive triggers (bmp=4, i.e. +4pp each). These are informationally empty for tennis — every active player has a WTA/ATP ranking and is described as fit to compete. The Tavily research briefs contain boilerplate sentences like 'X is currently ranked 59' and 'X has recovered from injuries and is expected to return' for essentially every player. Together they fire on 63 of 300 tennis traces (21%), generating +8pp of phantom edge per player they hit.",
+    "evidence": [
+      {"player": "Panna Udvardy", "boost": "+8pp", "words": ["ranked (+4)", "fit (+4)"], "result": "LOSS -£20.81"},
+      {"player": "Marie Bouzkova", "boost": "+8pp", "words": ["ranked (+4)", "fit (+4)"], "result": "LOSS -£10.83"},
+      {"player": "Daria Snigur", "boost": "+8pp", "words": ["ranked (+4)", "fit (+4)"], "result": "LOSS -£13.54"},
+      {"player": "Martin Landaluce", "boost": "+11pp", "words": ["dominant (+7)", "ranked (+4)"], "result": "LOSS -£14.04", "note": "dominant was a false positive — the fact said 'faces defending champion' describing opponent Fritz, but keyword triggered on the word regardless"},
+      {"player": "Nick Kyrgios", "boost": "+8pp", "words": ["ranked (+4)", "fit (+4)"], "result": "WIN +£25.15", "note": "won despite same junk boost pattern — lucky, not correct"}
+    ]
+  },
+  "root_cause_2_ignored_sources": {
+    "description": "The keyword model cannot parse directional predictions from external sources. In the Udvardy loss, all three research sources explicitly predicted Snigur to win — stevegtennis.com (prediction: Snigur to win), Dimers.com (Udvardy win probability 28%), sportytrader.com (also favoured Snigur). The keyword model ignored these directional signals and instead boosted Udvardy +8pp based on 'ranked' and 'fit' mentions. The model assigned Udvardy 78% when external models said 28%.",
+    "evidence": [
+      {"source": "stevegtennis.com", "prediction": "Snigur to win", "model_action": "ignored"},
+      {"source": "Dimers.com", "prediction": "Udvardy 28% win probability", "model_action": "ignored, model assigned 78%"},
+      {"source": "sportytrader.com", "prediction": "favoured Snigur", "model_action": "ignored"}
+    ]
+  },
+  "root_cause_3_boost_magnitude": {
+    "description": "Tennis bmp=4 is the highest mild positive boost of any sport (football match=5 but that is strong-pos equivalent). Tennis h2h markets on Betfair are highly efficient — they attract sharp money and the market price is typically well-calibrated. A +4pp mild boost from a single generic keyword is disproportionate. Two mild keywords fire = +8pp, which clears the 10pp signal threshold with minimal genuine information.",
+    "sport_boost_comparison": {
+      "tennis_bmp": 4,
+      "football_season_bmp": 2,
+      "golf_bmp": 3,
+      "cricket_bmp": 3,
+      "basketball_bmp": 3,
+      "politics_bmp": 2
+    }
+  },
+  "keyword_fire_stats": {
+    "total_tennis_traces": 300,
+    "fit_fires": 40,
+    "fit_total_boost": "+160pp",
+    "ranked_fires": 23,
+    "ranked_total_boost": "+92pp",
+    "injury_neg_fires": 40,
+    "injury_total_boost": "-200pp"
+  },
+  "tennis_live_performance": {
+    "wins": 5,
+    "losses": 5,
+    "pnl": -25.63,
+    "win_rate_pct": 50.0,
+    "note": "Worst performing sport by WR and only sport with negative PnL"
+  },
+  "immediate_action": "MOD-162: Block tennis signals from signal generation. Keyword fixes and boost recalibration to follow before re-enabling.",
+  "proposed_fixes": [
+    {
+      "priority": "P0 — done",
+      "fix": "Block tennis from signal generation entirely (MOD-162)"
+    },
+    {
+      "priority": "P1 — before re-enabling",
+      "fix": "Remove 'ranked' and 'fit' from tennis pos_mild keywords"
+    },
+    {
+      "priority": "P1 — before re-enabling",
+      "fix": "Reduce tennis bmp from 4 to 2 (align with politics/season-level)"
+    },
+    {
+      "priority": "P2 — enhancement",
+      "fix": "Add contrary-prediction detector: if research sources contain 'prediction: X to win' where X is the opponent, apply negative boost"
+    }
+  ],
+  "confidence": "high",
+  "risk": "none — tennis is the worst-performing sport; blocking it immediately improves expected value",
+  "do_not_touch": [
+    "config/config.toml",
+    "data/paper_tracker.json"
+  ]
+}
