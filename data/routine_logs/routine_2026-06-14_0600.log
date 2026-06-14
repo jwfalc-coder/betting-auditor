@@ -1,0 +1,233 @@
+Telegram connection error (attempt 1/3), retrying in 8s: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Sent
+2026-06-14 06:00:10,558 [INFO] ============================================================
+2026-06-14 06:00:10,559 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-06-14 06:00:10,559 [INFO] ============================================================
+2026-06-14 06:00:10,959 [INFO] Cached Betfair session too old, re-logging in
+2026-06-14 06:00:10,960 [INFO] Betfair login attempt 1/3
+2026-06-14 06:00:11,112 [INFO] Betfair login successful
+2026-06-14 06:00:11,269 [INFO] Catalogue: 100 markets for sport ID 1
+2026-06-14 06:00:11,388 [INFO] Catalogue: 100 markets for sport ID 2
+2026-06-14 06:00:11,511 [INFO] Catalogue: 100 markets for sport ID 7
+2026-06-14 06:00:11,620 [INFO] Catalogue: 100 markets for sport ID 4
+2026-06-14 06:00:11,698 [INFO] Catalogue: 0 markets for sport ID 2378961
+2026-06-14 06:00:11,801 [INFO] Catalogue: 29 markets for sport ID 3
+2026-06-14 06:00:11,928 [INFO] Catalogue: 39 markets for sport ID 7522
+2026-06-14 06:00:11,997 [INFO] Catalogue: 0 markets for sport ID 6423
+2026-06-14 06:00:11,997 [INFO] Betfair: fetching prices for 468 markets...
+2026-06-14 06:00:15,678 [INFO] Betfair: enriching 468 markets with price data...
+2026-06-14 06:00:15,688 [INFO] Betfair: enriched 50/468 markets, 0 tradeable so far
+2026-06-14 06:00:15,694 [INFO] Betfair: enriched 100/468 markets, 1 tradeable so far
+2026-06-14 06:00:15,697 [INFO] Betfair: enriched 150/468 markets, 4 tradeable so far
+2026-06-14 06:00:15,700 [INFO] Betfair: enriched 200/468 markets, 5 tradeable so far
+2026-06-14 06:00:15,710 [INFO] Betfair: enriched 250/468 markets, 14 tradeable so far
+2026-06-14 06:00:15,721 [INFO] Betfair: enriched 300/468 markets, 22 tradeable so far
+2026-06-14 06:00:15,725 [INFO] Betfair: enriched 350/468 markets, 35 tradeable so far
+2026-06-14 06:00:15,728 [INFO] Betfair: enriched 400/468 markets, 39 tradeable so far
+2026-06-14 06:00:15,787 [INFO] Betfair: enriched 450/468 markets, 66 tradeable so far
+2026-06-14 06:00:15,809 [INFO] Betfair: enriched 468/468 markets, 69 tradeable so far
+2026-06-14 06:00:15,812 [INFO] Betfair: 468 total markets, 69 above 100 GBP volume
+2026-06-14 06:00:15,918 [INFO] Outrights: 20 markets for sport 1
+2026-06-14 06:00:16,002 [INFO] Outrights: 11 markets for sport 3
+2026-06-14 06:00:16,075 [INFO] Outrights: 1 markets for sport 2378961
+2026-06-14 06:00:16,419 [INFO] Outrights: 30 markets above 25 GBP
+2026-06-14 06:00:16,424 [INFO] Betfair: added 25 outright markets for cross-ref
+2026-06-14 06:00:16,424 [INFO] betfair: 493 total, 94 above 100 GBP threshold
+2026-06-14 06:00:16,587 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-06-14_05-00.json
+2026-06-14 06:00:16,670 [INFO] Market log updated (betfair)
+2026-06-14 06:00:39,563 [INFO] Scanner complete for betfair. Snapshot: 2026-06-14_05-00.json
+2026-06-14 06:00:39,872 [INFO] ============================================================
+2026-06-14 06:00:39,872 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-06-14 06:00:39,873 [INFO] ============================================================
+2026-06-14 06:00:42,086 [INFO] Matchbook login attempt 1/3
+2026-06-14 06:00:42,264 [INFO] Matchbook login successful
+2026-06-14 06:00:42,265 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-06-14 06:00:42,366 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-06-14 06:00:42,670 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-06-14 06:00:42,966 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-06-14 06:00:43,244 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-06-14 06:00:43,533 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-06-14 06:00:43,849 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-06-14 06:00:44,172 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-06-14 06:00:44,412 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-06-14 06:00:44,652 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-06-14 06:00:44,969 [INFO] Matchbook: fetched page offset=180, 20 events (total so far: 200)
+2026-06-14 06:00:45,335 [INFO] Matchbook: fetched page offset=200, 20 events (total so far: 220)
+2026-06-14 06:00:45,617 [INFO] Matchbook: fetched page offset=220, 20 events (total so far: 240)
+2026-06-14 06:00:45,865 [INFO] Matchbook: fetched page offset=240, 9 events (total so far: 249)
+2026-06-14 06:00:45,866 [INFO] Matchbook: processing 249 events
+2026-06-14 06:00:45,872 [INFO] Matchbook: processed 20/249 events, 126 markets so far
+2026-06-14 06:00:45,887 [INFO] Matchbook: processed 40/249 events, 554 markets so far
+2026-06-14 06:00:45,900 [INFO] Matchbook: processed 60/249 events, 908 markets so far
+2026-06-14 06:00:45,906 [INFO] Matchbook: processed 80/249 events, 1086 markets so far
+2026-06-14 06:00:45,915 [INFO] Matchbook: processed 100/249 events, 1329 markets so far
+2026-06-14 06:00:45,969 [INFO] Matchbook: processed 120/249 events, 1822 markets so far
+2026-06-14 06:00:45,987 [INFO] Matchbook: processed 140/249 events, 2341 markets so far
+2026-06-14 06:00:45,992 [INFO] Matchbook: processed 160/249 events, 2602 markets so far
+2026-06-14 06:00:45,996 [INFO] Matchbook: processed 180/249 events, 2797 markets so far
+2026-06-14 06:00:46,012 [INFO] Matchbook: processed 200/249 events, 3217 markets so far
+2026-06-14 06:00:46,036 [INFO] Matchbook: processed 220/249 events, 3760 markets so far
+2026-06-14 06:00:46,046 [INFO] Matchbook: processed 240/249 events, 3978 markets so far
+2026-06-14 06:00:46,051 [INFO] Matchbook: processed 249/249 events, 3987 markets so far
+2026-06-14 06:00:46,051 [INFO] Matchbook: 3988 total markets, 415 above 25 GBP volume
+2026-06-14 06:00:46,091 [INFO] matchbook: 3988 total, 415 above 25 GBP threshold
+2026-06-14 06:00:46,266 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-06-14_05-00.json
+2026-06-14 06:00:46,379 [INFO] Market log updated (matchbook)
+2026-06-14 06:01:11,857 [INFO] Scanner complete for matchbook. Snapshot: 2026-06-14_05-00.json
+2026-06-14 06:01:12,508 [RESEARCHER] Prior index loaded: 25 known runners
+2026-06-14 06:01:12,547 [RESEARCHER] betfair: skipped 14 outright markets with no start time (BUG-093)
+2026-06-14 06:01:12,547 [RESEARCHER] betfair: 80 tradeable markets from 2026-06-14_05-00.json
+2026-06-14 06:01:12,547 [RESEARCHER] Market selection: 1 politics + 6 outrights + 9 other sports = 16 total (platforms: ['betfair'])
+2026-06-14 06:01:12,548 [RESEARCHER] [1/16] Makerfield - Restore Britain Vote Percentage
+2026-06-14 06:01:19,537 [RESEARCHER] [2/16] Winner
+2026-06-14 06:01:27,269 [RESEARCHER]   Prior history injected for Tommy Fleetwood
+2026-06-14 06:01:27,891 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-14 06:01:27,892 [RESEARCHER] [3/16] Top 10 Finish
+2026-06-14 06:01:29,794 [RESEARCHER]   Prior history injected for Tommy Fleetwood
+2026-06-14 06:01:30,076 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-14 06:01:30,077 [RESEARCHER] [4/16] Top 20 Finish
+2026-06-14 06:01:31,903 [RESEARCHER]   Prior history injected for Tommy Fleetwood
+2026-06-14 06:01:32,238 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-14 06:01:32,239 [RESEARCHER] [5/16] Top 5 Finish
+2026-06-14 06:01:34,100 [RESEARCHER]   Prior history injected for Tommy Fleetwood
+2026-06-14 06:01:34,411 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-14 06:01:34,412 [RESEARCHER] [6/16] Winner
+2026-06-14 06:01:42,718 [RESEARCHER] [SLASHGOLF] No tournament match for '  LPGA Dow Championship 2026'
+2026-06-14 06:01:42,719 [RESEARCHER] [7/16] Winner
+2026-06-14 06:01:50,818 [RESEARCHER] [SLASHGOLF] No tournament match for '  Champ Tour Principal Charity Classic 2026'
+2026-06-14 06:01:50,818 [RESEARCHER] [8/16] Match Odds
+2026-06-14 06:01:57,708 [RESEARCHER]   Prior history injected for India W
+2026-06-14 06:01:57,709 [RESEARCHER]   Prior history injected for Pakistan W
+2026-06-14 06:01:58,717 [RESEARCHER]   Data provider: 1 facts injected
+2026-06-14 06:01:58,718 [RESEARCHER] [9/16] Match Odds
+2026-06-14 06:02:07,064 [RESEARCHER]   Prior history injected for Bangladesh W
+2026-06-14 06:02:07,064 [RESEARCHER]   Prior history injected for Netherlands W
+2026-06-14 06:02:07,824 [RESEARCHER]   Data provider: 2 facts injected
+2026-06-14 06:02:07,825 [RESEARCHER] [10/16] FIFA Golden Ball
+2026-06-14 06:02:14,259 [RESEARCHER] [API_FOOTBALL] Could not resolve team ID for 'Lamine Yamal'
+2026-06-14 06:02:14,273 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-14 06:02:14,273 [RESEARCHER] [11/16] PFA Player of the Year 2025/26
+2026-06-14 06:02:21,888 [RESEARCHER] [API_FOOTBALL] Could not resolve team ID for 'Bruno Fernandes'
+2026-06-14 06:02:21,898 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-14 06:02:21,898 [RESEARCHER] [12/16] Each Way 10 Places - 1/5 Odds
+2026-06-14 06:02:23,794 [RESEARCHER]   Prior history injected for Tommy Fleetwood
+2026-06-14 06:02:24,140 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-14 06:02:24,140 [RESEARCHER] [13/16] Match Odds
+2026-06-14 06:02:30,462 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-14 06:02:30,463 [RESEARCHER] [14/16] Match Odds
+2026-06-14 06:02:37,894 [RESEARCHER] [15/16] Haotong Li vs Christiaan Bezuidenhout
+2026-06-14 06:02:46,111 [RESEARCHER] [SLASHGOLF] No tournament match for 'Tournament Match Bets'
+2026-06-14 06:02:46,112 [RESEARCHER] [16/16] R2 1200m Mdn
+2026-06-14 06:02:50,994 [RESEARCHER] Research brief written: 2026-06-14_05-02_brief.json
+2026-06-14 06:02:50,994 [RESEARCHER] Markets: 16 | Errors: 0 | Credits used: 70
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-14_05-02_brief.json
+2026-06-14 06:02:51,325 [ANALYZER] Loading research brief: 2026-06-14_05-02_brief.json
+2026-06-14 06:02:51,488 [ANALYZER] Betfair cross-ref index: 2695 runners
+2026-06-14 06:02:51,691 [ANALYZER] Analyzed 16 markets
+2026-06-14 06:02:51,691 [ANALYZER] Found 19 signals (10pp+)
+2026-06-14 06:02:51,691 [ANALYZER] Logged 34 distribution entries (7pp+)
+2026-06-14 06:02:51,710 [ANALYZER] Research output written: 2026-06-14_05-02_research.json
+2026-06-14 06:02:51,713 [ANALYZER] Appended 76 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-14_05-02_research.json
+2026-06-14 06:02:52,293 [RESOLVE] Found 20 open trade(s) to check (paper_mode=True)
+2026-06-14 06:02:52,363 [RESOLVE] Using cached Betfair session token
+2026-06-14 06:02:52,363 [RESOLVE] Betfair: checking 16 open-trade markets
+2026-06-14 06:03:12,964 [RESOLVE] Snapshot name lookup: found mappings for 16 markets
+2026-06-14 06:03:13,075 [RESOLVE] Betfair settled: market=1.259082206 221 winners: Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under
+2026-06-14 06:03:13,076 [RESOLVE] Betfair settled: market=1.259104887 winner=Sri Lanka (7337)
+2026-06-14 06:03:13,170 [RESOLVE] Betfair settled: market=1.245048439 winner=New York Knicks (237482)
+2026-06-14 06:03:13,170 [RESOLVE] Betfair settled: market=1.259081948 winner=New York Knicks (237482)
+2026-06-14 06:03:13,171 [RESOLVE] Settled markets found: 4
+2026-06-14 06:03:13,301 [RESOLVE]   [betfair] NBA Championship Winner | WIN | P&L: +0.54 | Selection: New York Knicks | Winner(s): New York Knicks
+2026-06-14 06:03:13,420 [RESOLVE]   [betfair] Moneyline | WIN | P&L: +3.68 | Selection: New York Knicks | Winner(s): New York Knicks
+2026-06-14 06:03:13,539 [RESOLVE]   [betfair] Match Odds | WIN | P&L: +3.84 | Selection: Sri Lanka | Winner(s): Sri Lanka
+2026-06-14 06:03:13,659 [RESOLVE]   [betfair] Total Points | WIN | P&L: +41.21 | Selection: Under | Winner(s): Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Over, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under, Under
+2026-06-14 06:03:13,659 [RESOLVE] Batch resolution alert: 4 trades, net=+49.27
+2026-06-14 06:03:13,809 [RESOLVE] Telegram notification sent
+2026-06-14 06:03:13,824 [RESOLVE] Auto-resolved 4 trade(s). Running P&L: +214.40 | W/L: 26/9 | ROI: 89.96%
+Kelly balance: £266.16 | Reserved: £106.79 | Available: £159.37
+Skipping (conflicting back in same market): Winner
+Skipping (conflicting back in same market): Top 10 Finish
+Skipping (conflicting back in same market): Top 10 Finish
+Skipping (conflicting back in same market): Top 10 Finish
+Skipping (conflicting back in same market): Top 10 Finish
+Skipping (already open): Top 10 Finish BACK
+Skipping (Kelly stake below £0.50 floor): Top 20 Finish Wyndham Clark — stake=£0.00 odds=1.11 model_prob=90.09%
+Skipping (Kelly stake below £0.50 floor): Top 20 Finish Jesper Svensson — stake=£0.03 odds=1.24 model_prob=80.65%
+Skipping (conflicting back in same market): Top 5 Finish
+Skipping (conflicting back in same market): Top 5 Finish
+Skipping (conflicting back in same market): Top 5 Finish
+Skipping high-odds lay: Winner @ 4.90 odds (cap: 4.5)
+Logged paper trade: Match Odds - BACK @ 91.74% (edge: 6.0pp) [betfair] | available now £113.49
+Skipping (already open): Match Odds BACK
+Skipping (already open): FIFA Golden Ball BACK
+Skipping (conflicting back in same market): FIFA Golden Ball
+Skipping (already open): PFA Player of the Year 2025/26 LAY
+Skipping (conflicting back in same market): Each Way 10 Places - 1/5 Odds
+Logged paper trade: Haotong Li vs Christiaan Bezuidenhout - BACK @ 14.71% (edge: 13.78pp) [betfair] | available now £97.93
+
+2 new paper trade(s) logged
+2026-06-14 06:03:15,111 [INFO] ============================================================
+2026-06-14 06:03:15,111 [INFO] DIGEST RUN STARTED
+2026-06-14 06:03:15,111 [INFO] ============================================================
+2026-06-14 06:03:19,026 [INFO] Signal filtered (high-odds lay): Winner @ 4.90 odds (cap: 4.5)
+2026-06-14 06:03:19,026 [INFO] Slip dedup: skipping Jackson Suber (BACK) — conflicting back in same market
+2026-06-14 06:03:19,027 [INFO] Slip dedup: skipping Lamine Yamal (BACK) — conflicting back in same market
+2026-06-14 06:03:19,027 [INFO] Slip dedup: skipping Jackson Suber (BACK) — conflicting back in same market
+2026-06-14 06:03:19,027 [INFO] Slip dedup: skipping Jackson Suber (BACK) — conflicting back in same market
+2026-06-14 06:03:19,027 [INFO] Slip dedup: skipping Jackson Suber (BACK) — conflicting back in same market
+2026-06-14 06:03:19,027 [INFO] Slip dedup: skipping Wyndham Clark (BACK) — conflicting back in same market
+2026-06-14 06:03:19,027 [INFO] Slip dedup: skipping Haotong Li (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Sam Burns (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Kylian Mbappe (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Bangladesh W (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Jesper Svensson (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Tommy Fleetwood (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Bud Cauley (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping India W (BACK) — conflicting back in same market
+2026-06-14 06:03:19,028 [INFO] Slip dedup: skipping Jesper Svensson (BACK) — conflicting back in same market
+2026-06-14 06:03:19,029 [INFO] Slip dedup: skipping Wyndham Clark (BACK) — conflicting back in same market
+2026-06-14 06:03:19,030 [INFO] Slip dedup: skipping Erling Haaland (LAY) — already open
+2026-06-14 06:03:19,030 [INFO] Slip dedup: all signals already open — no slip sent
+2026-06-14 06:03:19,031 [INFO] Sent 1 Telegram signal alerts
+2026-06-14 06:03:22,319 [INFO] cashout_advisor [adverse_drift]: Sam Burns (BACK) — Odds drifted OUT 50% against back bet (4.8 → 7.200) — market believes selection is now much less likely
+2026-06-14 06:03:22,319 [INFO] Cash-out advisory: Sam Burns (BACK) trigger=adverse_drift
+2026-06-14 06:03:22,450 [INFO] Telegram notification sent
+2026-06-14 06:03:22,453 [INFO] cashout_advisor: 1 advisory(s) fired this run
+2026-06-14 06:03:22,453 [INFO] Cash-out advisories fired: 1
+2026-06-14 06:03:22,479 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-06-14 06:03:22,557 [INFO] Period logs updated: 2026-06-14, 2026-W24, 2026-06, 2026-Q2
+2026-06-14 06:03:22,557 [INFO] Run log: [2026-06-14 05:03 UTC] status=signal | platforms=betfair,matchbook | markets=509 | signals=18 | alerts=1 | movements=10 | consec_losses=0
+2026-06-14 06:03:22,557 [INFO] Digest complete
+Distribution log updated: 9 new entries added
+Total entries: 1223
+  near_certainty: 13 total, 9 resolved
+  high_prob: 43 total, 26 resolved
+  7-9pp: 367 total, 113 resolved
+  10-11pp: 194 total, 64 resolved
+  12pp+: 606 total, 418 resolved
+
+REVIEW DUE: 7-9pp band has 113 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 113 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-06-14 06:03:25,456 [STATIC-DASH] Building dashboard data…
+2026-06-14 06:03:25,463 [STATIC-DASH] Data collected: 53 trades, 18 signals
+2026-06-14 06:03:25,504 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (572KB)
+2026-06-14 06:03:25,507 [STATIC-DASH] Copied PWA asset: manifest.json
+2026-06-14 06:03:25,508 [STATIC-DASH] Copied PWA asset: apple-touch-icon.png
+2026-06-14 06:03:25,510 [STATIC-DASH] Copied PWA asset: icon-192.png
+2026-06-14 06:03:25,511 [STATIC-DASH] Copied PWA asset: icon-512.png
+2026-06-14 06:03:25 [DEPLOY] Starting dashboard deploy...
+HTML written OK
+2026-06-14 06:03:25 [DEPLOY] Static HTML built
+[main bd1bcb0] Deploy: 2026-06-14 06:03 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   b26c889..bd1bcb0  main -> main
+2026-06-14 06:03:25 [DEPLOY] Deploy complete: Deploy: 2026-06-14 06:03 UTC
