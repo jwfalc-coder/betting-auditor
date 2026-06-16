@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-16T02:04:53.340674",
+  "date": "2026-06-16",
+  "last_routine": "Run completed: 2026-06-15 22:05:09 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n20 | Errors: 0 | Credits used: 57\n[ANALYZER] Loading research brief: 2026-06-15_21-03_brief.json\n[ANALYZER] Betfair cross-ref index: 3591 runners\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: UK - By-Elections | Makerfield by-election \u2014 6 runners, sum=100.0%\n[ANALYZER] BUG-134: Merged duplicate runner 'Deomcratic Party' into 'Democratic Party' (similarity 0.94) in USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: USA 2026 Midterm Elections | Which party will control the House in 2026? \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: UK - By-Elections | Makerfield by-election winner without Labour \u2014 5 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: UK - By-Elections | Makerfield - Restore Britain Vote Percentage \u2014 6 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK:   US Open 2026 | Winner \u2014 6 runners, sum=39.2%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK:   US Open 2026 | Top 5 Finish \u2014 6 runners, sum=124.0%\n[ANALYZER] BUG-134: Skipped structurally suspect market (overround 346%, 6 runners):   US Open 2026 | Top 20 Finish\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] BUG-130: Skipped unsupported market type:   US Open 2026 | Top 8 Finish [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Saudi Arabia v Uruguay | Asian Handicap [betfair]\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Uppsala Tigers v Malmo Mavericks | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: England W v Ireland W | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment failed (JSONDecodeError): Expecting value: line 1 column 1 (char 0)\n[ANALYZER] Analyzed 17 markets\n[ANALYZER] Found 5 signals (10pp+)\n[ANALYZER] Logged 17 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-15_21-04_research.json\n[ANALYZER] Appended 22 edge traces to edge_traces.json\nLogged paper trade: Match Odds - BACK @ 76.34% (edge: 7.69pp) [betfair] | available now \u00a360.92",
+  "resolved_total": 46,
+  "overall_win_rate_pct": 58.7,
+  "paper_pnl_total": 0.7,
+  "by_band": {
+    "12pp+": {
+      "n": 23,
+      "wins": 11,
+      "pnl": -26.57,
+      "win_rate_pct": 47.8
+    },
+    "10-11pp": {
+      "n": 10,
+      "wins": 6,
+      "pnl": 13.73,
+      "win_rate_pct": 60.0
+    },
+    "7-9pp": {
+      "n": 8,
+      "wins": 7,
+      "pnl": 5.81,
+      "win_rate_pct": 87.5
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 46,
+      "wins": 27,
+      "pnl": 0.7,
+      "win_rate_pct": 58.7
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 38,
+      "wins": 22,
+      "pnl": -10.11,
+      "win_rate_pct": 57.9
+    },
+    "lay": {
+      "n": 8,
+      "wins": 5,
+      "pnl": 10.81,
+      "win_rate_pct": 62.5
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.77,
+      "was_correct": false,
+      "paper_pnl": -4.0,
+      "resolved_at": "2026-06-12T15:56:13.689170"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.5,
+      "was_correct": true,
+      "paper_pnl": 1.98,
+      "resolved_at": "2026-06-13T05:02:56.503913"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 12.33,
+      "was_correct": true,
+      "paper_pnl": 3.68,
+      "resolved_at": "2026-06-14T05:03:13.301397"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.09,
+      "was_correct": true,
+      "paper_pnl": 0.6,
+      "resolved_at": "2026-06-13T17:03:55.374697"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 13.61,
+      "was_correct": false,
+      "paper_pnl": -3.35,
+      "resolved_at": "2026-06-13T21:04:21.175545"
+    },
+    {
+      "market_name": "Each Way 10 Places - 1/5 Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.85,
+      "was_correct": false,
+      "paper_pnl": -4.0,
+      "resolved_at": "2026-06-14T22:30:17.765199"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.5,
+      "resolved_at": "2026-06-14T22:30:17.953594"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.34,
+      "was_correct": null,
+      "paper_pnl": 0.0,
+      "resolved_at": "2026-06-15T14:04:16.998381"
+    },
+    {
+      "market_name": "7f Mdn Stks",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 25.9,
+      "was_correct": false,
+      "paper_pnl": -5.03,
+      "resolved_at": "2026-06-15T13:33:06"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.97,
+      "was_correct": true,
+      "paper_pnl": 2.08,
+      "resolved_at": "2026-06-15T13:23:19"
+    },
+    {
+      "market_name": "7f Mdn Stks",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 12.85,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-15T13:33:06"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": null,
+      "was_correct": true,
+      "paper_pnl": 11.76,
+      "resolved_at": "2026-06-14T23:02:36"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": null,
+      "was_correct": true,
+      "paper_pnl": 0.23,
+      "resolved_at": "2026-06-14T23:02:36"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.77,
+      "was_correct": false,
+      "paper_pnl": -9.54,
+      "resolved_at": "2026-06-12T15:56:13.689170"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 16.24,
+      "was_correct": false,
+      "paper_pnl": -15.32,
+      "resolved_at": "2026-06-11T12:36:15"
+    }
+  ],
+  "flags": []
+}
