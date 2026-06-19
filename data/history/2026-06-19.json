@@ -1,70 +1,61 @@
 {
-  "generated_at": "2026-06-19T02:19:46.401667",
+  "generated_at": "2026-06-19T16:36:56.362956",
   "date": "2026-06-19",
-  "last_routine": "Run completed: 2026-06-18 22:04:43 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n17 | Errors: 0 | Credits used: 72\n[ANALYZER] Loading research brief: 2026-06-18_21-03_brief.json\n[ANALYZER] Betfair cross-ref index: 3151 runners\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: UK - By-Elections | Makerfield by-election \u2014 6 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: UK - By-Elections | Makerfield by-election winner without Labour \u2014 5 runners, sum=100.0%\n[ANALYZER] BUG-134: Merged duplicate runner 'Deomcratic Party' into 'Democratic Party' (similarity 0.94) in USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: USA 2026 Midterm Elections | Which party will control the House in 2026? \u2014 2 runners, sum=100.0%\n[ANALYZER] Market skipped (overbook 131% > 130%): UK - By-Elections | Makerfield - Restore Britain Vote Percentage\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: USA 2026 Midterm Elections | Which party will control the Senate in 2026? \u2014 2 runners, sum=100.0%\n[ANALYZER] BUG-130: Skipped unsupported market type: England v New Zealand | England 1st Innings Runs Line [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Canada v Qatar | Asian Handicap [betfair]\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Texas Super Kings v Seattle Orcas | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Bangladesh v Australia | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Atlanta Dream @ Indiana Fever | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: New Zealand W v Ireland W | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Ribeiro/Zeballos v Casanova/Rodriguez Tave | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] Market skipped (overbook 132% > 130%): Lux Shyam Kolkata Tiger v Rashmi Medinipur Wizard | Match Odds\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Besiktas JK v Fenerbahce SK | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: J Pegula v Keys | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment: recovered JSON from prose-wrapped response\n[ANALYZER] Claude assessment OK: CT United FC v FC Cincinnati II | Match Odds \u2014 3 runners, sum=100.0%\n[ANALYZER] BUG-130: Skipped unsupported market type: Capitanes de Arecibo v Vaqueros de Bayamon | Total Points [betfair]\n[ANALYZER] Analyzed 12 markets\n[ANALYZER] Found 4 signals (10pp+)\n[ANALYZER] Logged 11 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-18_21-04_research.json\nLogged paper trade: Match Odds - LAY @ 62.11% (edge: 49.99pp) [betfair] | available now \u00a337.03\nLogged paper trade: Match Odds - BACK @ 67.57% (edge: 29.73pp) [betfair] | available now \u00a335.03",
-  "resolved_total": 60,
-  "overall_win_rate_pct": 53.3,
-  "paper_pnl_total": -0.91,
+  "last_routine": "Run completed: 2026-06-19 15:02:52 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n15 | Errors: 0 | Credits used: 10\n[ANALYZER] Loading research brief: 2026-06-19_14-01_brief.json\n[ANALYZER] Betfair cross-ref index: 3613 runners\n[ANALYZER] BUG-134: Merged duplicate runner 'Deomcratic Party' into 'Democratic Party' (similarity 0.94) in USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: USA 2026 Midterm Elections | Which party will control the House in 2026? \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: USA 2026 Midterm Elections | Which party will control the Senate in 2026? \u2014 2 runners, sum=100.0%\n[ANALYZER] Market skipped (overbook 132% > 130%): USA - Politics Specials | Los Angeles Mayoral Election\n[ANALYZER] Market skipped (overbook 142% > 130%): USA 2026 Midterm Elections | Montana Senate Election Winner\n[ANALYZER] Market skipped (overbook 187% > 130%): USA 2026 Midterm Elections | Oregon Gubernatorial Election Winner\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: New Zealand W v Ireland W | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Minnesota Lynx @ Golden State Valkyries | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Toronto Tempo @ Connecticut Sun | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Australia W v Netherlands W | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] 2-runner cap (BUG-151): Australia W 88.0% \u2192 87.0% (Match Odds)\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: AS Monaco v Paris Basketball | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Voc Rotterdam v Hbs | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Alba Berlin v FC Bayern Munchen | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Ti Droguet v J Rodionov | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Rcc v Vcc | Match Odds \u2014 2 runners, sum=100.0%\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 200 OK\"\n[ANALYZER] Claude assessment OK: Besiktas JK v Fenerbahce SK | Moneyline \u2014 2 runners, sum=100.0%\n[ANALYZER] Analyzed 12 markets\n[ANALYZER] Found 4 signals (10pp+)\n[ANALYZER] Logged 8 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-19_14-02_research.json\nLogged paper trade: Match Odds - BACK @ 50.0% (edge: 34.26pp) [betfair] | available now \u00a357.76\nLogged paper trade: Moneyline - LAY @ 59.88% (edge: 14.68pp) [betfair] | available now \u00a356.32",
+  "resolved_total": 64,
+  "overall_win_rate_pct": 54.7,
+  "paper_pnl_total": 1.94,
   "by_band": {
     "12pp+": {
-      "n": 31,
-      "wins": 15,
-      "pnl": -18.8,
-      "win_rate_pct": 48.4
+      "n": 33,
+      "wins": 16,
+      "pnl": -18.16,
+      "win_rate_pct": 48.5
     },
     "10-11pp": {
-      "n": 13,
-      "wins": 7,
-      "pnl": 12.35,
-      "win_rate_pct": 53.8
+      "n": 14,
+      "wins": 8,
+      "pnl": 14.29,
+      "win_rate_pct": 57.1
     },
     "7-9pp": {
-      "n": 9,
-      "wins": 7,
-      "pnl": 3.81,
-      "win_rate_pct": 77.8
+      "n": 10,
+      "wins": 8,
+      "pnl": 4.08,
+      "win_rate_pct": 80.0
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 60,
-      "wins": 32,
-      "pnl": -0.91,
-      "win_rate_pct": 53.3
+      "n": 64,
+      "wins": 35,
+      "pnl": 1.94,
+      "win_rate_pct": 54.7
     }
   },
   "by_recommendation": {
     "back": {
-      "n": 51,
-      "wins": 26,
-      "pnl": -12.67,
-      "win_rate_pct": 51.0
+      "n": 54,
+      "wins": 28,
+      "pnl": -11.76,
+      "win_rate_pct": 51.9
     },
     "lay": {
-      "n": 9,
-      "wins": 6,
-      "pnl": 11.76,
-      "win_rate_pct": 66.7
+      "n": 10,
+      "wins": 7,
+      "pnl": 13.7,
+      "win_rate_pct": 70.0
     }
   },
   "recent_signals": [
     {
-      "market_name": "Match Odds",
+      "market_name": "Makerfield by-election",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 14.77,
+      "edge_pct": 23.67,
       "was_correct": false,
-      "paper_pnl": -9.54,
-      "resolved_at": "2026-06-12T15:56:13.689170"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 16.24,
-      "was_correct": false,
-      "paper_pnl": -15.32,
-      "resolved_at": "2026-06-11T12:36:15"
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-19T05:05:09.144447"
     },
     {
       "market_name": "Match Odds",
@@ -74,6 +65,15 @@
       "was_correct": false,
       "paper_pnl": -2.0,
       "resolved_at": "2026-06-16T17:03:38.039169"
+    },
+    {
+      "market_name": "Makerfield - Restore Britain Vote Percentage",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 11.51,
+      "was_correct": true,
+      "paper_pnl": 1.94,
+      "resolved_at": "2026-06-19T05:05:09.285149"
     },
     {
       "market_name": "Match Odds",

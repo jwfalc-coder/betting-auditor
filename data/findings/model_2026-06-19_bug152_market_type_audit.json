@@ -1,0 +1,301 @@
+{
+  "generated": "2026-06-19",
+  "bug_ref": "BUG-152",
+  "title": "Full Market Type Suitability Audit — Pre-Event Form-Based Model Assessment",
+  "summary": "Audit of all 30 distinct market types seen in pipeline history. Goal: identify which market types are structurally unsuitable for a pre-event, web-research-driven probability model. Each type is categorised KEEP / ADD_GUARD / SUPPRESS with evidence from tracker WR data and research brief quality.",
+
+  "overall_stats": {
+    "total_tracker_trades": 87,
+    "total_distinct_market_names": 30,
+    "sport_categories": {
+      "Tennis": {"total": 16, "resolved": 16, "wins": 9, "voids": 0, "win_rate_pct": 56.2},
+      "Cricket": {"total": 9, "resolved": 5, "wins": 3, "voids": 3, "win_rate_pct": 60.0, "caveat": "3 voids are no-results; effective WR vs open positions = 37.5%"},
+      "Golf": {"total": 26, "resolved": 17, "wins": 11, "voids": 0, "win_rate_pct": 64.7, "sub": {
+        "Outright Winner": {"resolved": 7, "wins": 6, "win_rate_pct": 85.7},
+        "Top-N Finish (mid-tournament)": {"resolved": 10, "wins": 5, "win_rate_pct": 50.0}
+      }},
+      "Basketball": {"total": 9, "resolved": 8, "wins": 4, "voids": 1, "win_rate_pct": 50.0},
+      "Horse Racing": {"total": 11, "resolved": 11, "wins": 4, "voids": 0, "win_rate_pct": 36.4},
+      "Politics": {"total": 7, "resolved": 4, "wins": 3, "voids": 0, "win_rate_pct": 75.0},
+      "Football": {"total": 1, "resolved": 0, "wins": 0, "voids": 1, "win_rate_pct": null}
+    },
+    "target_win_rate_pct": 65.0
+  },
+
+  "market_type_verdicts": [
+    {
+      "category": "Tennis Match Odds",
+      "market_names": ["Match Odds (tennis events)"],
+      "verdict": "KEEP",
+      "win_rate_pct": 56.2,
+      "resolved_count": 16,
+      "priority": 2,
+      "research_quality": "GOOD — H2H, ranking, form, surface data all retrievable. 12 key_facts typical.",
+      "structural_issues": [
+        "Result contamination: same-tournament result pages leak into briefs (BUG-151 — FIXED). Fixes: P1a prompt cap, P1b 87% code cap, P2a digest scanner, P3 query rewrite.",
+        "WR 56.2% is below 65% target; still recovering from pre-BUG-151-fix contaminated signals."
+      ],
+      "action": "No further suppression needed. Monitor WR post-BUG-151 fixes over next 30 signals."
+    },
+    {
+      "category": "Cricket Match Odds",
+      "market_names": ["Match Odds (cricket events)", "Completed Match"],
+      "verdict": "ADD_GUARD",
+      "win_rate_pct": 60.0,
+      "effective_wr_with_voids_as_loss": 37.5,
+      "resolved_count": 5,
+      "void_count": 3,
+      "priority": 1,
+      "research_quality": "PARTIAL — international cricket facts retrievable, but no-result probability is structurally invisible to model.",
+      "structural_issues": [
+        "No-result blindspot (BUG-152): England home cricket in summer carries ~40-45% no-result probability (rain/abandonment). The market prices this into a separate 'No Result' runner. Model ignores this runner entirely and assigns 78-95% probability to the dominant team, generating artificial back edges.",
+        "3 voids from 9 trades = 33% no-result rate in sample. This matches the known seasonal base rate.",
+        "Domestic T20 leagues (Ranchi Titans, Lux Shyam, Texas Super Kings MLC) have essentially no web research available — 4 generic facts, no meaningful form data."
+      ],
+      "guard_specification": {
+        "guard_1_no_result_check": "Before any cricket Match Odds signal is added to slip: check if market has a 'No Result' runner AND event venue is England (May–Sep) OR 'Women ICC' competition. If yes, flag in digest output and show estimated no-result probability from market price. Do not suppress automatically; operator decides.",
+        "guard_2_domestic_t20": "For domestic T20 league events (event_name contains: 'Titans', 'Diamonds', 'Super Kings', 'Orcas', 'MLC', 'Jharkhand', 'Rajasthan', 'Bengal'): suppress if key_facts < 6 — model cannot form reliable view.",
+        "implementation_file": "scripts/digest.py",
+        "field_to_add": "cricket_no_result_warning in signal output"
+      }
+    },
+    {
+      "category": "Golf Outright Winner",
+      "market_names": ["Winner (golf events)"],
+      "verdict": "KEEP",
+      "win_rate_pct": 85.7,
+      "resolved_count": 7,
+      "priority": 3,
+      "research_quality": "EXCELLENT — tournament form, world rankings, course fit, recent strokes-gained all available. 6-11 key_facts typical.",
+      "structural_issues": [
+        "Result contamination: if tournament has finished before research runs, Tavily returns winner. Affects mid-run signals for completed events. BUG-151 P2a scanner partially covers this (suppresses if model_prob > 87% AND contamination detected).",
+        "IMPORTANT FLAG: Research briefs Jun 19 show 'Wyndham Clark won the 2026 U.S. Open' as a key_fact across all US Open markets. US Open runs Jun 12-15 — it has concluded. If correct, the 7 open Scheffler US Open Winner bets have LOST. Operator must verify and reconcile."
+      ],
+      "action": "Keep. Best-performing market type. No suppression. Apply BUG-151 contamination scanner."
+    },
+    {
+      "category": "Golf Top-N Finish (pre-tournament)",
+      "market_names": ["Top 10 Finish", "Top 5 Finish", "Top 6 Finish", "Top 8 Finish", "Top 20 Finish"],
+      "verdict": "ADD_GUARD",
+      "win_rate_pct": 50.0,
+      "resolved_count": 10,
+      "priority": 1,
+      "research_quality": "GOOD pre-tournament. POOR mid-tournament (leaderboard data dominates).",
+      "structural_issues": [
+        "Mid-tournament leaderboard blindspot (BUG-152): Golf tournament markets remain open across multiple days. event_start is set to next-round start time, not tournament start. The in-play guard uses event_start > now() — which passes mid-tournament rounds as 'future' events. Model sees current leaderboard in research and over-inflates probabilities for current leaders (e.g. Yan Liu at 38% for a 12.0 tournament winner after one round of 4).",
+        "Top 5 Finish: 0% WR (0/1). Under-sampled but consistent with mid-tournament issue.",
+        "Top 20 Finish: 50% WR (1/2). Wider net but same issue."
+      ],
+      "guard_specification": {
+        "guard": "Check if tournament has started: if event has a known start date AND (now - tournament_start) > 6 hours AND market_type in ['Top 10 Finish', 'Top 5 Finish', 'Top 6 Finish', 'Top 8 Finish', 'Top 20 Finish', '1st Round Leader']: suppress signal and log as mid_tournament_skip.",
+        "tournament_start_field": "Use event competition_id or look for tournament-level event_start stored in brief metadata. Alternative: add golf_tournament_start date to config for known recurring events.",
+        "implementation_file": "scripts/digest.py",
+        "implementation_note": "event_start in market data = next round start time for multi-day events. Need to infer tournament start from competition context or use a calendar lookup."
+      }
+    },
+    {
+      "category": "Golf Tournament Match Bets / 3-balls",
+      "market_names": ["Haotong Li vs Christiaan Bezuidenhout", "18:45-James (3 Balls)", "Tournament Match Bets", "Justin Rose vs Si Woo Kim"],
+      "verdict": "ADD_GUARD",
+      "win_rate_pct": null,
+      "resolved_count": 0,
+      "priority": 3,
+      "research_quality": "PARTIAL — general form available but match-bet specific context thin. 6 facts typical.",
+      "structural_issues": [
+        "Same mid-tournament issue as Top-N: tee-time match bets are live market signals during tournament rounds. event_start = tee time = future → passes in-play guard even though tournament is live.",
+        "Limited resolved data to assess model quality.",
+        "3-ball market names are time-prefixed (e.g. '18:45-James') — market name parsing may fail."
+      ],
+      "action": "Apply same mid-tournament guard as Top-N. No immediate suppress."
+    },
+    {
+      "category": "Basketball Moneyline (game-level)",
+      "market_names": ["Moneyline (basketball games)"],
+      "verdict": "SUPPRESS",
+      "win_rate_pct": 50.0,
+      "resolved_count": 7,
+      "priority": 1,
+      "research_quality": "POOR — 4 key_facts typical, heavily contradictory, frequent result contamination.",
+      "structural_issues": [
+        "Research quality: Tavily returns recent game results that directly contradict each other within the same brief (e.g. 'Sun defeated Tempo 106-102' AND 'Tempo defeated Sun 106-102' in same market key_facts). Model cannot distinguish home/away result direction.",
+        "Result contamination endemic: 4 of 4 basketball briefs sampled showed the most recent H2H result (same score, contradicted) as the dominant fact. Probability anchoring to recent result rather than season form.",
+        "Hallucination: 'Caitlin Clark sat out for load management' listed in 'Atlanta Dream vs Indiana Fever' context — Clark plays for Fever, not Dream. Research fetched wrong-team context.",
+        "San Antonio Spurs @ New York Knicks: claude_prob=0 (BUG-150) — bet placed with no probability basis.",
+        "50% WR = coin flip. No identifiable edge above market. Below 65% target.",
+        "WNBA schedule complexity: expansion teams (Toronto Tempo), load management, back-to-backs all untracked by Tavily.",
+        "Target path to 65%: would require deep basketball-specific research source (ESPN API, basketball-reference). Tavily alone cannot deliver this."
+      ],
+      "action": "SUPPRESS all game-level basketball Moneyline signals until basketball-specific research source is added. Log as basketball_moneyline_suppressed in digest."
+    },
+    {
+      "category": "Basketball Outright (Championship Winner, series winner)",
+      "market_names": ["NBA Championship Winner", "Moneyline (series context)"],
+      "verdict": "KEEP",
+      "win_rate_pct": 100.0,
+      "resolved_count": 1,
+      "priority": 3,
+      "research_quality": "GOOD for long-horizon outright — season stats, seedings, recent form over many games retrievable.",
+      "structural_issues": [
+        "Under-sampled (1 resolved). Cannot distinguish model quality from luck yet.",
+        "Must ensure market_type is 'Championship Winner' not game Moneyline — same scanner may confuse."
+      ],
+      "action": "Keep for now. Distinct from game-level Moneyline. 5-game sample before re-evaluation."
+    },
+    {
+      "category": "Horse Racing",
+      "market_names": ["2m4f Mdn Hrd", "7f Mdn Stks", "1m Nov Stks", "1m1f Hcap", "2m Nov Hrd", "4 TBP", "6f Hcap", "To Be Placed", "Each Way 10 Places - 1/5 Odds"],
+      "verdict": "SUPPRESS",
+      "win_rate_pct": 36.4,
+      "resolved_count": 11,
+      "priority": 1,
+      "research_quality": "VERY POOR — race-specific names ('2m4f Mdn Hrd at Southwell 9th Jun') return no meaningful form data from Tavily. 0 useful key_facts in practice.",
+      "structural_issues": [
+        "BUG-149 root: individual race names are unique identifiers; no web content exists for them pre-race. Tavily returns generic horse racing articles irrelevant to the specific runners.",
+        "BUG-150 (claude_prob=0): Without research, Claude outputs null probability. Fallback to model_prob=0 which should block signal but may not if edge calculation uses stale data.",
+        "WR 36.4% = well below market. 4 wins from 11 resolved in 6 weeks.",
+        "2m4f Mdn Hrd appeared to win (2/2) but both had model_prob 47-60% — likely random. 7f Mdn Stks 0/2, 6f Hcap 0/1, 1m1f Hcap 0/1.",
+        "EACH WAY bets (e.g. 'Each Way 10 Places - 1/5 Odds') appear in horse racing AND golf. Horse racing EW has same research problem. Golf EW has valid form data but complex EW pricing model not calibrated.",
+        "Horse racing liquidity is good on Betfair but edge estimate is unreliable — model cannot assess horse form."
+      ],
+      "action": "SUPPRESS all horse racing market names. Implementation: in scanner.py or digest.py, add event_type='Horse Racing' check. Race market names follow pattern: distance + race_type (Hrd/Stks/Hcap/Nov/Mdn/Chs + venue + date). Alternatively use Betfair event_type API field which correctly tags horse racing events."
+    },
+    {
+      "category": "Golf Each Way",
+      "market_names": ["Each Way - 10 Places", "Each Way 10 Places - 1/5 Odds (golf)"],
+      "verdict": "SUPPRESS",
+      "win_rate_pct": 0.0,
+      "resolved_count": 1,
+      "priority": 2,
+      "research_quality": "PARTIAL — same as outright winner research. But EW pricing is complex.",
+      "structural_issues": [
+        "Each Way bets have two components: a win part and a place part at reduced odds. The model does not assess whether EW place terms are separately priced. Treating EW as a simple back bet misprices the edge.",
+        "0% WR (0/1 resolved). Small sample but structurally problematic.",
+        "EW bets generate two exchange transactions, complicating P&L tracking."
+      ],
+      "action": "SUPPRESS golf EW until EW probability assessment is implemented. Outright Winner markets cover the same information more cleanly."
+    },
+    {
+      "category": "Politics (UK by-elections, US midterms)",
+      "market_names": ["Makerfield by-election", "Makerfield by-election winner without Labour", "Makerfield - Restore Britain Vote Percentage", "Which party will control the Senate in 2026?", "Which party will control the House in 2026?", "Los Angeles Mayoral Election Winner", "Montana Senate Election Winner", "Oregon Gubernatorial Election Winner"],
+      "verdict": "KEEP",
+      "win_rate_pct": 75.0,
+      "resolved_count": 4,
+      "priority": 3,
+      "research_quality": "GOOD for near-term elections. Polling data, constituency history, and party ratings available via Tavily.",
+      "structural_issues": [
+        "US midterms (Nov 2026) are 5 months away — positions held as long-term paper signals. Model prob may drift vs market price over time.",
+        "Makerfield by-election showed good research: polling data retrieved, vote share % markets worked well."
+      ],
+      "action": "Keep. Best model-match after golf outright. Long-term US election signals are labelled is_live=False correctly."
+    },
+    {
+      "category": "Football Match Odds",
+      "market_names": ["Match Odds (football)", "Asian Handicap"],
+      "verdict": "KEEP",
+      "win_rate_pct": null,
+      "resolved_count": 0,
+      "priority": 3,
+      "research_quality": "GOOD — international football form, FIFA rankings, head-to-head data all available. 6-8 key_facts typical.",
+      "structural_issues": [
+        "Only 1 trade (Portugal v Chile void/win) — insufficient resolved data.",
+        "Asian Handicap: 0 resolved. Complex handicap implies more sophisticated probability assessment than simple match winner."
+      ],
+      "action": "Keep for now. Asian Handicap: lower priority, model not specifically calibrated for handicap lines. Flag when next AH signal generates — operator may want to skip."
+    },
+    {
+      "category": "Cricket Totals and Specials",
+      "market_names": ["England 1st Innings Runs", "Total Points"],
+      "verdict": "SUPPRESS",
+      "win_rate_pct": null,
+      "resolved_count": 0,
+      "priority": 2,
+      "research_quality": "POOR — research returns batting averages and match previews, not runs estimates. Model has no calibrated basis for totals.",
+      "structural_issues": [
+        "England 1st Innings Runs: requires pitch/conditions assessment, bowler quality, batting form all quantified. Research provides general facts but cannot support a runs total probability.",
+        "Total Points (basketball): same issue — requires pace, defensive ratings, specific injury impact on scoring. Tavily returns generic match previews.",
+        "No resolved trades — no WR data, but structural unsuitability is clear."
+      ],
+      "action": "SUPPRESS both market types. Add to market_name blocklist in digest.py."
+    },
+    {
+      "category": "Long-term Specials (award markets)",
+      "market_names": ["PFA Player of the Year 2025/26", "FIFA Golden Ball", "Winner 2026 (Brazilian Serie A)"],
+      "verdict": "ADD_GUARD",
+      "win_rate_pct": 0.0,
+      "resolved_count": 1,
+      "priority": 3,
+      "research_quality": "PARTIAL — research can find current odds leaders and form, but long-horizon predictions are inherently high-variance.",
+      "structural_issues": [
+        "Brazilian Serie A Winner 2026: resolved as loss. Season-long market before halfway point — market prices are near 1.0 for clear favourites but model has thin research basis.",
+        "PFA Player of Year: subjective. Polls/voting research available but model not calibrated for subjective awards.",
+        "FIFA Golden Ball: tournament hasn't happened (FIFA WC 2026). Pure speculation."
+      ],
+      "action": "Add guard: long-horizon specials (competition_timeframe > 60 days) should not generate signals unless edge > 15pp AND model_prob < 80%. Otherwise too speculative."
+    }
+  ],
+
+  "priority_fix_list": [
+    {
+      "priority": "P1 — HIGH",
+      "fix_id": "BUG-152-F1",
+      "title": "Suppress horse racing markets",
+      "description": "Add event_type or market_name pattern block in digest.py. Block all Betfair horse racing event_type = 'Horse Racing', plus market_names matching race distance+type patterns. WR 36.4%, research structurally unavailable.",
+      "file": "scripts/digest.py or scripts/scanner.py",
+      "lines": "digest filtered_signals loop or scanner event_type filter"
+    },
+    {
+      "priority": "P1 — HIGH",
+      "fix_id": "BUG-152-F2",
+      "title": "Suppress basketball game Moneyline",
+      "description": "Block all game-level Moneyline signals where sport=Basketball. Allow Championship Winner and long-horizon outright bets. WR 50%, research contradictory and contaminated.",
+      "file": "scripts/digest.py",
+      "lines": "filtered_signals loop, check sport=='Basketball' AND market_name=='Moneyline'"
+    },
+    {
+      "priority": "P1 — HIGH",
+      "fix_id": "BUG-152-F3",
+      "title": "Mid-tournament golf guard",
+      "description": "For Top-N Finish, 3-ball, and Tournament Match Bet golf markets: detect if tournament is in progress (event competition_start > 24h ago). If so, suppress signal. Need to infer tournament start date from competition metadata or use a day-of-week heuristic (golf Thu-Sun).",
+      "file": "scripts/digest.py",
+      "lines": "new block before quality gate — check tournament_in_progress flag"
+    },
+    {
+      "priority": "P1 — HIGH",
+      "fix_id": "BUG-152-F4",
+      "title": "Cricket no-result warning + domestic T20 suppress",
+      "description": "(a) For cricket Match Odds where event has a 'No Result' runner: add warning field to signal in digest output for operator awareness. (b) For domestic T20 leagues (MLC, Jharkhand, Bengal T20): suppress if key_facts < 6.",
+      "file": "scripts/digest.py",
+      "lines": "new block in signal processing loop"
+    },
+    {
+      "priority": "P2 — MEDIUM",
+      "fix_id": "BUG-152-F5",
+      "title": "Suppress Each Way bets (golf and horse)",
+      "description": "Block market_name containing 'Each Way' until EW pricing model implemented. Apply to both horse racing and golf.",
+      "file": "scripts/digest.py",
+      "lines": "filtered_signals loop, market_name.lower() check"
+    },
+    {
+      "priority": "P2 — MEDIUM",
+      "fix_id": "BUG-152-F6",
+      "title": "Suppress cricket totals and basketball totals",
+      "description": "Block 'England 1st Innings Runs', 'Total Points', and similar totals markets — model has no calibrated basis for totals assessment.",
+      "file": "scripts/digest.py",
+      "lines": "market_name blocklist"
+    }
+  ],
+
+  "flags_for_operator": [
+    {
+      "flag": "US Open 2026 already concluded — Scheffler bets may have LOST",
+      "detail": "Research briefs dated Jun 19 consistently show 'Wyndham Clark won the 2026 U.S. Open' as a key_fact across all US Open market briefs. The US Open typically runs Jun 12-15. If Wyndham Clark won, the 7 open Scheffler US Open Winner bets (placed at ~1.030 odds) have lost. Also 3 other US Open Top-N bets open. Operator must check Betfair settled bets and reconcile. This is not model error — tournament started after placement and a different player won.",
+      "action_required": "Check Betfair settled bets for US Open 2026. Resolve all US Open entries in paper_tracker. Update live_balance."
+    }
+  ],
+
+  "market_type_summary_table": {
+    "KEEP": ["Tennis Match Odds", "Golf Outright Winner", "Politics (elections)", "Football Match Odds", "Basketball Outright (Championship)"],
+    "ADD_GUARD": ["Cricket Match Odds (no-result warning + domestic T20 suppress)", "Golf Top-N Finish (mid-tournament guard)", "Golf 3-balls / Tournament Match Bets (mid-tournament guard)", "Football Asian Handicap (flag only)", "Long-term Specials (edge > 15pp required)"],
+    "SUPPRESS": ["Horse Racing (all)", "Basketball Moneyline (game-level)", "Golf Each Way", "Cricket Totals (1st Innings Runs)", "Basketball Total Points"]
+  }
+}

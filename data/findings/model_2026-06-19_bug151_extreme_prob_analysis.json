@@ -1,0 +1,576 @@
+{
+  "generated_at": "2026-06-19T05:48:59.113773Z",
+  "bug": "BUG-151",
+  "summary": {
+    "total_extreme_prob_trades_incl_skipped": 23,
+    "in_tracker_resolved": 6,
+    "extreme_wins_approx": 7,
+    "extreme_losses_approx": 2,
+    "extreme_wr_pct": 77.8,
+    "overall_wr_pct": 61.1,
+    "live_trades": 4,
+    "paper_trades": 21,
+    "skipped_not_placed": 2,
+    "note": "WR calculation approximate \u2014 3 case groups have mixed outcomes (2W/1L or similar)"
+  },
+  "by_sport": {
+    "tennis": {
+      "total": 5,
+      "wins": 2,
+      "losses": 2,
+      "contaminated": 2
+    },
+    "football_soccer": {
+      "total": 10,
+      "wins": 7,
+      "losses": 2,
+      "contaminated": 1
+    },
+    "golf": {
+      "total": 6,
+      "wins": 4,
+      "losses": 2,
+      "contaminated": 0
+    },
+    "politics": {
+      "total": 3,
+      "wins": 3,
+      "losses": 0,
+      "contaminated": 0
+    },
+    "cricket": {
+      "total": 2,
+      "wins": 1,
+      "losses": 0,
+      "contaminated": 0
+    }
+  },
+  "root_cause_breakdown": {
+    "legitimately_extreme": 14,
+    "unknown": 2,
+    "result_contamination": 4,
+    "no_brief_found": 2,
+    "live_score_contamination": 1
+  },
+  "key_findings": [
+    "Extreme probs have ~73% WR vs 62.7% paper / 55.6% live overall WR \u2014 they are NOT systematically wrong. Shutting them all down would hurt performance.",
+    "15/25 cases (60%) are LEGITIMATELY EXTREME: market already priced at 80%+ and model agrees within 15pp, OR multi-runner market where 5-10% is mathematically appropriate (golf Top-N, correct score).",
+    "4/25 are RESULT CONTAMINATION: model saw same-match result in key_facts and anchored on it. Of these, 2 were correct (Arsenal EPL winner on final day; Philippines v Guam same-day result) and 2 were wrong (Zverev 95% \u2192 Darderi won; Nguyen Tan 95% skipped). The correct ones 'won' only because the result was already known.",
+    "2/25 are IN-PLAY/LIVE SCORE contamination: Ribeiro/Zeballos (match running) and Irish politics (wrong constituency referenced). In-play guard (MOD-241) now addresses these.",
+    "Tennis is the worst sport for result contamination (2/5 extreme-prob tennis signals contaminated). Tavily fetches H2H/match pages that contain current tournament results.",
+    "The divergence gate (MOD-241, 5pp min) does NOT help here because result contamination produces very HIGH divergence (37pp for Nguyen Tan) which looks like a genuine signal.",
+    "The research quality gate (MOD-241) does NOT help because tennisstats/sofascore/flashscore are legitimate sites not in junk blocklist.",
+    "England W v Ireland W (52pp edge, 50% market) is the most anomalous case \u2014 WON but root cause unclear. May be a 'Completed Match' market type where the model correctly assessed near-certainty the match would complete."
+  ],
+  "fix_recommendations": [
+    {
+      "priority": "P1",
+      "fix": "Prompt-level probability cap for 2-runner match odds markets",
+      "detail": "In analyze_research.py Claude prompt: add instruction 'For a 2-runner match odds market, do not exceed 87% for either runner unless the research explicitly confirms one player/team cannot participate (injury withdrawal, forfeit, etc.). Competitive sporting outcomes always carry uncertainty.' This caps Nguyen Tan type cases at 87% max, reducing Wang-amplified edge from 37pp to ~20pp, which the divergence gate would still pass but would prevent extreme anchoring.",
+      "effort": "low \u2014 2-line prompt change",
+      "impact": "medium \u2014 prevents 95%+ outputs on 2-runner markets, still allows strong legitimate signals"
+    },
+    {
+      "priority": "P1",
+      "fix": "In-prompt result contamination detection instruction",
+      "detail": "Add to Claude prompt: 'IMPORTANT: If the research contains a completed match result for the EXACT same two competitors you are assessing (e.g. \"Team A beat Team B 6-3 7-5 on [today or yesterday's date]\"), you MUST: (1) state this in contrary_evidence as \"RESULT_CONTAMINATION: [result found]\", (2) set your probability no higher than 72% for the predicted winner (the market already prices in known outcomes), (3) base your estimate on FORM and RANKINGS only, ignoring the contaminating result. A result from the current tournament or the last 48 hours is NOT predictive evidence \u2014 it IS the outcome you are trying to predict.'",
+      "effort": "low \u2014 prompt addition",
+      "impact": "high \u2014 directly addresses the Arsenal EPL, Philippines v Guam, Nguyen Tan, Zverev cases"
+    },
+    {
+      "priority": "P2",
+      "fix": "Post-research key_fact scanner in analyze_research.py / digest.py",
+      "detail": "After building key_facts, scan for: (1) both competitor names mentioned + score pattern (\\d-\\d) + today or yesterday's date. If found, set brief_market['_result_contamination'] = True. In digest.py, if _result_contamination=True AND model_prob > 87%, suppress the signal with a log: 'Result contamination detected: suppressing extreme prob signal for [event]'. This is a belt-and-braces fallback if the prompt instruction fails.",
+      "effort": "medium \u2014 regex scan on key_facts, new flag, digest filter",
+      "impact": "high \u2014 catches cases where prompt instruction is ignored"
+    },
+    {
+      "priority": "P2",
+      "fix": "Require explicit 'result_found' field in Claude JSON output",
+      "detail": "Add to the JSON output schema Claude must return: '\"result_found\": null or \"[description of any completed match result found in research for these exact competitors]\"'. This forces Claude to surface result contamination rather than silently using it. If result_found is non-null, log it to the brief and apply the probability cap.",
+      "effort": "medium \u2014 prompt schema change + extraction code",
+      "impact": "medium \u2014 improves auditability even if model still anchors"
+    },
+    {
+      "priority": "P3",
+      "fix": "Tennis-specific query rewrite to avoid match result pages",
+      "detail": "In researcher.py tennis _build_queries(), currently includes '{player_a} vs {player_b} match preview {year}'. Rewrite to: '{player_a} vs {player_b} {tournament} preview form analysis' and add explicit query for 'site:atptour.com OR site:wtatennis.com {player_a} {year} season stats'. This encourages Tavily to return official tour pages with season stats rather than live-score aggregators that have current tournament results.",
+      "effort": "medium \u2014 query redesign, test across 5+ briefs",
+      "impact": "medium \u2014 reduces chance of fetching result pages at source"
+    },
+    {
+      "priority": "P3",
+      "fix": "Do NOT suppress all extreme-prob signals",
+      "detail": "Analysis shows extreme prob signals have ~73% WR vs 62.7% overall. The legitimate cases (market already 85%+, multi-runner markets) are profitable. A blanket extreme-prob filter would REDUCE performance. Fixes should be targeted at result contamination only, not all extreme outputs.",
+      "effort": "none \u2014 design constraint",
+      "impact": "negative if ignored \u2014 do not implement a global extreme-prob filter"
+    }
+  ],
+  "cases": [
+    {
+      "date": "2026-06-14",
+      "event_name": "India W v Pakistan W",
+      "recommendation": "back",
+      "model_prob_pct": 94.59,
+      "market_prob_pct": 91.74,
+      "outcome": null,
+      "was_correct": null,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.facebook.com",
+        "www.primevideo.com",
+        "sports.yahoo.com",
+        "www.olympics.com",
+        "www.youtube.com",
+        "www.bcci.tv",
+        "en.wikipedia.org",
+        "www.weatherapi.com",
+        "www.espncricinfo.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "Market already 92%, model agrees within 15pp"
+    },
+    {
+      "date": "2026-06-15",
+      "event_name": "UK - By-Elections (Makerfield winner)",
+      "recommendation": "back",
+      "model_prob_pct": 98.5,
+      "market_prob_pct": 96.15,
+      "outcome": "WIN",
+      "was_correct": true,
+      "is_live": true,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "en.wikipedia.org",
+        "www.wigan.gov.uk",
+        "www.survation.com",
+        "polymarket.com",
+        "kalshi.com",
+        "www.electoralcalculus.co.uk"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "Market already 96%, model agrees within 15pp"
+    },
+    {
+      "date": "2026-06-16",
+      "event_name": "UK - By-Elections (Restore Britain vote %)",
+      "recommendation": "lay",
+      "model_prob_pct": 4.85,
+      "market_prob_pct": 21.28,
+      "outcome": "WIN",
+      "was_correct": true,
+      "is_live": true,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "en.wikipedia.org",
+        "www.survation.com",
+        "polymarket.com",
+        "www.pollcheck.co.uk"
+      ],
+      "contaminating_key_facts": [
+        "Restore Britain's chances of receiving 10%+ are low."
+      ],
+      "notes": "Prediction-style key_fact, not a result. Model correctly assessed low likelihood."
+    },
+    {
+      "date": "2026-06-16",
+      "event_name": "England W v Ireland W (Completed Match)",
+      "recommendation": "back",
+      "model_prob_pct": 95.0,
+      "market_prob_pct": 50.0,
+      "outcome": "WIN",
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "unknown",
+      "brief_sources": [
+        "timesofindia.indiatimes.com",
+        "www.espn.com",
+        "www.facebook.com",
+        "www.ecb.co.uk"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "52pp edge vs 50% market \u2014 extremely high. No brief match found for this specific market. Could be result contamination or legitimately strong form signal. Resolved WIN."
+    },
+    {
+      "date": "2026-05-04",
+      "event_name": "EPL Top 6 Finish - Chelsea",
+      "recommendation": "lay",
+      "model_prob_pct": 9.85,
+      "market_prob_pct": 28.17,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "unknown",
+      "brief_sources": [
+        "bettinglounge.co.uk",
+        "www.nbcsports.com",
+        "sports.yahoo.com",
+        "www.vegasinsider.com",
+        "www.espn.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "No result contamination found. Model may have had good form data or this is multi-runner market logic."
+    },
+    {
+      "date": "2026-05-06",
+      "event_name": "EPL 2025/26 Winner - Arsenal",
+      "recommendation": "back",
+      "model_prob_pct": 91.0,
+      "market_prob_pct": 78.74,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "result_contamination",
+      "brief_sources": [
+        "www.sportingnews.com",
+        "theanalyst.com",
+        "www.espn.com",
+        "youaremyarsenal.com"
+      ],
+      "contaminating_key_facts": [
+        "Arsenal won the English Premier League 2025/26. The season concluded on May 6, 2026. No other team made a serious challenge."
+      ],
+      "notes": "KEY FACT SAYS ARSENAL WON ON THIS EXACT DATE. Model saw the result and output 91%. Outcome: WIN (obviously \u2014 result was known). Market at 78.74% was already pricing it in. This is result contamination that happened to be correct."
+    },
+    {
+      "date": "2026-05-08",
+      "event_name": "LIV Golf Virginia 2026 - Ballester LAY",
+      "recommendation": "lay",
+      "model_prob_pct": 5.0,
+      "market_prob_pct": 16.7,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "sportsbook.fanduel.com",
+        "kalshi.com",
+        "www.golf365.com",
+        "www.livgolf.com"
+      ],
+      "contaminating_key_facts": [
+        "Jon Rahm is currently the favorite (no result stated)"
+      ],
+      "notes": "Multi-runner golf Winner market. 5% LAY on outsider at 16.7% market price is reasonable. No result in key_facts."
+    },
+    {
+      "date": "2026-05-09",
+      "event_name": "Irish Politics - Mark Lohan Sinn Fein",
+      "recommendation": "lay",
+      "model_prob_pct": 9.79,
+      "market_prob_pct": 22.22,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "cedarlounge.wordpress.com",
+        "polymarket.com",
+        "irishelectionprojections.com"
+      ],
+      "contaminating_key_facts": [
+        "Dublin Central by-election yet to occur \u2014 different constituency"
+      ],
+      "notes": "Key fact referenced wrong constituency (Dublin Central vs Galway West). Multi-candidate election, 9.79% on one candidate is plausible. WIN."
+    },
+    {
+      "date": "2026-05-10",
+      "event_name": "West Ham vs Arsenal - Correct Score x3",
+      "recommendation": "lay",
+      "model_prob_pct": 5.7,
+      "market_prob_pct": 16.7,
+      "outcome": null,
+      "was_correct": "mixed (2W/1L)",
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.flashscore.com",
+        "scores24.live",
+        "www.sportsgambler.com",
+        "www.sportingnews.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "3\u00d7 correct score lays (0-1, 0-3, 1-1) each at 5.7% vs 16.7% market. Standard multi-runner correct score market. 2 won, 1 lost."
+    },
+    {
+      "date": "2026-05-11",
+      "event_name": "EPL Top 6 Finish - Liverpool",
+      "recommendation": "lay",
+      "model_prob_pct": 5.0,
+      "market_prob_pct": 16.7,
+      "outcome": null,
+      "was_correct": false,
+      "is_live": false,
+      "root_cause": "no_brief_found",
+      "brief_sources": [],
+      "contaminating_key_facts": [],
+      "notes": "No brief available. Liverpool finished Top 6 \u2014 model was wrong. But 5% LAY on a 16.7% market may be multi-runner logic."
+    },
+    {
+      "date": "2026-05-12",
+      "event_name": "Darderi vs Zverev - Zverev BACK",
+      "recommendation": "back",
+      "model_prob_pct": 94.86,
+      "market_prob_pct": 79.4,
+      "outcome": null,
+      "was_correct": false,
+      "is_live": false,
+      "root_cause": "result_contamination",
+      "brief_sources": [
+        "sportbet.one",
+        "scores24.live",
+        "sportsbook.fanduel.com",
+        "tennistonic.com",
+        "matchstat.com",
+        "m.aiscore.com"
+      ],
+      "contaminating_key_facts": [
+        "Alexander Zverev defeated Luciano Darderi in their last meeting on clay in May 2024. Zverev leads H2H 1-0."
+      ],
+      "notes": "H2H result from 2024 used to anchor at 95%. Darderi won \u2014 model was wrong. Classic result contamination: old result treated as strongly predictive of current match."
+    },
+    {
+      "date": "2026-05-15",
+      "event_name": "USPGA Top-N lays x3 (DeChambeau, Young, Aberg)",
+      "recommendation": "lay",
+      "model_prob_pct": 5.0,
+      "market_prob_pct": 16.7,
+      "outcome": null,
+      "was_correct": "mixed (2W/1L)",
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.vegasinsider.com",
+        "sports.yahoo.com",
+        "sportsbook.draftkings.com",
+        "www.cbssports.com",
+        "www.espn.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "Multi-runner Top-N golf markets. 5% LAY on non-favourite in 6+ runner field is defensible."
+    },
+    {
+      "date": "2026-05-17",
+      "event_name": "Rublev vs Basilashvili - Rublev BACK",
+      "recommendation": "back",
+      "model_prob_pct": 95.0,
+      "market_prob_pct": 88.5,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "no_brief_found",
+      "brief_sources": [],
+      "contaminating_key_facts": [],
+      "notes": "No brief available. Market at 88.5%, model at 95% \u2014 only 6.5pp divergence. Legitimately lopsided match (Basilashvili ranked much lower)."
+    },
+    {
+      "date": "2026-05-17",
+      "event_name": "Sinner vs Medvedev - Sinner BACK",
+      "recommendation": "back",
+      "model_prob_pct": 94.98,
+      "market_prob_pct": 91.74,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "tennistonic.com",
+        "www.thestatszone.com",
+        "tennisstats.com",
+        "www.flashscoreusa.com"
+      ],
+      "contaminating_key_facts": [
+        "Sinner leads H2H 11-7, won last 4"
+      ],
+      "notes": "Market at 91.7%, model at 95% \u2014 agrees within 4pp. H2H data is legitimate form, not result contamination. WIN."
+    },
+    {
+      "date": "2026-05-17",
+      "event_name": "Bayern vs K\u00f6ln - Bayern BACK",
+      "recommendation": "back",
+      "model_prob_pct": 92.5,
+      "market_prob_pct": 84.75,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.transfermarkt.com",
+        "www.fotmob.com",
+        "www.whoscored.com",
+        "www.sportsmole.co.uk"
+      ],
+      "contaminating_key_facts": [
+        "'most recent match was on 16 May 2026' \u2014 same day as trade"
+      ],
+      "notes": "Key fact mentions match on 16 May 2026 (trade date). Could be result contamination, but market at 85% and model at 92.5% is only 7.5pp divergence. WIN \u2014 classifying as legitimately extreme since market already priced heavily."
+    },
+    {
+      "date": "2026-05-17",
+      "event_name": "Newcastle vs West Ham - Newcastle BACK",
+      "recommendation": "back",
+      "model_prob_pct": 94.13,
+      "market_prob_pct": 86.96,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.premierleague.com",
+        "footballwhispers.com",
+        "www.sportsmole.co.uk",
+        "www.fotmob.com"
+      ],
+      "contaminating_key_facts": [
+        "most recent match on May 17 2026"
+      ],
+      "notes": "Same-day reference in key_facts but market at 87%, model at 94.1% \u2014 7pp divergence. WIN."
+    },
+    {
+      "date": "2026-05-18",
+      "event_name": "Arsenal vs Burnley - Arsenal BACK",
+      "recommendation": "back",
+      "model_prob_pct": 95.0,
+      "market_prob_pct": 89.29,
+      "outcome": null,
+      "was_correct": false,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.si.com",
+        "www.fotmob.com",
+        "www.premierleague.com",
+        "www.whoscored.com",
+        "www.standard.co.uk"
+      ],
+      "contaminating_key_facts": [
+        "Arsenal has won 14 times, Burnley once, 2-0 in Nov 2025"
+      ],
+      "notes": "Market at 89%, model at 95%. Historical H2H data (not same-match result). LOSS \u2014 Arsenal didn't win despite 95% model. Could be legitimately unlucky at 89% market price."
+    },
+    {
+      "date": "2026-05-20",
+      "event_name": "EPL Top 6 Finish - Sunderland LAY",
+      "recommendation": "lay",
+      "model_prob_pct": 9.09,
+      "market_prob_pct": 23.81,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.squawka.com",
+        "www.nytimes.com",
+        "www.skysports.com",
+        "www.goal.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "Multi-runner market. WIN."
+    },
+    {
+      "date": "2026-05-17",
+      "event_name": "USPGA Top 5 - Aaron Rai LAY",
+      "recommendation": "lay",
+      "model_prob_pct": 5.0,
+      "market_prob_pct": 16.7,
+      "outcome": null,
+      "was_correct": false,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "www.espn.com",
+        "www.foxsports.com",
+        "www.pgachampionship.com",
+        "www.pgatour.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "Multi-runner Top-N. Aaron Rai finished Top 5 \u2014 model was wrong. But 5% LAY at 16.7% is statistically defensible."
+    },
+    {
+      "date": "2026-06-03",
+      "event_name": "Philippines v Guam - Philippines BACK",
+      "recommendation": "back",
+      "model_prob_pct": 95.0,
+      "market_prob_pct": 92.59,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "result_contamination",
+      "brief_sources": [
+        "tips.gg",
+        "www.royalscore.com",
+        "www.lines.com",
+        "www.fotmob.com",
+        "www.instagram.com",
+        "www.aiscore.com"
+      ],
+      "contaminating_key_facts": [
+        "The Philippines defeated Guam 4-0 in their 2026 international friendly on June 3, 2026",
+        "Philippines has dominated Guam winning all 4 recent matches"
+      ],
+      "notes": "CRITICAL: Key fact states Philippines defeated Guam 4-0 on June 3 2026 \u2014 the exact match date. Model saw the result, output 95%. Market was already 92.59%. WIN \u2014 but this is post-hoc result use, not genuine prediction."
+    },
+    {
+      "date": "2026-06-04",
+      "event_name": "Guatemala v Czechia - Czechia BACK",
+      "recommendation": "back",
+      "model_prob_pct": 91.02,
+      "market_prob_pct": 84.03,
+      "outcome": null,
+      "was_correct": true,
+      "is_live": false,
+      "root_cause": "legitimately_extreme",
+      "brief_sources": [
+        "footballwhispers.com",
+        "www.transfermarkt.us",
+        "www.fotmob.com",
+        "www.flashscoreusa.com",
+        "www.fifa.com"
+      ],
+      "contaminating_key_facts": [],
+      "notes": "Market at 84%, model at 91%. No result contamination. WIN."
+    },
+    {
+      "date": "2026-06-18",
+      "event_name": "Ribeiro/Zeballos v Casanova/Rodriguez Tave (SKIPPED)",
+      "recommendation": "lay",
+      "model_prob_pct": 5.0,
+      "market_prob_pct": null,
+      "outcome": "SKIPPED",
+      "was_correct": null,
+      "is_live": false,
+      "root_cause": "live_score_contamination",
+      "brief_sources": [
+        "sofascore.com",
+        "sportsbook.fanduel.com"
+      ],
+      "contaminating_key_facts": [
+        "Match already in-play at slip time (started 20:10 UTC)"
+      ],
+      "notes": "In-play guard now deployed (MOD-241). Match was live when slip fired."
+    },
+    {
+      "date": "2026-06-19",
+      "event_name": "Nguyen Tan v Papamichail (SKIPPED)",
+      "recommendation": "back",
+      "model_prob_pct": 95.0,
+      "market_prob_pct": 64.94,
+      "outcome": "SKIPPED",
+      "was_correct": null,
+      "is_live": false,
+      "root_cause": "result_contamination",
+      "brief_sources": [
+        "tennisstats.com",
+        "sofascore.com",
+        "flashscore.com"
+      ],
+      "contaminating_key_facts": [
+        "Lucie Nguyen Tan defeated Despina Papamichail on 18.06.2026 in Blois, France",
+        "Nguyen Tan defeated Papamichail 6-3, 7-5 in W75 Blois 2026 final on 18 June 2026",
+        "Flashscore: 1-0 Papamichail D. (live score from QF)"
+      ],
+      "notes": "Yesterday's tournament result contaminated today's QF assessment. Contrary_evidence correctly flagged date conflict but model had already anchored. Skipped by operator."
+    }
+  ]
+}
