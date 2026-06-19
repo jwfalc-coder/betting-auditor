@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-18",
+  "type": "research_quality",
+  "title": "Tennis research missing player-B recent form — stale H2H data",
+  "severity": "HIGH",
+  "trigger": "Harris vs Virtanen signal — model assessed Harris at 48% (market 23.26%) missing that Virtanen beat Harris 6-2 6-3 at Nottingham 1 one week prior",
+  "scope": {
+    "sport": "tennis",
+    "h2h_markets_audited": 34,
+    "h2h_markets_missing_player_b_entirely": 1,
+    "structural_gap": "4 Tavily queries covered: preview, player-A form, H2H (no year), player-A injury. Player B recent results NEVER searched."
+  },
+  "root_cause": {
+    "file": "scripts/researcher.py",
+    "function": "_build_queries",
+    "queries_before_fix": [
+      "{team_a} vs {team_b} tennis preview {surface} {year}",
+      "{team_a} {team_b} head to head {surface} record",
+      "{team_a} tennis recent form results {year}",
+      "{team_a} tennis injury fitness news {year}"
+    ],
+    "gaps": [
+      "No query for player B recent form/results",
+      "H2H query has no year filter — returns aggregators with old data, misses recent tournament results",
+      "Single 'recent form' query too generic — returns ranking/career pages not match scores"
+    ]
+  },
+  "harris_brief_evidence": {
+    "key_fact_1": "Harris ranked 142, Virtanen ranked 160 [TennisTemple — STALE: actual Virtanen ~116]",
+    "key_fact_2": "Harris leads H2H 1-0, last match 2024 [MISSING: Virtanen beat Harris 6-2 6-3 at Nottingham 1 ~1 week prior]",
+    "injected_data": "ATP form showed both 4-6 last 10 — aggregate form, not tournament-specific"
+  },
+  "fix_applied": {
+    "mod_id": "MOD-236",
+    "queries_after_fix": [
+      "{team_a} vs {team_b} tennis preview {surface} {year}",
+      "{team_a} tennis recent results scores {year}",
+      "{team_b} tennis recent results scores {year}",
+      "{team_a} {team_b} head to head tennis results {year}",
+      "{team_a} {team_b} tennis injury fitness news {year}",
+      "{team_a} {team_b} {event_type} {year} match result score [if event_type available]"
+    ],
+    "changes": [
+      "Added player-B dedicated recent results query (critical fix)",
+      "Added year to H2H query to prefer 2026 results over all-time records",
+      "Made form query more specific: 'results scores' over 'form results' to prefer match scores vs ranking pages",
+      "Combined injury query to both players (frees a slot)",
+      "Added optional 6th query using event_type for tournament-specific results"
+    ]
+  },
+  "operator_action": "None required — fix applied automatically (MOD-236). Monitor next tennis H2H signals for quality improvement."
+}

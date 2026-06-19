@@ -1,0 +1,98 @@
+{
+  "audit_date": "2026-06-18",
+  "scope": "all sports + live trade cross-check (268 brief files, 57 live resolved trades)",
+  "briefs_reviewed": 268,
+  "total_market_briefs_analysed": 4775,
+  "live_trades_cross_checked": 54,
+  "unmatched_live_trades": 3,
+
+  "key_mechanism": "key_facts are generated from Tavily's per-query 'answer' field. If Tavily does not return an answer for a query, that topic does not appear in key_facts even if sources contain relevant results. This is the root cause of several gaps below.",
+
+  "sport_findings": {
+    "tennis": {
+      "severity": "HIGH",
+      "gap": "Player B's recent form was NEVER queried — structural absence across all 34 H2H tennis briefs reviewed in prior audit. Tavily 'answer' for H2H query used no year filter so could return stale records.",
+      "fix_applied": "MOD-236 (2026-06-18): added player-B recent results query, year-filtered H2H, tournament-specific result query. Fix is already live.",
+      "examples": [
+        "Harris v Virtanen: Tavily missed Virtanen 6-2 6-3 win over Harris at Nottingham 1 (week prior). Claude assessed Harris 48% vs market 23%."
+      ],
+      "confirmed_signal_corruption": true
+    },
+
+    "golf": {
+      "severity": "MEDIUM",
+      "gap": "Top-N Finish markets (240 total): field/comparative context present in key_facts for only 53% of briefs (127/240). Field context query EXISTS (MOD-122: '{event} {year} field favourites preview contenders') but Tavily does not reliably return an 'answer' for this query — when it doesn't, no key_fact is added even though sources contain relevant data. The model assesses a player's top-10 probability without knowing how strong the surrounding field is.",
+      "additional_gap": "For Winner markets, field context was present in sources 100% of the time but only extracted to key_facts ~52% of the time — same root cause.",
+      "query_fix_needed": "researcher.py: split field-context query into two targeted queries so Tavily answer is more likely — e.g. '{event} {year} top contenders world rankings field strength' AND '{event} {year} leaderboard preview favourites odds'. The current single broad query often returns no Tavily answer.",
+      "examples": [
+        "US Open 2026 Top 10 Finish (Scheffler): facts mention only Scheffler stats, no mention of McIlroy, Rahm, Rory at same odds — model has no comparison point.",
+        "US Open 2026 Top 5/6/8/10/20 Finish: same brief, same gap, all generated from same market run."
+      ],
+      "confirmed_signal_corruption": false,
+      "note": "Live open trades (7x US Open Scheffler backs/Top-N) are all affected. Scheffler is #1 world so direction is likely correct, but overconfidence risk for players who are 2nd/3rd favourite in similar top-N markets."
+    },
+
+    "football": {
+      "severity": "LOW",
+      "gap": "28% of all football H2H briefs missing one or both teams in key_facts. However, broken down by market type: match result markets (our primary trade type) have 95% both-team coverage (281/295). The 28% gap is almost entirely from 'other' market types (handicaps, season winner, goals) where the team-vs-team comparison matters less.",
+      "match_result_coverage": "95% (281/295)",
+      "gap_market_types": ["goals/over-under: 25%", "season winner: 31%", "other: 14%"],
+      "examples": [
+        "Tianjin Jinmenhu vs Chengdu Rongcheng: Tianjin not found by last-name match (nickname 'Jinmen Tiger' used in facts, not 'Jinmenhu').",
+        "Bologna vs Internazionale: 'Internazionale' abbreviated to 'Inter' in facts — last-name matching misses it but facts clearly contain Inter's data."
+      ],
+      "confirmed_signal_corruption": false,
+      "note": "Most apparent 'gaps' are name normalisation artifacts in the audit script, not actual missing data. Real coverage for match odds markets is high."
+    },
+
+    "cricket": {
+      "severity": "LOW",
+      "gap": "12% of cricket briefs (47/387) lack pitch/weather context in key_facts. Gender expansion fix (' W' → ' Women') is working — zero confirmed men's data contamination in Women's cricket briefs.",
+      "pitch_weather_coverage": "87% (340/387)",
+      "gender_pollution": "0 confirmed cases (protection working)",
+      "examples": [
+        "West Indies W v Scotland W, New Zealand W v Ireland W: gender fix active, sources correctly reference Women's cricket.",
+        "India domestic leagues (T20) sometimes lack pitch condition data — Tavily answer for pitch query returns generic info."
+      ],
+      "confirmed_signal_corruption": false
+    },
+
+    "basketball": {
+      "severity": "LOW",
+      "gap": "2/15 sampled briefs had one team absent from key_facts. Both cases were the same event (Besiktas JK v Fenerbahce SK) where 'SK' suffix caused last-name mismatch in audit — facts clearly mentioned Fenerbahce. No real gap identified.",
+      "confirmed_signal_corruption": false
+    },
+
+    "horse_racing": {
+      "severity": "LOW",
+      "gap": "No systematic gap identified. 18 briefs reviewed. Form, going, and race conditions present in all sampled briefs. One anomaly: 'Beverley 16th Jun' brief had a Disc Ultimate world record result mixed in (Tavily noise) — benign, model ignores irrelevant facts.",
+      "confirmed_signal_corruption": false
+    },
+
+    "politics": {
+      "severity": "LOW",
+      "gap": "Polling/probability data present in 29/30 sampled markets. All briefs had 2026-dated sources. One edge case: 'Makerfield by-election vote percentage' market had facts about general party polling rather than specific vote-share forecast for that constituency.",
+      "confirmed_signal_corruption": false
+    }
+  },
+
+  "live_trade_cross_check": {
+    "total_live_resolved": 57,
+    "matched_to_brief": 54,
+    "unmatched": [
+      {"reason": "null market_id", "event": "San Antonio Spurs @ New York Knicks", "logged_at": "2026-06-07"},
+      {"reason": "brief not found for market_id", "event": "Thirsk 16th Jun", "market_id": "1.259166640"},
+      {"reason": "brief not found for market_id", "event": "Wolverhampton 16th Jun", "market_id": "1.259166663"}
+    ],
+    "issues_found_in_matched_briefs": 0,
+    "note": "All 57 live resolved trades show outcome=null in tracker — P&L tracking gap, not a research quality issue. No brief quality failures identified that clearly caused a wrong signal direction in the live resolved set."
+  },
+
+  "query_fixes_needed": [
+    "researcher.py golf Top-N: split field context query into two more targeted queries — '{event} {year} top contenders odds field strength world rankings' and '{event} {year} leaderboard current standings preview' — to increase Tavily answer hit rate above current ~53%.",
+    "researcher.py golf general: consider adding player's recent tournament results as a list query ('{player} 2026 tournament results scores finishes') to ensure Tavily returns structured answer vs generic profile page.",
+    "researcher.py politics: for vote-percentage markets, add explicit query for constituency-level polling: '{constituency} {year} vote share percentage polling forecast {party}'"
+  ],
+
+  "summary": "Tennis (HIGH, already fixed MOD-236) was the only confirmed signal corruption. Golf Top-N is the next most actionable gap: field context is present in sources for nearly all Top-N briefs but only extracted to key_facts 53% of the time due to Tavily not returning an 'answer' for the broad field-context query. Football, cricket, basketball, horse racing, and politics all have low or negligible quality gaps. No research quality failures identified in the 54 cross-checked live resolved trades — the tracker's outcome=null on all resolved live trades is a separate reconciliation issue. Recommended action: fix golf Top-N query split (researcher.py) as a MEDIUM priority improvement."
+}

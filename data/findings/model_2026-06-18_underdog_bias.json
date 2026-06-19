@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-18",
+  "title": "Possible underdog bias in BACK signals — 3-5 odds band underperforming vs paper history",
+  "type": "calibration",
+  "target_file": "scripts/analyze_research.py",
+  "finding": "Operator noticed that recent BACK signal losses were consistently on selections where the opponent/field was the market favourite. The live trade ledger (58 resolved, 55.2% WR) shows a significant divergence from paper history (69.7% WR) that may be partly explained by an underdog bias in the model's edge generation. The 3.00-4.99 odds band (20-33% market probability) is the worst performer: 2W/6L, 25.0% WR, -£30.52. The two overnight losses on 2026-06-18 were both WNBA moneylines at ~28% market probability (Toronto Tempo, Phoenix Mercury) — heavy underdogs. By contrast the 2.00-2.99 band (33-50% market prob) is the strongest at 83.3% WR +£92.43 across 18 trades.",
+  "root_cause": "Structural: BACK edge = model_prob - Wang(market_prob). The Wang transform (lambda=0.183, MOD-098) deflates market probabilities by ~6pp at the 30% range. For a 30% underdog, Wang deflates to ~24%, meaning the model only needs to assess ~34% to generate a 10pp BACK signal. Claude's research almost never generates a 10pp upward revision on clear favourites because their form/strength is already public knowledge and priced in. Underdogs, by contrast, surface surprising positive factors (opponent injury, form, conditions) that create apparent edge. The result: the model generates far more BACK signals on underdogs structurally, and the Wang transform amplifies the apparent edge magnitude on them. Whether that edge is real or an artefact of research optimism is unresolved — we need more data to confirm.",
+  "proposed_change": "Two candidate interventions — do NOT implement until 20+ additional live trades in the 3-5 odds band are resolved: (1) Raise the minimum edge threshold for BACK signals where market_prob < 30% (e.g. require 15pp+ rather than 10pp+). (2) Cap maximum BACK odds at 3.5 or 4.0 outright. Either would reduce exposure to the deep-underdog zone where the model's research advantage appears weakest. A third option — recalibrate wang_lambda downward to reduce the deflation effect at low probabilities — carries higher risk of side-effects across all market types.",
+  "expected_impact": "Unknown until confirmed. If the 3-5 odds band continues at 25% WR long-term, restricting it would have saved ~£30 in live losses so far. Risk: the 25% WR on 8 trades (2W/6L) has very wide confidence intervals — it could still be variance rather than a systematic model failure.",
+  "confidence": "low — 8 trades in the 3-5 odds band is insufficient to distinguish variance from model failure. Flag for review once n>=20.",
+  "risk": "low to investigate, medium to act on — any threshold change affects all BACK signals in that odds range",
+  "test_condition": "Re-evaluate when 3-5 odds band reaches 20+ resolved live trades. If WR remains below 35% at that point, implement proposed_change option (1) (raise threshold to 15pp+ for market_prob < 30%). Do not act before that milestone.",
+  "do_not_touch": [
+    "config/config.toml (no threshold changes yet)",
+    "scripts/analyze_research.py (no model changes yet)"
+  ],
+  "evidence": [
+    {"metric": "Live 3.00-4.99 odds band", "value": "2W/6L, 25.0% WR, -£30.52", "source": "data/paper_tracker.json 2026-06-18"},
+    {"metric": "Live 2.00-2.99 odds band", "value": "15W/3L, 83.3% WR, +£92.43", "source": "data/paper_tracker.json 2026-06-18"},
+    {"metric": "Overall live WR vs paper WR", "value": "55.2% live (58 resolved) vs 69.7% paper (218 resolved)", "source": "data/paper_tracker.json + paper_tracker_golive_backup_2026-06-06.json"},
+    {"metric": "Overnight losses 2026-06-18", "value": "Toronto Tempo BACK 27.8%, Phoenix Mercury BACK 28.2% — both WNBA moneylines, both losses", "source": "data/paper_tracker.json"},
+    {"metric": "Wang transform deflation at 30%", "value": "30% market prob -> ~24% adjusted (6pp deflation, lambda=0.183)", "source": "scripts/analyze_research.py MOD-098"}
+  ],
+  "caveats": "Overall live WR divergence (55.2% vs 69.7% paper) has multiple potential causes: live phase is only 12 days old, small sample, paper history may have had selection bias from manual curation, seasonal thinning (US Open week, no EPL). The underdog bias is one hypothesis among several. Do not over-index on this finding until more data resolves."
+}

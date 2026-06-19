@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-06-18T03:36:38Z",
+  "summary": "Monthly system-wide code audit. 12 findings across 8 scripts. The dominant theme is inconsistent application of the atomic-write pattern: 5 scripts that write critical JSON files still use plain open()+json.dump() instead of tempfile+os.replace(), creating Pi-crash corruption windows on the live trade ledger's calibration data, the bet queue, signal briefs, and period logs. The two highest-priority findings outside the atomic-write class are: (1) a confirmed production signal loss in analyze_research.py — the BUG-134 'structurally suspect overround' guard fires on multi-winner place markets (Top 20 Finish blocked in the 2026-06-17 22:00 run) because the check lacks a place-market exemption; and (2) the open BUG-141 log_live_trade race, which already silently destroyed two live trades on 2026-06-16 and remains unfixed. The pipeline is operationally stable — no routine failures in the last 72h — but the three HIGH findings each represent real data-loss or signal-loss incidents, not just hypothetical risks.",
+  "findings": [
+    {
+      "id": "AUDIT-2026-06-18-001",
+      "severity": "high",
+      "category": "atomicity",
+      "affected_file": "scripts/check_resolutions.py",
+      "description": "save_distribution() (lines 107-109) writes edge_distribution.json with a plain `with open(DIST_FILE, 'w') as f: json.dump(dist, f)`. This is the ONLY script that writes this file non-atomically — distribution_logger.py (line 55-64) correctly uses tempfile+os.replace. A Pi crash or power loss mid-write corrupts the calibration dataset. Corrupted JSON causes every subsequent routine to fail at distribution_logger.py and any script that reads edge_distribution.json, silently halting calibration data collection with no alert.",
+      "proposed_fix": "Replace the plain open()+json.dump() block with the same pattern used in distribution_logger.py lines 55-64: fd, tmp = tempfile.mkstemp(dir=DIST_FILE.parent, suffix='.tmp'); with os.fdopen(fd, 'w') as f: json.dump(dist, f, indent=2); os.replace(tmp, DIST_FILE).",
+      "effort_estimate": "15 minutes",
+      "risk_of_fix": "none — pure write-path change, read path unchanged"
+    },
+    {
+      "id": "AUDIT-2026-06-18-002",
+      "severity": "high",
+      "category": "logic_bug",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "The BUG-134 'structurally suspect overround' guard in analyze_market() fires on multi-winner place markets (Top-N Finish, Each Way), not just broken single-winner order books. Confirmed in production: the 2026-06-17 22:00 run logged '[ANALYZER] BUG-134: Skipped structurally suspect market (overround 319%, 6 runners): US Open 2026 | Top 20 Finish'. For a 6-runner Top-20 sample, each runner has a 50-60% independent probability — a 300%+ sum is mathematically correct and expected, not indicative of a bad book. The same run processed Top-10 (sum=190%), Top-5 (sum=124%), and Top-6 (sum=151%) without triggering the guard. Any Top-N market with more than ~5 researched runners and a tier of 15+ will reliably breach the threshold, silently suppressing it from every future run. This is the signal-loss counterpart of BUG-114 (normalization), which fixed probability calculation but not the upstream gate.",
+      "proposed_fix": "In the structurally suspect overround check within analyze_market(), add a place-market exemption: `if total_back_prob > SUSPECT_THRESHOLD and num_runners <= N and not _is_place_market(market_name):`. The _is_place_market() helper already exists (defined at lines 418-421 and 961-964 of analyze_research.py) — use it here. Alternatively, move the guard below the is_place_market branch so the scale=1.0 path is never gated on overround.",
+      "effort_estimate": "30 minutes",
+      "risk_of_fix": "low — only widens which markets reach the signal-assessment step; overbook guard (max_overbook_pct=130) still applies to single-winner markets"
+    },
+    {
+      "id": "AUDIT-2026-06-18-003",
+      "severity": "high",
+      "category": "race_condition",
+      "affected_file": "scripts/paper_tracker.py",
+      "description": "log_live_trade() performs a load-modify-save on paper_tracker.json with no file lock. The function calls load_tracker(), appends a trade, then save_tracker(). If the routine's own pipeline paper_tracker.py log step executes in the same window (narrow but real during manual phase), both processes load the same base state, append independently, and whichever writes last silently overwrites the other's appended trade. This is not a hypothetical: BUG-141 (OPEN, 2026-06-16) documents two live trades (Scheffler 'Top 6 Finish' and Frantic '6f Hcap') that were lost this way and had to be manually reconstructed from Betfair CSV exports. The save_tracker() tempfile+os.replace pattern prevents mid-write corruption but does NOT prevent the lost-update race because each caller loads its own in-memory copy.",
+      "proposed_fix": "Acquire an fcntl.flock(LOCK_EX) on a dedicated lockfile (or on paper_tracker.json itself) at the START of log_live_trade(), held across the full load-modify-save sequence, and release on exit. The same lock is already used in _log_paper_trades_locked() and resolve_trade() for the routine path — log_live_trade() should participate in the same lock so both paths serialise. See the existing flock pattern in paper_tracker.py for reference.",
+      "effort_estimate": "1-2 hours",
+      "risk_of_fix": "medium — adds blocking wait; test that the lock is released on exception and does not deadlock if paper_tracker.py log is run while a lock_live_trade call is in flight"
+    },
+    {
+      "id": "AUDIT-2026-06-18-004",
+      "severity": "medium",
+      "category": "silent_failure",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "MOD-219 (lines 1098-1105): when the Claude API is unavailable (key absent, quota exhausted, or network error), _claude_assess_market() returns None and the market is silently skipped with only a log.warning(). The operator receives no Telegram alert and has no way to know the pipeline is operating in degraded mode (keyword fallback was intentionally removed in MOD-219). The 2026-06-16 incident (BUG-136) showed that 82% of Claude calls failed across three consecutive routine runs with no operator notification — the degradation was discovered only when the operator manually reviewed signals. Under the current MOD-219 design a full API outage drops all signal assessment silently across 5 daily runs.",
+      "proposed_fix": "In the Claude API unavailable branch of _claude_assess_market(), call notify.alert_medium('Claude API unavailable', f'Market {market_name} skipped — assess manually') before returning None. To avoid spam across multiple markets in the same run, gate the alert with a module-level flag (e.g. _claude_alert_sent_this_run = False) that fires at most once per routine invocation.",
+      "effort_estimate": "30 minutes",
+      "risk_of_fix": "none — additive only; existing skip logic unchanged"
+    },
+    {
+      "id": "AUDIT-2026-06-18-005",
+      "severity": "medium",
+      "category": "atomicity",
+      "affected_file": "scripts/executor.py",
+      "description": "save_queue() (lines 597-598) writes the bet execution queue with `with open(QUEUE_FILE, 'w') as f: json.dump(queue, f, indent=2)`. A crash mid-write truncates the queue file. When executor.py --process-queue next runs (every 5 minutes via cron), json.loads() on the truncated file raises JSONDecodeError and the queue is treated as empty, silently discarding all pending orders. This is currently low-risk because paper_mode=true, but it becomes a Phase 1 blocker: a truncated queue in live mode means placed-but-not-confirmed orders are never tracked.",
+      "proposed_fix": "Apply tempfile+os.replace pattern: fd, tmp = tempfile.mkstemp(dir=QUEUE_FILE.parent); with os.fdopen(fd, 'w') as f: json.dump(queue, f, indent=2); os.replace(tmp, QUEUE_FILE).",
+      "effort_estimate": "15 minutes",
+      "risk_of_fix": "none"
+    },
+    {
+      "id": "AUDIT-2026-06-18-006",
+      "severity": "medium",
+      "category": "atomicity",
+      "affected_file": "scripts/scanner.py",
+      "description": "Market snapshot write (lines 168-170): `with open(snapshot_path, 'w') as f: json.dump(snapshot, f, indent=2)`. Snapshots are large (up to several MB for full market dumps). A Pi power failure mid-write produces a truncated JSON file. analyze_research.py reads the snapshot to load runner probabilities for each market — a corrupted snapshot raises JSONDecodeError and aborts analysis for that brief, silently dropping all signals from that market file. Because snapshot writes happen across multiple markets per run, a crash at the wrong moment can corrupt the most-recently-scanned markets.",
+      "proposed_fix": "Apply tempfile+os.replace pattern for snapshot writes. The tempfile should be in the same directory as snapshot_path to guarantee the rename is atomic (same filesystem). Use mkstemp rather than NamedTemporaryFile to avoid auto-delete on close.",
+      "effort_estimate": "15 minutes",
+      "risk_of_fix": "none"
+    },
+    {
+      "id": "AUDIT-2026-06-18-007",
+      "severity": "medium",
+      "category": "atomicity",
+      "affected_file": "scripts/researcher.py",
+      "description": "Research brief write (lines 853-854): `with open(out_path, 'w') as f: json.dump(brief, f, indent=2)`. Briefs are large (Tavily responses + aggregated facts for multiple queries). If researcher.py is killed mid-write (OOM, cron timeout, or power loss), analyze_research.py reads a truncated brief and raises JSONDecodeError on every runner in that market, silently dropping all signals from that event without any log line at WARNING level or above. Unlike the snapshot (which can be re-fetched), a partial brief cannot be reconstructed without re-running Tavily searches (costs credits).",
+      "proposed_fix": "Apply tempfile+os.replace pattern for brief output writes, consistent with the atomic write convention used in distribution_logger.py and paper_tracker.py.",
+      "effort_estimate": "15 minutes",
+      "risk_of_fix": "none"
+    },
+    {
+      "id": "AUDIT-2026-06-18-008",
+      "severity": "medium",
+      "category": "race_condition",
+      "affected_file": "scripts/digest.py",
+      "description": "_append_to_period_log() (lines 661-672) performs a read-modify-write on the daily/weekly/monthly/quarterly JSON period log files with no file lock. The function loads the existing log, appends the new run entry, and writes back. If two routine processes overlap (e.g. a stale cron invocation still running when the next fires, or a manual re-run), the second reader loads the pre-first-write state, so the first run's appended entry is overwritten and lost. Period logs are used by weekly_summary.py, run_model_audit.py, and the cloud auditor to track run history — silent loss of entries here underreports routine counts and signals-found statistics.",
+      "proposed_fix": "Wrap the read-modify-write in _append_to_period_log() with an fcntl.flock(LOCK_EX) on the period log file, mirroring the flock pattern used in paper_tracker.py. Alternatively, switch to append-only JSONL format (one entry per line) which avoids the read step entirely.",
+      "effort_estimate": "30-45 minutes",
+      "risk_of_fix": "low — lock held only during a small file operation; no external callers"
+    },
+    {
+      "id": "AUDIT-2026-06-18-009",
+      "severity": "low",
+      "category": "operational_risk",
+      "affected_file": "scripts/watchdog.py",
+      "description": "check_missing_outputs() (line 207) marks scanner_matchbook as HIGH severity if the Matchbook scanner output is absent, regardless of whether the Betfair scanner succeeded. Because Matchbook is data-only (MOD-119) and Betfair is the execution platform, a Matchbook-only failure is a partial degradation, not a critical failure — the routine continues correctly on Betfair alone. Promoting it to HIGH triggers the repair flow and fires a HIGH Telegram alert (notify.alert_high), causing alert fatigue and potentially triggering unnecessary Claude repairs. The cron.log consistently shows 'betfair=0 matchbook=0' both completing, but any Matchbook-specific transient error would produce a false HIGH.",
+      "proposed_fix": "In check_missing_outputs(), cross-reference the scan status file to determine whether at least one scanner (Betfair) succeeded. If Betfair scan output exists and Matchbook is missing, downgrade to MEDIUM ('Matchbook degraded — Betfair continues') rather than HIGH. Reserve HIGH for the case where both scanners are absent.",
+      "effort_estimate": "30 minutes",
+      "risk_of_fix": "low — only changes alert severity classification; repair flow is unchanged"
+    },
+    {
+      "id": "AUDIT-2026-06-18-010",
+      "severity": "low",
+      "category": "logic_bug",
+      "affected_file": "scripts/check_resolutions.py",
+      "description": "_check_stale_via_web() (line 514): `if ' vs ' not in event_name.lower(): continue` uses a single separator variant. Betfair event names use ' v ' (no trailing 's') for many match markets (e.g. 'England v New Zealand'); Matchbook and researcher.py handle ' v ', ' vs ', ' vs. ', and ' - ' (researcher.py ~line 220). A stale Betfair match market with a ' v ' separator will never enter the ESPN/football-data fallback path and will silently stay OPEN until manual resolution. The same market resolved correctly on Matchbook because its event names use ' vs '.",
+      "proposed_fix": "Replace the literal check with: `import re; if not re.search(r'\\s+v(?:s\\.?)?\\s+', event_name, re.IGNORECASE): continue`. This matches ' v ', ' vs ', and ' vs. ' — the three separator forms in use across both platforms.",
+      "effort_estimate": "10 minutes",
+      "risk_of_fix": "none — only widens which markets enter the stale-check path"
+    },
+    {
+      "id": "AUDIT-2026-06-18-011",
+      "severity": "low",
+      "category": "dead_code",
+      "affected_file": "scripts/check_resolutions.py",
+      "description": "_apply_resolution() (lines 153-165) increments tracker['summary'] fields (total, wins, losses, paper_pnl, total_staked, roi_pct) in-place after each resolution. However, _recompute_summary() is called at line 1202 immediately before save_tracker(), which recomputes every summary counter from scratch and overwrites the incremental values. The incremental updates are therefore dead code: they compute and write values that are unconditionally replaced before the file is written. This doubles the summary-maintenance surface and risks confusion if the two code paths ever drift (producing different totals transiently during a debug session). BUG-097 documented this as 'two near-identical resolution implementations' but the fix (calling _recompute_summary) left the incremental code in place.",
+      "proposed_fix": "Delete the incremental summary update block in _apply_resolution() (the lines that modify tracker['summary']['total'], wins, losses, paper_pnl, total_staked, roi_pct). Leave only the trade status/outcome field updates. Add a comment above the _recompute_summary() call at line 1202 noting it is authoritative and replaces any incremental math.",
+      "effort_estimate": "15 minutes",
+      "risk_of_fix": "none — the deleted code's output is overwritten before any read"
+    },
+    {
+      "id": "AUDIT-2026-06-18-012",
+      "severity": "low",
+      "category": "dead_code",
+      "affected_file": "scripts/paper_tracker.py",
+      "description": "Line 618 computes `_max_stake_by_profit = round(_max_profit_ratio / _est_profit_per_unit, 2) * effective_stake / (effective_stake if effective_stake else 1)`. The result is assigned to a local variable that is never read, referenced, or returned anywhere in the function. The BUG-142 fix (2026-06-17) reorganised decimal-odds resolution in this area but did not remove this orphaned computation. If _max_profit_ratio or _est_profit_per_unit are undefined in any reachable code path, this line would raise NameError before the actual stake logic runs.",
+      "proposed_fix": "Delete line 618. If the profit-relative stake cap logic was intended to be used as an additional cap on stake (analogous to max_stake_pct_of_balance), implement it explicitly and name it clearly; do not leave it as a silent dead assignment.",
+      "effort_estimate": "5 minutes",
+      "risk_of_fix": "none — variable is never read"
+    }
+  ]
+}

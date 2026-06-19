@@ -1,0 +1,55 @@
+{
+  "audit_date": "2026-06-18",
+  "scope": "API market data / market price anchoring in Claude prompt",
+  "market_price_shown_to_claude": true,
+  "when_shown": "BEFORE research findings — runner block with market_prob_pct appears in user_prompt before key_facts block",
+  "prompt_structure": [
+    "1. Event name, market, sport, event_start",
+    "2. Runners with market implied probabilities (e.g. '- Ribeiro/Zeballos: 62.1% (market implied)')",
+    "3. Research findings (key_facts)",
+    "4. Instruction to estimate true probability"
+  ],
+  "anchoring_evidence": {
+    "total_claude_signals_analysed": 128,
+    "avg_abs_diff_market_vs_claude": 18.5,
+    "pct_within_5pp_of_market": 12,
+    "pct_within_2pp_of_market": 1,
+    "pct_extreme_outputs_5_or_95": 5,
+    "exact_match_case": "Fenerbahce SK v Besiktas — market=75.19%, claude=75.19%, contrary_evidence=None",
+    "correlation": "LOW overall (avg 18.5pp diff), but 12% of signals show suspected anchoring (<5pp diff)",
+    "interpretation": "Claude is NOT systematically anchoring — average 18.5pp divergence shows genuine independent assessment. However, 12% of signals (15/128) show <5pp diff, consistent with anchoring when research is weak. One exact match confirmed (Fenerbahce 75.19%). The bigger risk is NOT tight anchoring but the OPPOSITE: when research is absent (junk sources), Claude generates EXTREME outputs (5%, 95%, 100%) rather than staying near the market. This is more dangerous than anchoring.",
+    "sample_anchored": [
+      {"market_prob": 75.19, "claude_prob": 75.19, "diff": 0.0, "event": "Fenerbahce SK v Besiktas"},
+      {"market_prob": 45.0, "claude_prob": 48.0, "diff": 3.0},
+      {"market_prob": 46.7, "claude_prob": 50.0, "diff": 3.3},
+      {"market_prob": 42.0, "claude_prob": 46.0, "diff": 4.0}
+    ]
+  },
+  "wang_transform_anchoring_risk": {
+    "explanation": "Wang Transform always compresses market risk premium, generating 3-7pp of structural positive edge at any probability level (e.g. Wang(50%) = 42.7%, so edge = 50% - 42.7% = +7.3pp). If Claude anchors to market_prob, this phantom edge can push signals above the 10pp threshold.",
+    "wang_false_edge_by_market_prob": {
+      "10%": "+2.8pp", "20%": "+4.7pp", "30%": "+6.0pp", "40%": "+6.9pp",
+      "50%": "+7.3pp", "60%": "+7.2pp", "70%": "+6.6pp", "80%": "+5.5pp", "90%": "+3.6pp"
+    },
+    "confirmed_false_signals": {
+      "count": 17,
+      "description": "17 signals where Claude was only 3-7pp above market (likely low-confidence/anchored), but Wang inflated into 10pp+ edge. Examples: Galan (market 41.3%, claude 47.0%, final edge +12.6pp), Djere (market 42.0%, claude 46.0%, edge +11.0pp), Scheffler golf (market 54.4%, claude 59.0%, edge +11.9pp).",
+      "examples": [
+        {"contract": "Daniel Elahi Galan", "market_prob": 41.3, "claude_prob": 47.0, "diff": 5.7, "edge": 12.6},
+        {"contract": "Scottie Scheffler golf", "market_prob": 54.4, "claude_prob": 59.0, "diff": 4.6, "edge": 11.9},
+        {"contract": "Republican Party", "market_prob": 52.6, "claude_prob": 57.0, "diff": 4.4, "edge": 11.7},
+        {"contract": "Laslo Djere", "market_prob": 42.0, "claude_prob": 46.0, "diff": 4.0, "edge": 11.0}
+      ]
+    },
+    "severity": "MEDIUM — 17 phantom signals in history, not systematic but structurally recurring"
+  },
+  "prior_history_injection": {
+    "was_present": true,
+    "what_it_was": "MOD-123: per-runner past bet results injected into research brief as additional key_facts. Dead functions _build_prior_index, _prior_performance_fact, _norm_last in researcher.py + analyze_research.py.",
+    "removed_by": "MOD-229, commit 10007fa, 2026-06-17",
+    "reason_for_removal": "Compounding feedback loop at sample sizes too small to be meaningful (1-3 trades per runner). Early luck amplified into overconfidence.",
+    "impact_of_removal": "Positive — removes noise feedback. Prior history at this scale is noise, not signal."
+  },
+  "recommendation": "THREE changes: (1) MOVE market price to END of prompt after research findings — reduces anchoring in low-research cases; (2) ADD research quality gate (>=2 non-junk sources) before signal generated — prevents extreme outputs; (3) ADD minimum claude_prob divergence check: if |claude_prob - market_prob| < 5pp, suppress signal as 'no view' — Wang would generate phantom edge on these regardless of true value.",
+  "summary": "Market price IS shown to Claude before research findings (anchoring risk confirmed). Claude is NOT systematically anchoring (avg diff 18.5pp). But 12% of signals show <5pp diff from market, and Wang Transform inflates any anchored signal by 3-7pp — creating 17 confirmed phantom edges in history. More dangerous: when Tavily returns junk sources, Claude generates extreme probabilities (5%/95%) rather than staying near market. Three fixes needed: move price after research in prompt, add research quality gate, suppress near-market signals."
+}
