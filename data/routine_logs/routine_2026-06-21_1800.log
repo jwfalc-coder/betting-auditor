@@ -1,0 +1,325 @@
+Sent
+2026-06-21 18:00:12,962 [INFO] ============================================================
+2026-06-21 18:00:12,963 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-06-21 18:00:12,963 [INFO] ============================================================
+2026-06-21 18:00:13,370 [INFO] Cached Betfair session too old, re-logging in
+2026-06-21 18:00:13,370 [INFO] Betfair login attempt 1/3
+2026-06-21 18:00:13,519 [INFO] Betfair login successful
+2026-06-21 18:00:13,667 [INFO] Catalogue: 100 markets for sport ID 1 (window=48h)
+2026-06-21 18:00:13,779 [INFO] Catalogue: 100 markets for sport ID 2 (window=48h)
+2026-06-21 18:00:13,898 [INFO] Catalogue: 100 markets for sport ID 7 (window=48h)
+2026-06-21 18:00:14,008 [INFO] Catalogue: 98 markets for sport ID 4 (window=48h)
+2026-06-21 18:00:14,093 [INFO] Catalogue: 0 markets for sport ID 2378961 (window=168h)
+2026-06-21 18:00:14,177 [INFO] Catalogue: 8 markets for sport ID 3 (window=168h)
+2026-06-21 18:00:14,345 [INFO] Catalogue: 57 markets for sport ID 7522 (window=48h)
+2026-06-21 18:00:14,430 [INFO] Catalogue: 0 markets for sport ID 6423 (window=48h)
+2026-06-21 18:00:14,430 [INFO] Betfair: fetching prices for 463 markets...
+2026-06-21 18:00:18,288 [INFO] Betfair: enriching 463 markets with price data...
+2026-06-21 18:00:18,295 [INFO] Betfair: enriched 50/463 markets, 6 tradeable so far
+2026-06-21 18:00:18,301 [INFO] Betfair: enriched 100/463 markets, 14 tradeable so far
+2026-06-21 18:00:18,304 [INFO] Betfair: enriched 150/463 markets, 16 tradeable so far
+2026-06-21 18:00:18,307 [INFO] Betfair: enriched 200/463 markets, 17 tradeable so far
+2026-06-21 18:00:18,314 [INFO] Betfair: enriched 250/463 markets, 26 tradeable so far
+2026-06-21 18:00:18,321 [INFO] Betfair: enriched 300/463 markets, 26 tradeable so far
+2026-06-21 18:00:18,326 [INFO] Betfair: enriched 350/463 markets, 33 tradeable so far
+2026-06-21 18:00:18,330 [INFO] Betfair: enriched 400/463 markets, 35 tradeable so far
+2026-06-21 18:00:18,380 [INFO] Betfair: enriched 450/463 markets, 54 tradeable so far
+2026-06-21 18:00:18,393 [INFO] Betfair: enriched 463/463 markets, 54 tradeable so far
+2026-06-21 18:00:18,395 [INFO] Betfair: 463 total markets, 54 above 100 GBP volume
+2026-06-21 18:00:18,493 [INFO] Outrights: 20 markets for sport 1
+2026-06-21 18:00:18,583 [INFO] Outrights: 9 markets for sport 3
+2026-06-21 18:00:18,677 [INFO] Outrights: 50 markets for sport 2378961
+2026-06-21 18:00:19,327 [INFO] Outrights: 58 markets above 25 GBP
+2026-06-21 18:00:19,332 [INFO] Betfair: added 58 outright markets for cross-ref
+2026-06-21 18:00:19,332 [INFO] betfair: 521 total, 112 above 100 GBP threshold
+2026-06-21 18:00:19,526 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-06-21_17-00.json
+2026-06-21 18:00:19,633 [INFO] Market log updated (betfair)
+2026-06-21 18:00:43,867 [INFO] Scanner complete for betfair. Snapshot: 2026-06-21_17-00.json
+2026-06-21 18:00:44,183 [INFO] ============================================================
+2026-06-21 18:00:44,183 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-06-21 18:00:44,184 [INFO] ============================================================
+2026-06-21 18:00:44,537 [INFO] Using cached Matchbook session token
+2026-06-21 18:00:44,537 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-06-21 18:00:44,740 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-06-21 18:00:45,078 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-06-21 18:00:45,471 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-06-21 18:00:45,785 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-06-21 18:00:46,031 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-06-21 18:00:46,271 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-06-21 18:00:46,509 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-06-21 18:00:46,753 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-06-21 18:00:47,057 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-06-21 18:00:47,443 [INFO] Matchbook: fetched page offset=180, 20 events (total so far: 200)
+2026-06-21 18:00:47,765 [INFO] Matchbook: fetched page offset=200, 20 events (total so far: 220)
+2026-06-21 18:00:48,092 [INFO] Matchbook: fetched page offset=220, 20 events (total so far: 240)
+2026-06-21 18:00:48,352 [INFO] Matchbook: fetched page offset=240, 14 events (total so far: 254)
+2026-06-21 18:00:48,352 [INFO] Matchbook: processing 254 events
+2026-06-21 18:00:48,384 [INFO] Matchbook: processed 20/254 events, 501 markets so far
+2026-06-21 18:00:48,428 [INFO] Matchbook: processed 40/254 events, 1158 markets so far
+2026-06-21 18:00:48,466 [INFO] Matchbook: processed 60/254 events, 1793 markets so far
+2026-06-21 18:00:48,478 [INFO] Matchbook: processed 80/254 events, 2147 markets so far
+2026-06-21 18:00:48,481 [INFO] Matchbook: processed 100/254 events, 2271 markets so far
+2026-06-21 18:00:48,482 [INFO] Matchbook: processed 120/254 events, 2307 markets so far
+2026-06-21 18:00:48,483 [INFO] Matchbook: processed 140/254 events, 2342 markets so far
+2026-06-21 18:00:48,485 [INFO] Matchbook: processed 160/254 events, 2399 markets so far
+2026-06-21 18:00:48,526 [INFO] Matchbook: processed 180/254 events, 2727 markets so far
+2026-06-21 18:00:48,548 [INFO] Matchbook: processed 200/254 events, 3274 markets so far
+2026-06-21 18:00:48,567 [INFO] Matchbook: processed 220/254 events, 3704 markets so far
+2026-06-21 18:00:48,584 [INFO] Matchbook: processed 240/254 events, 4074 markets so far
+2026-06-21 18:00:48,589 [INFO] Matchbook: processed 254/254 events, 4088 markets so far
+2026-06-21 18:00:48,589 [INFO] Matchbook: 4089 total markets, 561 above 25 GBP volume
+2026-06-21 18:00:48,632 [INFO] matchbook: 4089 total, 561 above 25 GBP threshold
+2026-06-21 18:00:48,844 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-06-21_17-00.json
+2026-06-21 18:00:48,950 [INFO] Market log updated (matchbook)
+2026-06-21 18:01:18,669 [INFO] Scanner complete for matchbook. Snapshot: 2026-06-21_17-00.json
+2026-06-21 18:01:19,540 [RESEARCHER] Primary research fetcher: gemini (models: gemini-2.5-flash)
+2026-06-21 18:01:19,543 [RESEARCHER] Research cache: 27 entries loaded (TTL 6h, drift 10%)
+2026-06-21 18:01:19,592 [RESEARCHER] betfair: skipped 2 markets above volume cap (£500,000)
+2026-06-21 18:01:19,592 [RESEARCHER] Horizon filter: skipping English Premier League | pfa player of the year 2025/26 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping Brazilian Serie A | winner 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping Irish Premier Division | winner outright 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping US Major League Soccer | mls cup winner 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping FIFA World Cup | fifa golden ball — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping FIFA World Cup | winning group — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping FIFA World Cup | total tournament goals — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping FIFA World Cup | england top team goalscorer — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping FIFA World Cup | who will perform at the world cup final ht show? — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,593 [RESEARCHER] Horizon filter: skipping English Sky Bet League 1 | winner 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping English Sky Bet League 2 | winner 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping English Sky Bet Championship | winner 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping English Sky Bet Championship | promotion 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping English Premier League | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping English Premier League | relegation — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping Specials | ballon d'or winner 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping   US Open 2026 | top 5 finish — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping   US Open 2026 | top 10 finish — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping   LPGA Meijer Classic 2026 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,594 [RESEARCHER] Horizon filter: skipping The Open Championship 2026 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,595 [RESEARCHER] Horizon filter: skipping Presidents Cup 2026 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,595 [RESEARCHER] Horizon filter: skipping The Masters 2027 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,595 [RESEARCHER] Horizon filter: skipping The Ryder Cup 2027 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 18:01:19,595 [RESEARCHER] betfair: skipped 23 outright markets with no start time (BUG-093)
+2026-06-21 18:01:19,595 [RESEARCHER] betfair: 87 tradeable markets from 2026-06-21_17-00.json
+2026-06-21 18:01:19,598 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Peru
+2026-06-21 18:01:19,601 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Colombia
+2026-06-21 18:01:19,601 [RESEARCHER] Politics: skipping indefinite market: UK - Party Leaders | Next Lib Dem Leader
+2026-06-21 18:01:19,602 [RESEARCHER] Politics: skipping indefinite market: European Politics | Next Prime Minister of Sweden
+2026-06-21 18:01:19,602 [RESEARCHER] Politics: skipping indefinite market: UK - Party Leaders | Next Labour Leader
+2026-06-21 18:01:19,602 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Brazil
+2026-06-21 18:01:19,602 [RESEARCHER] Politics: capped at 5 slots — dropped 22 lowest-volume politics markets
+2026-06-21 18:01:19,612 [RESEARCHER] Market selection: 5 politics + 0 outrights + 20 other sports = 25 total (platforms: ['betfair'])
+2026-06-21 18:01:19,613 [RESEARCHER] [1/25] Which party will control the House in 2026?
+2026-06-21 18:01:30,472 [RESEARCHER] Gemini research (gemini-2.5-flash): USA 2026 Midterm Elections | Which party will control the House in 2026? — 11 sources, 5 grounded search(es)
+2026-06-21 18:01:34,345 [RESEARCHER] [2/25] Which party will control the Senate in 2026?
+2026-06-21 18:01:49,581 [RESEARCHER] Gemini research (gemini-2.5-flash): USA 2026 Midterm Elections | Which party will control the Senate in 2026? — 11 sources, 5 grounded search(es)
+2026-06-21 18:01:53,358 [RESEARCHER] [3/25] Los Angeles Mayoral Election
+2026-06-21 18:01:53,477 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 6s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:01:59,604 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:02:04,721 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:02:08,489 [RESEARCHER] [4/25] Greater Manchester Mayoral By-Election
+2026-06-21 18:02:08,613 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 51s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:02:59,722 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:03:11,396 [RESEARCHER] Gemini research (gemini-2.5-flash): UK - Mayoral Elections | Greater Manchester Mayoral By-Election — 5 sources, 5 grounded search(es)
+2026-06-21 18:03:15,224 [RESEARCHER] [5/25] Montana Senate Election Winner
+2026-06-21 18:03:15,337 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 44s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:03:59,543 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:04:04,655 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:04:08,476 [RESEARCHER] [6/25] 19:30-Scheffler
+2026-06-21 18:04:08,579 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 51s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:04:59,778 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:05:05,001 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:05:07,278 [RESEARCHER] [SLASHGOLF] No tournament match for '4th Round 2 Balls'
+2026-06-21 18:05:07,279 [RESEARCHER] [7/25] Match Odds
+2026-06-21 18:05:07,279 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-06-21T14:06
+2026-06-21 18:05:07,679 [RESEARCHER] [DATA_PROVIDER] cricketdata /currentMatches returned status=failure
+2026-06-21 18:05:07,858 [RESEARCHER] [DATA_PROVIDER] cricketdata /series returned status=failure
+2026-06-21 18:05:07,859 [RESEARCHER] [8/25] Match Odds
+2026-06-21 18:05:07,985 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 52s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:06:00,189 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 59s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:06:59,334 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:07:03,893 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:07:03,894 [RESEARCHER] [9/25] Match Odds
+2026-06-21 18:07:03,894 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-06-21T14:03
+2026-06-21 18:07:04,160 [RESEARCHER] [DATA_PROVIDER] cricketdata /currentMatches returned status=failure
+2026-06-21 18:07:04,499 [RESEARCHER] [DATA_PROVIDER] cricketdata /series returned status=failure
+2026-06-21 18:07:04,500 [RESEARCHER] [10/25] Moneyline
+2026-06-21 18:07:04,500 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-06-21T14:11
+2026-06-21 18:07:04,510 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:07:04,510 [RESEARCHER] [11/25] Moneyline
+2026-06-21 18:07:04,616 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 55s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:07:59,849 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:08:05,069 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:08:07,089 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:08:07,090 [RESEARCHER] [12/25] Moneyline
+2026-06-21 18:08:20,269 [RESEARCHER] Gemini research (gemini-2.5-flash): New York Liberty @ Los Angeles Sparks | Moneyline — 9 sources, 5 grounded search(es)
+2026-06-21 18:08:22,279 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:08:22,279 [RESEARCHER] [14/25] Match Odds
+2026-06-21 18:08:22,485 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 37s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:08:59,617 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:09:04,816 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:09:07,155 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:09:07,155 [RESEARCHER] [16/25] Moneyline
+2026-06-21 18:09:07,284 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 52s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:09:59,538 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:10:04,744 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:10:06,764 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:10:06,765 [RESEARCHER] [18/25] Match Odds
+2026-06-21 18:10:06,886 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 53s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:11:00,004 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:11:05,125 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:11:07,349 [RESEARCHER] [DATA_PROVIDER] cricketdata /currentMatches returned status=failure
+2026-06-21 18:11:07,540 [RESEARCHER] [DATA_PROVIDER] cricketdata /series returned status=failure
+2026-06-21 18:11:07,541 [RESEARCHER] [19/25] Match Odds
+2026-06-21 18:11:07,658 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 52s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:11:59,887 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:12:05,094 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:12:09,489 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:12:09,490 [RESEARCHER] [20/25] Match Odds
+2026-06-21 18:12:09,680 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 50s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:12:59,804 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:13:04,934 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:13:07,036 [RESEARCHER] [API_FOOTBALL] API errors: {'search': 'The Search field may only contain alpha-numeric characters and spaces.'}
+2026-06-21 18:13:07,037 [RESEARCHER] [API_FOOTBALL] Could not resolve team ID for 'Talleres (RE)'
+2026-06-21 18:13:07,050 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:13:07,050 [RESEARCHER] [21/25] Goal Lines
+2026-06-21 18:13:07,162 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 52s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:13:59,379 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:14:04,591 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:14:06,979 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-06-21 18:14:06,980 [RESEARCHER]   Data provider: 1 facts injected
+2026-06-21 18:14:06,980 [RESEARCHER] [22/25] Match Odds
+2026-06-21 18:14:07,094 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 52s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:14:59,315 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:15:04,495 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:15:07,131 [RESEARCHER] [DATA_PROVIDER] cricketdata /currentMatches returned status=failure
+2026-06-21 18:15:07,321 [RESEARCHER] [DATA_PROVIDER] cricketdata /series returned status=failure
+2026-06-21 18:15:07,322 [RESEARCHER] [23/25] Match Odds
+2026-06-21 18:15:07,435 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 52s (attempt 1/2) rather than using a paid backup
+2026-06-21 18:15:59,559 [RESEARCHER] Gemini 429 rate-limit (gemini-2.5-flash) — retrying in 5s (attempt 2/2) rather than using a paid backup
+2026-06-21 18:16:04,771 [RESEARCHER] Gemini error 429 (gemini-2.5-flash): {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+2026-06-21 18:16:06,996 [RESEARCHER] [DATA_PROVIDER] cricketdata /currentMatches returned status=failure
+2026-06-21 18:16:07,183 [RESEARCHER] [DATA_PROVIDER] cricketdata /series returned status=failure
+2026-06-21 18:16:07,184 [RESEARCHER] Research fallback: 13 brief entr(ies) short on sources after Tavily
+Sent
+2026-06-21 18:16:08,003 [RESEARCHER] Spawning Claude Code research session: 13 market(s), model=claude-sonnet-4-6
+2026-06-21 18:21:21,498 [RESEARCHER] Research fallback: Claude Code session covered 13/13 group(s)
+2026-06-21 18:21:21,510 [RESEARCHER] researcher.py: skipped 5 markets (5 horse_racing) (excluded_sports)
+2026-06-21 18:21:21,510 [RESEARCHER] Research cache: 3 hits, 22 fresh lookups
+2026-06-21 18:21:21,521 [RESEARCHER] Research brief written: 2026-06-21_17-21_brief.json
+2026-06-21 18:21:21,521 [RESEARCHER] Markets: 20 | Errors: 0 | Credits used: 0
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-21_17-21_brief.json
+2026-06-21 18:21:24,968 [ANALYZER] Loading research brief: 2026-06-21_17-21_brief.json
+2026-06-21 18:21:25,164 [ANALYZER] Betfair cross-ref index: 2282 runners
+2026-06-21 18:21:25,169 [ANALYZER] BUG-154: far-future market held (~136d out): USA 2026 Midterm Elections | Which party will control the House in 2026?
+2026-06-21 18:21:25,171 [ANALYZER] BUG-154: far-future market held (~136d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?
+2026-06-21 18:21:25,172 [ANALYZER] BUG-154: far-future market held (~136d out): USA - Politics Specials | Los Angeles Mayoral Election
+2026-06-21 18:21:25,178 [ANALYZER] Politics: Labour — Fallback prior 23.0% applied (blended market_prob=47.8%)
+2026-06-21 18:21:25,183 [ANALYZER] Politics: Reform UK — Fallback prior 31.0% applied (blended market_prob=24.6%)
+2026-06-21 18:21:25,186 [ANALYZER] Politics: Green — Fallback prior 19.0% applied (blended market_prob=10.8%)
+2026-06-21 18:21:25,194 [ANALYZER] Market skipped (overbook 140% > 130%): USA 2026 Midterm Elections | Montana Senate Election Winner
+2026-06-21 18:21:25,194 [ANALYZER] BUG-130: Skipped unsupported market type: 4th Round 2 Balls | 19:30-Scheffler [betfair]
+2026-06-21 18:21:25,208 [ANALYZER] MOD-246: suppressed BACK Singapore on Match Odds — edge 47.4pp >= ceiling 15.0pp
+2026-06-21 18:21:25,247 [ANALYZER] BUG-130: Skipped unsupported market type: Arsenal de Sarandi v Deportivo Merlo | Goal Lines [betfair]
+2026-06-21 18:21:25,255 [ANALYZER] Analyzed 14 markets
+2026-06-21 18:21:25,255 [ANALYZER] Found 1 signals (10pp+)
+2026-06-21 18:21:25,255 [ANALYZER] Logged 5 distribution entries (7pp+)
+2026-06-21 18:21:25,262 [ANALYZER] Research output written: 2026-06-21_17-21_research.json
+2026-06-21 18:21:25,264 [ANALYZER] Appended 34 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-21_17-21_research.json
+2026-06-21 18:21:26,411 [RESOLVE] Found 12 open trade(s) to check (paper_mode=True)
+2026-06-21 18:21:26,507 [RESOLVE] Using cached Betfair session token
+2026-06-21 18:21:26,508 [RESOLVE] Betfair: checking 11 open-trade markets
+2026-06-21 18:21:51,969 [RESOLVE] Snapshot name lookup: found mappings for 8 markets
+2026-06-21 18:21:52,620 [RESOLVE] Settled markets found: 0
+2026-06-21 18:21:52,620 [RESOLVE] No open-trade markets have settled yet.
+Balance: £112.21 | Reserved: £46.44 | Available: £65.77
+Stake scaling: Kelly balance £112.21 → max stake £15.00 (was £50.00)
+Logged paper trade: Match Odds - BACK @ 42.37% (edge: 12.05pp) [betfair] | available now £63.77
+
+1 new paper trade(s) logged
+Signal drought counter: 0 consecutive zero-signal run(s)
+2026-06-21 18:21:54,505 [INFO] ============================================================
+2026-06-21 18:21:54,505 [INFO] DIGEST RUN STARTED
+2026-06-21 18:21:54,505 [INFO] ============================================================
+2026-06-21 18:21:59,339 [INFO] Domestic T20 suppress (BUG-152-F4a): Texas Super Kings v MI New York — only 5 key_facts
+/home/jwfalc/smarkets-bot/scripts/digest.py:630: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _now_utc = datetime.datetime.utcnow().isoformat()
+2026-06-21 18:21:59,367 [INFO] Sending batch slip: 1 signals
+2026-06-21 18:21:59,514 [INFO] Telegram notification sent
+2026-06-21 18:21:59,516 [INFO] Sent 1 Telegram signal alerts
+2026-06-21 18:22:03,316 [INFO] cashout_advisor: no advisory triggers fired
+2026-06-21 18:22:03,339 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-06-21 18:22:03,437 [INFO] Period logs updated: 2026-06-21, 2026-W25, 2026-06, 2026-Q2
+2026-06-21 18:22:03,438 [INFO] Run log: [2026-06-21 17:21 UTC] status=signal | platforms=betfair,matchbook | markets=673 | signals=1 | alerts=1 | movements=10 | consec_losses=0
+2026-06-21 18:22:03,438 [INFO] Digest complete
+Distribution log updated: 0 new entries added
+Total entries: 1513
+  near_certainty: 15 total, 12 resolved
+  high_prob: 57 total, 35 resolved
+  7-9pp: 474 total, 145 resolved
+  10-11pp: 248 total, 82 resolved
+  12pp+: 719 total, 458 resolved
+
+REVIEW DUE: 7-9pp band has 145 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 145 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-06-21 18:22:06,950 [STATIC-DASH] Building dashboard data…
+2026-06-21 18:22:06,954 [STATIC-DASH] Data collected: 86 trades, 1 signals
+2026-06-21 18:22:06,979 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (481KB)
+2026-06-21 18:22:06,997 [STATIC-DASH] Copied PWA asset: manifest.json
+2026-06-21 18:22:06,998 [STATIC-DASH] Copied PWA asset: apple-touch-icon.png
+2026-06-21 18:22:07,000 [STATIC-DASH] Copied PWA asset: icon-192.png
+2026-06-21 18:22:07,004 [STATIC-DASH] Copied PWA asset: icon-512.png
+2026-06-21 18:22:07 [DEPLOY] Starting dashboard deploy...
+HTML written OK
+2026-06-21 18:22:07 [DEPLOY] Static HTML built
+[main b36008c] Deploy: 2026-06-21 18:22 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   e9a52b0..b36008c  main -> main
+2026-06-21 18:22:07 [DEPLOY] Deploy complete: Deploy: 2026-06-21 18:22 UTC
