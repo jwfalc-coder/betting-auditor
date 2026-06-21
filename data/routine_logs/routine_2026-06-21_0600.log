@@ -1,0 +1,353 @@
+Sent
+2026-06-21 06:00:12,708 [INFO] ============================================================
+2026-06-21 06:00:12,708 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-06-21 06:00:12,708 [INFO] ============================================================
+2026-06-21 06:00:13,113 [INFO] Cached Betfair session too old, re-logging in
+2026-06-21 06:00:13,113 [INFO] Betfair login attempt 1/3
+2026-06-21 06:00:13,265 [INFO] Betfair login successful
+2026-06-21 06:00:13,413 [INFO] Catalogue: 100 markets for sport ID 1 (window=48h)
+2026-06-21 06:00:13,533 [INFO] Catalogue: 100 markets for sport ID 2 (window=48h)
+2026-06-21 06:00:13,653 [INFO] Catalogue: 100 markets for sport ID 7 (window=48h)
+2026-06-21 06:00:13,770 [INFO] Catalogue: 100 markets for sport ID 4 (window=48h)
+2026-06-21 06:00:13,851 [INFO] Catalogue: 0 markets for sport ID 2378961 (window=168h)
+2026-06-21 06:00:13,964 [INFO] Catalogue: 48 markets for sport ID 3 (window=168h)
+2026-06-21 06:00:14,134 [INFO] Catalogue: 57 markets for sport ID 7522 (window=48h)
+2026-06-21 06:00:14,203 [INFO] Catalogue: 0 markets for sport ID 6423 (window=48h)
+2026-06-21 06:00:14,203 [INFO] Betfair: fetching prices for 505 markets...
+2026-06-21 06:00:18,247 [INFO] Betfair: enriching 505 markets with price data...
+2026-06-21 06:00:18,255 [INFO] Betfair: enriched 50/505 markets, 0 tradeable so far
+2026-06-21 06:00:18,262 [INFO] Betfair: enriched 100/505 markets, 2 tradeable so far
+2026-06-21 06:00:18,265 [INFO] Betfair: enriched 150/505 markets, 2 tradeable so far
+2026-06-21 06:00:18,267 [INFO] Betfair: enriched 200/505 markets, 2 tradeable so far
+2026-06-21 06:00:18,276 [INFO] Betfair: enriched 250/505 markets, 14 tradeable so far
+2026-06-21 06:00:18,287 [INFO] Betfair: enriched 300/505 markets, 17 tradeable so far
+2026-06-21 06:00:18,291 [INFO] Betfair: enriched 350/505 markets, 24 tradeable so far
+2026-06-21 06:00:18,294 [INFO] Betfair: enriched 400/505 markets, 45 tradeable so far
+2026-06-21 06:00:18,350 [INFO] Betfair: enriched 450/505 markets, 81 tradeable so far
+2026-06-21 06:00:18,423 [INFO] Betfair: enriched 500/505 markets, 84 tradeable so far
+2026-06-21 06:00:18,427 [INFO] Betfair: enriched 505/505 markets, 84 tradeable so far
+2026-06-21 06:00:18,429 [INFO] Betfair: 505 total markets, 84 above 100 GBP volume
+2026-06-21 06:00:18,535 [INFO] Outrights: 20 markets for sport 1
+2026-06-21 06:00:18,616 [INFO] Outrights: 9 markets for sport 3
+2026-06-21 06:00:18,696 [INFO] Outrights: 50 markets for sport 2378961
+2026-06-21 06:00:19,316 [INFO] Outrights: 58 markets above 25 GBP
+2026-06-21 06:00:19,321 [INFO] Betfair: added 54 outright markets for cross-ref
+2026-06-21 06:00:19,321 [INFO] betfair: 559 total, 138 above 100 GBP threshold
+2026-06-21 06:00:19,483 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-06-21_05-00.json
+2026-06-21 06:00:19,569 [INFO] Market log updated (betfair)
+2026-06-21 06:00:48,592 [INFO] Scanner complete for betfair. Snapshot: 2026-06-21_05-00.json
+2026-06-21 06:00:48,923 [INFO] ============================================================
+2026-06-21 06:00:48,923 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-06-21 06:00:48,923 [INFO] ============================================================
+2026-06-21 06:00:49,271 [INFO] Matchbook login attempt 1/3
+2026-06-21 06:00:49,509 [INFO] Matchbook login successful
+2026-06-21 06:00:49,510 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-06-21 06:00:49,621 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-06-21 06:00:49,869 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-06-21 06:00:50,097 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-06-21 06:00:50,401 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-06-21 06:00:50,749 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-06-21 06:00:51,081 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-06-21 06:00:51,372 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-06-21 06:00:51,625 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-06-21 06:00:52,026 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-06-21 06:00:52,359 [INFO] Matchbook: fetched page offset=180, 20 events (total so far: 200)
+2026-06-21 06:00:52,656 [INFO] Matchbook: fetched page offset=200, 20 events (total so far: 220)
+2026-06-21 06:00:52,908 [INFO] Matchbook: fetched page offset=220, 13 events (total so far: 233)
+2026-06-21 06:00:52,909 [INFO] Matchbook: processing 233 events
+2026-06-21 06:00:52,918 [INFO] Matchbook: processed 20/233 events, 238 markets so far
+2026-06-21 06:00:52,923 [INFO] Matchbook: processed 40/233 events, 359 markets so far
+2026-06-21 06:00:52,924 [INFO] Matchbook: processed 60/233 events, 379 markets so far
+2026-06-21 06:00:52,935 [INFO] Matchbook: processed 80/233 events, 701 markets so far
+2026-06-21 06:00:52,959 [INFO] Matchbook: processed 100/233 events, 1341 markets so far
+2026-06-21 06:00:52,978 [INFO] Matchbook: processed 120/233 events, 1863 markets so far
+2026-06-21 06:00:53,031 [INFO] Matchbook: processed 140/233 events, 2333 markets so far
+2026-06-21 06:00:53,036 [INFO] Matchbook: processed 160/233 events, 2603 markets so far
+2026-06-21 06:00:53,066 [INFO] Matchbook: processed 180/233 events, 3292 markets so far
+2026-06-21 06:00:53,082 [INFO] Matchbook: processed 200/233 events, 3668 markets so far
+2026-06-21 06:00:53,097 [INFO] Matchbook: processed 220/233 events, 4038 markets so far
+2026-06-21 06:00:53,103 [INFO] Matchbook: processed 233/233 events, 4051 markets so far
+2026-06-21 06:00:53,103 [INFO] Matchbook: 4052 total markets, 451 above 25 GBP volume
+2026-06-21 06:00:53,145 [INFO] matchbook: 4052 total, 451 above 25 GBP threshold
+2026-06-21 06:00:53,321 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-06-21_05-00.json
+2026-06-21 06:00:53,412 [INFO] Market log updated (matchbook)
+2026-06-21 06:01:23,037 [INFO] Scanner complete for matchbook. Snapshot: 2026-06-21_05-00.json
+2026-06-21 06:01:23,711 [RESEARCHER] Research cache: 61 entries loaded (TTL 6h, drift 10%)
+2026-06-21 06:01:23,792 [RESEARCHER] betfair: skipped 3 markets above volume cap (£500,000)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping English Premier League | pfa player of the year 2025/26 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping Brazilian Serie A | winner 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping Irish Premier Division | winner outright 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping US Major League Soccer | mls cup winner 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping FIFA World Cup | fifa golden ball — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping FIFA World Cup | winning group — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping FIFA World Cup | total tournament goals — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,793 [RESEARCHER] Horizon filter: skipping FIFA World Cup | england top team goalscorer — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping FIFA World Cup | who will perform at the world cup final ht show? — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping English Sky Bet League 1 | winner 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping English Sky Bet League 2 | winner 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping English Sky Bet Championship | winner 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping English Sky Bet Championship | promotion 2026/27 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping English Premier League | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping English Premier League | relegation — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping Specials | ballon d'or winner 2026 — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping The Open Championship 2026 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,794 [RESEARCHER] Horizon filter: skipping Presidents Cup 2026 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,795 [RESEARCHER] Horizon filter: skipping The Masters 2027 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,795 [RESEARCHER] Horizon filter: skipping The Ryder Cup 2027 | winner — no market_start_time (outright/long-horizon type)
+2026-06-21 06:01:23,795 [RESEARCHER] betfair: skipped 20 outright markets with no start time (BUG-093)
+2026-06-21 06:01:23,795 [RESEARCHER] betfair: 115 tradeable markets from 2026-06-21_05-00.json
+2026-06-21 06:01:23,797 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Peru
+2026-06-21 06:01:23,797 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Colombia
+2026-06-21 06:01:23,797 [RESEARCHER] Politics: skipping indefinite market: UK - Party Leaders | Next Lib Dem Leader
+2026-06-21 06:01:23,797 [RESEARCHER] Politics: skipping indefinite market: European Politics | Next Prime Minister of Sweden
+2026-06-21 06:01:23,797 [RESEARCHER] Politics: skipping indefinite market: UK - Party Leaders | Next Labour Leader
+2026-06-21 06:01:23,798 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Brazil
+2026-06-21 06:01:23,798 [RESEARCHER] Politics: capped at 5 slots — dropped 22 lowest-volume politics markets
+2026-06-21 06:01:23,807 [RESEARCHER] Market selection: 5 politics + 6 outrights + 14 other sports = 25 total (platforms: ['betfair'])
+2026-06-21 06:01:23,807 [RESEARCHER] [1/25] Which party will control the House in 2026?
+2026-06-21 06:01:24,158 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:24,494 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:24,836 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:25,177 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:27,357 [RESEARCHER] [2/25] Which party will control the Senate in 2026?
+2026-06-21 06:01:27,690 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:27,973 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:28,283 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:28,593 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:30,864 [RESEARCHER] [3/25] Los Angeles Mayoral Election
+2026-06-21 06:01:31,272 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:31,594 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:31,912 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:32,234 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:34,361 [RESEARCHER] [4/25] Greater Manchester Mayoral By-Election
+2026-06-21 06:01:34,693 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:35,093 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:35,443 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:35,875 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:38,029 [RESEARCHER] [5/25] Montana Senate Election Winner
+2026-06-21 06:01:38,346 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:38,701 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:39,053 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:39,372 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:41,548 [RESEARCHER] [6/25] Top 10 Finish
+2026-06-21 06:01:41,901 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:42,249 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:42,576 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:42,927 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:43,245 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:43,579 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:44,831 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-21 06:01:44,831 [RESEARCHER] [7/25] Top 20 Finish
+2026-06-21 06:01:45,142 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:45,461 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:45,826 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:46,194 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:46,518 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:46,866 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:47,541 [RESEARCHER] [SLASHGOLF] _golf_datagolf failed: '<' not supported between instances of 'float' and 'NoneType'
+2026-06-21 06:01:47,543 [RESEARCHER] [8/25] Top 5 Finish
+2026-06-21 06:01:47,838 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:48,160 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:48,516 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:48,860 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:49,210 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:49,535 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:50,159 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-21 06:01:50,159 [RESEARCHER] [9/25] Top 8 Finish
+2026-06-21 06:01:50,461 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:50,808 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:51,129 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:51,419 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:51,740 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:52,048 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:52,657 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-21 06:01:52,658 [RESEARCHER] [10/25] Top 6 Finish
+2026-06-21 06:01:53,006 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:53,327 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:53,646 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:53,982 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:54,306 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:54,628 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:55,240 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-21 06:01:55,240 [RESEARCHER] [11/25] Winner
+2026-06-21 06:01:55,525 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:55,833 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:56,128 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:56,448 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:56,816 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:57,169 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:57,478 [RESEARCHER] [SLASHGOLF] No tournament match for 'LPGA Meijer Classic 2026'
+2026-06-21 06:01:57,478 [RESEARCHER] [12/25] Match Odds  Draw No Bet
+2026-06-21 06:01:57,817 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:58,154 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:58,530 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:01:58,868 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:00,064 [RESEARCHER]   Data provider: 2 facts injected
+2026-06-21 06:02:00,064 [RESEARCHER] [13/25] Each Way - 10 Places
+2026-06-21 06:02:00,406 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:00,737 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:01,080 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:01,424 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:01,747 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:02,110 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:02,722 [RESEARCHER]   Data provider: 6 facts injected
+2026-06-21 06:02:02,722 [RESEARCHER] [14/25] Match Odds
+2026-06-21 06:02:03,030 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:03,389 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:03,722 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:04,061 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:05,081 [RESEARCHER]   Data provider: 4 facts injected
+2026-06-21 06:02:05,082 [RESEARCHER] [15/25] Match Odds
+2026-06-21 06:02:05,394 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:05,763 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:06,076 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:06,391 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:07,169 [RESEARCHER] [16/25] Match Odds
+2026-06-21 06:02:07,509 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:07,874 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:08,199 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:08,525 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:09,311 [RESEARCHER]   Data provider: 1 facts injected
+2026-06-21 06:02:09,311 [RESEARCHER] [17/25] Match Odds
+2026-06-21 06:02:09,658 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:09,940 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:10,296 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:10,634 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:11,520 [RESEARCHER] [18/25] Match Odds
+2026-06-21 06:02:11,835 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:12,177 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:12,515 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:12,809 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:13,566 [RESEARCHER] [19/25] Match Odds
+2026-06-21 06:02:13,914 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:14,228 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:14,598 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:14,914 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:15,676 [RESEARCHER] [20/25] Robert MacIntyre vs Joaquin Niemann
+2026-06-21 06:02:16,067 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:16,432 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:16,767 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:17,124 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:17,417 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:17,727 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:18,036 [RESEARCHER] [SLASHGOLF] No tournament match for 'Tournament Match Bets'
+2026-06-21 06:02:18,036 [RESEARCHER] [21/25] Match Odds
+2026-06-21 06:02:18,389 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:18,734 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:19,079 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:19,418 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:20,180 [RESEARCHER] [22/25] Match Odds
+2026-06-21 06:02:20,539 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:20,855 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:21,152 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:21,515 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:22,294 [RESEARCHER] [24/25] Match Odds
+2026-06-21 06:02:22,657 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:23,022 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:23,369 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:23,684 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:24,469 [RESEARCHER] [25/25] Round 4 Score - Matt Fitzpatrick
+2026-06-21 06:02:24,786 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:25,143 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:25,512 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:25,857 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:26,233 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:26,595 [RESEARCHER] Tavily error 402: {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+2026-06-21 06:02:26,913 [RESEARCHER] [SLASHGOLF] No tournament match for 'Player Round Scores'
+2026-06-21 06:02:26,915 [RESEARCHER] Research cache: pruned 1 entries older than 24h
+2026-06-21 06:02:26,948 [RESEARCHER] researcher.py: skipped 1 markets (1 horse_racing) (excluded_sports)
+2026-06-21 06:02:26,948 [RESEARCHER] Research cache: 0 hits, 25 fresh lookups
+2026-06-21 06:02:26,960 [RESEARCHER] Research brief written: 2026-06-21_05-02_brief.json
+2026-06-21 06:02:26,962 [RESEARCHER] Markets: 24 | Errors: 0 | Credits used: 114
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-21_05-02_brief.json
+2026-06-21 06:02:34,840 [ANALYZER] Loading research brief: 2026-06-21_05-02_brief.json
+2026-06-21 06:02:35,031 [ANALYZER] Betfair cross-ref index: 2983 runners
+2026-06-21 06:02:35,042 [ANALYZER] BUG-154: far-future market held (~136d out): USA 2026 Midterm Elections | Which party will control the House in 2026?
+2026-06-21 06:02:35,044 [ANALYZER] BUG-154: far-future market held (~136d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?
+2026-06-21 06:02:35,048 [ANALYZER] Market skipped (overbook 138% > 130%): UK - Mayoral Elections | Greater Manchester Mayoral By-Election
+2026-06-21 06:02:35,049 [ANALYZER] Market skipped (overbook 140% > 130%): USA 2026 Midterm Elections | Montana Senate Election Winner
+2026-06-21 06:02:35,064 [ANALYZER] BUG-130: Skipped unsupported market type:   US Open 2026 | Top 8 Finish [betfair]
+2026-06-21 06:02:35,081 [ANALYZER] BUG-130: Skipped unsupported market type: Tournament Match Bets | Robert MacIntyre vs Joaquin Niemann [betfair]
+2026-06-21 06:02:35,084 [ANALYZER] BUG-130: Skipped unsupported market type: Player Round Scores | Round 4 Score - Matt Fitzpatrick [betfair]
+2026-06-21 06:02:35,085 [ANALYZER] Analyzed 17 markets
+2026-06-21 06:02:35,085 [ANALYZER] Found 7 signals (10pp+)
+2026-06-21 06:02:35,086 [ANALYZER] Logged 24 distribution entries (7pp+)
+2026-06-21 06:02:35,096 [ANALYZER] Research output written: 2026-06-21_05-02_research.json
+2026-06-21 06:02:35,100 [ANALYZER] Appended 62 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-06-21_05-02_research.json
+2026-06-21 06:02:37,131 [RESOLVE] Found 12 open trade(s) to check (paper_mode=True)
+2026-06-21 06:02:37,340 [RESOLVE] Using cached Betfair session token
+2026-06-21 06:02:37,346 [RESOLVE] Betfair: checking 11 open-trade markets
+2026-06-21 06:03:03,552 [RESOLVE] Snapshot name lookup: found mappings for 8 markets
+2026-06-21 06:03:03,732 [RESOLVE] Settled markets found: 0
+2026-06-21 06:03:03,732 [RESOLVE] No open-trade markets have settled yet.
+Balance: £112.21 | Reserved: £46.44 | Available: £65.77
+Stake scaling: Kelly balance £112.21 → max stake £15.00 (was £50.00)
+BUG-134: Profit-relative cap: Scottie Scheffler BACK @ 1.44 — £2.00 → £1.67 (risk:reward would be 2.4:1)
+Skipping (already open): Top 5 Finish BACK
+Skipping (conflicting back in same market): Top 5 Finish
+Skipping (conflicting back in same market): Top 5 Finish
+Skipping (conflicting back in same market): Top 5 Finish
+Skipping (conflicting back in same market): Top 5 Finish
+BUG-134: Profit-relative cap: Scottie Scheffler BACK @ 1.31 — £0.40 → £0.24 (risk:reward would be 3.4:1)
+Reduced stake: Top 6 Finish edge 6.0pp < 5.0pp → £2.00 (20%)
+Skipping (already open): Top 6 Finish BACK
+BUG-134: Profit-relative cap: Wyndham Clark BACK @ 1.27 — £0.28 → £0.14 (risk:reward would be 3.9:1)
+Reduced stake: Each Way - 10 Places edge 5.7pp < 5.0pp → £2.00 (14%)
+Skipping (conflicting back in same market): Each Way - 10 Places
+No new paper trades to log
+Signal drought counter: 1 consecutive zero-signal run(s)
+2026-06-21 06:03:05,091 [INFO] ============================================================
+2026-06-21 06:03:05,092 [INFO] DIGEST RUN STARTED
+2026-06-21 06:03:05,092 [INFO] ============================================================
+2026-06-21 06:03:10,220 [INFO] Mid-tournament golf guard (BUG-152-F3):   US Open 2026 | Top 10 Finish — leaderboard data in key_facts
+2026-06-21 06:03:10,220 [INFO] Mid-tournament golf guard (BUG-152-F3):   US Open 2026 | Top 5 Finish — leaderboard data in key_facts
+2026-06-21 06:03:10,220 [INFO] Mid-tournament golf guard (BUG-152-F3):   US Open 2026 | Top 8 Finish — leaderboard data in key_facts
+2026-06-21 06:03:10,221 [INFO] Mid-tournament golf guard (BUG-152-F3):   US Open 2026 | Top 6 Finish — leaderboard data in key_facts
+2026-06-21 06:03:10,221 [INFO] Cricket no-result flag (BUG-152-F4b): England v New Zealand — No Result runner or England/ICC Women venue
+2026-06-21 06:03:10,222 [INFO] Domestic T20 suppress (BUG-152-F4a): Dhanbad Diamonds v Santhal Strikers — only 0 key_facts
+2026-06-21 06:03:10,222 [INFO] Research quality gate (BUG-148d): 24 low-quality market(s) identified
+2026-06-21 06:03:10,222 [INFO] Research quality gate (BUG-148d): suppressed 7 signal(s)
+/home/jwfalc/smarkets-bot/scripts/digest.py:630: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _now_utc = datetime.datetime.utcnow().isoformat()
+2026-06-21 06:03:13,928 [INFO] cashout_advisor [profit_threshold]: Scottie Scheffler (BACK) — Odds shortened from 1.9 to 1.190 — ~92% of max profit now locked in
+2026-06-21 06:03:13,928 [INFO] Cash-out advisory: Scottie Scheffler (BACK) trigger=profit_threshold
+2026-06-21 06:03:14,080 [INFO] Telegram notification sent
+2026-06-21 06:03:14,082 [INFO] cashout_advisor: 1 advisory(s) fired this run
+2026-06-21 06:03:14,082 [INFO] Cash-out advisories fired: 1
+2026-06-21 06:03:14,100 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-06-21 06:03:14,197 [INFO] Period logs updated: 2026-06-21, 2026-W25, 2026-06, 2026-Q2
+2026-06-21 06:03:14,198 [INFO] Run log: [2026-06-21 05:03 UTC] status=ok | platforms=betfair,matchbook | markets=589 | signals=0 | alerts=0 | movements=10 | consec_losses=0
+2026-06-21 06:03:14,198 [INFO] Digest complete
+Distribution log updated: 17 new entries added
+Total entries: 1501
+  near_certainty: 15 total, 12 resolved
+  high_prob: 57 total, 35 resolved
+  7-9pp: 471 total, 145 resolved
+  10-11pp: 244 total, 82 resolved
+  12pp+: 714 total, 458 resolved
+
+REVIEW DUE: 7-9pp band has 145 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 145 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-06-21 06:03:17,111 [STATIC-DASH] Building dashboard data…
+2026-06-21 06:03:17,115 [STATIC-DASH] Data collected: 85 trades, 0 signals
+2026-06-21 06:03:17,150 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (464KB)
+2026-06-21 06:03:17,168 [STATIC-DASH] Copied PWA asset: manifest.json
+2026-06-21 06:03:17,170 [STATIC-DASH] Copied PWA asset: apple-touch-icon.png
+2026-06-21 06:03:17,172 [STATIC-DASH] Copied PWA asset: icon-192.png
+2026-06-21 06:03:17,176 [STATIC-DASH] Copied PWA asset: icon-512.png
+2026-06-21 06:03:17 [DEPLOY] Starting dashboard deploy...
+HTML written OK
+2026-06-21 06:03:17 [DEPLOY] Static HTML built
+[main 7534fb7] Deploy: 2026-06-21 06:03 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   8fd6bbd..7534fb7  main -> main
+2026-06-21 06:03:17 [DEPLOY] Deploy complete: Deploy: 2026-06-21 06:03 UTC
