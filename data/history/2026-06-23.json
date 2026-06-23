@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-23T02:05:38.304708",
+  "date": "2026-06-23",
+  "last_routine": "Run completed: 2026-06-22 22:05:21 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n23 | Errors: 0 | Credits used: 0\n[ANALYZER] Loading research brief: 2026-06-22_21-04_brief.json\n[ANALYZER] Betfair cross-ref index: 2693 runners\n[ANALYZER] BUG-154: far-future market held (~135d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~135d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] BUG-154: far-future market held (~135d out): USA - Politics Specials | Los Angeles Mayoral Election\n[ANALYZER] MOD-246: suppressed BACK Scottie Scheffler on Winner \u2014 edge 34.1pp >= ceiling 15.0pp\n[ANALYZER] MOD-246: suppressed BACK Patrick Reed on Winner \u2014 edge 24.9pp >= ceiling 15.0pp\n[ANALYZER] Market skipped (overbook 131% > 130%): Hampshire W v Warwickshire W | Match Odds\n[ANALYZER] Market skipped (overbook 134% > 130%): Royals of Rayalaseema v Simhadri Vizag Lions | Match Odds\n[ANALYZER] BUG-130: Skipped unsupported market type: NBA Draft Markets | 2026 NBA Number 2 Overall Pick [betfair]\n[ANALYZER] Analyzed 16 markets\n[ANALYZER] Found 3 signals (10pp+)\n[ANALYZER] Logged 17 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-22_21-04_research.json\n[ANALYZER] Appended 55 edge traces to edge_traces.json\nLogged paper trade: Winner - BACK @ 5.88% (edge: 11.05pp) [betfair] | available now \u00a387.79",
+  "resolved_total": 70,
+  "overall_win_rate_pct": 55.7,
+  "paper_pnl_total": 13.18,
+  "by_band": {
+    "12pp+": {
+      "n": 33,
+      "wins": 16,
+      "pnl": -18.16,
+      "win_rate_pct": 48.5
+    },
+    "10-11pp": {
+      "n": 17,
+      "wins": 10,
+      "pnl": 18.71,
+      "win_rate_pct": 58.8
+    },
+    "7-9pp": {
+      "n": 11,
+      "wins": 9,
+      "pnl": 4.35,
+      "win_rate_pct": 81.8
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 70,
+      "wins": 39,
+      "pnl": 13.18,
+      "win_rate_pct": 55.7
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 60,
+      "wins": 32,
+      "pnl": -0.52,
+      "win_rate_pct": 53.3
+    },
+    "lay": {
+      "n": 10,
+      "wins": 7,
+      "pnl": 13.7,
+      "win_rate_pct": 70.0
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 12.63,
+      "was_correct": true,
+      "paper_pnl": 2.27,
+      "resolved_at": "2026-06-16T12:26:14.614798"
+    },
+    {
+      "market_name": "Top 6 Finish",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.58,
+      "was_correct": true,
+      "paper_pnl": 2.47,
+      "resolved_at": "2026-06-22T05:06:52.334778"
+    },
+    {
+      "market_name": "6f Hcap",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.24,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-16T17:03:38.194582"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.97,
+      "was_correct": true,
+      "paper_pnl": 2.62,
+      "resolved_at": "2026-06-16T17:03:38.322863"
+    },
+    {
+      "market_name": "Completed Match",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 52.26,
+      "was_correct": true,
+      "paper_pnl": 14.25,
+      "resolved_at": "2026-06-16T21:04:29.100991"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 20.01,
+      "was_correct": false,
+      "paper_pnl": -5.0,
+      "resolved_at": "2026-06-17T05:04:58.645246"
+    },
+    {
+      "market_name": "1m1f Hcap",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 17.62,
+      "was_correct": false,
+      "paper_pnl": -4.36,
+      "resolved_at": "2026-06-16T17:03:38.454091"
+    },
+    {
+      "market_name": "4 TBP",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-16T17:03:38.586549"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": true,
+      "paper_pnl": 8.55,
+      "resolved_at": "2026-06-22T05:06:52.486928"
+    },
+    {
+      "market_name": "To Be Placed",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -4.0,
+      "resolved_at": "2026-06-16T17:03:38.608413"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.62,
+      "was_correct": true,
+      "paper_pnl": 2.01,
+      "resolved_at": "2026-06-16T21:04:29.238306"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.07,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-18T05:04:18.924391"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 15.66,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-18T05:04:19.064596"
+    },
+    {
+      "market_name": "Each Way - 10 Places",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-22T05:06:52.661340"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.67,
+      "was_correct": true,
+      "paper_pnl": 0.27,
+      "resolved_at": "2026-06-20T17:02:12.152975"
+    }
+  ],
+  "flags": []
+}
