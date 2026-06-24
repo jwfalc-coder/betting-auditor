@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-23T02:05:38.304708",
-  "date": "2026-06-23",
-  "last_routine": "Run completed: 2026-06-22 22:05:21 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n23 | Errors: 0 | Credits used: 0\n[ANALYZER] Loading research brief: 2026-06-22_21-04_brief.json\n[ANALYZER] Betfair cross-ref index: 2693 runners\n[ANALYZER] BUG-154: far-future market held (~135d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~135d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] BUG-154: far-future market held (~135d out): USA - Politics Specials | Los Angeles Mayoral Election\n[ANALYZER] MOD-246: suppressed BACK Scottie Scheffler on Winner \u2014 edge 34.1pp >= ceiling 15.0pp\n[ANALYZER] MOD-246: suppressed BACK Patrick Reed on Winner \u2014 edge 24.9pp >= ceiling 15.0pp\n[ANALYZER] Market skipped (overbook 131% > 130%): Hampshire W v Warwickshire W | Match Odds\n[ANALYZER] Market skipped (overbook 134% > 130%): Royals of Rayalaseema v Simhadri Vizag Lions | Match Odds\n[ANALYZER] BUG-130: Skipped unsupported market type: NBA Draft Markets | 2026 NBA Number 2 Overall Pick [betfair]\n[ANALYZER] Analyzed 16 markets\n[ANALYZER] Found 3 signals (10pp+)\n[ANALYZER] Logged 17 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-22_21-04_research.json\n[ANALYZER] Appended 55 edge traces to edge_traces.json\nLogged paper trade: Winner - BACK @ 5.88% (edge: 11.05pp) [betfair] | available now \u00a387.79",
-  "resolved_total": 70,
-  "overall_win_rate_pct": 55.7,
-  "paper_pnl_total": 13.18,
+  "generated_at": "2026-06-24T02:10:39.520892",
+  "date": "2026-06-24",
+  "last_routine": "Run completed: 2026-06-23 22:06:00 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n24 | Errors: 9 | Credits used: 0\n[ANALYZER] Loading research brief: 2026-06-23_21-05_brief.json\n[ANALYZER] Betfair cross-ref index: 4067 runners\n[ANALYZER] BUG-154: far-future market held (~134d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~134d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] MOD-246: suppressed BACK Scottie Scheffler on Winner \u2014 edge 27.8pp >= ceiling 15.0pp\n[ANALYZER] MOD-246: suppressed BACK Joaquin Niemann on Winner \u2014 edge 19.6pp >= ceiling 15.0pp\n[ANALYZER] BUG-130: Skipped unsupported market type: England v New Zealand Series Betting | Series Betting [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Tournament Match Bets | Patrick Reed v Joaquin Niemann [betfair]\n[ANALYZER] Analyzed 18 markets\n[ANALYZER] Found 5 signals (10pp+)\n[ANALYZER] Logged 20 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-23_21-05_research.json\n[ANALYZER] Appended 74 edge traces to edge_traces.json",
+  "resolved_total": 71,
+  "overall_win_rate_pct": 56.3,
+  "paper_pnl_total": 13.65,
   "by_band": {
     "12pp+": {
       "n": 33,
@@ -19,26 +19,26 @@
       "win_rate_pct": 58.8
     },
     "7-9pp": {
-      "n": 11,
-      "wins": 9,
-      "pnl": 4.35,
-      "win_rate_pct": 81.8
+      "n": 12,
+      "wins": 10,
+      "pnl": 4.82,
+      "win_rate_pct": 83.3
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 70,
-      "wins": 39,
-      "pnl": 13.18,
-      "win_rate_pct": 55.7
+      "n": 71,
+      "wins": 40,
+      "pnl": 13.65,
+      "win_rate_pct": 56.3
     }
   },
   "by_recommendation": {
     "back": {
-      "n": 60,
-      "wins": 32,
-      "pnl": -0.52,
-      "win_rate_pct": 53.3
+      "n": 61,
+      "wins": 33,
+      "pnl": -0.05,
+      "win_rate_pct": 54.1
     },
     "lay": {
       "n": 10,
@@ -48,15 +48,6 @@
     }
   },
   "recent_signals": [
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 12.63,
-      "was_correct": true,
-      "paper_pnl": 2.27,
-      "resolved_at": "2026-06-16T12:26:14.614798"
-    },
     {
       "market_name": "Top 6 Finish",
       "platform": "betfair",
@@ -182,6 +173,15 @@
       "was_correct": true,
       "paper_pnl": 0.27,
       "resolved_at": "2026-06-20T17:02:12.152975"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.18,
+      "was_correct": true,
+      "paper_pnl": 0.47,
+      "resolved_at": "2026-06-23T14:02:18.751776"
     }
   ],
   "flags": []
