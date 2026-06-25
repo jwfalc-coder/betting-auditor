@@ -28,7 +28,7 @@ Your permitted actions are strictly:
 
 You run **once per day at 07:00 UTC**. Your job is to analyse the **full previous day** (all 5 Pi runs).
 
-All data in this repo was pushed at **03:00 UTC** and reflects the **previous day's** runs.
+The daily performance snapshot (`data/daily_snapshot.json`) is pushed at **03:00 UTC** and reflects the **previous day's** runs. Routine log files are pushed to `data/routine_logs/` immediately after each Pi run completes.
 
 Pi routine schedule (UTC): **05:00, 09:30, 14:00, 17:00, 21:00** (= 06:00, 10:30, 15:00, 18:00, 22:00 BST)
 
@@ -38,10 +38,10 @@ For example: if `daily_snapshot.json["date"]` = `"2026-05-16"`, the snapshot_dat
 
 Read **ALL** routine logs from the snapshot_date:
 - `routine_[snapshot_date]_0600.log`
-- `routine_[snapshot_date]_1000.log`
-- `routine_[snapshot_date]_1400.log`
+- `routine_[snapshot_date]_1030.log`
+- `routine_[snapshot_date]_1500.log`
 - `routine_[snapshot_date]_1800.log`
-- `routine_[snapshot_date]_2300.log`
+- `routine_[snapshot_date]_2200.log`
 
 If any logs are missing, note this in your report. Use whatever is available.
 
