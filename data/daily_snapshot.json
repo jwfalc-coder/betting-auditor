@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-27T02:12:47.040403",
-  "date": "2026-06-27",
-  "last_routine": "Run completed: 2026-06-27 00:03:37 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Loading research brief: 2026-06-26_23-03_brief.json\n[ANALYZER] Betfair cross-ref index: 4454 runners\n[ANALYZER] BUG-154: far-future market held (~131d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~131d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] Politics: Labour \u2014 Polling prior 33.0% applied (blended market_prob=58.8%)\n[ANALYZER] Politics: Reform UK \u2014 Polling prior 30.0% applied (blended market_prob=20.1%)\n[ANALYZER] MOD-256: suppressed BACK Eugenio Chacarra on Top 20 Finish \u2014 odds 1.090 < floor 1.15\n[ANALYZER] MOD-256: suppressed BACK Matt Wallace on Top 20 Finish \u2014 odds 1.100 < floor 1.15\n[ANALYZER] MOD-256: suppressed BACK Joaquin Niemann on Top 5 Finish \u2014 odds 1.090 < floor 1.15\n[ANALYZER] Market skipped (overbook 588% > 130%):   Champ Tour-Dick's Sporting Goods Open 2026 | Winner\n[ANALYZER] BUG-130: Skipped unsupported market type: Uruguay v Spain | Over/Under 2.5 Goals [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Cape Verde v Saudi Arabia | Over/Under 2.5 Goals [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Tournament Match Bets | Patrick Reed v Joaquin Niemann [betfair]\n[ANALYZER] Analyzed 14 markets\n[ANALYZER] Found 0 signals (10pp+)\n[ANALYZER] Logged 8 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-26_23-03_research.json\n[ANALYZER] Appended 52 edge traces to edge_traces.json",
-  "resolved_total": 76,
-  "overall_win_rate_pct": 53.9,
-  "paper_pnl_total": 6.22,
+  "generated_at": "2026-06-28T02:31:54.853609",
+  "date": "2026-06-28",
+  "last_routine": "Run completed: 2026-06-27 22:02:50 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Loading research brief: 2026-06-27_21-02_brief.json\n[ANALYZER] Betfair cross-ref index: 3381 runners\n[ANALYZER] BUG-154: far-future market held (~130d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~130d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Dylan Frittelli:   DPW Tour Italian Open 2026 | Top 10 Finish\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 England: England v New Zealand | Match Odds  Draw No Bet\n[ANALYZER] MOD-274: Moneyline BACK blocked \u2014 Los Angeles Sparks odds 3.45 > 2.5: Los Angeles Sparks @ Indiana Fever | Moneyline\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Los Angeles Sparks: Los Angeles Sparks @ Indiana Fever | Moneyline\n[ANALYZER] BUG-130: Skipped unsupported market type: Calgary Stampeders @ British Columbia Lions | Handicap [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Tournament Match Bets | Patrick Reed v Joaquin Niemann [betfair]\n[ANALYZER] Analyzed 21 markets\n[ANALYZER] Found 1 signals (10pp+)\n[ANALYZER] Logged 5 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-27_21-02_research.json\n[ANALYZER] Appended 69 edge traces to edge_traces.json",
+  "resolved_total": 80,
+  "overall_win_rate_pct": 55.0,
+  "paper_pnl_total": 5.95,
   "by_band": {
     "12pp+": {
       "n": 36,
@@ -19,26 +19,26 @@
       "win_rate_pct": 55.6
     },
     "7-9pp": {
-      "n": 13,
-      "wins": 11,
-      "pnl": 5.39,
-      "win_rate_pct": 84.6
+      "n": 17,
+      "wins": 14,
+      "pnl": 5.12,
+      "win_rate_pct": 82.4
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 76,
-      "wins": 41,
-      "pnl": 6.22,
-      "win_rate_pct": 53.9
+      "n": 80,
+      "wins": 44,
+      "pnl": 5.95,
+      "win_rate_pct": 55.0
     }
   },
   "by_recommendation": {
     "back": {
-      "n": 66,
-      "wins": 34,
-      "pnl": -7.48,
-      "win_rate_pct": 51.5
+      "n": 70,
+      "wins": 37,
+      "pnl": -7.75,
+      "win_rate_pct": 52.9
     },
     "lay": {
       "n": 10,
@@ -48,42 +48,6 @@
     }
   },
   "recent_signals": [
-    {
-      "market_name": "1m1f Hcap",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 17.62,
-      "was_correct": false,
-      "paper_pnl": -4.36,
-      "resolved_at": "2026-06-16T17:03:38.454091"
-    },
-    {
-      "market_name": "4 TBP",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": null,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-06-16T17:03:38.586549"
-    },
-    {
-      "market_name": "Top 10 Finish",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": null,
-      "was_correct": true,
-      "paper_pnl": 8.55,
-      "resolved_at": "2026-06-22T05:06:52.486928"
-    },
-    {
-      "market_name": "To Be Placed",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": null,
-      "was_correct": false,
-      "paper_pnl": -4.0,
-      "resolved_at": "2026-06-16T17:03:38.608413"
-    },
     {
       "market_name": "Match Odds",
       "platform": "betfair",
@@ -182,6 +146,42 @@
       "was_correct": false,
       "paper_pnl": -2.0,
       "resolved_at": "2026-06-26T21:03:51.926007"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-27T14:03:36.724660"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.5,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-27T17:03:02.654716"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.43,
+      "was_correct": true,
+      "paper_pnl": 0.59,
+      "resolved_at": "2026-06-27T14:03:36.904259"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-27T21:02:38.520101"
     }
   ],
   "flags": []
