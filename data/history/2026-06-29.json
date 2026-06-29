@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-29T02:06:46.113134",
+  "date": "2026-06-29",
+  "last_routine": "Run completed: 2026-06-28 22:03:04 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Loading research brief: 2026-06-28_21-02_brief.json\n[ANALYZER] Betfair cross-ref index: 2806 runners\n[ANALYZER] BUG-154: far-future market held (~129d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~129d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Sport Recife: Fortaleza EC v Sport Recife | Match Odds\n[ANALYZER] BUG-130: Skipped unsupported market type: Zimbabwe v Bangladesh | Zimbabwe 1st Innings Runs Line [betfair]\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Golden State Valkyries: New York Liberty @ Golden State Valkyries | Moneyline\n[ANALYZER] Market skipped (overbook 167% > 130%): Karimnagar Diamonds v Medak Falcons | Match Odds\n[ANALYZER] BUG-130: Skipped unsupported market type: San Francisco Unicorns v Washington Freedom | 1st Innings 10 Overs Line [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Iran v Syria | Handicap [betfair]\n[ANALYZER] Analyzed 11 markets\n[ANALYZER] Found 0 signals (10pp+)\n[ANALYZER] Logged 3 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-28_21-02_research.json\n[ANALYZER] Appended 29 edge traces to edge_traces.json",
+  "resolved_total": 86,
+  "overall_win_rate_pct": 53.5,
+  "paper_pnl_total": 1.74,
+  "by_band": {
+    "12pp+": {
+      "n": 38,
+      "wins": 17,
+      "pnl": -24.26,
+      "win_rate_pct": 44.7
+    },
+    "10-11pp": {
+      "n": 21,
+      "wins": 10,
+      "pnl": 12.01,
+      "win_rate_pct": 47.6
+    },
+    "7-9pp": {
+      "n": 18,
+      "wins": 15,
+      "pnl": 5.71,
+      "win_rate_pct": 83.3
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 86,
+      "wins": 46,
+      "pnl": 1.74,
+      "win_rate_pct": 53.5
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 73,
+      "wins": 38,
+      "pnl": -11.16,
+      "win_rate_pct": 52.1
+    },
+    "lay": {
+      "n": 13,
+      "wins": 8,
+      "pnl": 12.9,
+      "win_rate_pct": 61.5
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.99,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-28T14:06:33.846863"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.18,
+      "was_correct": true,
+      "paper_pnl": 0.47,
+      "resolved_at": "2026-06-23T14:02:18.751776"
+    },
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 12.26,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-25T22:30:18.360510"
+    },
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.83,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-25T22:30:18.537524"
+    },
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.4,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-25T21:06:46.945434"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-26T14:08:14.641534"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 12.29,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-26T21:03:51.926007"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 6.0,
+      "was_correct": true,
+      "paper_pnl": 0.59,
+      "resolved_at": "2026-06-28T14:06:33.875935"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-27T14:03:36.724660"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 18.0,
+      "was_correct": true,
+      "paper_pnl": 1.9,
+      "resolved_at": "2026-06-28T14:06:34.061625"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.5,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-27T17:03:02.654716"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.43,
+      "was_correct": true,
+      "paper_pnl": 0.59,
+      "resolved_at": "2026-06-27T14:03:36.904259"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-27T21:02:38.520101"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.99,
+      "was_correct": false,
+      "paper_pnl": -0.5,
+      "resolved_at": "2026-06-28T14:06:34.242974"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.23,
+      "was_correct": false,
+      "paper_pnl": -2.2,
+      "resolved_at": "2026-06-28T17:04:22.525138"
+    }
+  ],
+  "flags": []
+}
