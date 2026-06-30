@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-30T02:05:24.405526",
+  "date": "2026-06-30",
+  "last_routine": "Run completed: 2026-06-29 22:05:06 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Loading research brief: 2026-06-29_21-04_brief.json\n[ANALYZER] Betfair cross-ref index: 3704 runners\n[ANALYZER] BUG-154: far-future market held (~128d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~128d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Chris Gotterup:   PGA John Deere Classic 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Ben Griffin:   PGA John Deere Classic 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Keith Mitchell:   PGA John Deere Classic 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Keegan Bradley:   PGA John Deere Classic 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Jackson Koivun:   PGA John Deere Classic 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 J.T. Poston:   PGA John Deere Classic 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Joaquin Niemann:   DPW Tour BMW International Open 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Eugenio Chacarra:   DPW Tour BMW International Open 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Angel Ayora:   DPW Tour BMW International Open 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Patrick Reed:   DPW Tour BMW International Open 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Rasmus Neergaard-Petersen:   DPW Tour BMW International Open 2026 | Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Daniel Hillier:   DPW Tour BMW International Open 2026 | Winner\n[ANALYZER] BUG-130: Skipped unsupported market type: Netherlands v Morocco | Over/Under 2.5 Goals [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Zimbabwe v Bangladesh | Bangladesh 2nd Innings Runs Line [betfair]\n[ANALYZER] Market skipped (overbook 146% > 130%): Mysore Warriors v Coastal Kings Mangaluru | Match Odds\n[ANALYZER] BUG-130: Skipped unsupported market type: Criollos de Caguas v Leones de Ponce | Total Points [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Gigantes de Carolina v Osos de Manati | Total Points [betfair]\n[ANALYZER] BUG-130: Skipped unsupported market type: Caneros del Este v Metros de Santiago | Total Points [betfair]\n[ANALYZER] Analyzed 17 markets\n[ANALYZER] Found 0 signals (10pp+)\n[ANALYZER] Logged 15 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-06-29_21-04_research.json\n[ANALYZER] Appended 56 edge traces to edge_traces.json",
+  "resolved_total": 90,
+  "overall_win_rate_pct": 53.3,
+  "paper_pnl_total": -1.14,
+  "by_band": {
+    "12pp+": {
+      "n": 40,
+      "wins": 17,
+      "pnl": -28.26,
+      "win_rate_pct": 42.5
+    },
+    "10-11pp": {
+      "n": 21,
+      "wins": 10,
+      "pnl": 12.01,
+      "win_rate_pct": 47.6
+    },
+    "7-9pp": {
+      "n": 20,
+      "wins": 17,
+      "pnl": 6.83,
+      "win_rate_pct": 85.0
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 90,
+      "wins": 48,
+      "pnl": -1.14,
+      "win_rate_pct": 53.3
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 77,
+      "wins": 40,
+      "pnl": -14.04,
+      "win_rate_pct": 51.9
+    },
+    "lay": {
+      "n": 13,
+      "wins": 8,
+      "pnl": 12.9,
+      "win_rate_pct": 61.5
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 11.83,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-25T22:30:18.537524"
+    },
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.4,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-25T21:06:46.945434"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.83,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-29T05:09:37.470744"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 14.83,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-29T05:09:37.663450"
+    },
+    {
+      "market_name": "Top 20 Finish",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 6.0,
+      "was_correct": true,
+      "paper_pnl": 0.59,
+      "resolved_at": "2026-06-29T14:07:22.312421"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-26T14:08:14.641534"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 12.29,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-26T21:03:51.926007"
+    },
+    {
+      "market_name": "Top 10 Finish",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 6.0,
+      "was_correct": true,
+      "paper_pnl": 0.59,
+      "resolved_at": "2026-06-28T14:06:33.875935"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-27T14:03:36.724660"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 18.0,
+      "was_correct": true,
+      "paper_pnl": 1.9,
+      "resolved_at": "2026-06-28T14:06:34.061625"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.5,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-27T17:03:02.654716"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.43,
+      "was_correct": true,
+      "paper_pnl": 0.59,
+      "resolved_at": "2026-06-27T14:03:36.904259"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.57,
+      "resolved_at": "2026-06-27T21:02:38.520101"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.99,
+      "was_correct": false,
+      "paper_pnl": -0.5,
+      "resolved_at": "2026-06-28T14:06:34.242974"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.23,
+      "was_correct": false,
+      "paper_pnl": -2.2,
+      "resolved_at": "2026-06-28T17:04:22.525138"
+    }
+  ],
+  "flags": []
+}
