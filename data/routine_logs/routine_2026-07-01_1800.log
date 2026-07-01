@@ -1,0 +1,295 @@
+Sent
+2026-07-01 18:00:02,627 [INFO] ============================================================
+2026-07-01 18:00:02,628 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-07-01 18:00:02,628 [INFO] ============================================================
+2026-07-01 18:00:03,047 [INFO] Using cached Betfair session token
+2026-07-01 18:00:03,173 [INFO] Catalogue: 100 markets for sport ID 1 (window=48h)
+2026-07-01 18:00:03,280 [INFO] Catalogue: 100 markets for sport ID 2 (window=48h)
+2026-07-01 18:00:03,394 [INFO] Catalogue: 100 markets for sport ID 7 (window=48h)
+2026-07-01 18:00:03,501 [INFO] Catalogue: 100 markets for sport ID 4 (window=48h)
+2026-07-01 18:00:03,601 [INFO] Catalogue: 0 markets for sport ID 2378961 (window=168h)
+2026-07-01 18:00:03,767 [INFO] Catalogue: 77 markets for sport ID 3 (window=168h)
+2026-07-01 18:00:04,079 [INFO] Catalogue: 100 markets for sport ID 7522 (window=48h)
+2026-07-01 18:00:04,157 [INFO] Catalogue: 3 markets for sport ID 6423 (window=48h)
+2026-07-01 18:00:04,157 [INFO] Betfair: fetching prices for 580 markets...
+2026-07-01 18:00:09,073 [INFO] Betfair: enriching 580 markets with price data...
+2026-07-01 18:00:09,078 [INFO] Betfair: enriched 50/580 markets, 5 tradeable so far
+2026-07-01 18:00:09,088 [INFO] Betfair: enriched 100/580 markets, 9 tradeable so far
+2026-07-01 18:00:09,091 [INFO] Betfair: enriched 150/580 markets, 13 tradeable so far
+2026-07-01 18:00:09,093 [INFO] Betfair: enriched 200/580 markets, 14 tradeable so far
+2026-07-01 18:00:09,103 [INFO] Betfair: enriched 250/580 markets, 41 tradeable so far
+2026-07-01 18:00:09,114 [INFO] Betfair: enriched 300/580 markets, 65 tradeable so far
+2026-07-01 18:00:09,118 [INFO] Betfair: enriched 350/580 markets, 76 tradeable so far
+2026-07-01 18:00:09,121 [INFO] Betfair: enriched 400/580 markets, 78 tradeable so far
+2026-07-01 18:00:09,175 [INFO] Betfair: enriched 450/580 markets, 101 tradeable so far
+2026-07-01 18:00:09,227 [INFO] Betfair: enriched 500/580 markets, 117 tradeable so far
+2026-07-01 18:00:09,294 [INFO] Betfair: enriched 550/580 markets, 118 tradeable so far
+2026-07-01 18:00:09,325 [INFO] Betfair: enriched 580/580 markets, 123 tradeable so far
+2026-07-01 18:00:09,328 [INFO] Betfair: 580 total markets, 123 above 100 GBP volume
+2026-07-01 18:00:09,450 [INFO] Outrights: 24 markets for sport 1
+2026-07-01 18:00:09,539 [INFO] Outrights: 12 markets for sport 3
+2026-07-01 18:00:09,630 [INFO] Outrights: 50 markets for sport 2378961
+2026-07-01 18:00:10,395 [INFO] Outrights: 69 markets above 25 GBP
+2026-07-01 18:00:10,402 [INFO] Betfair: added 62 outright markets for cross-ref
+2026-07-01 18:00:10,404 [INFO] betfair: 642 total, 185 above 100 GBP threshold
+2026-07-01 18:00:10,734 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-07-01_17-00.json
+2026-07-01 18:00:10,892 [INFO] Market log updated (betfair)
+2026-07-01 18:00:41,909 [INFO] Scanner complete for betfair. Snapshot: 2026-07-01_17-00.json
+2026-07-01 18:00:42,227 [INFO] ============================================================
+2026-07-01 18:00:42,228 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-07-01 18:00:42,228 [INFO] ============================================================
+2026-07-01 18:00:42,581 [INFO] Using cached Matchbook session token
+2026-07-01 18:00:42,582 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-07-01 18:00:42,704 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-07-01 18:00:43,044 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-07-01 18:00:43,279 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-07-01 18:00:43,513 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-07-01 18:00:43,769 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-07-01 18:00:44,037 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-07-01 18:00:44,280 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-07-01 18:00:44,579 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-07-01 18:00:44,819 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-07-01 18:00:45,069 [INFO] Matchbook: fetched page offset=180, 20 events (total so far: 200)
+2026-07-01 18:00:45,395 [INFO] Matchbook: fetched page offset=200, 20 events (total so far: 220)
+2026-07-01 18:00:45,786 [INFO] Matchbook: fetched page offset=220, 20 events (total so far: 240)
+2026-07-01 18:00:46,031 [INFO] Matchbook: fetched page offset=240, 7 events (total so far: 247)
+2026-07-01 18:00:46,031 [INFO] Matchbook: processing 247 events
+2026-07-01 18:00:46,037 [INFO] Matchbook: processed 20/247 events, 193 markets so far
+2026-07-01 18:00:46,058 [INFO] Matchbook: processed 40/247 events, 580 markets so far
+2026-07-01 18:00:46,059 [INFO] Matchbook: processed 60/247 events, 600 markets so far
+2026-07-01 18:00:46,060 [INFO] Matchbook: processed 80/247 events, 620 markets so far
+2026-07-01 18:00:46,064 [INFO] Matchbook: processed 100/247 events, 807 markets so far
+2026-07-01 18:00:46,070 [INFO] Matchbook: processed 120/247 events, 995 markets so far
+2026-07-01 18:00:46,074 [INFO] Matchbook: processed 140/247 events, 1124 markets so far
+2026-07-01 18:00:46,077 [INFO] Matchbook: processed 160/247 events, 1252 markets so far
+2026-07-01 18:00:46,083 [INFO] Matchbook: processed 180/247 events, 1274 markets so far
+2026-07-01 18:00:46,085 [INFO] Matchbook: processed 200/247 events, 1315 markets so far
+2026-07-01 18:00:46,098 [INFO] Matchbook: processed 220/247 events, 1688 markets so far
+2026-07-01 18:00:46,120 [INFO] Matchbook: processed 240/247 events, 2134 markets so far
+2026-07-01 18:00:46,122 [INFO] Matchbook: processed 247/247 events, 2141 markets so far
+2026-07-01 18:00:46,123 [INFO] Matchbook: 2142 total markets, 360 above 25 GBP volume
+2026-07-01 18:00:46,147 [INFO] matchbook: 2142 total, 360 above 25 GBP threshold
+2026-07-01 18:00:46,317 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-07-01_17-00.json
+2026-07-01 18:00:46,410 [INFO] Market log updated (matchbook)
+2026-07-01 18:01:19,468 [INFO] Scanner complete for matchbook. Snapshot: 2026-07-01_17-00.json
+2026-07-01 18:01:20,145 [RESEARCHER] Primary research fetcher: gemini (models: gemini-2.5-flash, gemini-2.5-flash-lite)
+2026-07-01 18:01:20,151 [RESEARCHER] Research cache: 67 entries loaded (TTL 10h, drift 10%)
+2026-07-01 18:01:20,219 [RESEARCHER] betfair: skipped 1 markets above volume cap (£500,000)
+2026-07-01 18:01:20,220 [RESEARCHER] Horizon filter: allowing English Premier League | pfa player of the year 2025/26 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,220 [RESEARCHER] Horizon filter: allowing Brazilian Serie A | winner 2026 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,220 [RESEARCHER] Horizon filter: allowing Irish Premier Division | winner outright 2026 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,220 [RESEARCHER] Horizon filter: allowing US Major League Soccer | mls cup winner 2026 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,220 [RESEARCHER] Horizon filter: allowing FIFA World Cup | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,220 [RESEARCHER] Horizon filter: allowing FIFA World Cup | fifa golden ball with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: skipping FIFA World Cup | winning group — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: skipping FIFA World Cup | total tournament goals — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: skipping FIFA World Cup | england top team goalscorer — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: skipping FIFA World Cup | who will perform at the world cup final ht show? — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: allowing Scottish Premiership | winner 2026/27 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: allowing English Sky Bet League 1 | winner 2026/27 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: allowing English Sky Bet League 2 | winner 2026/27 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: allowing English Sky Bet Championship | winner 2026/27 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: skipping English Sky Bet League 2 | promotion 2026/27 — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,221 [RESEARCHER] Horizon filter: skipping English Sky Bet Championship | promotion 2026/27 — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing Spanish La Liga | winner 2026/27 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing English Premier League | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: skipping English Premier League | relegation — no market_start_time (outright/long-horizon type)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing UEFA Champions League | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing German Bundesliga | winner 2026/27 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing Specials | ballon d'or winner 2026 with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing  The Open Championship 2026 | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing Presidents Cup 2026 | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing The Masters 2027 | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,222 [RESEARCHER] Horizon filter: allowing The Ryder Cup 2027 | winner with no market_start_time (outright/season-long type, MOD-289)
+2026-07-01 18:01:20,223 [RESEARCHER] betfair: skipped 7 outright markets with no start time (BUG-093)
+2026-07-01 18:01:20,223 [RESEARCHER] betfair: 178 tradeable markets from 2026-07-01_17-00.json
+2026-07-01 18:01:20,225 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Peru
+2026-07-01 18:01:20,225 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Colombia
+2026-07-01 18:01:20,226 [RESEARCHER] Politics: skipping indefinite market: UK - Party Leaders | Next Lib Dem Leader
+2026-07-01 18:01:20,226 [RESEARCHER] Politics: skipping indefinite market: European Politics | Next Prime Minister of Sweden
+2026-07-01 18:01:20,226 [RESEARCHER] Politics: skipping indefinite market: UK - Party Leaders | Next Labour Leader
+2026-07-01 18:01:20,226 [RESEARCHER] Politics: skipping indefinite market: South American Politics | Next President of Brazil
+2026-07-01 18:01:20,226 [RESEARCHER] Politics: capped at 5 slots — dropped 25 lowest-volume politics markets
+2026-07-01 18:01:20,228 [RESEARCHER] MOD-280: outright slots 7/7 — 4 golf / 3 non-golf
+2026-07-01 18:01:20,235 [RESEARCHER] Market selection: 5 politics + 7 outrights + 19 other sports = 31 total (platforms: ['betfair'])
+2026-07-01 18:01:20,236 [RESEARCHER] Gemini batch pre-pass: 9 cache-miss market(s), groups of 8
+2026-07-01 18:02:26,374 [RESEARCHER] Gemini batch (gemini-2.5-flash): 8/8 markets, 10 shared sources
+2026-07-01 18:02:33,896 [RESEARCHER] Gemini batch (gemini-2.5-flash): 1/1 markets, 10 shared sources
+2026-07-01 18:02:33,914 [RESEARCHER] Gemini batch pre-pass: cached 9/9 market(s)
+2026-07-01 18:02:33,914 [RESEARCHER] [1/31] Which party will control the House in 2026?
+2026-07-01 18:02:33,915 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T09:33
+2026-07-01 18:02:35,743 [RESEARCHER] [2/31] Which party will control the Senate in 2026?
+2026-07-01 18:02:35,744 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T09:33
+2026-07-01 18:02:37,560 [RESEARCHER] [3/31] Next Permanent Chancellor of the Exchequer?
+2026-07-01 18:02:37,560 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:39,389 [RESEARCHER] [4/31] Andy Burnham Elected as Labour Leader Unopposed?
+2026-07-01 18:02:39,390 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:41,257 [RESEARCHER] [5/31] Greater Manchester Mayoral By-Election
+2026-07-01 18:02:41,257 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,109 [RESEARCHER] [6/31] Winner
+2026-07-01 18:02:43,109 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,259 [RESEARCHER] [SLASHGOLF] Rate limit hit (429)
+2026-07-01 18:02:43,260 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:43,260 [RESEARCHER] [7/31] Winner
+2026-07-01 18:02:43,261 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,277 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:43,277 [RESEARCHER] [8/31] Winner
+2026-07-01 18:02:43,278 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,294 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:43,294 [RESEARCHER] [9/31] Top 10 Finish
+2026-07-01 18:02:43,294 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,311 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:43,311 [RESEARCHER] [10/31] Winner
+2026-07-01 18:02:43,312 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,344 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:43,344 [RESEARCHER] [11/31] Winner
+2026-07-01 18:02:43,345 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:43,376 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:43,376 [RESEARCHER] [12/31] Winner
+2026-07-01 18:02:43,376 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:43,393 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:43,394 [RESEARCHER] [13/31] FIFA Golden Ball
+2026-07-01 18:02:43,394 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:43,531 [RESEARCHER] [API_FOOTBALL] Could not resolve team ID for 'Kylian Mbappe'
+2026-07-01 18:02:43,540 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:43,540 [RESEARCHER] [15/31] Match Odds
+2026-07-01 18:02:43,540 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:44,304 [RESEARCHER] [16/31] Winner 2026/27
+2026-07-01 18:02:44,304 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:44,322 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:44,322 [RESEARCHER] [18/31] Match Odds
+2026-07-01 18:02:44,322 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:45,013 [RESEARCHER]   Data provider: 1 facts injected
+2026-07-01 18:02:45,014 [RESEARCHER] [20/31] PFA Player of the Year 2025/26
+2026-07-01 18:02:45,014 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:45,126 [RESEARCHER] [API_FOOTBALL] Could not resolve team ID for 'Bruno Fernandes'
+2026-07-01 18:02:45,135 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:45,418 [RESEARCHER] [21/31] Ballon d'Or Winner 2026
+2026-07-01 18:02:45,419 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:45,436 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:45,436 [RESEARCHER] [22/31] Winner 2026
+2026-07-01 18:02:45,437 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:45,454 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:45,454 [RESEARCHER] [23/31] Total Points
+2026-07-01 18:02:45,454 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T09:33
+2026-07-01 18:02:53,525 [RESEARCHER] [DATA_PROVIDER] NBA standings fetch failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-01 18:02:53,526 [RESEARCHER] [DATA_PROVIDER] _basketball_nba_stats failed: '<' not supported between instances of 'NoneType' and 'float'
+2026-07-01 18:02:53,548 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:53,549 [RESEARCHER] [24/31] 1st Round Leader
+2026-07-01 18:02:53,549 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:53,570 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:53,571 [RESEARCHER] [25/31] Match Odds
+2026-07-01 18:02:53,571 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:53,858 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:53,858 [RESEARCHER] [26/31] Each Way 10 Places - 1/5 Odds
+2026-07-01 18:02:53,859 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T15:33
+2026-07-01 18:02:53,867 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:53,868 [RESEARCHER] [27/31] 1st Round Leader
+2026-07-01 18:02:53,868 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T11:31
+2026-07-01 18:02:53,877 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:53,877 [RESEARCHER] [28/31] Match Odds
+2026-07-01 18:02:53,877 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:54,333 [RESEARCHER] [29/31] Match Odds
+2026-07-01 18:02:54,333 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:54,797 [RESEARCHER] [30/31] MLS Cup Winner 2026
+2026-07-01 18:02:54,797 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T17:02
+2026-07-01 18:02:54,815 [RESEARCHER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-01 18:02:54,815 [RESEARCHER] [31/31] 17:50-McCarthy
+2026-07-01 18:02:54,815 [RESEARCHER]   [CACHE HIT] Reusing research from 2026-07-01T09:33
+2026-07-01 18:02:54,824 [RESEARCHER] [SLASHGOLF] No schedule data available
+2026-07-01 18:02:54,824 [RESEARCHER] Research cache: pruned 7 entries older than 24h
+2026-07-01 18:02:54,847 [RESEARCHER] researcher.py: skipped 3 markets (3 horse_racing) (excluded_sports)
+2026-07-01 18:02:54,847 [RESEARCHER] Research cache: 28 hits, 3 fresh lookups
+2026-07-01 18:02:54,863 [RESEARCHER] Research brief written: 2026-07-01_17-02_brief.json
+2026-07-01 18:02:54,863 [RESEARCHER] Markets: 28 | Errors: 0 | Deferred: 0 | Credits used: 0
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-07-01_17-02_brief.json
+2026-07-01 18:02:57,337 [ANALYZER] Loading research brief: 2026-07-01_17-02_brief.json
+2026-07-01 18:02:57,585 [ANALYZER] Betfair cross-ref index: 5369 runners
+2026-07-01 18:02:57,590 [ANALYZER] BUG-154: far-future market held (~126d out): USA 2026 Midterm Elections | Which party will control the House in 2026?
+2026-07-01 18:02:57,592 [ANALYZER] BUG-154: far-future market held (~126d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?
+2026-07-01 18:02:57,592 [ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]
+2026-07-01 18:02:57,592 [ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?
+2026-07-01 18:02:57,636 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/147 runners (partial field): Winner
+2026-07-01 18:02:57,657 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/159 runners (partial field): Winner
+2026-07-01 18:02:57,679 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/156 runners (partial field): Winner
+2026-07-01 18:02:57,691 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/159 runners (partial field): Top 10 Finish
+2026-07-01 18:02:57,705 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/76 runners (partial field): Winner
+2026-07-01 18:02:57,722 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/20 runners (partial field): Winner
+2026-07-01 18:02:57,737 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/50 runners (partial field): Winner
+2026-07-01 18:02:57,757 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/85 runners (partial field): FIFA Golden Ball
+2026-07-01 18:02:57,764 [ANALYZER] BUG-154: far-future market held (~182d out): English Sky Bet Championship | Winner 2026/27
+2026-07-01 18:02:57,768 [ANALYZER] Market skipped (overbook 200% > 130%): English Premier League | PFA Player of the Year 2025/26
+2026-07-01 18:02:57,781 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/33 runners (partial field): Ballon d'Or Winner 2026
+2026-07-01 18:02:57,781 [ANALYZER] Market skipped (overbook 147% > 130%): Brazilian Serie A | Winner 2026
+2026-07-01 18:02:57,781 [ANALYZER] BUG-130: Skipped unsupported market type: Ukraine v Georgia | Total Points [betfair]
+2026-07-01 18:02:57,793 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/147 runners (partial field): 1st Round Leader
+2026-07-01 18:02:57,812 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/147 runners (partial field): Each Way 10 Places - 1/5 Odds
+2026-07-01 18:02:57,825 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/159 runners (partial field): 1st Round Leader
+2026-07-01 18:02:57,832 [ANALYZER] Market skipped (overbook 216% > 130%): US Major League Soccer | MLS Cup Winner 2026
+2026-07-01 18:02:57,839 [ANALYZER] Analyzed 19 markets
+2026-07-01 18:02:57,840 [ANALYZER] Found 2 signals (10pp+)
+2026-07-01 18:02:57,840 [ANALYZER] Logged 8 distribution entries (7pp+)
+2026-07-01 18:02:57,855 [ANALYZER] Research output written: 2026-07-01_17-02_research.json
+2026-07-01 18:02:57,858 [ANALYZER] Appended 92 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-07-01_17-02_research.json
+2026-07-01 18:02:58,779 [RESOLVE] Found 6 open trade(s) to check (paper_mode=True)
+2026-07-01 18:02:58,851 [RESOLVE] Cached Betfair session too old, re-logging in
+2026-07-01 18:02:58,851 [RESOLVE] Betfair login attempt 1/3
+2026-07-01 18:02:59,015 [RESOLVE] Betfair login successful
+2026-07-01 18:02:59,015 [RESOLVE] Betfair: checking 4 open-trade markets
+2026-07-01 18:03:17,904 [RESOLVE] Snapshot name lookup: found mappings for 4 markets
+2026-07-01 18:03:18,009 [RESOLVE] Settled markets found: 0
+2026-07-01 18:03:18,009 [RESOLVE] No open-trade markets have settled yet.
+Balance: £104.66 | Reserved: £26.72 | Available: £77.94
+Stake scaling: Kelly balance £104.66 → max stake £15.00 (was £50.00)
+Skipping (already open): Greater Manchester Mayoral By-Election LAY
+Skipping (already open): Winner BACK
+No new paper trades to log
+Signal drought counter: 1 consecutive zero-signal run(s)
+2026-07-01 18:03:19,333 [INFO] ============================================================
+2026-07-01 18:03:19,334 [INFO] DIGEST RUN STARTED
+2026-07-01 18:03:19,334 [INFO] ============================================================
+2026-07-01 18:03:23,958 [INFO] Cricket no-result flag (BUG-152-F4b): England W v South Africa W — No Result runner or England/ICC Women venue
+/home/jwfalc/smarkets-bot/scripts/digest.py:630: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _now_utc = datetime.datetime.utcnow().isoformat()
+2026-07-01 18:03:23,966 [INFO] Slip: no new paper trades logged this run — nothing to send
+2026-07-01 18:03:27,939 [INFO] cashout_advisor: no advisory triggers fired
+2026-07-01 18:03:27,939 [WARNING] CONSECUTIVE LOSSES: 3
+2026-07-01 18:03:27,940 [WARNING] Consecutive loss alert: 3 in a row
+2026-07-01 18:03:28,118 [INFO] Telegram notification sent
+2026-07-01 18:03:28,152 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-07-01 18:03:28,169 [INFO] Period logs updated: 2026-07-01, 2026-W27, 2026-07, 2026-Q3
+2026-07-01 18:03:28,169 [INFO] Run log: [2026-07-01 17:03 UTC] status=signal | platforms=betfair,matchbook | markets=545 | signals=2 | alerts=0 | movements=10 | consec_losses=3
+2026-07-01 18:03:28,170 [INFO] Digest complete
+Distribution log updated: 3 new entries added
+Total entries: 1841
+  near_certainty: 15 total, 12 resolved
+  high_prob: 75 total, 56 resolved
+  7-9pp: 611 total, 198 resolved
+  10-11pp: 314 total, 117 resolved
+  12pp+: 826 total, 535 resolved
+
+REVIEW DUE: 7-9pp band has 198 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 198 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-07-01 18:03:31,349 [STATIC-DASH] Building dashboard data…
+2026-07-01 18:03:31,357 [STATIC-DASH] Data collected: 117 trades, 2 signals
+2026-07-01 18:03:31,399 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (586KB)
+2026-07-01 18:03:31,403 [STATIC-DASH] Copied PWA asset: manifest.json
+2026-07-01 18:03:31,404 [STATIC-DASH] Copied PWA asset: apple-touch-icon.png
+2026-07-01 18:03:31,405 [STATIC-DASH] Copied PWA asset: icon-192.png
+2026-07-01 18:03:31,407 [STATIC-DASH] Copied PWA asset: icon-512.png
+2026-07-01 18:03:31 [DEPLOY] Starting dashboard deploy...
+HTML written OK
+2026-07-01 18:03:31 [DEPLOY] Static HTML built
+[main 611c67a] Deploy: 2026-07-01 18:03 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   6783ad9..611c67a  main -> main
+2026-07-01 18:03:31 [DEPLOY] Deploy complete: Deploy: 2026-07-01 18:03 UTC
