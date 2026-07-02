@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-07-02T02:09:06.170498",
+  "date": "2026-07-02",
+  "last_routine": "Run completed: 2026-07-01 22:03:50 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Loading research brief: 2026-07-01_21-03_brief.json\n[ANALYZER] Betfair cross-ref index: 4903 runners\n[ANALYZER] BUG-154: far-future market held (~126d out): USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-154: far-future market held (~126d out): USA 2026 Midterm Elections | Which party will control the Senate in 2026?\n[ANALYZER] BUG-130: Skipped unsupported market type: UK - Next Ministers | Next Permanent Chancellor of the Exchequer? [betfair]\n[ANALYZER] Analyzer: skipping indefinite politics market (no date/election keyword): UK - Party Leaders | Andy Burnham Elected as Labour Leader Unopposed?\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/147 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/159 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/156 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/147 runners (partial field): Top 20 Finish\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/76 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/20 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/50 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/85 runners (partial field): FIFA Golden Ball\n[ANALYZER] Market skipped (overbook 281% > 130%): Univ de Concepcion v Nublense | Match Odds\n[ANALYZER] BUG-154: far-future market held (~182d out): English Sky Bet Championship | Winner 2026/27\n[ANALYZER] Market skipped (overbook 186% > 130%): English Premier League | PFA Player of the Year 2025/26\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/33 runners (partial field): Ballon d'Or Winner 2026\n[ANALYZER] Market skipped (overbook 147% > 130%): Brazilian Serie A | Winner 2026\n[ANALYZER] Market skipped (overbook 301% > 130%):   PGA John Deere Classic 2026 | 1st Round Leader\n[ANALYZER] BUG-130: Skipped unsupported market type: Ukraine v Georgia | Total Points [betfair]\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/147 runners (partial field): Each Way 10 Places - 1/5 Odds\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/159 runners (partial field): 1st Round Leader\n[ANALYZER] Market skipped (overbook 216% > 130%): US Major League Soccer | MLS Cup Winner 2026\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/159 runners (partial field): Each Way 10 Places - 1/5 Odds\n[ANALYZER] Analyzed 20 markets\n[ANALYZER] Found 3 signals (10pp+)\n[ANALYZER] Logged 9 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-07-01_21-03_research.json\n[ANALYZER] Appended 94 edge traces to edge_traces.json",
+  "resolved_total": 103,
+  "overall_win_rate_pct": 51.5,
+  "paper_pnl_total": -5.34,
+  "by_band": {
+    "12pp+": {
+      "n": 40,
+      "wins": 17,
+      "pnl": -28.16,
+      "win_rate_pct": 42.5
+    },
+    "10-11pp": {
+      "n": 23,
+      "wins": 10,
+      "pnl": 10.62,
+      "win_rate_pct": 43.5
+    },
+    "7-9pp": {
+      "n": 20,
+      "wins": 17,
+      "pnl": 7.41,
+      "win_rate_pct": 85.0
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 103,
+      "wins": 53,
+      "pnl": -5.34,
+      "win_rate_pct": 51.5
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 89,
+      "wins": 44,
+      "pnl": -20.49,
+      "win_rate_pct": 49.4
+    },
+    "lay": {
+      "n": 14,
+      "wins": 9,
+      "pnl": 15.15,
+      "win_rate_pct": 64.3
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.5,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-06-27T17:03:02.654716"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.43,
+      "was_correct": true,
+      "paper_pnl": 0.62,
+      "resolved_at": "2026-06-27T14:03:36.904259"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 5.37,
+      "was_correct": true,
+      "paper_pnl": 0.6,
+      "resolved_at": "2026-06-27T21:02:38.520101"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.99,
+      "was_correct": false,
+      "paper_pnl": -0.5,
+      "resolved_at": "2026-06-28T14:06:34.242974"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.23,
+      "was_correct": false,
+      "paper_pnl": -2.15,
+      "resolved_at": "2026-06-28T17:04:22.525138"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": null,
+      "was_correct": true,
+      "paper_pnl": 2.0,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "1st Round Leader",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": true,
+      "paper_pnl": 0.3,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": true,
+      "paper_pnl": 2.4,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "Win",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": null,
+      "was_correct": false,
+      "paper_pnl": 0.0,
+      "resolved_at": "2026-07-01T00:00:00.000000"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.12,
+      "was_correct": null,
+      "paper_pnl": 0.0,
+      "resolved_at": "2026-07-01T16:52:59.909254"
+    },
+    {
+      "market_name": "Winner",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 10.38,
+      "was_correct": null,
+      "paper_pnl": 0.0,
+      "resolved_at": "2026-07-01T16:53:00.675672"
+    }
+  ],
+  "flags": []
+}
