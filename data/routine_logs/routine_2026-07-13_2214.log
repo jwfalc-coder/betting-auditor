@@ -1,0 +1,334 @@
+Sent
+2026-07-13 22:14:17,104 [INFO] ============================================================
+2026-07-13 22:14:17,104 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-07-13 22:14:17,104 [INFO] ============================================================
+2026-07-13 22:14:17,637 [INFO] Using cached Betfair session token
+2026-07-13 22:14:17,770 [INFO] Catalogue: 100 markets for sport ID 1 (window=48h)
+2026-07-13 22:14:17,884 [INFO] Catalogue: 100 markets for sport ID 2 (window=48h)
+2026-07-13 22:14:17,990 [INFO] Catalogue: 91 markets for sport ID 4 (window=48h)
+2026-07-13 22:14:18,064 [INFO] Catalogue: 2 markets for sport ID 2378961 (window=168h)
+2026-07-13 22:14:18,175 [INFO] Catalogue: 53 markets for sport ID 3 (window=168h)
+2026-07-13 22:14:18,350 [INFO] Catalogue: 66 markets for sport ID 7522 (window=48h)
+2026-07-13 22:14:18,418 [INFO] Catalogue: 0 markets for sport ID 6423 (window=48h)
+2026-07-13 22:14:18,418 [INFO] Betfair: fetching prices for 412 markets...
+2026-07-13 22:14:21,884 [INFO] Betfair: enriching 412 markets with price data...
+2026-07-13 22:14:21,889 [INFO] Betfair: enriched 50/412 markets, 22 tradeable so far
+2026-07-13 22:14:21,894 [INFO] Betfair: enriched 100/412 markets, 46 tradeable so far
+2026-07-13 22:14:21,896 [INFO] Betfair: enriched 150/412 markets, 47 tradeable so far
+2026-07-13 22:14:21,899 [INFO] Betfair: enriched 200/412 markets, 50 tradeable so far
+2026-07-13 22:14:21,901 [INFO] Betfair: enriched 250/412 markets, 60 tradeable so far
+2026-07-13 22:14:21,904 [INFO] Betfair: enriched 300/412 markets, 66 tradeable so far
+2026-07-13 22:14:21,973 [INFO] Betfair: enriched 350/412 markets, 78 tradeable so far
+2026-07-13 22:14:22,029 [INFO] Betfair: enriched 400/412 markets, 98 tradeable so far
+2026-07-13 22:14:22,065 [INFO] Betfair: enriched 412/412 markets, 98 tradeable so far
+2026-07-13 22:14:22,066 [INFO] Betfair: 412 total markets, 98 above 100 GBP volume
+2026-07-13 22:14:22,200 [INFO] Outrights: 27 markets for sport 1
+2026-07-13 22:14:22,303 [INFO] Outrights: 10 markets for sport 3
+2026-07-13 22:14:22,401 [INFO] Outrights: 50 markets for sport 2378961
+2026-07-13 22:14:23,169 [INFO] Outrights: 70 markets above 25 GBP
+2026-07-13 22:14:23,176 [INFO] Betfair: added 64 outright markets for cross-ref
+2026-07-13 22:14:23,177 [INFO] betfair: 476 total, 162 above 100 GBP threshold
+2026-07-13 22:14:23,511 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-07-13_21-14.json
+2026-07-13 22:14:23,674 [INFO] Market log updated (betfair)
+2026-07-13 22:14:53,840 [INFO] Scanner complete for betfair. Snapshot: 2026-07-13_21-14.json
+2026-07-13 22:14:54,199 [INFO] ============================================================
+2026-07-13 22:14:54,199 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-07-13 22:14:54,200 [INFO] ============================================================
+2026-07-13 22:14:54,721 [INFO] Using cached Matchbook session token
+2026-07-13 22:14:54,721 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-07-13 22:14:54,884 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-07-13 22:14:55,139 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-07-13 22:14:55,379 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-07-13 22:14:55,630 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-07-13 22:14:55,895 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-07-13 22:14:56,180 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-07-13 22:14:56,491 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-07-13 22:14:56,773 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-07-13 22:14:57,088 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-07-13 22:14:57,330 [INFO] Matchbook: fetched page offset=180, 12 events (total so far: 192)
+2026-07-13 22:14:57,330 [INFO] Matchbook: processing 192 events
+2026-07-13 22:14:57,340 [INFO] Matchbook: processed 20/192 events, 252 markets so far
+2026-07-13 22:14:57,346 [INFO] Matchbook: processed 40/192 events, 444 markets so far
+2026-07-13 22:14:57,351 [INFO] Matchbook: processed 60/192 events, 628 markets so far
+2026-07-13 22:14:57,355 [INFO] Matchbook: processed 80/192 events, 824 markets so far
+2026-07-13 22:14:57,360 [INFO] Matchbook: processed 100/192 events, 1015 markets so far
+2026-07-13 22:14:57,372 [INFO] Matchbook: processed 120/192 events, 1391 markets so far
+2026-07-13 22:14:57,390 [INFO] Matchbook: processed 140/192 events, 1931 markets so far
+2026-07-13 22:14:57,401 [INFO] Matchbook: processed 160/192 events, 2254 markets so far
+2026-07-13 22:14:57,420 [INFO] Matchbook: processed 180/192 events, 2673 markets so far
+2026-07-13 22:14:57,423 [INFO] Matchbook: processed 192/192 events, 2748 markets so far
+2026-07-13 22:14:57,424 [INFO] Matchbook: 2749 total markets, 242 above 25 GBP volume
+2026-07-13 22:14:57,447 [INFO] matchbook: 2749 total, 242 above 25 GBP threshold
+2026-07-13 22:14:57,537 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-07-13_21-14.json
+2026-07-13 22:14:57,584 [INFO] Market log updated (matchbook)
+2026-07-13 22:15:29,051 [INFO] Scanner complete for matchbook. Snapshot: 2026-07-13_21-14.json
+2026-07-13 22:15:33,796 [ANALYZER] Primary research fetcher: gemini (models: gemini-2.5-flash, gemini-2.5-flash-lite)
+2026-07-13 22:15:33,803 [ANALYZER] Research cache: 84 entries loaded (TTL 10h, drift 10%)
+2026-07-13 22:15:33,876 [ANALYZER] betfair: loaded snapshot 2026-07-13_21-14.json
+2026-07-13 22:15:33,877 [ANALYZER] betfair: skipped 2 markets above volume cap (£500,000)
+2026-07-13 22:15:33,878 [ANALYZER] betfair: skipped 12 markets beyond 30d horizon
+2026-07-13 22:15:33,878 [ANALYZER] betfair: 150 tradeable markets
+2026-07-13 22:15:33,887 [ANALYZER] Already-open dedup: excluded 16 markets with an existing open position
+2026-07-13 22:15:33,891 [ANALYZER] Unsupported market-type filter: excluded 60 markets (BUG-130 whitelist — would always be rejected downstream anyway)
+2026-07-13 22:15:33,892 [ANALYZER] Indefinite-politics filter: excluded 4 markets (MOD-156 — no resolution date)
+2026-07-13 22:15:33,893 [ANALYZER] Far-future filter: excluded 26 markets that BUG-154/MOD-147 would hold anyway (MOD-297/MOD-311): German State Elections | Berlin State Election Winner (~68d out); Canadian Politics | Quebec General Election Winner (~83d out); USA 2026 Midterm Elections | Balance of Power - 2026 Midterms (~112d out); USA 2026 Midterm Elections | Which party will control the House in 2026? (~112d out); USA 2026 Midterm Elections | Which party will control the Senate in 2026? (~112d out); USA 2026 Midterm Elections | Alaska Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Delaware Senate Election Winner (~112d out); USA 2026 Midterm Elections | Rhode Island Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Massachusetts Senate Election Winner (~112d out); USA 2026 Midterm Elections | Michigan Senate Election Winner (~112d out); USA 2026 Midterm Elections | New Hampshire Senate Election Winner (~112d out); USA 2026 Midterm Elections | Alaska Senate Election Winner (~112d out); USA 2026 Midterm Elections | Illinois Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Connecticut Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | New York Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Florida Senate Election Winner (~112d out); USA 2026 Midterm Elections | Wyoming Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Louisiana Senate Election Winner (~112d out); USA 2026 Midterm Elections | Hawaii Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Alabama Senate Election Winner (~112d out); USA 2026 Midterm Elections | New Jersey Senate Election Winner (~112d out); USA 2026 Midterm Elections | Florida Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Montana Senate Election Winner (~112d out); USA 2026 Midterm Elections | New Mexico Gubernatorial Election Winner (~112d out); USA 2026 Midterm Elections | Oregon Senate Election Winner (~112d out); USA 2026 Midterm Elections | Illinois Senate Election Winner (~112d out)
+2026-07-13 22:15:33,894 [ANALYZER] Overbook filter: excluded 7 markets that BUG-122 would skip anyway (MOD-297): Cerro Largo FC v Defensor Sporting | Double Chance (202% > 130%); America MG v Londrina | Double Chance (201% > 130%); English Premier League | PFA Player of the Year 2025/26 (192% > 130%); Brazilian Serie A | Winner 2026 (146% > 130%); Irish Premier Division | Winner Outright 2026 (266% > 130%); US Major League Soccer | MLS Cup Winner 2026 (324% > 130%); UK - Mayoral Elections | Manchester Mayor By-Election 1st Preference Winner (190% > 130%)
+2026-07-13 22:15:33,896 [ANALYZER] MOD-317: unified quota (lay/probe priority) — tennis=4/4 (L2/P0), cricket=4/4 (L2/P0), basketball=6/6 (L3/P3), politics=0/2 (L0/P0), golf=1/6 (L0/P0), football=4/6 (L0/P2), 37 total
+2026-07-13 22:15:33,896 [ANALYZER] Sports breakdown: {'tennis': 4, 'cricket': 9, 'basketball': 9, 'golf': 1, 'football': 14}
+2026-07-13 22:15:33,898 [ANALYZER] Market selection: 37 total (platforms: ['betfair'])
+2026-07-13 22:15:33,899 [ANALYZER] Gemini batch pre-pass: 3 cache-miss market(s), groups of 8
+2026-07-13 22:15:52,929 [ANALYZER] Gemini batch (gemini-2.5-flash): 3/3 markets, 10 shared sources
+2026-07-13 22:15:52,932 [ANALYZER] Gemini batch pre-pass: cached 3/3 market(s)
+2026-07-13 22:15:52,932 [ANALYZER] [1/37] Match Odds
+2026-07-13 22:15:52,932 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:15:55,777 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:15:55,778 [ANALYZER]   Data provider: 2 facts injected
+2026-07-13 22:15:55,778 [ANALYZER] [2/37] Match Odds
+2026-07-13 22:15:55,778 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:15:56,300 [ANALYZER]   Data provider: 2 facts injected
+2026-07-13 22:15:56,300 [ANALYZER] [3/37] Moneyline
+2026-07-13 22:15:56,300 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T11:32
+2026-07-13 22:15:56,311 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:15:56,312 [ANALYZER] [4/37] 1st Round Leader
+2026-07-13 22:15:56,312 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:15:56,807 [ANALYZER] [SLASHGOLF] Empty leaderboard for The Open Championship
+2026-07-13 22:15:56,807 [ANALYZER] [5/37] Draw no Bet
+2026-07-13 22:15:56,807 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:15:57,152 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:15:57,152 [ANALYZER]   Data provider: 1 facts injected
+2026-07-13 22:15:57,152 [ANALYZER] [6/37] Match Odds
+2026-07-13 22:15:57,153 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T19:04
+2026-07-13 22:15:58,682 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:15:58,682 [ANALYZER]   Data provider: 2 facts injected
+2026-07-13 22:15:58,682 [ANALYZER] [7/37] Match Odds
+2026-07-13 22:15:58,683 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T19:04
+2026-07-13 22:15:59,195 [ANALYZER]   Data provider: 2 facts injected
+2026-07-13 22:15:59,195 [ANALYZER] [8/37] Moneyline
+2026-07-13 22:15:59,195 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T17:03
+2026-07-13 22:15:59,206 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:15:59,206 [ANALYZER] [9/37] Draw no Bet
+2026-07-13 22:15:59,206 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:15:59,330 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Cerro Largo FC'
+2026-07-13 22:15:59,341 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:15:59,341 [ANALYZER] [10/37] Match Odds
+2026-07-13 22:15:59,341 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:15
+2026-07-13 22:16:02,072 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:16:02,072 [ANALYZER]   Data provider: 2 facts injected
+2026-07-13 22:16:02,072 [ANALYZER] [11/37] Match Odds
+2026-07-13 22:16:02,072 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T19:04
+2026-07-13 22:16:02,827 [ANALYZER]   Data provider: 1 facts injected
+2026-07-13 22:16:02,827 [ANALYZER] [12/37] Moneyline
+2026-07-13 22:16:02,827 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T11:32
+2026-07-13 22:16:10,890 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Chicago Bulls: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:16:18,933 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Chicago Bulls: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:16:26,975 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Utah Jazz: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:16:35,042 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Utah Jazz: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:16:35,056 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:16:35,056 [ANALYZER] [13/37] Winner 2026/27
+2026-07-13 22:16:35,056 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:16:35,075 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:16:35,076 [ANALYZER] [14/37] Match Odds
+2026-07-13 22:16:35,076 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:16:36,616 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:16:36,616 [ANALYZER]   Data provider: 2 facts injected
+2026-07-13 22:16:36,616 [ANALYZER] [15/37] Match Odds
+2026-07-13 22:16:36,616 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:16:37,125 [ANALYZER] [16/37] Moneyline
+2026-07-13 22:16:37,126 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:16:45,169 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Atlanta Hawks: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:16:53,211 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Atlanta Hawks: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:01,277 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Boston Celtics: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:09,320 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Boston Celtics: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:09,330 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:17:09,331 [ANALYZER] [17/37] Match Odds
+2026-07-13 22:17:09,331 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:17:09,461 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Paysandu FC'
+2026-07-13 22:17:09,471 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:17:09,471 [ANALYZER] [18/37] Moneyline
+2026-07-13 22:17:09,471 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T17:03
+2026-07-13 22:17:17,511 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Phoenix Suns: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:25,574 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Phoenix Suns: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:33,616 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Milwaukee Bucks: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:41,659 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Milwaukee Bucks: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:41,669 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:17:41,670 [ANALYZER] [19/37] Moneyline
+2026-07-13 22:17:41,670 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T14:03
+2026-07-13 22:17:49,741 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Dallas Mavericks: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:17:57,782 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Dallas Mavericks: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:05,822 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Memphis Grizzlies: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:13,881 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Memphis Grizzlies: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:13,893 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:13,893 [ANALYZER] [20/37] Match Odds
+2026-07-13 22:18:13,893 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:14,191 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:14,192 [ANALYZER]   Data provider: 1 facts injected
+2026-07-13 22:18:14,192 [ANALYZER] [21/37] Match Odds Including Tie
+2026-07-13 22:18:14,192 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T19:04
+2026-07-13 22:18:14,972 [ANALYZER]   Data provider: 1 facts injected
+2026-07-13 22:18:14,972 [ANALYZER] [22/37] Half Time/Full Time
+2026-07-13 22:18:14,972 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:15,056 [ANALYZER] [API_FOOTBALL] API errors: {'search': 'The Search field may only contain alpha-numeric characters and spaces.'}
+2026-07-13 22:18:15,057 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'America MG/America MG'
+2026-07-13 22:18:15,067 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:15,067 [ANALYZER] [23/37] Match Odds
+2026-07-13 22:18:15,068 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:15,201 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Cerro Largo FC'
+2026-07-13 22:18:15,211 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:15,211 [ANALYZER] [24/37] Match Odds
+2026-07-13 22:18:15,211 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:15,733 [ANALYZER] [25/37] Half Time Score
+2026-07-13 22:18:15,734 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:15,820 [ANALYZER] [API_FOOTBALL] API errors: {'search': 'The Search field may only contain alpha-numeric characters and spaces.'}
+2026-07-13 22:18:15,821 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for '0 - 0'
+2026-07-13 22:18:15,832 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:15,832 [ANALYZER] [26/37] Moneyline
+2026-07-13 22:18:15,832 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T14:03
+2026-07-13 22:18:23,873 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Miami Heat: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:31,908 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Miami Heat: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:39,978 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Cleveland Cavaliers: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:48,022 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Cleveland Cavaliers: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:18:48,032 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:48,032 [ANALYZER] [27/37] Both teams to Score?
+2026-07-13 22:18:48,032 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:48,222 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:48,222 [ANALYZER] [28/37] Half Time
+2026-07-13 22:18:48,222 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:48,460 [ANALYZER] [API_FOOTBALL] Rate limit hit (429)
+2026-07-13 22:18:48,471 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:48,471 [ANALYZER] [29/37] Match Odds
+2026-07-13 22:18:48,471 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T14:03
+2026-07-13 22:18:49,109 [ANALYZER]   Data provider: 3 facts injected
+2026-07-13 22:18:49,110 [ANALYZER] [30/37] Moneyline
+2026-07-13 22:18:49,110 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T17:03
+2026-07-13 22:18:49,119 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:49,120 [ANALYZER] [31/37] Match Odds and Both teams to Score
+2026-07-13 22:18:49,120 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:49,234 [ANALYZER] [API_FOOTBALL] Rate limit hit (429)
+2026-07-13 22:18:49,234 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'America MG/Yes'
+2026-07-13 22:18:49,244 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:49,245 [ANALYZER] [32/37] Match Odds
+2026-07-13 22:18:49,245 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:50,128 [ANALYZER]   Data provider: 1 facts injected
+2026-07-13 22:18:50,129 [ANALYZER] [33/37] Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:18:50,129 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:50,199 [ANALYZER] [API_FOOTBALL] Rate limit hit (429)
+2026-07-13 22:18:50,200 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'America MG/Under 2.5 Goals'
+2026-07-13 22:18:50,210 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:50,210 [ANALYZER] [34/37] Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:18:50,211 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:07
+2026-07-13 22:18:50,298 [ANALYZER] [API_FOOTBALL] Rate limit hit (429)
+2026-07-13 22:18:50,298 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Paysandu FC/Under 2.5 Goals'
+2026-07-13 22:18:50,309 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:18:50,309 [ANALYZER] [35/37] Match Odds
+2026-07-13 22:18:50,309 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T19:04
+2026-07-13 22:18:51,089 [ANALYZER]   Data provider: 1 facts injected
+2026-07-13 22:18:51,089 [ANALYZER] [36/37] Moneyline
+2026-07-13 22:18:51,089 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:15
+2026-07-13 22:18:59,130 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Minnesota Timberwolves: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:19:07,190 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Minnesota Timberwolves: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:19:15,233 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Portland Trail Blazers: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:19:23,279 [ANALYZER] [DATA_PROVIDER] NBA game log fetch failed for Portland Trail Blazers: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=8)
+2026-07-13 22:19:23,289 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:19:23,289 [ANALYZER] [37/37] Both teams to Score?
+2026-07-13 22:19:23,289 [ANALYZER]   [CACHE HIT] Reusing research from 2026-07-13T21:15
+2026-07-13 22:19:23,456 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-07-13 22:19:23,487 [ANALYZER] Research cache: 37 hits, 0 fresh lookups
+2026-07-13 22:19:23,507 [ANALYZER] Research brief written: 2026-07-13_21-19_brief.json
+2026-07-13 22:19:23,507 [ANALYZER] Markets: 37 | Errors: 0 | Deferred: 0 | Credits used: 0
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-07-13_21-19_brief.json
+2026-07-13 22:19:26,755 [ANALYZER] Loading research brief: 2026-07-13_21-19_brief.json
+2026-07-13 22:19:26,998 [ANALYZER] Betfair cross-ref index: 3295 runners
+2026-07-13 22:19:27,030 [ANALYZER] MOD-274: Moneyline BACK blocked — Los Angeles Sparks odds 4.1 > 2.5: Los Angeles Sparks @ Atlanta Dream | Moneyline
+2026-07-13 22:19:27,087 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/157 runners (partial field): 1st Round Leader
+2026-07-13 22:19:27,215 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/24 runners (partial field): Winner 2026/27
+2026-07-13 22:19:27,360 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/9 runners (partial field): Half Time/Full Time
+2026-07-13 22:19:27,424 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/10 runners (partial field): Half Time Score
+2026-07-13 22:19:27,519 [ANALYZER] BUG-134: Merged duplicate runner 'America MG/Under 2.5 Goals' into 'America MG/Over 2.5 Goals' (similarity 0.90) in America MG v Londrina | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,520 [ANALYZER] BUG-134: Merged duplicate runner 'Londrina/Under 2.5 Goals' into 'Londrina/Over 2.5 Goals' (similarity 0.89) in America MG v Londrina | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,521 [ANALYZER] BUG-134: Merged duplicate runner 'Londrina/Under 2.5 Goals' into 'Draw/Under 2.5 Goals' (similarity 0.86) in America MG v Londrina | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,521 [ANALYZER] BUG-134: Merged duplicate runner 'Draw/Over 2.5 Goals' into 'Londrina/Over 2.5 Goals' (similarity 0.86) in America MG v Londrina | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,537 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 3/6 runners (partial field): Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,538 [ANALYZER] BUG-134: Merged duplicate runner 'Paysandu FC/Over 2.5 Goals' into 'Paysandu FC/Under 2.5 Goals' (similarity 0.91) in Paysandu FC v Centro Atletico Fenix | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,539 [ANALYZER] BUG-134: Merged duplicate runner 'Cen Atl Fenix/Under 2.5 Goals' into 'Cen Atl Fenix/Over 2.5 Goals' (similarity 0.91) in Paysandu FC v Centro Atletico Fenix | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,539 [ANALYZER] BUG-134: Merged duplicate runner 'Draw/Over 2.5 Goals' into 'Draw/Under 2.5 Goals' (similarity 0.87) in Paysandu FC v Centro Atletico Fenix | Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,551 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 3/6 runners (partial field): Match Odds and Over/Under 2.5 Goals
+2026-07-13 22:19:27,571 [ANALYZER] Analyzed 37 markets
+2026-07-13 22:19:27,571 [ANALYZER] Found 7 signals (10pp+)
+2026-07-13 22:19:27,571 [ANALYZER] Logged 9 distribution entries (7pp+)
+2026-07-13 22:19:27,590 [ANALYZER] Research output written: 2026-07-13_21-19_research.json
+2026-07-13 22:19:27,594 [ANALYZER] Appended 101 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-07-13_21-19_research.json
+2026-07-13 22:19:28,532 [RESOLVE] Found 27 open trade(s) to check (paper_mode=True)
+2026-07-13 22:19:28,606 [RESOLVE] Using cached Betfair session token
+2026-07-13 22:19:28,607 [RESOLVE] Betfair: checking 21 open-trade markets
+2026-07-13 22:20:11,240 [RESOLVE] Snapshot name lookup: found mappings for 21 markets
+2026-07-13 22:20:11,505 [RESOLVE] Betfair settled: market=1.259809891 winner=Breidablik (1478217)
+2026-07-13 22:20:11,601 [RESOLVE] Betfair settled: market=1.259809926 winner=Breidablik/Over 2.5 Goals (46480072)
+2026-07-13 22:20:11,601 [RESOLVE] Settled markets found: 2
+2026-07-13 22:20:11,868 [RESOLVE]   [betfair] Draw no Bet | LOSS | P&L: -2.00 | Selection: Keflavik | Winner(s): Breidablik
+2026-07-13 22:20:12,131 [RESOLVE]   [betfair] Match Odds and Over/Under 2.5 Goals | WIN | P&L: +2.24 | Selection: Breidablik/Over 2.5 Goals | Winner(s): Breidablik/Over 2.5 Goals
+2026-07-13 22:20:12,131 [RESOLVE] Batch resolution alert: 2 trades, net=+0.24
+2026-07-13 22:20:22,269 [RESOLVE] Telegram notification sent
+2026-07-13 22:20:22,327 [RESOLVE] Auto-resolved 2 trade(s). Running P&L: +1.24 | W/L: 58/55 | ROI: 0.24%
+MOD-249: proven-loser denylist active — 2 category/ies: soccer/half time/back n=21 WR=24%; soccer/match odds/back n=97 WR=47%
+Balance: £111.24 | Reserved: £26.88 | Available: £84.36
+Stake scaling: Kelly balance £111.24 → max stake £15.00 (was £50.00)
+MOD-249 proven-loser: suppressing Hungary (soccer/match odds/back)
+Logged paper trade: Draw no Bet - BACK @ 36.5% (edge: 13.94pp) [betfair] [PROBE — not counted in exposure] | available now £84.36
+Logged paper trade: Moneyline - BACK @ 41.67% (edge: 10.21pp) [betfair] [PROBE — not counted in exposure] | available now £84.36
+MOD-249 proven-loser: suppressing Londrina (soccer/match odds/back)
+MOD-249 proven-loser: suppressing Cerro Largo FC (soccer/match odds/back)
+MOD-249 proven-loser: suppressing The Draw (soccer/match odds/back)
+MOD-249 proven-loser: suppressing Londrina (soccer/half time/back)
+
+2 new paper trade(s) logged
+Signal drought counter: 0 consecutive zero-signal run(s)
+2026-07-13 22:20:42,279 [INFO] ============================================================
+2026-07-13 22:20:42,280 [INFO] DIGEST RUN STARTED
+2026-07-13 22:20:42,280 [INFO] ============================================================
+2026-07-13 22:20:47,332 [INFO] Divergence gate (BUG-148b/MOD-254): suppressed 5 standard-track signal(s) with <5pp model-vs-market divergence
+2026-07-13 22:20:47,356 [INFO] Cricket no-result flag (BUG-152-F4b): England v India — No Result runner or England/ICC Women venue
+2026-07-13 22:20:47,359 [INFO] Cricket no-result flag (BUG-152-F4b): England v India — No Result runner or England/ICC Women venue
+2026-07-13 22:20:47,362 [WARNING] Result contamination detected (BUG-151): Ireland W v West Indies W — key_fact has score + recent date: West Indies Women have clinched the three-match ODI series against Ireland Women with a 2-0 lead as of July 12, 2026.
+/home/jwfalc/smarkets-bot/scripts/digest.py:630: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _now_utc = datetime.datetime.utcnow().isoformat()
+2026-07-13 22:20:47,383 [INFO] Sending batch slip: 0 actionable, 2 probe
+2026-07-13 22:20:47,536 [INFO] Telegram notification sent
+2026-07-13 22:20:47,537 [INFO] Sent 2 Telegram signal alert(s) — slip mirrors 2 tracker row(s) logged this run
+2026-07-13 22:20:54,007 [INFO] cashout_advisor: no advisory triggers fired
+2026-07-13 22:20:54,092 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-07-13 22:20:54,123 [INFO] Period logs updated: 2026-07-13, 2026-W29, 2026-07, 2026-Q3
+2026-07-13 22:20:54,124 [INFO] Run log: [2026-07-13 21:20 UTC] status=signal | platforms=betfair,matchbook | markets=404 | signals=2 | alerts=2 | movements=10 | consec_losses=1
+2026-07-13 22:20:54,124 [INFO] Digest complete
+Distribution log updated: 8 new entries added
+Total entries: 2203
+  near_certainty: 15 total, 12 resolved
+  high_prob: 75 total, 56 resolved
+  7-9pp: 851 total, 283 resolved
+  10-11pp: 384 total, 152 resolved
+  12pp+: 878 total, 555 resolved
+
+REVIEW DUE: 7-9pp band has 140 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 140 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-07-13 22:20:58,590 [STATIC-DASH] Building dashboard data…
+2026-07-13 22:20:58,604 [STATIC-DASH] Data collected: 268 trades, 2 signals
+2026-07-13 22:20:58,674 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (763KB)
+2026-07-13 22:20:58,694 [STATIC-DASH] Copied PWA asset: manifest.json
+2026-07-13 22:20:58,696 [STATIC-DASH] Copied PWA asset: apple-touch-icon.png
+2026-07-13 22:20:58,699 [STATIC-DASH] Copied PWA asset: icon-192.png
+2026-07-13 22:20:58,704 [STATIC-DASH] Copied PWA asset: icon-512.png
+2026-07-13 22:20:58 [DEPLOY] Starting dashboard deploy...
+HTML written OK
+2026-07-13 22:20:58 [DEPLOY] Static HTML built
+[main 4629d04] Deploy: 2026-07-13 22:21 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   f9037b2..4629d04  main -> main
+2026-07-13 22:20:58 [DEPLOY] Deploy complete: Deploy: 2026-07-13 22:21 UTC
