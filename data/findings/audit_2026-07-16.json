@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-07-16T03:37:50Z",
+  "audit_type": "monthly_code_audit",
+  "summary": "12 findings across the pipeline: 7 medium-severity (3 trivial, 4 small) and 5 low-severity (all trivial). No high-severity blockers were found. Most urgently: probe trades are being silently included in the bi-weekly model audit inputs, which caused the 2026-07-15 finding ('soccer backs catastrophically miscalibrated') to reflect probe-only data that the operator never places — the live lay strategy itself may be fine. Three other correctness issues require trivial fixes: the distribution_logger band assignment for source-2 entries is broken, datetime.utcnow() emits a live DeprecationWarning on Python 3.13.5, and the three divergent _is_two_horse() copies risk classification drift as new market types are added. Operationally, stats.nba.com times out on every basketball market during the off-season, adding ~192 s of dead wait per routine. Two locking/epoch-filter gaps (scanner concurrent write, watchdog log parsing) are also ready to fix. The remaining five findings are documentation/config maintenance debt.",
+  "findings": [
+    {
+      "id": "AUDIT-2026-001",
+      "severity": "medium",
+      "category": "correctness",
+      "affected_file": "scripts/distribution_logger.py",
+      "description": "Line 194: `band = band_for_edge(edge)` is called without the required `signal_track` argument for source-2 distribution entries. The function signature expects `(edge, signal_track)` to correctly assign the near_certainty and high_prob bands for probe vs real-signal tracks. Calling with only one argument either raises TypeError at runtime (silently caught, producing an unresolved entry) or, if a default exists, silently assigns an incorrect band. Either way, calibration data for probe distribution entries is corrupt or absent.",
+      "proposed_fix": "On distribution_logger.py line 194, pass the signal_track value from the source-2 entry: `band = band_for_edge(edge, entry.get('signal_track', 'standard_track'))` — mirroring the call pattern used for source-1 entries earlier in the same function.",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-002",
+      "severity": "medium",
+      "category": "correctness",
+      "affected_file": "scripts/digest.py",
+      "description": "Line 630 uses `datetime.datetime.utcnow().isoformat()`, deprecated since Python 3.12 (PEP 495) and actively emitting DeprecationWarning on the live Pi runtime (Python 3.13.5, confirmed). It produces a naive datetime with no tzinfo, making timezone comparisons ambiguous. Every routine log that reaches this code path will include the warning, polluting the error signal that the watchdog and operator review. All other datetime calls in the codebase already use the correct timezone-aware replacement pattern.",
+      "proposed_fix": "Replace `datetime.datetime.utcnow().isoformat()` with `datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).isoformat()` — the pattern already used in check_resolutions.py line 129 and throughout paper_tracker.py.",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-003",
+      "severity": "medium",
+      "category": "correctness",
+      "affected_file": "scripts/run_model_audit.py",
+      "description": "build_inputs_summary() (run_model_audit.py line 231) and build_daily_snapshot() (backup.py line 380) both filter trades with `status == 'resolved'` only, without excluding back_probe=True trades. Probe trades are tracking-only and never placed; weekly_summary.py line 64 and paper_tracker.py's headline stats (MOD-315) already exclude them. With ~84+ resolved probe trades as of 2026-07-13, the model audit and cloud auditor receive a distorted resolved_total and win_rate/PnL that blends real lay performance with the expected-to-underperform probe lane. The 2026-07-15 model audit finding ('Soccer multi-outcome back signals catastrophically miscalibrated') was driven almost entirely by probe data — signals the operator never places — mis-stating live risk.",
+      "proposed_fix": "In both files, add `and not t.get('back_probe')` alongside the status filter: `[t for t in tr.get('trades', []) if t.get('status') == 'resolved' and not t.get('back_probe')]` — identical to the exclusion already in weekly_summary.py line 64.",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-004",
+      "severity": "medium",
+      "category": "operational-risk",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "stats.nba.com times out on every basketball market during the NBA off-season (April–September). Each market triggers 4 timeout attempts (2 teams × 2 endpoints) at 8 s each, totalling 32 s of dead wait per market. With 6 basketball slots per routine run the pipeline incurs ~192 s of dead wait per run before falling back to empty enrichment. The 2026-07-15 22:09 UTC routine log confirms 28 consecutive timeout warnings across 7 basketball markets. The timeouts are silently swallowed — no alert fires — but they lengthen every evening routine by 3+ minutes.",
+      "proposed_fix": "In the NBA data-provider fetch function, add a season-gate: if today is outside the NBA regular-season/playoff window (approximately October through mid-June), skip stats.nba.com calls entirely and return an empty result immediately. Alternatively, cache a per-invocation 'host unreachable' flag after the first timeout so subsequent basketball markets in the same run bypass the host without re-timing-out.",
+      "effort_estimate": "small"
+    },
+    {
+      "id": "AUDIT-2026-005",
+      "severity": "medium",
+      "category": "correctness",
+      "affected_file": "scripts/analyze_research.py",
+      "description": "Three independent `_is_two_horse()` / `_is_two_horse_market()` implementations exist in analyze_research.py (line 164), researcher.py (line 1315), and paper_tracker.py (line 429). The two_horse boolean is load-bearing for MOD-316/317 probe segmentation and the milestone_watcher's promote/kill alerts. A single-word discrepancy between copies — e.g. one recognising 'DNB' but another not — will cause a market classified as 2h at research time to be logged as multi by paper_tracker, silently corrupting segment WR/PnL buckets and triggering wrong milestone decisions.",
+      "proposed_fix": "Extract a canonical `is_two_horse_market(market_name: str) -> bool` to a shared module (e.g. scripts/utils.py) and replace all three inline implementations with imports. The canonical set should match the MOD-316 spec: Moneyline, Draw No Bet, Tournament Match Bets, named H2H markets, and tennis Match Odds.",
+      "effort_estimate": "small"
+    },
+    {
+      "id": "AUDIT-2026-006",
+      "severity": "medium",
+      "category": "operational-risk",
+      "affected_file": "scripts/watchdog.py",
+      "description": "parse_log() (lines 140-178) reads and pattern-matches the entire log file without filtering to lines timestamped after start_epoch. The start_epoch argument is accepted but never used inside this function. check_missing_outputs() correctly gates on start_epoch. On a same-minute double-fire — two cron invocations producing the same log file path — errors from the first invocation trigger detected failures for the second, causing spurious deterministic or Claude-based repairs that may overwrite correct output files and send false-alarm Telegram alerts.",
+      "proposed_fix": "In parse_log(), parse the leading timestamp from each log line (already present via %(asctime)s) and skip lines where the parsed time predates start_epoch. The epoch comparison pattern is already implemented in check_missing_outputs() and can be reused.",
+      "effort_estimate": "small"
+    },
+    {
+      "id": "AUDIT-2026-007",
+      "severity": "medium",
+      "category": "correctness",
+      "affected_file": "scripts/scanner.py",
+      "description": "_update_combined_status() (lines 486-525) performs an unprotected read-modify-write on last_scan_status.json. When Betfair and Matchbook scanners run concurrently (as they do in run_routine.sh), both processes read the same initial file, apply independent platform updates, and write back — the second write silently discards the first platform's data. Every other safety-critical write in the codebase (paper_tracker, distribution_logger) uses fcntl.flock; this is the only exception.",
+      "proposed_fix": "Wrap the read-modify-write in _update_combined_status() with an exclusive flock on a sidecar lock file (last_scan_status.json.lock), matching the pattern used in save_tracker() and save_distribution().",
+      "effort_estimate": "small"
+    },
+    {
+      "id": "AUDIT-2026-008",
+      "severity": "low",
+      "category": "maintenance-debt",
+      "affected_file": "config/config.toml",
+      "description": "`[improvement] model = 'claude-opus-4-7'` references an older Opus release; the current production model is claude-opus-4-8. The model audit is still functional (2026-07-15 run succeeded), but is not running against the latest Opus. The same stale ID is hardcoded as the default fallback in run_model_audit.py line 460, so removing the config key would perpetuate the drift.",
+      "proposed_fix": "Update config.toml `[improvement] model = 'claude-opus-4-8'` and update the default string in run_model_audit.py line 460 to match.",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-009",
+      "severity": "low",
+      "category": "maintenance-debt",
+      "affected_file": "config/config.toml",
+      "description": "`research_fallback_api_enabled = true` is accompanied by an inline comment `# Opt-in (default off)`. The flag is actively enabled — the paid Haiku API fallback is live and incurring per-call cost. Any agent or operator reading the comment will incorrectly believe this path is disabled and may not account for the spend or consider it when diagnosing research quality issues.",
+      "proposed_fix": "Update the comment to reflect live state, e.g. `# ENABLED — Haiku API fallback active (set false to disable and avoid per-call cost)`.",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-010",
+      "severity": "low",
+      "category": "maintenance-debt",
+      "affected_file": "config/config.toml",
+      "description": "`[routine] scheduled_hours_utc` contains 5 time entries, but 7 daily cron slots actually fire. digest.py and the static dashboard read this array to compute and display the next expected scan time. After a cron slot fires that is absent from the array, the dashboard shows an incorrect countdown to the next scan.",
+      "proposed_fix": "Add the 2 missing slot times to scheduled_hours_utc. Verify the exact times against the active crontab (`crontab -l`) and convert to UTC if needed (the cron fires in BST per project memory).",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-011",
+      "severity": "low",
+      "category": "maintenance-debt",
+      "affected_file": "scripts/run_routine.sh",
+      "description": "Line 43 comment reads: 'researcher.py intentionally uses only Matchbook snapshots — Betfair is data-only'. This is the exact inverse of current reality: Betfair has been the primary execution platform since MOD-119 (2026-05-26) and Matchbook is data-only. An agent or developer reading this during a debugging session will inspect Matchbook as the data source and treat Betfair as passive, leading to incorrect diagnosis of scanner or selection issues.",
+      "proposed_fix": "Update the comment to reflect the live state: 'researcher.py uses Betfair snapshots (primary platform since MOD-119). Matchbook scanner runs for data-only cross-reference.'",
+      "effort_estimate": "trivial"
+    },
+    {
+      "id": "AUDIT-2026-012",
+      "severity": "low",
+      "category": "maintenance-debt",
+      "affected_file": "BUGS.md",
+      "description": "The BUGS.md header states '8 open bugs' but lists only 7 IDs (BUG-123, BUG-124, BUG-143, BUG-151, BUG-161, BUG-091-watch, BUG-130-watch). Additionally, BUG-151 (edge contamination via normalisation) is listed as open, but CLAUDE.md and session memory confirm fixes were applied in the June 19 session (contamination scanner + 87% cap). If BUG-151 is fully resolved the true open count would be 6. An inaccurate open-bug list causes agents in future sessions to re-investigate closed issues and mis-state the current risk posture.",
+      "proposed_fix": "Verify BUG-151 closure status by reviewing the contamination scanner code in digest.py. Correct the header count to match the actual listed IDs. Mark BUG-151 FIXED if the June 19 fix is complete; otherwise annotate its partial status explicitly.",
+      "effort_estimate": "trivial"
+    }
+  ]
+}
