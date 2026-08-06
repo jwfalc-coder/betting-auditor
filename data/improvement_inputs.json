@@ -1,316 +1,163 @@
 {
-  "generated_at": "2026-07-15T06:00:02.285074",
+  "generated_at": "2026-08-05T06:00:02.381505",
   "gating_stats": {
-    "days_since_last_run": 41.98,
-    "resolved_trades_since_last": 33,
-    "resolved_trades_total": 241
+    "days_since_last_run": 21.0,
+    "resolved_trades_since_last": 196,
+    "resolved_trades_total": 437
   },
-  "resolved_total": 241,
-  "overall_win_rate_pct": 43.2,
-  "paper_pnl_total": -30.73,
+  "resolved_total": 437,
+  "overall_win_rate_pct": 40.0,
+  "paper_pnl_total": -54.76,
   "by_band": {
     "12pp+": {
-      "n": 54,
-      "wins": 21,
-      "pnl": -27.36,
-      "win_rate_pct": 38.9
+      "n": 76,
+      "wins": 25,
+      "pnl": -52.62,
+      "win_rate_pct": 32.9
     },
     "10-11pp": {
-      "n": 36,
-      "wins": 13,
-      "pnl": 4.0,
-      "win_rate_pct": 36.1
+      "n": 55,
+      "wins": 21,
+      "pnl": 12.11,
+      "win_rate_pct": 38.2
     },
     "7-9pp": {
-      "n": 131,
-      "wins": 61,
-      "pnl": -12.16,
-      "win_rate_pct": 46.6
+      "n": 286,
+      "wins": 120,
+      "pnl": -19.04,
+      "win_rate_pct": 42.0
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 241,
-      "wins": 104,
-      "pnl": -30.73,
-      "win_rate_pct": 43.2
+      "n": 437,
+      "wins": 175,
+      "pnl": -54.76,
+      "win_rate_pct": 40.0
     }
   },
   "by_recommendation": {
     "back": {
-      "n": 214,
-      "wins": 90,
-      "pnl": -52.46,
-      "win_rate_pct": 42.1
+      "n": 369,
+      "wins": 154,
+      "pnl": -68.36,
+      "win_rate_pct": 41.7
     },
     "lay": {
-      "n": 27,
-      "wins": 14,
-      "pnl": 21.73,
-      "win_rate_pct": 51.9
+      "n": 68,
+      "wins": 21,
+      "pnl": 13.6,
+      "win_rate_pct": 30.9
     }
   },
   "recent_30": [
     {
-      "market_name": "Both teams to Score?",
+      "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 10.75,
-      "was_correct": null,
-      "paper_pnl": 0.0,
-      "resolved_at": "2026-07-12T17:08:12.974115"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.12,
+      "edge_pct": 10.07,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T14:07:23.099409"
+      "resolved_at": "2026-08-01T22:31:04.168369"
     },
     {
-      "market_name": "Half Time",
+      "market_name": "18:20-Kim",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.57,
+      "edge_pct": 7.12,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T14:07:23.449297"
-    },
-    {
-      "market_name": "18:15-Bairstow",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.08,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T22:30:44.500362"
-    },
-    {
-      "market_name": "Draw no Bet",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.49,
-      "was_correct": true,
-      "paper_pnl": 0.65,
-      "resolved_at": "2026-07-12T17:08:13.225520"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.69,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T17:08:13.450293"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.73,
-      "was_correct": true,
-      "paper_pnl": 2.36,
-      "resolved_at": "2026-07-12T17:08:13.677002"
+      "resolved_at": "2026-08-02T05:04:48.454243"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.6,
+      "edge_pct": 7.1,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-02T05:04:48.844299"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 10.28,
       "was_correct": true,
-      "paper_pnl": 2.74,
-      "resolved_at": "2026-07-13T05:03:26.816510"
+      "paper_pnl": 1.9,
+      "resolved_at": "2026-08-01T17:07:45.623811"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.11,
+      "was_correct": false,
+      "paper_pnl": -1.9,
+      "resolved_at": "2026-08-02T17:08:19.467714"
     },
     {
       "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.31,
-      "was_correct": true,
-      "paper_pnl": 2.43,
-      "resolved_at": "2026-07-13T05:03:27.053999"
-    },
-    {
-      "market_name": "19:50-Glover",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.6,
-      "was_correct": true,
-      "paper_pnl": 2.09,
-      "resolved_at": "2026-07-13T05:03:27.290735"
-    },
-    {
-      "market_name": "Match Odds and Over/Under 2.5 Goals",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.23,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T21:06:37.347864"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.36,
-      "was_correct": true,
-      "paper_pnl": 2.47,
-      "resolved_at": "2026-07-12T19:07:25.638164"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.19,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T19:07:25.859098"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.33,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T19:07:25.898528"
-    },
-    {
-      "market_name": "Draw no Bet",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.3,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T21:06:37.582107"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 10.01,
-      "was_correct": true,
-      "paper_pnl": 4.84,
-      "resolved_at": "2026-07-12T21:06:37.821172"
-    },
-    {
-      "market_name": "Half Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.75,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T21:06:38.054876"
-    },
-    {
-      "market_name": "Draw no Bet",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.43,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T22:30:44.749890"
-    },
-    {
-      "market_name": "Draw no Bet",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 10.42,
-      "was_correct": null,
-      "paper_pnl": 0.0,
-      "resolved_at": "2026-07-13T05:03:27.535014"
-    },
-    {
-      "market_name": "Both teams to Score?",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.21,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-12T22:30:45.017088"
-    },
-    {
-      "market_name": "Draw no Bet",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 13.68,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-13T21:20:11.610250"
-    },
-    {
-      "market_name": "Match Odds and Over/Under 2.5 Goals",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.15,
-      "was_correct": true,
-      "paper_pnl": 2.24,
-      "resolved_at": "2026-07-13T21:20:11.868570"
-    },
-    {
-      "market_name": "Draw no Bet",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 13.94,
-      "was_correct": null,
-      "paper_pnl": 0.0,
-      "resolved_at": "2026-07-14T05:04:59.049136"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 10.21,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-14T05:04:59.330028"
-    },
-    {
-      "market_name": "Half Time/Full Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.24,
-      "was_correct": true,
-      "paper_pnl": 1.98,
-      "resolved_at": "2026-07-14T14:05:52.804694"
-    },
-    {
-      "market_name": "Both teams to Score?",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 9.08,
-      "was_correct": true,
-      "paper_pnl": 2.09,
-      "resolved_at": "2026-07-14T17:17:08.196901"
-    },
-    {
-      "market_name": "Match Odds and Over/Under 2.5 Goals",
       "platform": "betfair",
       "rec": "back",
       "edge_pct": 7.14,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-07-14T17:17:08.536754"
-    },
-    {
-      "market_name": "Half Time/Full Time",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.06,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-07-14T17:17:08.799740"
+      "resolved_at": "2026-08-02T05:04:49.211781"
     },
     {
       "market_name": "Both teams to Score?",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 8.91,
+      "edge_pct": 8.24,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-07-14T21:11:40.039873"
+      "resolved_at": "2026-08-01T22:31:04.619543"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 8.32,
+      "was_correct": false,
+      "paper_pnl": -0.4,
+      "resolved_at": "2026-08-01T21:04:34.977852"
+    },
+    {
+      "market_name": "Jordan Spieth vs Marco Penge",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.35,
+      "was_correct": true,
+      "paper_pnl": 4.56,
+      "resolved_at": "2026-08-02T22:31:28.989975"
+    },
+    {
+      "market_name": "Hideki Matsuyama vs Ryan Gerard",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.12,
+      "was_correct": true,
+      "paper_pnl": 4.27,
+      "resolved_at": "2026-08-02T22:31:29.341719"
+    },
+    {
+      "market_name": "17:01-Wallace",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.97,
+      "was_correct": true,
+      "paper_pnl": 2.47,
+      "resolved_at": "2026-08-02T21:04:28.125012"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.01,
+      "was_correct": true,
+      "paper_pnl": 2.2,
+      "resolved_at": "2026-08-02T21:04:28.559574"
     },
     {
       "market_name": "Moneyline",
@@ -319,24 +166,177 @@
       "edge_pct": 7.09,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-07-15T05:11:40.708236"
+      "resolved_at": "2026-08-02T21:04:28.893290"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.11,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-02T21:04:29.227959"
+    },
+    {
+      "market_name": "Match Odds and Over/Under 2.5 Goals",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.24,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-02T22:31:29.707766"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 21.04,
+      "was_correct": false,
+      "paper_pnl": -0.8,
+      "resolved_at": "2026-08-03T09:34:54.204069"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.49,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-04T05:04:28.976501"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.63,
+      "was_correct": true,
+      "paper_pnl": 2.24,
+      "resolved_at": "2026-08-04T05:04:29.393380"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 25.42,
+      "was_correct": false,
+      "paper_pnl": -0.8,
+      "resolved_at": "2026-08-03T14:04:32.432279"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.01,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-04T05:04:29.744937"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.09,
+      "was_correct": true,
+      "paper_pnl": 2.58,
+      "resolved_at": "2026-08-04T05:04:30.093996"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.08,
+      "was_correct": true,
+      "paper_pnl": 2.17,
+      "resolved_at": "2026-08-04T05:04:30.503361"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.01,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-04T05:04:30.907225"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.12,
+      "was_correct": true,
+      "paper_pnl": 1.9,
+      "resolved_at": "2026-08-04T11:35:21.146595"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.62,
+      "was_correct": true,
+      "paper_pnl": 2.66,
+      "resolved_at": "2026-08-05T05:09:10.215439"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.46,
+      "was_correct": false,
+      "paper_pnl": -1.52,
+      "resolved_at": "2026-08-04T14:10:45.511281"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.95,
+      "was_correct": false,
+      "paper_pnl": -0.44,
+      "resolved_at": "2026-08-04T14:10:45.961583"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.79,
+      "was_correct": true,
+      "paper_pnl": 2.55,
+      "resolved_at": "2026-08-05T05:09:10.629303"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.09,
+      "was_correct": true,
+      "paper_pnl": 2.09,
+      "resolved_at": "2026-08-05T05:09:10.987588"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.09,
+      "was_correct": true,
+      "paper_pnl": 2.09,
+      "resolved_at": "2026-08-05T05:09:11.380631"
     }
   ],
   "distribution": {
     "7-9pp": {
-      "total": 878,
-      "resolved": 288,
-      "wins": 116
+      "total": 1409,
+      "resolved": 462,
+      "wins": 192
     },
     "12pp+": {
-      "total": 884,
-      "resolved": 556,
-      "wins": 199
+      "total": 948,
+      "resolved": 617,
+      "wins": 226
     },
     "10-11pp": {
-      "total": 394,
-      "resolved": 154,
-      "wins": 51
+      "total": 558,
+      "resolved": 222,
+      "wins": 82
     },
     "high_prob": {
       "total": 75,
@@ -351,104 +351,104 @@
   },
   "top_boost_words": [
     {
-      "word": "injury",
-      "count": 1133
+      "word": "won",
+      "count": 2084
     },
     {
-      "word": "won",
-      "count": 842
+      "word": "injury",
+      "count": 1586
     },
     {
       "word": "strong",
-      "count": 697
-    },
-    {
-      "word": "rain",
-      "count": 538
-    },
-    {
-      "word": "leads",
-      "count": 473
+      "count": 823
     },
     {
       "word": "strokes gained",
-      "count": 440
+      "count": 650
     },
     {
-      "word": "top",
-      "count": 353
+      "word": "rain",
+      "count": 580
+    },
+    {
+      "word": "leads",
+      "count": 504
     },
     {
       "word": "form",
-      "count": 298
-    },
-    {
-      "word": "contender",
-      "count": 275
+      "count": 455
     },
     {
       "word": "injured",
-      "count": 158
+      "count": 408
+    },
+    {
+      "word": "top",
+      "count": 357
+    },
+    {
+      "word": "contender",
+      "count": 280
     },
     {
       "word": "dominant",
-      "count": 153
-    },
-    {
-      "word": "winner",
-      "count": 148
+      "count": 277
     },
     {
       "word": "scoring",
-      "count": 129
-    },
-    {
-      "word": "challenge",
-      "count": 122
+      "count": 229
     },
     {
       "word": "top 10",
-      "count": 109
+      "count": 201
     },
     {
-      "word": "top 5",
-      "count": 104
+      "word": "winner",
+      "count": 167
     },
     {
       "word": "without",
-      "count": 77
+      "count": 146
     },
     {
       "word": "winning streak",
-      "count": 70
+      "count": 125
     },
     {
-      "word": "consistent",
-      "count": 69
-    },
-    {
-      "word": "missed cut",
-      "count": 64
-    },
-    {
-      "word": "absent",
-      "count": 60
-    },
-    {
-      "word": "unbeaten",
-      "count": 59
-    },
-    {
-      "word": "ahead",
-      "count": 58
-    },
-    {
-      "word": "ranked",
-      "count": 54
+      "word": "challenge",
+      "count": 123
     },
     {
       "word": "advantage",
-      "count": 52
+      "count": 120
+    },
+    {
+      "word": "top 5",
+      "count": 107
+    },
+    {
+      "word": "unbeaten",
+      "count": 102
+    },
+    {
+      "word": "missed cut",
+      "count": 80
+    },
+    {
+      "word": "consistent",
+      "count": 72
+    },
+    {
+      "word": "defending",
+      "count": 71
+    },
+    {
+      "word": "experienced",
+      "count": 69
+    },
+    {
+      "word": "absent",
+      "count": 65
     }
   ],
   "external_audits": []
