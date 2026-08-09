@@ -1,0 +1,353 @@
+Sent
+2026-08-09 15:00:02,592 [INFO] ============================================================
+2026-08-09 15:00:02,593 [INFO] SCANNER RUN STARTED - BETFAIR
+2026-08-09 15:00:02,594 [INFO] ============================================================
+2026-08-09 15:00:03,200 [INFO] Cached Betfair session too old, re-logging in
+2026-08-09 15:00:03,200 [INFO] Betfair login attempt 1/3
+2026-08-09 15:00:03,364 [INFO] Betfair login successful
+2026-08-09 15:00:03,517 [INFO] Catalogue: 100 markets for sport ID 1 (window=48h)
+2026-08-09 15:00:03,653 [INFO] Catalogue: 100 markets for sport ID 2 (window=48h)
+2026-08-09 15:00:03,775 [INFO] Catalogue: 100 markets for sport ID 4 (window=48h)
+2026-08-09 15:00:03,872 [INFO] Catalogue: 6 markets for sport ID 2378961 (window=168h)
+2026-08-09 15:00:03,975 [INFO] Catalogue: 13 markets for sport ID 3 (window=168h)
+2026-08-09 15:00:04,106 [INFO] Catalogue: 18 markets for sport ID 7522 (window=48h)
+2026-08-09 15:00:04,201 [INFO] Catalogue: 0 markets for sport ID 6423 (window=48h)
+2026-08-09 15:00:04,283 [INFO] Catalogue: 15 markets for sport ID 3503 (window=168h)
+2026-08-09 15:00:04,358 [INFO] Catalogue: 0 markets for sport ID 61420 (window=48h)
+2026-08-09 15:00:04,442 [INFO] Catalogue: 0 markets for sport ID 7524 (window=48h)
+2026-08-09 15:00:04,524 [INFO] Catalogue: 0 markets for sport ID 1477 (window=48h)
+2026-08-09 15:00:04,616 [INFO] Catalogue: 0 markets for sport ID 6 (window=48h)
+2026-08-09 15:00:04,692 [INFO] Catalogue: 0 markets for sport ID 26420387 (window=48h)
+2026-08-09 15:00:04,806 [INFO] Catalogue: 45 markets for sport ID 7511 (window=48h)
+2026-08-09 15:00:04,908 [INFO] Catalogue: 8 markets for sport ID 6422 (window=168h)
+2026-08-09 15:00:05,001 [INFO] Catalogue: 0 markets for sport ID 5 (window=48h)
+2026-08-09 15:00:05,094 [INFO] Catalogue: 0 markets for sport ID 8 (window=168h)
+2026-08-09 15:00:05,094 [INFO] Betfair: fetching prices for 405 markets...
+2026-08-09 15:00:08,759 [INFO] Betfair: enriching 405 markets with price data...
+2026-08-09 15:00:08,769 [INFO] Betfair: enriched 50/405 markets, 15 tradeable so far
+2026-08-09 15:00:08,775 [INFO] Betfair: enriched 100/405 markets, 41 tradeable so far
+2026-08-09 15:00:08,778 [INFO] Betfair: enriched 150/405 markets, 44 tradeable so far
+2026-08-09 15:00:08,780 [INFO] Betfair: enriched 200/405 markets, 45 tradeable so far
+2026-08-09 15:00:08,788 [INFO] Betfair: enriched 250/405 markets, 52 tradeable so far
+2026-08-09 15:00:08,792 [INFO] Betfair: enriched 300/405 markets, 55 tradeable so far
+2026-08-09 15:00:08,818 [INFO] Betfair: enriched 350/405 markets, 81 tradeable so far
+2026-08-09 15:00:08,830 [INFO] Betfair: enriched 400/405 markets, 125 tradeable so far
+2026-08-09 15:00:08,831 [INFO] Betfair: enriched 405/405 markets, 126 tradeable so far
+2026-08-09 15:00:08,832 [INFO] Betfair: 405 total markets, 127 above 100 GBP volume
+2026-08-09 15:00:08,956 [INFO] Outrights: 34 markets for sport 1
+2026-08-09 15:00:09,047 [INFO] Outrights: 14 markets for sport 3
+2026-08-09 15:00:09,167 [INFO] Outrights: 50 markets for sport 2378961
+2026-08-09 15:00:10,112 [INFO] Outrights: 90 markets above 25 GBP
+2026-08-09 15:00:10,123 [INFO] Betfair: added 82 outright markets for cross-ref
+2026-08-09 15:00:10,124 [INFO] betfair: 487 total, 209 above 100 GBP threshold
+2026-08-09 15:00:10,493 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/betfair/2026-08-09_14-00.json
+2026-08-09 15:00:10,685 [INFO] Market log updated (betfair)
+2026-08-09 15:01:06,319 [INFO] Pruned 1 files older than 90d from /home/jwfalc/smarkets-bot/data/snapshots/betfair
+2026-08-09 15:01:06,362 [INFO] Pruned 2 files older than 90d from /home/jwfalc/smarkets-bot/data/research
+2026-08-09 15:01:06,362 [INFO] Scanner complete for betfair. Snapshot: 2026-08-09_14-00.json
+2026-08-09 15:01:06,739 [INFO] ============================================================
+2026-08-09 15:01:06,740 [INFO] SCANNER RUN STARTED - MATCHBOOK
+2026-08-09 15:01:06,740 [INFO] ============================================================
+2026-08-09 15:01:07,221 [INFO] Matchbook login attempt 1/3
+2026-08-09 15:01:07,487 [INFO] Matchbook login successful
+2026-08-09 15:01:07,488 [INFO] Matchbook: fetching events with prices for 15 sports...
+2026-08-09 15:01:07,605 [INFO] Matchbook: fetched page offset=0, 20 events (total so far: 20)
+2026-08-09 15:01:07,914 [INFO] Matchbook: fetched page offset=20, 20 events (total so far: 40)
+2026-08-09 15:01:08,285 [INFO] Matchbook: fetched page offset=40, 20 events (total so far: 60)
+2026-08-09 15:01:08,718 [INFO] Matchbook: fetched page offset=60, 20 events (total so far: 80)
+2026-08-09 15:01:09,119 [INFO] Matchbook: fetched page offset=80, 20 events (total so far: 100)
+2026-08-09 15:01:09,447 [INFO] Matchbook: fetched page offset=100, 20 events (total so far: 120)
+2026-08-09 15:01:09,741 [INFO] Matchbook: fetched page offset=120, 20 events (total so far: 140)
+2026-08-09 15:01:10,046 [INFO] Matchbook: fetched page offset=140, 20 events (total so far: 160)
+2026-08-09 15:01:10,379 [INFO] Matchbook: fetched page offset=160, 20 events (total so far: 180)
+2026-08-09 15:01:10,677 [INFO] Matchbook: fetched page offset=180, 20 events (total so far: 200)
+2026-08-09 15:01:11,051 [INFO] Matchbook: fetched page offset=200, 20 events (total so far: 220)
+2026-08-09 15:01:11,366 [INFO] Matchbook: fetched page offset=220, 20 events (total so far: 240)
+2026-08-09 15:01:11,658 [INFO] Matchbook: fetched page offset=240, 20 events (total so far: 260)
+2026-08-09 15:01:11,987 [INFO] Matchbook: fetched page offset=260, 20 events (total so far: 280)
+2026-08-09 15:01:12,318 [INFO] Matchbook: fetched page offset=280, 20 events (total so far: 300)
+2026-08-09 15:01:12,720 [INFO] Matchbook: fetched page offset=300, 20 events (total so far: 320)
+2026-08-09 15:01:13,017 [INFO] Matchbook: fetched page offset=320, 20 events (total so far: 340)
+2026-08-09 15:01:13,255 [INFO] Matchbook: fetched page offset=340, 20 events (total so far: 360)
+2026-08-09 15:01:13,513 [INFO] Matchbook: fetched page offset=360, 20 events (total so far: 380)
+2026-08-09 15:01:13,806 [INFO] Matchbook: fetched page offset=380, 20 events (total so far: 400)
+2026-08-09 15:01:14,085 [INFO] Matchbook: fetched page offset=400, 20 events (total so far: 420)
+2026-08-09 15:01:14,380 [INFO] Matchbook: fetched page offset=420, 20 events (total so far: 440)
+2026-08-09 15:01:14,642 [INFO] Matchbook: fetched page offset=440, 20 events (total so far: 460)
+2026-08-09 15:01:14,880 [INFO] Matchbook: fetched page offset=460, 4 events (total so far: 464)
+2026-08-09 15:01:14,881 [INFO] Matchbook: processing 464 events
+2026-08-09 15:01:14,889 [INFO] Matchbook: processed 20/464 events, 114 markets so far
+2026-08-09 15:01:14,906 [INFO] Matchbook: processed 40/464 events, 514 markets so far
+2026-08-09 15:01:14,937 [INFO] Matchbook: processed 60/464 events, 973 markets so far
+2026-08-09 15:01:14,964 [INFO] Matchbook: processed 80/464 events, 1576 markets so far
+2026-08-09 15:01:15,026 [INFO] Matchbook: processed 100/464 events, 2047 markets so far
+2026-08-09 15:01:15,048 [INFO] Matchbook: processed 120/464 events, 2508 markets so far
+2026-08-09 15:01:15,063 [INFO] Matchbook: processed 140/464 events, 2825 markets so far
+2026-08-09 15:01:15,077 [INFO] Matchbook: processed 160/464 events, 3127 markets so far
+2026-08-09 15:01:15,098 [INFO] Matchbook: processed 180/464 events, 3604 markets so far
+2026-08-09 15:01:15,114 [INFO] Matchbook: processed 200/464 events, 3940 markets so far
+2026-08-09 15:01:15,139 [INFO] Matchbook: processed 220/464 events, 4554 markets so far
+2026-08-09 15:01:15,156 [INFO] Matchbook: processed 240/464 events, 4885 markets so far
+2026-08-09 15:01:15,171 [INFO] Matchbook: processed 260/464 events, 5175 markets so far
+2026-08-09 15:01:15,188 [INFO] Matchbook: processed 280/464 events, 5650 markets so far
+2026-08-09 15:01:15,200 [INFO] Matchbook: processed 300/464 events, 5883 markets so far
+2026-08-09 15:01:15,230 [INFO] Matchbook: processed 320/464 events, 6300 markets so far
+2026-08-09 15:01:15,244 [INFO] Matchbook: processed 340/464 events, 6545 markets so far
+2026-08-09 15:01:15,246 [INFO] Matchbook: processed 360/464 events, 6569 markets so far
+2026-08-09 15:01:15,251 [INFO] Matchbook: processed 380/464 events, 6600 markets so far
+2026-08-09 15:01:15,267 [INFO] Matchbook: processed 400/464 events, 6842 markets so far
+2026-08-09 15:01:15,279 [INFO] Matchbook: processed 420/464 events, 7235 markets so far
+2026-08-09 15:01:15,297 [INFO] Matchbook: processed 440/464 events, 7779 markets so far
+2026-08-09 15:01:15,302 [INFO] Matchbook: processed 460/464 events, 7838 markets so far
+2026-08-09 15:01:15,304 [INFO] Matchbook: processed 464/464 events, 7842 markets so far
+2026-08-09 15:01:15,304 [INFO] Matchbook: 7843 total markets, 716 above 25 GBP volume
+2026-08-09 15:01:15,400 [INFO] matchbook: 7843 total, 716 above 25 GBP threshold
+2026-08-09 15:01:15,710 [INFO] Snapshot written: /home/jwfalc/smarkets-bot/data/snapshots/matchbook/2026-08-09_14-01.json
+2026-08-09 15:01:15,865 [INFO] Market log updated (matchbook)
+2026-08-09 15:02:10,113 [INFO] Pruned 1 files older than 90d from /home/jwfalc/smarkets-bot/data/snapshots/matchbook
+2026-08-09 15:02:10,150 [INFO] Scanner complete for matchbook. Snapshot: 2026-08-09_14-01.json
+2026-08-09 15:02:15,107 [ANALYZER] Primary research fetcher: gemini (models: gemini-2.5-flash, gemini-2.5-flash-lite)
+2026-08-09 15:02:15,135 [ANALYZER] Research cache: 141 entries loaded (TTL 10h, drift 10%)
+2026-08-09 15:02:15,323 [ANALYZER] betfair: loaded snapshot 2026-08-09_14-00.json
+2026-08-09 15:02:15,323 [ANALYZER] betfair: skipped 1 markets above volume cap (£500,000)
+2026-08-09 15:02:15,324 [ANALYZER] betfair: skipped 8 markets beyond 30d horizon
+2026-08-09 15:02:15,324 [ANALYZER] betfair: 201 tradeable markets
+2026-08-09 15:02:15,351 [ANALYZER] Already-open dedup: excluded 19 markets with an existing open position
+2026-08-09 15:02:15,356 [ANALYZER] Unsupported market-type filter: excluded 76 markets (BUG-130 whitelist — would always be rejected downstream anyway)
+2026-08-09 15:02:15,357 [ANALYZER] Indefinite-politics filter: excluded 3 markets (MOD-156 — no resolution date)
+2026-08-09 15:02:15,364 [ANALYZER] Far-future filter: excluded 51 markets that BUG-154/MOD-147 would hold anyway (MOD-297/MOD-311): China Open | Winner (~276d out); English Sky Bet League 1 | Relegation 2026/27 (~143d out); English Sky Bet Championship | Relegation 2026/27 (~143d out); English Sky Bet League 2 | Promotion 2026/27 (~143d out); English Sky Bet League 2 | Relegation 2026/27 (~143d out); French Ligue 1 | Winner 2026/27 (~143d out); English Premier League | Winner (~282d out); English Premier League | Top 5 Finish (~282d out); English Premier League | Top 6 Finish (~282d out); English Premier League | Relegation (~282d out); Italian Serie A | Winner 2026/27 (~143d out); UEFA Champions League | Winner (~287d out); German Bundesliga | Winner 2026/27 (~143d out); German State Elections | Berlin State Election Winner (~87d out); Canadian Politics | Quebec General Election Winner (~87d out); USA 2026 Midterm Elections | Balance of Power - 2026 Midterms (~87d out); USA 2026 Midterm Elections | Which party will control the House in 2026? (~87d out); USA 2026 Midterm Elections | Which party will control the Senate in 2026? (~87d out); USA 2026 Midterm Elections | Alaska Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Idaho Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Rhode Island Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Tennessee Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Connecticut Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | New York Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Florida Senate Election Winner (~87d out); USA 2026 Midterm Elections | Wyoming Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Alabama Senate Election Winner (~87d out); USA 2026 Midterm Elections | New Jersey Senate Election Winner (~87d out); USA 2026 Midterm Elections | Montana Senate Election Winner (~87d out); USA 2026 Midterm Elections | New Mexico Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Oregon Senate Election Winner (~87d out); USA 2026 Midterm Elections | Illinois Senate Election Winner (~87d out); USA 2026 Midterm Elections | Texas Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Virginia Senate Election Winner (~87d out); USA 2026 Midterm Elections | North Carolina Senate Election Winner (~87d out); USA 2026 Midterm Elections | Maine Senate Election Winner (~87d out); USA 2026 Midterm Elections | California Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | West Virginia Senate Election Winner (~87d out); USA 2026 Midterm Elections | Maine Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Pennsylvania Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Iowa Senate Election Winner (~87d out); USA 2026 Midterm Elections | Colorado Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Georgia Senate Election Winner (~87d out); USA 2026 Midterm Elections | Vermont Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Nevada Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Mississippi Senate Election Winner (~87d out); USA 2026 Midterm Elections | Wyoming Senate Election Winner (~87d out); USA 2026 Midterm Elections | Delaware Senate Election Winner (~87d out); USA 2026 Midterm Elections | Alabama Gubernatorial Election Winner (~87d out); USA 2026 Midterm Elections | Massachusetts Senate Election Winner (~87d out); USA 2026 Midterm Elections | Idaho Senate Election Winner (~87d out)
+2026-08-09 15:02:15,366 [ANALYZER] Overbook filter: excluded 8 markets that BUG-122 would skip anyway (MOD-297): FC Basel v Thun | Double Chance (201% > 130%); Sion v FC Vaduz | Double Chance (202% > 130%); C Caniato v Fed Cecconi | Match Odds (197% > 130%); English Premier League | PFA Player of the Year 2025/26 (163% > 130%); Brazilian Serie A | Winner 2026 (154% > 130%); Irish Premier Division | Winner Outright 2026 (184% > 130%); US Major League Soccer | MLS Cup Winner 2026 (594% > 130%);  PIF London Championship 2026 | Winner (212% > 130%)
+2026-08-09 15:02:15,367 [ANALYZER] MOD-317: unified quota (lay/probe priority) — football=5/6 (L1/P1), tennis=2/4 (L1/P0), cricket=4/4 (L0/P0), basketball=4/6 (L3/P1), darts=0/1 (L0/P0), australian_rules=0/1 (L0/P0), ice_hockey=0/1 (L0/P0), rugby_league=0/1 (L0/P0), boxing=0/1 (L0/P0), mma=0/1 (L0/P0), baseball=1/1 (L0/P1), snooker=1/1 (L0/P0), rugby_union=0/1 (L0/P0), motor_sport=0/1 (L0/P0), politics=1/2 (L0/P0), golf=6/6 (L2/P0), 44 total
+2026-08-09 15:02:15,368 [ANALYZER] Sports breakdown: {'football': 8, 'tennis': 2, 'cricket': 4, 'basketball': 4, 'baseball': 13, 'snooker': 3, 'politics': 1, 'golf': 9}
+2026-08-09 15:02:15,372 [ANALYZER] Market selection: 44 total (platforms: ['betfair'])
+2026-08-09 15:02:15,373 [ANALYZER] Gemini batch pre-pass: 18 cache-miss market(s), groups of 8
+2026-08-09 15:02:24,748 [ANALYZER] Gemini batch (gemini-2.5-flash): 1/8 markets, 10 shared sources
+2026-08-09 15:03:12,283 [ANALYZER] Gemini batch (gemini-2.5-flash): 8/8 markets, 10 shared sources
+2026-08-09 15:03:32,228 [ANALYZER] Gemini batch (gemini-2.5-flash): 2/2 markets, 10 shared sources
+2026-08-09 15:03:32,238 [ANALYZER] Gemini batch pre-pass: cached 11/18 market(s)
+2026-08-09 15:03:32,238 [ANALYZER] [1/44] Draw no Bet
+2026-08-09 15:03:32,239 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:32,601 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'AVS Futebol SAD'
+2026-08-09 15:03:32,614 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:32,614 [ANALYZER]   Data provider: 1 facts injected
+2026-08-09 15:03:32,614 [ANALYZER] [2/44] Match Odds
+2026-08-09 15:03:36,313 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:36,313 [ANALYZER]   Data provider: 2 facts injected
+2026-08-09 15:03:36,314 [ANALYZER] [3/44] Match Odds
+2026-08-09 15:03:36,314 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T11:34
+2026-08-09 15:03:37,379 [ANALYZER]   Data provider: 3 facts injected
+2026-08-09 15:03:37,379 [ANALYZER] [4/44] Moneyline
+2026-08-09 15:03:37,380 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:37,391 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:37,392 [ANALYZER] [5/44] Moneyline
+2026-08-09 15:03:37,392 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:37,392 [ANALYZER] [6/44] Match Odds
+2026-08-09 15:03:37,392 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:37,393 [ANALYZER] [7/44] Clacton By Election - Count Binface Vote Share
+2026-08-09 15:03:37,393 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:39,256 [ANALYZER] [8/44] Winner
+2026-08-09 15:03:39,257 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:39,517 [ANALYZER] [SLASHGOLF] Rate limit hit (429)
+2026-08-09 15:03:39,518 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:39,518 [ANALYZER]   Data provider: 1 facts injected
+2026-08-09 15:03:39,518 [ANALYZER] [9/44] Draw no Bet
+2026-08-09 15:03:41,851 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:41,851 [ANALYZER]   Data provider: 2 facts injected
+2026-08-09 15:03:41,851 [ANALYZER] [10/44] Match Odds
+2026-08-09 15:03:46,258 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:46,259 [ANALYZER] [11/44] Match Odds
+2026-08-09 15:03:48,787 [ANALYZER]   Data provider: 1 facts injected
+2026-08-09 15:03:48,787 [ANALYZER] [12/44] Moneyline
+2026-08-09 15:03:48,787 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:48,798 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:48,799 [ANALYZER] [13/44] Top 5 Finish
+2026-08-09 15:03:48,799 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:48,952 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:48,952 [ANALYZER]   Data provider: 1 facts injected
+2026-08-09 15:03:48,952 [ANALYZER] [14/44] Match Odds
+2026-08-09 15:03:51,210 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'St Gallen'
+2026-08-09 15:03:51,221 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:51,222 [ANALYZER]   Data provider: 1 facts injected
+2026-08-09 15:03:51,222 [ANALYZER] [15/44] Match Odds
+2026-08-09 15:03:53,752 [ANALYZER]   Data provider: 3 facts injected
+2026-08-09 15:03:53,752 [ANALYZER] [16/44] Moneyline
+2026-08-09 15:03:53,753 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:53,764 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:53,764 [ANALYZER] [17/44] Winner
+2026-08-09 15:03:53,764 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:53,775 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:53,776 [ANALYZER] [18/44] Both teams to Score?
+2026-08-09 15:03:56,036 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:56,036 [ANALYZER] [19/44] Match Odds
+2026-08-09 15:03:56,036 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,539 [ANALYZER]   Data provider: 2 facts injected
+2026-08-09 15:03:56,539 [ANALYZER] [20/44] Moneyline
+2026-08-09 15:03:56,540 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,551 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:56,552 [ANALYZER] [21/44] 17:45-Wallace
+2026-08-09 15:03:56,552 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:56,563 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:56,563 [ANALYZER] [22/44] Both teams to Score?
+2026-08-09 15:03:56,564 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,753 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:56,753 [ANALYZER] [23/44] 17:55-Skinns
+2026-08-09 15:03:56,754 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:56,765 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:56,765 [ANALYZER] [24/44] 18:35-Noren
+2026-08-09 15:03:56,765 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:56,777 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:56,777 [ANALYZER] [25/44] Moneyline
+2026-08-09 15:03:56,777 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,777 [ANALYZER] [26/44] Moneyline
+2026-08-09 15:03:56,778 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,778 [ANALYZER] [27/44] Moneyline
+2026-08-09 15:03:56,778 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,778 [ANALYZER] [28/44] Moneyline
+2026-08-09 15:03:56,778 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,778 [ANALYZER] [29/44] Moneyline
+2026-08-09 15:03:56,778 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T11:34
+2026-08-09 15:03:56,779 [ANALYZER] [30/44] Moneyline
+2026-08-09 15:03:56,779 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,779 [ANALYZER] [31/44] Moneyline
+2026-08-09 15:03:56,779 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,779 [ANALYZER] [32/44] Moneyline
+2026-08-09 15:03:56,779 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,780 [ANALYZER] [33/44] Moneyline
+2026-08-09 15:03:56,780 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,780 [ANALYZER] [34/44] Moneyline
+2026-08-09 15:03:56,780 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,780 [ANALYZER] [35/44] 18:05-Matsuyama
+2026-08-09 15:03:56,780 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:56,792 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:56,792 [ANALYZER] [36/44] Match Odds and Both teams to Score
+2026-08-09 15:03:56,792 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,885 [ANALYZER] [API_FOOTBALL] API errors: {'search': 'The Search field may only contain alpha-numeric characters and spaces.'}
+2026-08-09 15:03:56,886 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'FC Basel/Yes'
+2026-08-09 15:03:56,897 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:56,898 [ANALYZER] [37/44] Moneyline
+2026-08-09 15:03:56,898 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,898 [ANALYZER] [38/44] Match Odds
+2026-08-09 15:03:56,898 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T09:35
+2026-08-09 15:03:56,899 [ANALYZER] [39/44] Match Odds
+2026-08-09 15:03:56,899 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T05:04
+2026-08-09 15:03:56,899 [ANALYZER] [40/44] 18:15-Hall
+2026-08-09 15:03:56,899 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,910 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:56,910 [ANALYZER] [41/44] Moneyline
+2026-08-09 15:03:56,911 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,911 [ANALYZER] [42/44] 18:55-Brennan
+2026-08-09 15:03:56,911 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:56,922 [ANALYZER] [SLASHGOLF] No schedule data available
+2026-08-09 15:03:56,923 [ANALYZER] [43/44] Half Time/Full Time
+2026-08-09 15:03:56,923 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:57,134 [ANALYZER] [API_FOOTBALL] Rate limit hit (429)
+2026-08-09 15:03:57,134 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'St Gallen/St Gallen'
+2026-08-09 15:03:57,146 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:57,146 [ANALYZER]   Data provider: 1 facts injected
+2026-08-09 15:03:57,146 [ANALYZER] [44/44] Half Time/Full Time
+2026-08-09 15:03:57,147 [ANALYZER]   [CACHE HIT] Reusing research from 2026-08-09T14:03
+2026-08-09 15:03:57,220 [ANALYZER] [API_FOOTBALL] Rate limit hit (429)
+2026-08-09 15:03:57,221 [ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'FC Basel/FC Basel'
+2026-08-09 15:03:57,233 [ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=
+2026-08-09 15:03:57,233 [ANALYZER] Research fallback: 7 brief entr(ies) short on sources after primary (gemini)
+Sent
+2026-08-09 15:03:58,316 [ANALYZER] Spawning Claude Code research session: 7 market(s), model=claude-sonnet-4-6
+2026-08-09 15:04:09,388 [ANALYZER] Claude Code research session exited rc=1: 
+2026-08-09 15:04:09,389 [ANALYZER] Research fallback: Claude Code session covered 0/7 group(s)
+2026-08-09 15:04:09,877 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:09,879 [ANALYZER] Claude research fallback failed for St Gallen v Luzern: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPCmtM5LjvTSDECeFp'}
+2026-08-09 15:04:10,207 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:10,209 [ANALYZER] Claude research fallback failed for J Martin Manzano v Rapagnetta: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPEMtP11vfqGEUctDa'}
+2026-08-09 15:04:10,581 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:10,582 [ANALYZER] Claude research fallback failed for Dragons v Typhoons: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPFdHJgoX8P5ZHFPfW'}
+2026-08-09 15:04:10,904 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:10,906 [ANALYZER] Claude research fallback failed for FC Basel v Thun: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPHHzv8AXbXgbk5kpz'}
+2026-08-09 15:04:11,174 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:11,176 [ANALYZER] Claude research fallback failed for Halmstads v GAIS: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPJb8mabdpHoCy3icz'}
+2026-08-09 15:04:11,530 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:11,531 [ANALYZER] Claude research fallback failed for Ireland v Afghanistan: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPKj6Y4yHt3Mvfg18K'}
+2026-08-09 15:04:11,948 [ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-08-09 15:04:11,953 [ANALYZER] Claude research fallback failed for Ri Antoni v Purtseladze: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdsJPMTmWJWav29TDLQW2'}
+2026-08-09 15:04:12,044 [ANALYZER] Research cache: 37 hits, 7 fresh lookups
+2026-08-09 15:04:12,066 [ANALYZER] Research brief written: 2026-08-09_14-04_brief.json
+2026-08-09 15:04:12,066 [ANALYZER] Markets: 44 | Errors: 7 | Deferred: 0 | Credits used: 0
+BRIEF_PATH:/home/jwfalc/smarkets-bot/data/research/2026-08-09_14-04_brief.json
+2026-08-09 15:04:15,765 [ANALYZER] Loading research brief: 2026-08-09_14-04_brief.json
+2026-08-09 15:04:16,043 [ANALYZER] Betfair cross-ref index: 2779 runners
+2026-08-09 15:04:16,374 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/7 runners (partial field): Clacton By Election - Count Binface Vote Share
+2026-08-09 15:04:16,429 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/58 runners (partial field): Winner
+2026-08-09 15:04:16,429 [ANALYZER] MOD-293: favorite-trap flagged (monitoring only, not blocked) — Joaquin Niemann BACK at 72.5% implied:  LIV Golf New York 2026 | Winner
+2026-08-09 15:04:16,458 [ANALYZER] MOD-332: promoted back segment (basketball:moneyline) — New York Liberty: Las Vegas Aces @ New York Liberty | Moneyline
+2026-08-09 15:04:16,498 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/58 runners (partial field): Top 5 Finish
+2026-08-09 15:04:16,575 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/151 runners (partial field): Winner
+2026-08-09 15:04:16,924 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/9 runners (partial field): Half Time/Full Time
+2026-08-09 15:04:16,978 [ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation — brief has 6/9 runners (partial field): Half Time/Full Time
+2026-08-09 15:04:16,979 [ANALYZER] Analyzed 44 markets
+2026-08-09 15:04:16,979 [ANALYZER] Found 2 signals (10pp+)
+2026-08-09 15:04:16,979 [ANALYZER] Logged 3 distribution entries (7pp+)
+2026-08-09 15:04:17,002 [ANALYZER] Research output written: 2026-08-09_14-04_research.json
+2026-08-09 15:04:17,008 [ANALYZER] Appended 123 edge traces to edge_traces.json
+RESEARCH_PATH:/home/jwfalc/smarkets-bot/data/research/2026-08-09_14-04_research.json
+2026-08-09 15:04:18,287 [RESOLVE] Found 39 open trade(s) to check (paper_mode=True)
+2026-08-09 15:04:18,442 [RESOLVE] Using cached Betfair session token
+2026-08-09 15:04:18,442 [RESOLVE] Betfair: checking 30 open-trade markets
+2026-08-09 15:05:16,002 [RESOLVE] Snapshot name lookup: found mappings for 30 markets
+2026-08-09 15:05:16,116 [RESOLVE] Betfair settled: market=1.260909314 winner=Federico Zeballos (4151444)
+2026-08-09 15:05:16,289 [RESOLVE] Settled markets found: 1
+2026-08-09 15:05:16,801 [RESOLVE]   [betfair] Match Odds | WIN | P&L: +1.90 | Selection: Samuele Pieri | Winner(s): Federico Zeballos
+2026-08-09 15:05:16,801 [RESOLVE] Resolution alert: Match Odds pnl=+1.90
+2026-08-09 15:05:16,931 [RESOLVE] Telegram notification sent
+2026-08-09 15:05:17,090 [RESOLVE] Auto-resolved 1 trade(s). Running P&L: -14.65 | W/L: 64/71 | ROI: -2.59%
+MOD-249: proven-loser denylist active — 7 category/ies: golf/winner/back n=25 WR=16%; soccer/half time/back n=21 WR=24%; soccer/match odds/back n=55 WR=49%; cricket/match odds/back n=23 WR=35%; soccer/both teams to score?/back n=20 WR=40%; baseball/moneyline/back n=61 WR=46%; soccer/draw no bet/back n=20 WR=20%
+Balance: £95.35 | Reserved: £0.56 | Available: £94.79
+Stake scaling: Kelly balance £95.35 → max stake £15.00 (was £50.00)
+MOD-249 proven-loser: suppressing Birmingham Phoenix (soccer/match odds/back)
+BUG-134: Profit-relative cap: Joaquin Niemann BACK @ 1.38 — £2.00 → £1.44 (risk:reward would be 2.8:1)
+MOD-249 proven-loser: suppressing Joaquin Niemann (golf/winner/back)
+No new paper trades to log
+Signal drought counter: 2 consecutive zero-signal run(s)
+2026-08-09 15:05:25,540 [INFO] ============================================================
+2026-08-09 15:05:25,542 [INFO] DIGEST RUN STARTED
+2026-08-09 15:05:25,542 [INFO] ============================================================
+2026-08-09 15:05:41,200 [INFO] Divergence gate (BUG-148b/MOD-254): suppressed 2 standard-track signal(s) with <5pp model-vs-market divergence
+2026-08-09 15:05:41,236 [INFO] Research quality gate (BUG-148d): 7 low-quality market(s) identified
+/home/jwfalc/smarkets-bot/scripts/digest.py:630: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  _now_utc = datetime.datetime.utcnow().isoformat()
+2026-08-09 15:05:41,242 [INFO] Slip: no new paper trades logged this run — nothing to send
+2026-08-09 15:05:59,684 [INFO] cashout_advisor: no advisory triggers fired
+2026-08-09 15:05:59,842 [INFO] Dashboard data written: /home/jwfalc/smarkets-bot/dashboard/dashboard_data.json
+2026-08-09 15:05:59,918 [INFO] Period logs updated: 2026-08-09, 2026-W32, 2026-08, 2026-Q3
+2026-08-09 15:05:59,920 [INFO] Run log: [2026-08-09 14:05 UTC] status=ok | platforms=betfair,matchbook | markets=925 | signals=0 | alerts=0 | movements=10 | consec_losses=0
+2026-08-09 15:05:59,920 [INFO] Digest complete
+Distribution log updated: 0 new entries added
+Total entries: 3189
+  near_certainty: 15 total, 12 resolved
+  high_prob: 75 total, 56 resolved
+  7-9pp: 1542 total, 498 resolved
+  10-11pp: 588 total, 226 resolved
+  12pp+: 969 total, 627 resolved
+
+REVIEW DUE: 7-9pp band has 355 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+
+REVIEW DUE: 7-9pp band has 355 resolved entries (threshold: 12)
+  Run: python distribution_logger.py report
+  Then run: prompts/prompt_review_v1.md
+EXIT_CODE:0
+Sent
+2026-08-09 15:06:05,991 [STATIC-DASH] Building dashboard data…
+2026-08-09 15:06:06,024 [STATIC-DASH] Data collected: 533 trades, 0 signals
+2026-08-09 15:06:06,130 [STATIC-DASH] Written: /home/jwfalc/smarkets-dashboard/index.html (1062KB)
+2026-08-09 15:06:06,134 [STATIC-DASH] Copied PWA asset: manifest.json
+2026-08-09 15:06:06,146 [STATIC-DASH] Copied PWA asset: apple-touch-icon.png
+2026-08-09 15:06:06,149 [STATIC-DASH] Copied PWA asset: icon-192.png
+2026-08-09 15:06:06,153 [STATIC-DASH] Copied PWA asset: icon-512.png
+2026-08-09 15:06:06 [DEPLOY] Starting dashboard deploy...
+HTML written OK
+2026-08-09 15:06:06 [DEPLOY] Static HTML built
+[main 8db2a65] Deploy: 2026-08-09 15:06 UTC
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/jwfalc-coder/smarkets-dashboard.git
+   333f60e..8db2a65  main -> main
+2026-08-09 15:06:06 [DEPLOY] Deploy complete: Deploy: 2026-08-09 15:06 UTC
