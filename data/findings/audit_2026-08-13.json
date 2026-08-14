@@ -1,0 +1,128 @@
+{
+  "run_date": "2026-08-13",
+  "auditor": "claude-sonnet-4-6 (monthly code audit)",
+  "scope": "Full pipeline: scanner, researcher, analyze_research, check_resolutions, digest, paper_tracker, distribution_logger, executor, watchdog, backup, weekly_summary, run_routine.sh, notify, run_code_audit, config.toml",
+  "summary": "Two medium-severity operational-risk issues found: a silent lost-update race on edge_distribution.json (shared by check_resolutions.py and distribution_logger.py with no advisory lock coordination) and a non-atomic repair_log.json read-modify-write in watchdog.py that can drop entries or corrupt the log on a crash. Ten low-severity findings cover non-atomic writes to status/dashboard files, a deprecated datetime API, stale config documentation, accumulating lock files, and maintenance-debt patterns in researcher.py and paper_tracker.py. No HIGH severity bugs found. Signal logic, thresholds, and calibration are not in scope.",
+  "findings": [
+    {
+      "id": "AUD-2026-08-13-01",
+      "severity": "medium",
+      "category": "operational_risk",
+      "affected_file": "scripts/check_resolutions.py, scripts/distribution_logger.py",
+      "description": "Both check_resolutions.py (line ~107) and distribution_logger.py (line 55) define independent save_distribution() functions that each use tempfile.mkstemp + os.replace for atomic write, but with NO advisory flock. The 23:30 standalone check_resolutions.py cron can overlap with a late-running 22:00 routine whose step 7 calls distribution_logger.py log. Both write to the same edge_distribution.json: when both os.replace calls fire, the second wins and silently overwrites the first writer's changes, dropping whatever resolved entries the first writer had just added. Calibration data loss is invisible — no error logged, no Telegram alert.",
+      "proposed_fix": "Add fcntl.flock coordination between both save_distribution() implementations. Simplest approach: extract a shared save_distribution() into a small utility module (or duplicate the flock pattern from paper_tracker.py's save_tracker). Lock on a dedicated edge_distribution.lock file, acquire LOCK_EX before the tempfile write, release after os.replace. Alternatively, ensure the 23:30 check_resolutions.py run finishes before the next routine's distribution step — but locking is more robust.",
+      "effort_estimate": "30 minutes",
+      "risk_of_fix": "low — adding a lock on a dedicated lock file does not change the write path logic"
+    },
+    {
+      "id": "AUD-2026-08-13-02",
+      "severity": "medium",
+      "category": "bug",
+      "affected_file": "scripts/watchdog.py",
+      "description": "append_repair_entry() at line 117 calls read_repair_log() + write_repair_log() as a non-atomic read-modify-write. write_repair_log() uses Path.write_text() (open 'w', truncate, write) — not tempfile+replace. Two failure modes: (1) If two watchdog instances run concurrently (e.g. a prior routine's slow repair overlaps the next routine's watchdog), both read the same repair log list, each appends an entry, and the second write silently drops the first's append. (2) If the process crashes between truncation and completion of write_text(), the file is left corrupt/empty. read_repair_log() catches json.JSONDecodeError and returns [] silently — subsequent append_repair_entry() calls then write a fresh list starting from scratch, discarding all repair history.",
+      "proposed_fix": "Replace write_repair_log() with an atomic pattern: write to a tempfile in the same directory, then os.replace() over the target. Optionally add an fcntl.flock on a repair_log.lock sidecar to serialise concurrent appends. The read-modify-write is already serialised within a single watchdog run (the loop over issues calls dispatch() sequentially), so only concurrent-instance and crash-safety need to be addressed.",
+      "effort_estimate": "20 minutes",
+      "risk_of_fix": "low — localised to watchdog.py, no change to repair logic"
+    },
+    {
+      "id": "AUD-2026-08-13-03",
+      "severity": "low",
+      "category": "bug",
+      "affected_file": "scripts/researcher.py",
+      "description": "The module-level constant _GEMINI_MODELS at line 72 is initialised to [\"gemini-3.5-flash\", \"gemini-2.5-flash\"]. At runtime, run_research() at line 1803 overwrites this from config: _GEMINI_MODELS = _gem_cfg.get(\"research_gemini_models\", [\"gemini-3.5-flash\", \"gemini-2.5-flash\"]) — using the same invalid list as the fallback default. The live config correctly sets research_gemini_models = [\"gemini-2.5-flash\", \"gemini-2.5-flash-lite\"], so current runs are unaffected. However, \"gemini-3.5-flash\" is not a valid Google model identifier — if the config key is ever removed or mistyped, every Gemini batch call silently fails on the first model (getting a 4xx error or wrong-model response) before cascading to the second, burning 503-retry wait time and degrading research throughput with no alert.",
+      "proposed_fix": "Change the fallback default at both line 72 and line 1803 to [\"gemini-2.5-flash\", \"gemini-2.5-flash-lite\"] to match the live config. No behaviour change while config key is present.",
+      "effort_estimate": "5 minutes",
+      "risk_of_fix": "minimal — default is only used if config key is absent"
+    },
+    {
+      "id": "AUD-2026-08-13-04",
+      "severity": "low",
+      "category": "operational_risk",
+      "affected_file": "scripts/scanner.py",
+      "description": "_update_combined_status() at line 486 performs a read-modify-write on last_scan_status.json using plain open() for both the read (line 493) and write (line 524), with no tempfile+replace and no flock. The dashboard and downstream consumers read this file between scanner runs. A concurrent read during the write sees a truncated file (plain open 'w' truncates before writing) and may throw JSONDecodeError. The function also lacks locking — if scanner invocations were ever parallelised, the merge logic would silently discard one platform's update.",
+      "proposed_fix": "Replace the write at line 524 with the tempfile+replace pattern (consistent with _update_odds_history at line 432 in the same file, which already uses atomic write + flock). Add fcntl.flock on last_scan_status.lock around the read-modify-write to make it safe if parallelised.",
+      "effort_estimate": "20 minutes",
+      "risk_of_fix": "low — mechanical change, same pattern as nearby _update_odds_history()"
+    },
+    {
+      "id": "AUD-2026-08-13-05",
+      "severity": "low",
+      "category": "operational_risk",
+      "affected_file": "scripts/digest.py",
+      "description": "dashboard_data.json is written at line 852 using plain open(DASHBOARD_DATA, 'w') followed by json.dump(). This truncates the target before writing — a concurrent browser fetch of the file (which the live GitHub Pages dashboard does on page load) receives truncated JSON during the write window and may display an error or a blank dashboard. A failed generation that leaves the process mid-write (OOM, SIGKILL) also leaves the file corrupted.",
+      "proposed_fix": "Wrap the write in the standard tempfile+replace pattern: write json.dump() into a tempfile in the dashboard/ directory, then os.replace() over DASHBOARD_DATA. Three-line change consistent with how other critical JSON files are written elsewhere in the pipeline.",
+      "effort_estimate": "10 minutes",
+      "risk_of_fix": "minimal — no logic change, only write path"
+    },
+    {
+      "id": "AUD-2026-08-13-06",
+      "severity": "low",
+      "category": "operational_risk",
+      "affected_file": "scripts/run_routine.sh",
+      "description": "write_status() at line 16 writes run_status.json via a shell heredoc redirect: cat > \"$STATUS_FILE\" << EOF ... EOF. The shell truncates $STATUS_FILE to zero bytes before writing the heredoc content. A concurrent dashboard read during this window (dashboard polls run_status.json for the progress indicator) receives an empty file or partial JSON and may log a parse error. This fires up to 14 times per routine (once per write_status call).",
+      "proposed_fix": "Write to a tempfile and mv atomically: TMPFILE=$(mktemp \"$STATUS_FILE.XXXXXX\") && cat > \"$TMPFILE\" << EOF ... EOF && mv \"$TMPFILE\" \"$STATUS_FILE\". Alternatively use Python to write the status file with the project's standard tempfile+replace pattern.",
+      "effort_estimate": "15 minutes",
+      "risk_of_fix": "low — cosmetic/display-only file, no trade logic"
+    },
+    {
+      "id": "AUD-2026-08-13-07",
+      "severity": "low",
+      "category": "bug",
+      "affected_file": "scripts/digest.py",
+      "description": "Two related issues in the in-play filter at lines 632-637. (1) Line 632 uses datetime.datetime.utcnow() which is deprecated as of Python 3.12 and emits DeprecationWarning on each run (caught by the watchdog's DeprecationWarning pattern at watchdog.py LOG_PATTERNS line 135, generating a LOW watchdog event every run). (2) Line 637 compares resolution_timeframe.rstrip(\"Z\") > _now_utc as ISO strings. _now_utc is a naive ISO string (no timezone suffix); resolution_timeframe may carry a timezone offset in non-Z format (e.g. +01:00 from certain Betfair fields) — rstrip(\"Z\") leaves the offset intact, and lexicographic comparison of \"2026-08-13T20:00:00+01:00\" > \"2026-08-13T19:45:00\" incorrectly passes the in-play check, potentially letting an in-play market through the filter.",
+      "proposed_fix": "Replace line 632 with: _now_utc = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z'). For line 637, normalise both timestamps to the same format before comparing, or use datetime.fromisoformat() to parse both and compare as datetime objects (catching ValueError if parsing fails and defaulting to block).",
+      "effort_estimate": "20 minutes",
+      "risk_of_fix": "low — logic change only on the in-play guard; a malformed resolution_timeframe is currently excluded by try/except around the comparison"
+    },
+    {
+      "id": "AUD-2026-08-13-08",
+      "severity": "low",
+      "category": "maintenance_debt",
+      "affected_file": "scripts/digest.py",
+      "description": "\"instagram.com\" appears twice in the _JUNK_DOMAINS set (approximately lines 395 and 400). Python sets silently deduplicate, so there is no functional impact — both entries resolve to a single set member. The duplicate indicates a copy-paste error during domain list maintenance and will confuse future editors checking for domain coverage.",
+      "proposed_fix": "Remove the duplicate entry. One-line deletion.",
+      "effort_estimate": "2 minutes",
+      "risk_of_fix": "none"
+    },
+    {
+      "id": "AUD-2026-08-13-09",
+      "severity": "low",
+      "category": "maintenance_debt",
+      "affected_file": "scripts/digest.py",
+      "description": "_append_to_period_log() at line 969 opens a lock file (path.with_suffix('.lock')) for each of the four period log paths (daily/weekly/monthly/quarterly) but never deletes the lock file after releasing the lock. fcntl.LOCK_UN is called (line 988), but the file itself persists. At 4 lock files per routine run and 7 runs/day, this accumulates ~28 new .lock files per day in the reports/ subdirectories indefinitely. The lock files are harmless to correctness (fcntl advisory locks are per-fd, not per-file), but they create maintenance noise and will trigger complaints from disk-full or backup monitoring on a long-running Pi.",
+      "proposed_fix": "Add lock_path.unlink(missing_ok=True) in the finally block after fcntl.LOCK_UN, or use a single static lock file path rather than a per-log-file sidecar. Alternatively, add a periodic cleanup cron step that removes .lock files older than 1 day from the reports/ tree.",
+      "effort_estimate": "10 minutes",
+      "risk_of_fix": "low — the lock file is only used while the process holds the fd; removing the file after unlock is safe"
+    },
+    {
+      "id": "AUD-2026-08-13-10",
+      "severity": "low",
+      "category": "logic_drift",
+      "affected_file": "config/config.toml, scripts/digest.py, scripts/telegram_bot.py",
+      "description": "[routine].scheduled_hours_utc in config.toml lists 5 UTC hours ([5, 9.5, 14, 17, 21]) corresponding to 6:00/10:30/15:00/18:00/22:00 BST. CLAUDE.md documents 7 daily runs (adding 12:30 and 20:00 BST = 11:30 and 19:00 UTC). digest.py:769 and telegram_bot.py:182 both consume this key for \"next scan\" time display. As a result, for approximately 4.5 hours per day (between 11:30-14:00 UTC and 19:00-21:00 UTC), the dashboard and Telegram bot show the wrong next-run time, making it appear a run is further away than it is. This also affects any alerting logic that compares current time against scheduled hours.",
+      "proposed_fix": "Update [routine].scheduled_hours_utc in config.toml to match the actual crontab: [5, 9.5, 11.5, 14, 17, 19, 21] (adding 11.5 for 12:30 BST and 19 for 20:00 BST, both in UTC). Verify against the active crontab before committing — crontab_backup.txt in scripts/ should be the source of truth.",
+      "effort_estimate": "5 minutes",
+      "risk_of_fix": "low — display/reference field only; no execution logic reads this key"
+    },
+    {
+      "id": "AUD-2026-08-13-11",
+      "severity": "low",
+      "category": "maintenance_debt",
+      "affected_file": "scripts/paper_tracker.py",
+      "description": "The signal processing loop in _log_paper_trades_locked() imports the re module multiple times with different aliases: 'import re as _re117' at approximately line 1132, 'import re as _re208' at approximately line 1215, and 'import re as _re' at approximately line 1369. Python's import cache means sys.modules['re'] is returned on all subsequent imports, so there is zero runtime cost. However, the pattern suggests these were copy-pasted from different code contexts and never cleaned up, making the loop body confusing to read and the aliases untrustworthy as identifiers (they look like they might be different modules).",
+      "proposed_fix": "Move all three import re statements to the module top-level (or at minimum to the function prologue outside the loop) and use a single alias. One-time cleanup during a non-critical maintenance window.",
+      "effort_estimate": "10 minutes",
+      "risk_of_fix": "low — behaviour unchanged"
+    },
+    {
+      "id": "AUD-2026-08-13-12",
+      "severity": "low",
+      "category": "maintenance_debt",
+      "affected_file": "scripts/run_routine.sh",
+      "description": "At line 248, the context note writes: echo \"Run completed: $(date '+%Y-%m-%d %H:%M:%S UTC')\". The UTC string is hardcoded in the format pattern, but date(1) uses the system timezone — Europe/London — which is BST (UTC+1) from late March to late October. During BST, last_run_context.txt records timestamps labelled UTC that are actually 1 hour ahead. This affects the cloud auditor repo snapshot which copies last_run_context.txt and uses it as the 'last_routine' timestamp baseline.",
+      "proposed_fix": "Replace with: echo \"Run completed: $(date -u '+%Y-%m-%d %H:%M:%S UTC')\" — the -u flag forces UTC output so the label and value match. Alternatively use $(TZ=UTC date '+%Y-%m-%d %H:%M:%S UTC').",
+      "effort_estimate": "2 minutes",
+      "risk_of_fix": "none"
+    }
+  ]
+}
