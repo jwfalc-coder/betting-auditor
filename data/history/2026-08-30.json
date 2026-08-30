@@ -1,0 +1,191 @@
+{
+  "generated_at": "2026-08-30T02:14:01.550012",
+  "date": "2026-08-30",
+  "last_routine": "Run completed: 2026-08-29 22:06:51 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Primary research fetcher: gemini (models: gemini-2.5-flash, gemini-2.5-flash-lite)\n[ANALYZER] Research cache: 139 entries loaded (TTL 10h, drift 10%)\n[ANALYZER] betfair: loaded snapshot 2026-08-29_21-00.json\n[ANALYZER] betfair: skipped 3 markets above volume cap (\u00a3500,000)\n[ANALYZER] betfair: skipped 10 markets beyond 30d horizon\n[ANALYZER] betfair: 215 tradeable markets\n[ANALYZER] Already-open dedup: excluded 20 markets with an existing open position\n[ANALYZER] Unsupported market-type filter: excluded 85 markets (BUG-130 whitelist \u2014 would always be rejected downstream anyway)\n[ANALYZER] Indefinite-politics filter: excluded 3 markets (MOD-156 \u2014 no resolution date)\n[ANALYZER] Far-future filter: excluded 62 markets that BUG-154/MOD-147 would hold anyway (MOD-297/MOD-311): England v Pakistan Series Betting | Series Winner (~270d out); Hungarian Darts Trophy | Winner (~270d out); F1 Italian Grand Prix | Winner (~275d out); English Sky Bet League 1 | Relegation 2026/27 (~123d out); English Sky Bet Championship | Relegation 2026/27 (~123d out); English Sky Bet League 2 | Promotion 2026/27 (~123d out); English Sky Bet League 2 | Relegation 2026/27 (~123d out); Spanish La Liga | Relegation 2026/27 (~123d out); French Ligue 1 | Winner 2026/27 (~123d out); English Premier League | Winner (~261d out); English Premier League | Top 5 Finish (~261d out); English Premier League | Top 6 Finish (~261d out); English Premier League | Relegation (~261d out); Italian Serie A | Winner 2026/27 (~123d out); Italian Serie A | Relegation 2026/27 (~123d out); Italian Serie A | Top 4 Finish 2026/27 (~123d out); German Bundesliga | Winner 2026/27 (~123d out); English Premier League | PFA Player of the Year 2026/27 (~123d out); UEFA Champions League | Winner 2026/27 (~123d out); UEFA Europa League | Winner 2026/27 (~123d out); German State Elections | Berlin State Election Winner (~67d out); Canadian Politics | Quebec General Election Winner (~67d out); USA 2026 Midterm Elections | Balance of Power - 2026 Midterms (~67d out); USA 2026 Midterm Elections | Which party will control the House in 2026? (~67d out); USA 2026 Midterm Elections | Which party will control the Senate in 2026? (~67d out); USA 2026 Midterm Elections | Alaska Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Idaho Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Rhode Island Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Tennessee Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Connecticut Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | New York Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Florida Senate Election Winner (~67d out); USA 2026 Midterm Elections | Wyoming Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Alabama Senate Election Winner (~67d out); USA 2026 Midterm Elections | New Jersey Senate Election Winner (~67d out); USA 2026 Midterm Elections | Montana Senate Election Winner (~67d out); USA 2026 Midterm Elections | New Mexico Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Oregon Senate Election Winner (~67d out); USA 2026 Midterm Elections | Illinois Senate Election Winner (~67d out); USA 2026 Midterm Elections | Texas Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Virginia Senate Election Winner (~67d out); USA 2026 Midterm Elections | North Carolina Senate Election Winner (~67d out); USA 2026 Midterm Elections | Maine Senate Election Winner (~67d out); USA 2026 Midterm Elections | California Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | West Virginia Senate Election Winner (~67d out); USA 2026 Midterm Elections | Maine Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Pennsylvania Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Iowa Senate Election Winner (~67d out); USA 2026 Midterm Elections | Colorado Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Georgia Senate Election Winner (~67d out); USA 2026 Midterm Elections | Vermont Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Nevada Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Mississippi Senate Election Winner (~67d out); USA 2026 Midterm Elections | Wyoming Senate Election Winner (~67d out); USA 2026 Midterm Elections | Delaware Senate Election Winner (~67d out); USA 2026 Midterm Elections | Alabama Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Massachusetts Senate Election Winner (~67d out); USA 2026 Midterm Elections | Idaho Senate Election Winner (~67d out); USA 2026 Midterm Elections | Michigan Senate Election Winner (~67d out); USA 2026 Midterm Elections | New Hampshire Senate Election Winner (~67d out); USA 2026 Midterm Elections | Massachusetts Gubernatorial Election Winner (~67d out); USA 2026 Midterm Elections | Arkansas Senate Election Winner (~67d out)\n[ANALYZER] Overbook filter: excluded 8 markets that BUG-122 would skip anyway (MOD-297): Sussex v Somerset | Match Odds DRAW NO BET (181% > 130%); Yorkshire v Leicestershire | Match Odds DRAW NO BET (136% > 130%); British Columbia Lions @ Ottawa Redblacks | Moneyline (169% > 130%); Brazilian Serie A | Winner 2026 (176% > 130%); Irish Premier Division | Winner Outright 2026 (176% > 130%); US Major League Soccer | MLS Cup Winner 2026 (311% > 130%);   LPGA FM Championship 2026 | Winner (588% > 130%); Presidents Cup 2026 | Winner (283% > 130%)\n[ANALYZER] MOD-317: unified quota (lay/probe priority) \u2014 football=3/6 (L0/P0), tennis=4/4 (L2/P0), cricket=3/4 (L2/P0), basketball=3/6 (L2/P1), darts=0/1 (L0/P0), australian_rules=0/1 (L0/P0), ice_hockey=0/1 (L0/P0), rugby_league=0/1 (L0/P0), boxing=0/1 (L0/P0), mma=0/1 (L0/P0), baseball=1/1 (L0/P1), snooker=0/1 (L0/P0), rugby_union=0/1 (L0/P0), motor_sport=0/1 (L0/P0), politics=0/2 (L0/P0), golf=6/6 (L3/P3), 37 total\n[ANALYZER] Sports breakdown: {'football': 6, 'tennis': 4, 'cricket': 3, 'basketball': 3, 'baseball': 7, 'golf': 8, 'american_football': 6}\n[ANALYZER] Market selection: 37 total (platforms: ['betfair'])\n[ANALYZER] Gemini batch pre-pass: 19 cache-miss market(s), groups of 8\n[ANALYZER] Gemini batch (gemini-2.5-flash): 8/8 markets, 10 shared sources\n[ANALYZER] Gemini batch (gemini-2.5-flash): 8/8 markets, 10 shared sources\n[ANALYZER] Gemini batch (gemini-2.5-flash): 3/3 markets, 10 shared sources\n[ANALYZER] Gemini batch pre-pass: cached 19/19 market(s)\n[ANALYZER] [1/37] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Jaguares de Cordoba'\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [2/37] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 5 facts injected\n[ANALYZER] [3/37] Match Odds  Draw No Bet\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [4/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T11:33\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [5/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T17:04\n[ANALYZER] [6/37] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [SLASHGOLF] Rate limit hit (429)\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [7/37] Half Time/Full Time\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [API_FOOTBALL] API errors: {'search': 'The Search field may only contain alpha-numeric characters and spaces.'}\n[ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Atletico MG/Atletico MG'\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [8/37] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [9/37] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T17:04\n[ANALYZER] [10/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T17:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [11/37] Top 5 Finish\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T14:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [12/37] Half Time\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [13/37] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [14/37] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T17:04\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [15/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [16/37] Top 20 Finish\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [17/37] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [18/37] Ewen Ferguson vs Daniel Hillier\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [19/37] Tyrrell Hatton vs Patrick Reed\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [20/37] Eugenio Chacarra vs Oliver Lindell\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [21/37] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [22/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [23/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [24/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T17:04\n[ANALYZER] [25/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [26/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [27/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [28/37] Both teams to Score?\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [29/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T17:04\n[ANALYZER] [30/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [31/37] Half Time\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Jaguares de Cordoba'\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [32/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [33/37] Match Odds and Both teams to Score\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [API_FOOTBALL] API errors: {'search': 'The Search field may only contain alpha-numeric characters and spaces.'}\n[ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Atletico MG/Yes'\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [34/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [35/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [36/37] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T19:04\n[ANALYZER] [37/37] Jorge Campillo vs Antoine Rozner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-08-29T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] Research cache: 37 hits, 0 fresh lookups\n[ANALYZER] Research brief written: 2026-08-29_21-04_brief.json\n[ANALYZER] Markets: 37 | Errors: 0 | Deferred: 0 | Credits used: 0\n[ANALYZER] Loading research brief: 2026-08-29_21-04_brief.json\n[ANALYZER] Betfair cross-ref index: 3599 runners\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/157 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/9 runners (partial field): Half Time/Full Time\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/29 runners (partial field): Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/157 runners (partial field): Top 5 Finish\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/157 runners (partial field): Top 20 Finish\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 6/30 runners (partial field): Winner\n[ANALYZER] Analyzed 37 markets\n[ANALYZER] Found 2 signals (10pp+)\n[ANALYZER] Logged 2 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-08-29_21-04_research.json\n[ANALYZER] Appended 105 edge traces to edge_traces.json",
+  "resolved_total": 678,
+  "overall_win_rate_pct": 38.6,
+  "paper_pnl_total": -82.23,
+  "by_band": {
+    "12pp+": {
+      "n": 104,
+      "wins": 34,
+      "pnl": -56.54,
+      "win_rate_pct": 32.7
+    },
+    "10-11pp": {
+      "n": 81,
+      "wins": 27,
+      "pnl": -1.8,
+      "win_rate_pct": 33.3
+    },
+    "7-9pp": {
+      "n": 473,
+      "wins": 192,
+      "pnl": -28.68,
+      "win_rate_pct": 40.6
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 678,
+      "wins": 262,
+      "pnl": -82.23,
+      "win_rate_pct": 38.6
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 529,
+      "wins": 222,
+      "pnl": -87.15,
+      "win_rate_pct": 42.0
+    },
+    "lay": {
+      "n": 149,
+      "wins": 40,
+      "pnl": 4.92,
+      "win_rate_pct": 26.8
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "08:20-Hatton",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.7,
+      "was_correct": true,
+      "paper_pnl": 2.47,
+      "resolved_at": "2026-08-28T14:09:25.774932"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.74,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-29T05:14:09.433091"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.04,
+      "was_correct": true,
+      "paper_pnl": 2.39,
+      "resolved_at": "2026-08-29T05:14:10.027957"
+    },
+    {
+      "market_name": "Regular Time Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.74,
+      "was_correct": false,
+      "paper_pnl": -0.32,
+      "resolved_at": "2026-08-29T19:06:24.762874"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 8.32,
+      "was_correct": false,
+      "paper_pnl": -0.38,
+      "resolved_at": "2026-08-29T09:41:46.892919"
+    },
+    {
+      "market_name": "17:19-Schauffele",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.04,
+      "was_correct": true,
+      "paper_pnl": 2.01,
+      "resolved_at": "2026-08-29T21:06:05.434730"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 12.62,
+      "was_correct": false,
+      "paper_pnl": -1.6,
+      "resolved_at": "2026-08-29T19:06:25.346800"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 8.39,
+      "was_correct": false,
+      "paper_pnl": -0.44,
+      "resolved_at": "2026-08-29T22:31:16.784957"
+    },
+    {
+      "market_name": "18:37-Fox",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.07,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-29T22:31:17.461674"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.73,
+      "was_correct": false,
+      "paper_pnl": -0.24,
+      "resolved_at": "2026-08-29T21:06:06.009057"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.85,
+      "was_correct": true,
+      "paper_pnl": 2.09,
+      "resolved_at": "2026-08-29T21:06:06.479485"
+    },
+    {
+      "market_name": "19:19-Rose",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.53,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-08-29T22:31:18.016806"
+    },
+    {
+      "market_name": "18:01-Fitzpatrick",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.61,
+      "was_correct": true,
+      "paper_pnl": 2.09,
+      "resolved_at": "2026-08-29T21:06:06.983892"
+    },
+    {
+      "market_name": "Half Time/Full Time",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.18,
+      "was_correct": true,
+      "paper_pnl": 2.17,
+      "resolved_at": "2026-08-29T21:06:07.449366"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 8.74,
+      "was_correct": false,
+      "paper_pnl": -0.38,
+      "resolved_at": "2026-08-29T21:06:07.953950"
+    }
+  ],
+  "flags": [
+    "betfair_low_winrate",
+    "low_edge_band_losing"
+  ]
+}
