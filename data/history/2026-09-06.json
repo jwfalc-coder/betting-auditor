@@ -1,0 +1,191 @@
+{
+  "generated_at": "2026-09-06T02:20:05.040185",
+  "date": "2026-09-06",
+  "last_routine": "Run completed: 2026-09-05 22:18:27 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Primary research fetcher: gemini (models: gemini-2.5-flash, gemini-2.5-flash-lite)\n[ANALYZER] Research cache: 75 entries loaded (TTL far=10h near=3h within 24h of start, force-refresh<2h, drift 10%)\n[ANALYZER] betfair: loaded snapshot 2026-09-05_21-00.json\n[ANALYZER] betfair: skipped 2 markets above volume cap (\u00a3500,000)\n[ANALYZER] betfair: skipped 13 markets beyond 30d horizon\n[ANALYZER] betfair: 276 tradeable markets\n[ANALYZER] In-play filter: excluded 3 in-play markets\n[ANALYZER] Already-open dedup: excluded 21 markets with an existing open position\n[ANALYZER] Unsupported market-type filter: excluded 125 markets (BUG-130 whitelist \u2014 would always be rejected downstream anyway)\n[ANALYZER] Indefinite-politics filter: excluded 3 markets (MOD-156 \u2014 no resolution date)\n[ANALYZER] Far-future filter: excluded 23 markets that BUG-154/MOD-147 would hold anyway (MOD-297/MOD-311): I Jovi\u0107 v Eala | Set 1 Winner (~270d out);   Czech Darts Open | Winner (~271d out); British Open | Winner (~270d out); F1 Italian Grand Prix | Winner (~270d out); F1 Italian Grand Prix | Top 6 Finish (~270d out); UEFA Conference League | Winner 2026/27 (~116d out); English Sky Bet League 1 | Relegation 2026/27 (~116d out); English Sky Bet Championship | Relegation 2026/27 (~116d out); English Sky Bet League 2 | Promotion 2026/27 (~116d out); English Sky Bet League 2 | Relegation 2026/27 (~116d out); Spanish La Liga | Relegation 2026/27 (~116d out); French Ligue 1 | Winner 2026/27 (~116d out); English Premier League | Winner (~254d out); English Premier League | Top 5 Finish (~254d out); English Premier League | Top 6 Finish (~254d out); English Premier League | Relegation (~254d out); Italian Serie A | Winner 2026/27 (~116d out); Italian Serie A | Relegation 2026/27 (~116d out); Italian Serie A | Top 4 Finish 2026/27 (~116d out); German Bundesliga | Winner 2026/27 (~116d out); English Premier League | PFA Player of the Year 2026/27 (~116d out); UEFA Champions League | Winner 2026/27 (~116d out); UEFA Europa League | Winner 2026/27 (~116d out)\n[ANALYZER] Overbook filter: excluded 13 markets that BUG-122 would skip anyway (MOD-297): Everton De Vina v Univ Catolica (Chile) | Double Chance (201% > 130%); Sao Paulo v Atletico MG | Double Chance (201% > 130%); Bathinda Royals v Jalandhar Warriors | Match Odds (166% > 130%); Italy Women v USA Women | Moneyline (198% > 130%); Brazilian Serie A | Winner 2026 (442% > 130%); Irish Premier Division | Winner Outright 2026 (804% > 130%); US Major League Soccer | MLS Cup Winner 2026 (1565% > 130%); German State Elections | Berlin State Election Winner (222% > 130%); Canadian Politics | Quebec General Election Winner (132% > 130%); USA 2026 Midterm Elections | Alaska Gubernatorial Election Winner (186% > 130%); USA 2026 Midterm Elections | California Gubernatorial Election Winner (597% > 130%); USA 2026 Midterm Elections | Vermont Gubernatorial Election Winner (172% > 130%); USA 2026 Midterm Elections | Nevada Gubernatorial Election Winner (196% > 130%)\n[ANALYZER] MOD-317: unified quota (lay/probe priority/proven-segment) \u2014 football=4/6 (L0/P0/S2), tennis=4/4 (L2/P0/S0), cricket=4/4 (L2/P0/S0), basketball=0/6 (L0/P0/S0), darts=0/1 (L0/P0/S0), australian_rules=1/1 (L0/P0/S0), ice_hockey=0/1 (L0/P0/S0), rugby_league=0/1 (L0/P0/S0), boxing=0/1 (L0/P0/S0), mma=0/1 (L0/P0/S0), baseball=1/1 (L0/P1/S0), snooker=0/1 (L0/P0/S0), rugby_union=0/1 (L0/P0/S0), motor_sport=1/1 (L0/P0/S0), politics=2/2 (L0/P0/S0), golf=8/8 (L3/P0/S0), 54 total\n[ANALYZER] Sports breakdown: {'football': 4, 'tennis': 4, 'cricket': 6, 'australian_rules': 1, 'baseball': 5, 'motor_sport': 1, 'politics': 21, 'golf': 8, 'american_football': 4}\n[ANALYZER] Market selection: 54 total (platforms: ['betfair'])\n[ANALYZER] Gemini batch pre-pass: 33 cache-miss market(s), groups of 8\n[ANALYZER] Gemini batch (gemini-2.5-flash): 8/8 markets (4 per-market-attributed), 10 shared sources\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch group returned <2 good sources (gemini-2.5-flash-lite) \u2014 uncovered\n[ANALYZER] Gemini batch (gemini-2.5-flash): 8/8 markets (4 per-market-attributed), 10 shared sources\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch group returned <2 good sources (gemini-2.5-flash-lite) \u2014 uncovered\n[ANALYZER] Gemini batch (gemini-2.5-flash): 1/1 markets (1 per-market-attributed), 7 shared sources\n[ANALYZER] Gemini batch pre-pass: cached 17/33 market(s) (17 covered by Gemini, 17 passed the quality gate)\n[ANALYZER] [1/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [2/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 6 facts injected\n[ANALYZER] [3/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [4/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [5/54] Moneyline\n[ANALYZER] [6/54] First Lap Leader \n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [7/54] Which party will control the House in 2026?\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [8/54] Sergio Garcia vs Casey Jarvis\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [9/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [10/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [11/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER]   Data provider: 1 facts injected\n[ANALYZER] [12/54] Idaho Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T14:05\n[ANALYZER] [13/54] Thomas Detry vs David Puig\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [14/54] Match Odds\n[ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Ceara SC Fortaleza'\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [15/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 6 facts injected\n[ANALYZER] [16/54] Match Odds\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [17/54] Matt Wallace vs Ryan Gerard\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [18/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [19/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [20/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER]   Data provider: 1 facts injected\n[ANALYZER] [21/54] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [22/54] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [23/54] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [24/54] 09:49-Puig\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [25/54] 09:38-Lawrence\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [26/54] Which party will control the Senate in 2026?\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T14:05\n[ANALYZER] [27/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [28/54] Connecticut Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [29/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] [30/54] Montana Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [31/54] Michigan Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T14:05\n[ANALYZER] [32/54] Moneyline\n[ANALYZER] [33/54] Moneyline\n[ANALYZER] [34/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [35/54] Wyoming Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T14:05\n[ANALYZER] [36/54] Moneyline\n[ANALYZER] [37/54] Moneyline\n[ANALYZER] [38/54] Maine Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [39/54] Florida Senate Election Winner\n[ANALYZER] [40/54] Mississippi Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T14:05\n[ANALYZER] [41/54] Arkansas Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T14:05\n[ANALYZER] [42/54] New York Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [43/54] Texas Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [44/54] Alabama Gubernatorial Election Winner\n[ANALYZER] [45/54] Match Odds\n[ANALYZER] [46/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER] [47/54] New Hampshire Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [48/54] Massachusetts Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T17:07\n[ANALYZER] [49/54] New Mexico Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER] [50/54] Pennsylvania Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER] [51/54] Georgia Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER] [52/54] Tennessee Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T19:04\n[ANALYZER] [53/54] Moneyline\n[ANALYZER] [54/54] Wyoming Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-05T21:04\n[ANALYZER] Research fallback: 20 brief entr(ies) short on sources after primary (gemini)\n[ANALYZER] Spawning Claude Code research session: 20 market(s), model=claude-sonnet-4-6\n[ANALYZER] Research fallback: Claude Code session covered 17/20 group(s)\n[ANALYZER] Research cache: pruned 14 entries older than 24h\n[ANALYZER] Research cache: 34 hits, 20 fresh lookups\n[ANALYZER] Research brief written: 2026-09-05_21-10_brief.json\n[ANALYZER] Markets: 54 | Errors: 0 | Deferred: 3 | Credits used: 0\n[ANALYZER] [SLASHGOLF] 1 calls: 0 cache, 1 network, 2 429\n[ANALYZER] [API_FOOTBALL] 10 calls: 0 cache, 10 network, 0 429\n[ANALYZER] Loading research brief: 2026-09-05_21-10_brief.json\n[ANALYZER] Betfair cross-ref index: 4239 runners\n[ANALYZER] BUG-134: Merged duplicate runner 'Deomcratic Party' into 'Democratic Party' (similarity 0.94) in USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 2/3 runners (partial field): Which party will control the House in 2026?\n[ANALYZER] Politics: Republican \u2014 Fallback prior 67.0% applied (blended market_prob=85.1%)\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 24/158 runners (partial field): Winner\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Western Kentucky: Western Kentucky @ Nevada | Moneyline\n[ANALYZER] Politics: Democrat \u2014 Fallback prior 73.0% applied (blended market_prob=34.2%)\n[ANALYZER] Politics: Republican \u2014 Fallback prior 80.0% applied (blended market_prob=87.0%)\n[ANALYZER] MOD-246: suppressed BACK Democrat on Mississippi Senate Election Winner \u2014 edge 22.3pp >= ceiling 15.0pp\n[ANALYZER] MOD-349: suppressed LAY Republican @ 1.090 < min_lay_odds_betfair 1.50\n[ANALYZER] Politics: Democrat \u2014 Fallback prior 78.0% applied (blended market_prob=34.9%)\n[ANALYZER] Politics: Republican \u2014 Fallback prior 81.0% applied (blended market_prob=88.7%)\n[ANALYZER] MOD-246: suppressed BACK Democrat on Arkansas Senate Election Winner \u2014 edge 23.9pp >= ceiling 15.0pp\n[ANALYZER] MOD-349: suppressed LAY Republican @ 1.070 < min_lay_odds_betfair 1.50\n[ANALYZER] BUG-134: Merged duplicate runner 'Democrats' into 'Democrat' (similarity 0.94) in USA 2026 Midterm Elections | New York Gubernatorial Election Winner\n[ANALYZER] BUG-134: Merged duplicate runner 'Republicans' into 'Republican' (similarity 0.95) in USA 2026 Midterm Elections | New York Gubernatorial Election Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 2/4 runners (partial field): New York Gubernatorial Election Winner\n[ANALYZER] BUG-160: BACK suppressed \u2014 Republican effectively eliminated (lay price 1000.0 >= 100): USA 2026 Midterm Elections | New York Gubernatorial Election Winner\n[ANALYZER] MOD-274: Moneyline BACK blocked \u2014 Los Angeles Angels odds 2.66 > 2.5: Los Angeles Angels @ Pittsburgh Pirates | Moneyline\n[ANALYZER] Analyzed 54 markets\n[ANALYZER] Found 2 signals (10pp+)\n[ANALYZER] Logged 14 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-09-05_21-11_research.json\n[ANALYZER] Appended 143 edge traces to edge_traces.json\nLogged paper trade: Moneyline - BACK @ 47.17% (edge: 7.2pp) [betfair] [PROBE \u2014 not counted in exposure] | available now \u00a359.34",
+  "resolved_total": 735,
+  "overall_win_rate_pct": 37.7,
+  "paper_pnl_total": -105.12,
+  "by_band": {
+    "12pp+": {
+      "n": 116,
+      "wins": 37,
+      "pnl": -58.08,
+      "win_rate_pct": 31.9
+    },
+    "10-11pp": {
+      "n": 86,
+      "wins": 28,
+      "pnl": -9.15,
+      "win_rate_pct": 32.6
+    },
+    "7-9pp": {
+      "n": 513,
+      "wins": 203,
+      "pnl": -42.68,
+      "win_rate_pct": 39.6
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 735,
+      "wins": 277,
+      "pnl": -105.12,
+      "win_rate_pct": 37.7
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 560,
+      "wins": 233,
+      "pnl": -103.8,
+      "win_rate_pct": 41.6
+    },
+    "lay": {
+      "n": 175,
+      "wins": 44,
+      "pnl": -1.32,
+      "win_rate_pct": 25.1
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "Half Time/Full Time",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.4,
+      "was_correct": true,
+      "paper_pnl": 1.63,
+      "resolved_at": "2026-09-02T21:06:42.550071"
+    },
+    {
+      "market_name": "Match Odds DRAW NO BET",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 22.48,
+      "was_correct": false,
+      "paper_pnl": -0.92,
+      "resolved_at": "2026-09-04T17:12:31.269078"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.31,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-03T05:10:47.280443"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.62,
+      "was_correct": true,
+      "paper_pnl": 1.98,
+      "resolved_at": "2026-09-03T05:10:47.753086"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 14.41,
+      "was_correct": false,
+      "paper_pnl": -1.44,
+      "resolved_at": "2026-09-03T17:18:20.255452"
+    },
+    {
+      "market_name": "Match Odds DRAW NO BET",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.48,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-04T17:12:31.806735"
+    },
+    {
+      "market_name": "Regular Time Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.06,
+      "was_correct": false,
+      "paper_pnl": -0.38,
+      "resolved_at": "2026-09-04T21:11:26.399908"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.03,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-04T05:17:09.835591"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.71,
+      "was_correct": false,
+      "paper_pnl": -0.48,
+      "resolved_at": "2026-09-04T11:43:42.796832"
+    },
+    {
+      "market_name": "07:50-Wu",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.54,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-04T14:14:42.765435"
+    },
+    {
+      "market_name": "07:50-Wu",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.36,
+      "was_correct": true,
+      "paper_pnl": 3.65,
+      "resolved_at": "2026-09-04T14:14:43.303490"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.89,
+      "was_correct": true,
+      "paper_pnl": 2.05,
+      "resolved_at": "2026-09-04T17:12:32.289460"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.87,
+      "was_correct": false,
+      "paper_pnl": -0.24,
+      "resolved_at": "2026-09-05T22:31:25.934583"
+    },
+    {
+      "market_name": "Half Time/Full Time",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.24,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-04T21:11:26.989691"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.65,
+      "was_correct": false,
+      "paper_pnl": -2.4,
+      "resolved_at": "2026-09-05T19:12:13.509539"
+    }
+  ],
+  "flags": [
+    "betfair_low_winrate",
+    "low_edge_band_losing"
+  ]
+}
