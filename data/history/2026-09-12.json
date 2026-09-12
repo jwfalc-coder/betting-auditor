@@ -1,0 +1,191 @@
+{
+  "generated_at": "2026-09-12T02:14:05.655673",
+  "date": "2026-09-12",
+  "last_routine": "Run completed: 2026-09-11 22:08:48 UTC\nBetfair scanner: exit 0 | Matchbook scanner: exit 0\nResearcher: exit 0\nAnalyzer: exit 0\n[ANALYZER] Primary research fetcher: gemini (models: gemini-2.5-flash, gemini-2.5-flash-lite)\n[ANALYZER] Research cache: 49 entries loaded (TTL far=10h near=3h within 24h of start, force-refresh<2h, drift 10%)\n[ANALYZER] betfair: loaded snapshot 2026-09-11_21-00.json\n[ANALYZER] betfair: skipped 3 markets above volume cap (\u00a3500,000)\n[ANALYZER] betfair: skipped 14 markets beyond 30d horizon\n[ANALYZER] betfair: 307 tradeable markets\n[ANALYZER] Already-open dedup: excluded 33 markets with an existing open position\n[ANALYZER] Unsupported market-type filter: excluded 146 markets (BUG-130 whitelist \u2014 would always be rejected downstream anyway)\n[ANALYZER] Indefinite-politics filter: excluded 3 markets (MOD-156 \u2014 no resolution date)\n[ANALYZER] Far-future filter: excluded 24 markets that BUG-154/MOD-147 would hold anyway (MOD-297/MOD-311):  Flanders Darts Trophy | Winner (~271d out);   World Series of Darts Finals | Winner (~275d out);   English Open | Winner (~271d out); F1 Spanish Grand Prix | Overall Qualifying Winner (~270d out); F1 Spanish Grand Prix | Top 6 Finish (~270d out); F1 Spanish Grand Prix | Winner (~270d out); UEFA Conference League | Winner 2026/27 (~110d out); English Sky Bet League 1 | Relegation 2026/27 (~110d out); English Sky Bet Championship | Relegation 2026/27 (~110d out); English Sky Bet League 2 | Promotion 2026/27 (~110d out); English Sky Bet League 2 | Relegation 2026/27 (~110d out); Spanish La Liga | Relegation 2026/27 (~110d out); French Ligue 1 | Winner 2026/27 (~110d out); English Premier League | Winner (~248d out); English Premier League | Top 5 Finish (~248d out); English Premier League | Top 6 Finish (~248d out); English Premier League | Relegation (~248d out); Italian Serie A | Winner 2026/27 (~110d out); Italian Serie A | Relegation 2026/27 (~110d out); Italian Serie A | Top 4 Finish 2026/27 (~110d out); German Bundesliga | Winner 2026/27 (~110d out); English Premier League | PFA Player of the Year 2026/27 (~110d out); UEFA Champions League | Winner 2026/27 (~110d out); UEFA Europa League | Winner 2026/27 (~110d out)\n[ANALYZER] Overbook filter: excluded 14 markets that BUG-122 would skip anyway (MOD-297):   The Solheim Cup 2026 | Margin of Victory - Draw No Bet (428% > 130%); Pau v Bayonne | Match Odds (284% > 130%); Harlequins v Northampton | Match Odds (261% > 130%); Brazilian Serie A | Winner 2026 (398% > 130%); Irish Premier Division | Winner Outright 2026 (848% > 130%); US Major League Soccer | MLS Cup Winner 2026 (1029% > 130%);  Champs Tour Sanford International 2026 | Winner (2343% > 130%); Canadian Politics | Quebec General Election Winner (133% > 130%); USA 2026 Midterm Elections | Alaska Gubernatorial Election Winner (184% > 130%); USA 2026 Midterm Elections | Montana Senate Election Winner (202% > 130%); USA 2026 Midterm Elections | California Gubernatorial Election Winner (596% > 130%); USA 2026 Midterm Elections | Vermont Gubernatorial Election Winner (172% > 130%); USA 2026 Midterm Elections | Nevada Gubernatorial Election Winner (193% > 130%); USA 2026 Midterm Elections | Will the California Billionaire Tax Pass? (152% > 130%)\n[ANALYZER] MOD-317: unified quota (lay/probe priority/proven-segment) \u2014 football=3/6 (L0/P0/S1), tennis=2/4 (L1/P0/S0), cricket=4/4 (L1/P0/S0), basketball=2/6 (L2/P0/S0), darts=1/1 (L0/P0/S0), australian_rules=1/1 (L0/P0/S0), ice_hockey=0/1 (L0/P0/S0), rugby_league=0/1 (L0/P0/S0), boxing=1/1 (L0/P0/S0), mma=0/1 (L0/P0/S0), baseball=1/1 (L0/P1/S0), snooker=0/1 (L0/P0/S0), rugby_union=1/1 (L0/P0/S0), motor_sport=0/1 (L0/P0/S0), politics=2/2 (L0/P0/S0), golf=5/8 (L3/P0/S0), 54 total\n[ANALYZER] Sports breakdown: {'football': 3, 'tennis': 2, 'cricket': 6, 'basketball': 2, 'darts': 2, 'australian_rules': 1, 'boxing': 3, 'baseball': 8, 'rugby_union': 2, 'politics': 15, 'golf': 5, 'american_football': 5}\n[ANALYZER] Market selection: 54 total (platforms: ['betfair'])\n[ANALYZER] Gemini batch pre-pass: 40 cache-miss market(s), groups of 8\n[ANALYZER] Gemini batch 503 (gemini-2.5-flash) \u2014 transient high-demand; retry 1/2 in 4s\n[ANALYZER] Gemini batch 503 (gemini-2.5-flash) \u2014 transient high-demand; retry 2/2 in 8s\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch (gemini-2.5-flash-lite): 8/8 markets (7 per-market-attributed), 10 shared sources\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch group returned <2 good sources (gemini-2.5-flash-lite) \u2014 uncovered\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch (gemini-2.5-flash-lite): 8/8 markets (8 per-market-attributed), 10 shared sources\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch (gemini-2.5-flash-lite): 8/8 markets (8 per-market-attributed), 10 shared sources\n[ANALYZER] Gemini batch 429 (gemini-2.5-flash) \u2014 daily cap; trying next model\n[ANALYZER] Gemini batch (gemini-2.5-flash-lite): 8/8 markets (8 per-market-attributed), 10 shared sources\n[ANALYZER] Gemini batch pre-pass: cached 28/40 market(s) (32 covered by Gemini, 28 passed the quality gate)\n[ANALYZER] [1/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 1 facts injected\n[ANALYZER] [2/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 5 facts injected\n[ANALYZER] [3/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [4/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [5/54] Match Odds\n[ANALYZER] [6/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [7/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T14:06\n[ANALYZER] [8/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [9/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [10/54] Which party will control the House in 2026?\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T17:07\n[ANALYZER] [11/54] Eugenio Chacarra v Matt Wallace\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [12/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [13/54] Match Odds\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER]   Data provider: 5 facts injected\n[ANALYZER] [14/54] Match Odds\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [15/54] Moneyline\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [16/54] Idaho Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T14:06\n[ANALYZER] [17/54] Rasmus Neergaard-Petersen vs Joe Dean\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [18/54] Match Odds\n[ANALYZER] [API_FOOTBALL] Could not resolve team ID for 'Club 2 de Mayo'\n[ANALYZER] [DATA_PROVIDER] theoddsapi: unrecognised sport_type=\n[ANALYZER] [19/54] Match Odds\n[ANALYZER]   Data provider: 1 facts injected\n[ANALYZER] [20/54] Tom McKibbin vs Alex Fitzpatrick\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [21/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [22/54] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [23/54] Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [SLASHGOLF] No schedule data available\n[ANALYZER] [24/54] Connecticut Gubernatorial Election Winner\n[ANALYZER] [25/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [26/54] Wyoming Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T17:07\n[ANALYZER] [27/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [28/54] Moneyline\n[ANALYZER] [29/54] Moneyline\n[ANALYZER] [30/54] Mississippi Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [31/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [32/54] Arkansas Senate Election Winner\n[ANALYZER] [33/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [34/54] Florida Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T17:07\n[ANALYZER] [35/54] Pennsylvania Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [36/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [37/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [38/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [39/54] Moneyline\n[ANALYZER] [40/54] New York Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [41/54] New Mexico Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [42/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [43/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [44/54] Massachusetts Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [45/54] Georgia Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [46/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [47/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [48/54] Tennessee Gubernatorial Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [49/54] Wyoming Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [50/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] [51/54] Match Odds\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER]   Data provider: 2 facts injected\n[ANALYZER] [52/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [53/54] Moneyline\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T19:04\n[ANALYZER] [54/54] Illinois Senate Election Winner\n[ANALYZER]   [CACHE HIT] Reusing research from 2026-09-11T21:04\n[ANALYZER] Research fallback: 16 brief entr(ies) short on sources after primary (gemini)\n[ANALYZER] Spawning Claude Code research session: 16 market(s), model=claude-sonnet-4-6\n[ANALYZER] Claude Code research session exited rc=1: \\$\\('\\\\\\([^']*\\\\\\)'\\)\" /home/jwfalc/smarkets-bot/dashboard/bot_dashboard.html) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.\n[ANALYZER] Research fallback: Claude Code session covered 0/16 group(s)\n[ANALYZER] Tier-2 CLI covered 0 markets \u2014 escalating to tier-3 API despite api_enabled=false\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Durham W v Warwickshire W: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLFrKMSZMsD5dvyfMeU'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Guyana Amazon Warriors v Trinbago Knight Riders: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLFtRc7ernosLXQUG4z'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Leol Jeanjean v C Liu: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLFv3Lj4bXRosK5xoru'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for USA 2026 Midterm Elections: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLFwj3T3N2PwGvxfcrj'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Chris Dobey v Niels Zonneveld: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLFxpmVypNrHQWs8K8g'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Arizona State @ Texas A&M: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLFz5gHTotpgAJzqxcT'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Colorado Rockies (M Ada @ Detroit Tigers (F Valde: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG1egdqtQWEvwPeppJ'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for USA 2026 Midterm Elections: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG3ADZLGyMfAHNJX15'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Richmond @ NC State: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG4YZPSB6vMiX5dNgY'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Defensa y Justicia v Gimnasia Mendoza: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG5x9HLEUtcnehcDX4'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for San Antonio Bulo Bulo v Aurora: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG7JW9fuKdeBqf22KW'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Club 2 de Mayo de Pedro Juan Cab v Libertad: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG8fMqJNUCX5bAjiRB'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Tournament Match Bets: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLG9w1NtCjybav9PDVA'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Els Jacquemot v Blinkova: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLGBPpXheQVE19Estgc'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for Tournament Match Bets: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLGCfiMzobN12Q664Av'}\n[ANALYZER] HTTP Request: POST https://api.anthropic.com/v1/messages \"HTTP/1.1 400 Bad Request\"\n[ANALYZER] Claude research fallback failed for France Women v Germany Women: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CexLGDwrhkGJL2mcgpayv'}\n[ANALYZER] Research cache: 38 hits, 16 fresh lookups\n[ANALYZER] Research brief written: 2026-09-11_21-06_brief.json\n[ANALYZER] Markets: 54 | Errors: 16 | Deferred: 0 | Credits used: 0\n[ANALYZER] [SLASHGOLF] 1 calls: 0 cache, 1 network, 2 429\n[ANALYZER] [API_FOOTBALL] 7 calls: 2 cache, 5 network, 0 429\n[ANALYZER] Loading research brief: 2026-09-11_21-06_brief.json\n[ANALYZER] Betfair cross-ref index: 4711 runners\n[ANALYZER] BUG-134: Merged duplicate runner 'Deomcratic Party' into 'Democratic Party' (similarity 0.94) in USA 2026 Midterm Elections | Which party will control the House in 2026?\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 2/3 runners (partial field): Which party will control the House in 2026?\n[ANALYZER] Politics: Republican \u2014 Fallback prior 67.0% applied (blended market_prob=85.1%)\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 24/139 runners (partial field): Winner\n[ANALYZER] Politics: Republican \u2014 Fallback prior 45.0% applied (blended market_prob=76.8%)\n[ANALYZER] MOD-274: Moneyline BACK blocked \u2014 Michigan odds 2.88 > 2.5: Oklahoma @ Michigan | Moneyline\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Michigan: Oklahoma @ Michigan | Moneyline\n[ANALYZER] BUG-134: Merged duplicate runner 'Democrats' into 'Democrat' (similarity 0.94) in USA 2026 Midterm Elections | New York Gubernatorial Election Winner\n[ANALYZER] BUG-134: Merged duplicate runner 'Republicans' into 'Republican' (similarity 0.95) in USA 2026 Midterm Elections | New York Gubernatorial Election Winner\n[ANALYZER] BUG-129 guard (MOD-290): skipping sum-to-100% normalisation \u2014 brief has 2/4 runners (partial field): New York Gubernatorial Election Winner\n[ANALYZER] BUG-160: BACK suppressed \u2014 Republican effectively eliminated (lay price 1000.0 >= 100): USA 2026 Midterm Elections | New York Gubernatorial Election Winner\n[ANALYZER] MOD-349: PROBE LAY Fiji @ 1.020 < min_lay_odds_betfair 1.50 \u2014 kept tracking-only for data collection (back_probe=true)\n[ANALYZER] MOD-274: Moneyline BACK blocked \u2014 Temple odds 17.0 > 2.5: Penn State @ Temple | Moneyline\n[ANALYZER] MOD-280: standard-track BACK suppressed (lay-only) \u2014 Temple: Penn State @ Temple | Moneyline\n[ANALYZER] Analyzed 54 markets\n[ANALYZER] Found 3 signals (10pp+)\n[ANALYZER] Logged 10 distribution entries (7pp+)\n[ANALYZER] Research output written: 2026-09-11_21-06_research.json\n[ANALYZER] Appended 139 edge traces to edge_traces.json",
+  "resolved_total": 783,
+  "overall_win_rate_pct": 37.8,
+  "paper_pnl_total": -115.12,
+  "by_band": {
+    "12pp+": {
+      "n": 119,
+      "wins": 38,
+      "pnl": -60.18,
+      "win_rate_pct": 31.9
+    },
+    "10-11pp": {
+      "n": 90,
+      "wins": 28,
+      "pnl": -13.65,
+      "win_rate_pct": 31.1
+    },
+    "7-9pp": {
+      "n": 554,
+      "wins": 221,
+      "pnl": -46.08,
+      "win_rate_pct": 39.9
+    }
+  },
+  "by_platform": {
+    "betfair": {
+      "n": 783,
+      "wins": 296,
+      "pnl": -115.12,
+      "win_rate_pct": 37.8
+    }
+  },
+  "by_recommendation": {
+    "back": {
+      "n": 594,
+      "wins": 248,
+      "pnl": -111.48,
+      "win_rate_pct": 41.8
+    },
+    "lay": {
+      "n": 189,
+      "wins": 48,
+      "pnl": -3.64,
+      "win_rate_pct": 25.4
+    }
+  },
+  "recent_signals": [
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.05,
+      "was_correct": true,
+      "paper_pnl": 2.24,
+      "resolved_at": "2026-09-09T22:31:29.253071"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.79,
+      "was_correct": true,
+      "paper_pnl": 2.47,
+      "resolved_at": "2026-09-10T05:16:23.071443"
+    },
+    {
+      "market_name": "Joakim Lagergren vs Bernd Wiesberger",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.06,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-11T21:07:45.766830"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.1,
+      "was_correct": true,
+      "paper_pnl": 1.98,
+      "resolved_at": "2026-09-10T05:16:23.715713"
+    },
+    {
+      "market_name": "1st Half Moneyline",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 17.93,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-10T05:16:24.339164"
+    },
+    {
+      "market_name": "13:45-Rahm",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.36,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-10T19:08:01.306050"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.13,
+      "was_correct": false,
+      "paper_pnl": -0.8,
+      "resolved_at": "2026-09-10T19:08:01.851595"
+    },
+    {
+      "market_name": "Match Odds DRAW NO BET",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 11.28,
+      "was_correct": null,
+      "paper_pnl": 0.0,
+      "resolved_at": "2026-09-11T17:17:18.293315"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.09,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-10T19:08:02.410720"
+    },
+    {
+      "market_name": "14:10-Wallace",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.12,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-10T21:13:56.735177"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.01,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-11T05:13:02.657233"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.8,
+      "was_correct": false,
+      "paper_pnl": -0.28,
+      "resolved_at": "2026-09-11T14:12:10.352707"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.14,
+      "was_correct": true,
+      "paper_pnl": 1.9,
+      "resolved_at": "2026-09-11T05:13:03.400245"
+    },
+    {
+      "market_name": "Match Odds DRAW NO BET",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.13,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-11T17:17:18.979890"
+    },
+    {
+      "market_name": "Regular Time Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.71,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-11T21:07:46.451518"
+    }
+  ],
+  "flags": [
+    "betfair_low_winrate",
+    "low_edge_band_losing"
+  ]
+}
