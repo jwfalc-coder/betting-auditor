@@ -1,235 +1,280 @@
 {
-  "generated_at": "2026-09-09T06:00:02.125396",
+  "generated_at": "2026-09-16T06:00:02.632925",
   "gating_stats": {
-    "days_since_last_run": 21.0,
-    "resolved_trades_since_last": 174,
-    "resolved_trades_total": 759
+    "days_since_last_run": 28.0,
+    "resolved_trades_since_last": 238,
+    "resolved_trades_total": 823
   },
-  "resolved_total": 759,
-  "overall_win_rate_pct": 38.1,
-  "paper_pnl_total": -100.52,
+  "resolved_total": 823,
+  "overall_win_rate_pct": 37.5,
+  "paper_pnl_total": -135.05,
   "by_band": {
     "12pp+": {
-      "n": 118,
+      "n": 119,
       "wins": 38,
-      "pnl": -58.18,
-      "win_rate_pct": 32.2
+      "pnl": -60.18,
+      "win_rate_pct": 31.9
     },
     "10-11pp": {
-      "n": 88,
-      "wins": 28,
-      "pnl": -11.65,
-      "win_rate_pct": 31.8
+      "n": 94,
+      "wins": 29,
+      "pnl": -17.75,
+      "win_rate_pct": 30.9
     },
     "7-9pp": {
-      "n": 533,
-      "wins": 214,
-      "pnl": -35.48,
-      "win_rate_pct": 40.2
+      "n": 590,
+      "wins": 233,
+      "pnl": -61.91,
+      "win_rate_pct": 39.5
     }
   },
   "by_platform": {
     "betfair": {
-      "n": 759,
-      "wins": 289,
-      "pnl": -100.52,
-      "win_rate_pct": 38.1
+      "n": 823,
+      "wins": 309,
+      "pnl": -135.05,
+      "win_rate_pct": 37.5
     }
   },
   "by_recommendation": {
     "back": {
-      "n": 575,
-      "wins": 241,
-      "pnl": -101.72,
-      "win_rate_pct": 41.9
+      "n": 627,
+      "wins": 260,
+      "pnl": -127.73,
+      "win_rate_pct": 41.5
     },
     "lay": {
-      "n": 184,
-      "wins": 48,
-      "pnl": 1.2,
-      "win_rate_pct": 26.1
+      "n": 196,
+      "wins": 49,
+      "pnl": -7.32,
+      "win_rate_pct": 25.0
     }
   },
   "recent_30": [
     {
-      "market_name": "07:50-Wu",
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.78,
+      "was_correct": false,
+      "paper_pnl": -2.68,
+      "resolved_at": "2026-09-12T17:15:33.536799"
+    },
+    {
+      "market_name": "Match Odds DRAW NO BET",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.54,
+      "edge_pct": 7.13,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-09-04T14:14:42.765435"
-    },
-    {
-      "market_name": "07:50-Wu",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.36,
-      "was_correct": true,
-      "paper_pnl": 3.65,
-      "resolved_at": "2026-09-04T14:14:43.303490"
-    },
-    {
-      "market_name": "Each Way 10 Places - 1/5 Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 8.26,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-09-06T17:16:46.006504"
-    },
-    {
-      "market_name": "Each Way 10 Places - 1/5 Odds",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.74,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-09-06T17:16:46.691096"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.89,
-      "was_correct": true,
-      "paper_pnl": 2.05,
-      "resolved_at": "2026-09-04T17:12:32.289460"
+      "resolved_at": "2026-09-11T17:17:18.979890"
     },
     {
       "market_name": "Match Odds",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 9.87,
+      "edge_pct": 9.39,
       "was_correct": false,
-      "paper_pnl": -0.24,
-      "resolved_at": "2026-09-05T22:31:25.934583"
+      "paper_pnl": -0.36,
+      "resolved_at": "2026-09-13T05:10:25.960642"
     },
     {
-      "market_name": "Half Time/Full Time",
+      "market_name": "Regular Time Match Odds",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.71,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-11T21:07:46.451518"
+    },
+    {
+      "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
       "edge_pct": 7.24,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-09-04T21:11:26.989691"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 7.64,
-      "was_correct": true,
-      "paper_pnl": 1.9,
-      "resolved_at": "2026-09-06T21:10:08.536072"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 7.65,
-      "was_correct": false,
-      "paper_pnl": -2.4,
-      "resolved_at": "2026-09-05T19:12:13.509539"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 10.12,
-      "was_correct": false,
-      "paper_pnl": -0.38,
-      "resolved_at": "2026-09-06T08:01:26.609757"
-    },
-    {
-      "market_name": "Antoine Rozner vs Thriston Lawrence",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 16.18,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-09-06T17:16:47.365846"
+      "resolved_at": "2026-09-12T05:12:37.444941"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.81,
+      "edge_pct": 7.84,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-09-06T05:13:44.898670"
+      "resolved_at": "2026-09-12T05:12:38.107120"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.54,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-12T11:41:51.493175"
+    },
+    {
+      "market_name": "Rasmus Neergaard-Petersen vs Joe Dean",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.21,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-13T19:16:57.955331"
+    },
+    {
+      "market_name": "Tom McKibbin vs Alex Fitzpatrick",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.43,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-13T19:16:58.583463"
+    },
+    {
+      "market_name": "12:40-Hillier",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.43,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-12T17:15:34.250789"
+    },
+    {
+      "market_name": "14:30-Lowry",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.1,
+      "was_correct": true,
+      "paper_pnl": 2.55,
+      "resolved_at": "2026-09-12T19:12:47.007822"
+    },
+    {
+      "market_name": "14:19-Ferguson",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.4,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-12T19:12:47.685618"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 8.34,
+      "was_correct": false,
+      "paper_pnl": -0.1,
+      "resolved_at": "2026-09-12T14:13:08.232757"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.01,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-13T05:10:26.704280"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 7.52,
+      "was_correct": false,
+      "paper_pnl": -0.46,
+      "resolved_at": "2026-09-12T19:12:48.240149"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.01,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-13T05:10:27.334790"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.17,
+      "was_correct": true,
+      "paper_pnl": 2.24,
+      "resolved_at": "2026-09-13T05:10:27.916847"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 7.01,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-13T05:10:28.541715"
+    },
+    {
+      "market_name": "Match Odds",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 8.2,
+      "was_correct": false,
+      "paper_pnl": -0.72,
+      "resolved_at": "2026-09-13T21:13:00.237677"
+    },
+    {
+      "market_name": "First Lap Leader ",
+      "platform": "betfair",
+      "rec": "lay",
+      "edge_pct": 9.31,
+      "was_correct": false,
+      "paper_pnl": -1.26,
+      "resolved_at": "2026-09-13T14:15:00.458806"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 8.76,
+      "was_correct": true,
+      "paper_pnl": 2.13,
+      "resolved_at": "2026-09-13T22:31:33.297290"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
       "edge_pct": 7.1,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-09-06T05:13:45.466097"
+      "was_correct": true,
+      "paper_pnl": 2.2,
+      "resolved_at": "2026-09-14T05:09:25.348718"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.2,
+      "edge_pct": 7.53,
       "was_correct": true,
-      "paper_pnl": 2.13,
-      "resolved_at": "2026-09-06T05:13:45.972475"
-    },
-    {
-      "market_name": "Winner",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.24,
-      "was_correct": true,
-      "paper_pnl": 2.05,
-      "resolved_at": "2026-09-06T19:10:07.201590"
+      "paper_pnl": 2.28,
+      "resolved_at": "2026-09-14T05:09:26.016005"
     },
     {
       "market_name": "Match Odds",
       "platform": "betfair",
       "rec": "lay",
-      "edge_pct": 8.95,
-      "was_correct": false,
-      "paper_pnl": -0.34,
-      "resolved_at": "2026-09-06T17:16:47.887754"
-    },
-    {
-      "market_name": "First Lap Leader ",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.24,
+      "edge_pct": 10.96,
       "was_correct": true,
-      "paper_pnl": 1.67,
-      "resolved_at": "2026-09-06T14:11:53.674772"
+      "paper_pnl": 1.9,
+      "resolved_at": "2026-09-14T11:36:17.739937"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 8.46,
-      "was_correct": true,
-      "paper_pnl": 2.51,
-      "resolved_at": "2026-09-06T21:10:09.260233"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.12,
-      "was_correct": true,
-      "paper_pnl": 1.94,
-      "resolved_at": "2026-09-06T21:10:09.862573"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.02,
+      "edge_pct": 7.08,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-09-06T22:31:26.999817"
+      "resolved_at": "2026-09-15T05:07:24.677763"
     },
     {
       "market_name": "Moneyline",
@@ -238,105 +283,60 @@
       "edge_pct": 7.01,
       "was_correct": true,
       "paper_pnl": 1.9,
-      "resolved_at": "2026-09-07T05:11:51.504252"
+      "resolved_at": "2026-09-15T05:07:25.327654"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.01,
-      "was_correct": true,
-      "paper_pnl": 1.9,
-      "resolved_at": "2026-09-06T21:10:10.470530"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 14.05,
-      "was_correct": true,
-      "paper_pnl": 1.9,
-      "resolved_at": "2026-09-08T09:45:28.173512"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 7.92,
-      "was_correct": true,
-      "paper_pnl": 1.9,
-      "resolved_at": "2026-09-07T14:11:13.415073"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 10.52,
-      "was_correct": false,
-      "paper_pnl": -2.12,
-      "resolved_at": "2026-09-08T09:45:28.843100"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.22,
-      "was_correct": true,
-      "paper_pnl": 1.98,
-      "resolved_at": "2026-09-07T22:31:27.368582"
-    },
-    {
-      "market_name": "Match Odds",
-      "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 7.19,
-      "was_correct": true,
-      "paper_pnl": 1.9,
-      "resolved_at": "2026-09-07T21:11:12.089220"
-    },
-    {
-      "market_name": "Moneyline",
-      "platform": "betfair",
-      "rec": "back",
-      "edge_pct": 7.14,
+      "edge_pct": 8.72,
       "was_correct": false,
       "paper_pnl": -2.0,
-      "resolved_at": "2026-09-07T22:31:27.983988"
+      "resolved_at": "2026-09-15T14:09:34.148112"
     },
     {
       "market_name": "Moneyline",
       "platform": "betfair",
       "rec": "back",
-      "edge_pct": 7.01,
-      "was_correct": false,
-      "paper_pnl": -2.0,
-      "resolved_at": "2026-09-07T22:31:28.501389"
+      "edge_pct": 8.49,
+      "was_correct": true,
+      "paper_pnl": 0.82,
+      "resolved_at": "2026-09-16T05:08:28.084949"
     },
     {
-      "market_name": "Match Odds",
+      "market_name": "Match Odds and Over/Under 2.5 Goals",
       "platform": "betfair",
-      "rec": "lay",
-      "edge_pct": 8.02,
+      "rec": "back",
+      "edge_pct": 7.15,
       "was_correct": false,
-      "paper_pnl": -0.24,
-      "resolved_at": "2026-09-08T21:13:35.709058"
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-15T22:31:34.407090"
+    },
+    {
+      "market_name": "Moneyline",
+      "platform": "betfair",
+      "rec": "back",
+      "edge_pct": 9.78,
+      "was_correct": false,
+      "paper_pnl": -2.0,
+      "resolved_at": "2026-09-16T05:08:28.814688"
     }
   ],
   "distribution": {
     "7-9pp": {
-      "total": 2406,
-      "resolved": 707,
-      "wins": 313
+      "total": 2617,
+      "resolved": 762,
+      "wins": 341
     },
     "12pp+": {
-      "total": 1219,
-      "resolved": 692,
+      "total": 1379,
+      "resolved": 697,
       "wins": 271
     },
     "10-11pp": {
-      "total": 815,
-      "resolved": 267,
-      "wins": 106
+      "total": 898,
+      "resolved": 274,
+      "wins": 109
     },
     "high_prob": {
       "total": 75,
@@ -352,116 +352,106 @@
   "top_boost_words": [
     {
       "word": "won",
-      "count": 4133
+      "count": 4499
     },
     {
       "word": "injury",
-      "count": 2561
+      "count": 2671
     },
     {
       "word": "strong",
-      "count": 1223
-    },
-    {
-      "word": "strokes gained",
-      "count": 978
+      "count": 1350
     },
     {
       "word": "form",
-      "count": 946
+      "count": 1030
+    },
+    {
+      "word": "strokes gained",
+      "count": 1006
     },
     {
       "word": "injured",
-      "count": 875
-    },
-    {
-      "word": "rain",
-      "count": 650
+      "count": 919
     },
     {
       "word": "leads",
-      "count": 643
+      "count": 709
+    },
+    {
+      "word": "rain",
+      "count": 658
     },
     {
       "word": "dominant",
-      "count": 506
+      "count": 561
     },
     {
       "word": "scoring",
-      "count": 430
+      "count": 440
+    },
+    {
+      "word": "top 10",
+      "count": 365
     },
     {
       "word": "top",
       "count": 357
     },
     {
+      "word": "challenge",
+      "count": 323
+    },
+    {
       "word": "contender",
       "count": 281
     },
     {
-      "word": "without",
-      "count": 255
-    },
-    {
       "word": "winning streak",
-      "count": 251
+      "count": 267
     },
     {
-      "word": "top 10",
-      "count": 245
-    },
-    {
-      "word": "challenge",
-      "count": 216
+      "word": "without",
+      "count": 256
     },
     {
       "word": "winner",
-      "count": 216
+      "count": 231
     },
     {
       "word": "advantage",
-      "count": 209
+      "count": 225
     },
     {
       "word": "unbeaten",
-      "count": 181
+      "count": 192
     },
     {
       "word": "top 5",
-      "count": 180
+      "count": 187
     },
     {
       "word": "defending",
-      "count": 137
+      "count": 146
     },
     {
       "word": "world number",
-      "count": 119
+      "count": 121
     },
     {
       "word": "experienced",
-      "count": 98
+      "count": 109
     },
     {
       "word": "best",
-      "count": 93
+      "count": 101
     },
     {
-      "word": "missed cut",
-      "count": 85
+      "word": "majority",
+      "count": 89
     }
   ],
   "external_audits": [
-    {
-      "filename": "2026-09-01.md",
-      "date": "2026-09-01",
-      "content": "# Research Audit \u2014 2026-09-01\n\n## Summary\n\nAll 28 signals generated today carry `back_probe=true`, meaning no operative signals reached the operator and nothing was placeable \u2014 both backs and lays are in tracking-only mode. Pipeline health was clean (7/7 runs, 0 tracebacks), but 19 Gemini 429s and 250/266 cache hits mean research freshness is questionable. The 11 resolved trades show a 27.3% win rate and -\u00a30.14 P&L, with the \u226590% lay band again losing all four of its settled bets \u2014 consistent with the established losing pattern in that segment.\n\n## Observations\n\n1. **Every signal \u2014 including lays \u2014 is probe-only, so today's slip was blank.** `back_probe_signals = 28 = signals_total`: every signal generated today, across all sports and both sides (21 backs, 7 lays), is flagged tracking-only. Since lays are the side with any claimed edge, forcing lays into probe mode as well means the bot is producing zero operative output. This is a structural configuration state, not a signal quality issue, but it is worth flagging: if this condition persists indefinitely, the bot is effectively dark even on its best-evidenced bet type. Confidence: high (the count is unambiguous). No established finding directly covers this, but it directly suppresses the only side (lays) with a claimed track record.\n\n2. **The \u226590% lay segment added four more losses: 0/4 wins, -\u00a32.00.** Established finding #2 identifies \u226590% market-implied lays as 1 win / 24 losses historically. Today's four resolved trades in that band went 0/4, -\u00a32.00, extending that record. The 65\u201389.99% band went 1/4, +\u00a30.02 \u2014 approximately breakeven. The sole <65% lay resolved as a win: 1/1, +\u00a31.90. That single data point is consistent with established finding #1 (edge concentrated in sub-65% lays) but n=1 is purely anecdotal. Confidence on the \u226590% band: medium (n=4 today, cumulative history gives context); confidence on <65%: speculative (n=1).\n\n3. **93.98% of researched markets were served from cache; zero Tavily credits were used.** 250 of 266 researched markets were cache hits, and `total_tavily_credits = 0`. The research fallback activated 6 times, and 19 Gemini 429 rate-limit hits occurred in the 06:00 run. This raises a real question about whether today's \"research\" reflects current information or stale cached data from prior runs. Two result-contamination flags fired (both for the same darts pairing: Noa-Lynn van Leuven / Jordan Brooks / Ziggy Schenk, flagging a score + recent date in `key_facts`). Established finding #4 says web research contributes ~0.13pp of apparent edge on average \u2014 today's cache-dominant coverage makes the real-research contribution even lower than that baseline. Confidence: high (counts are direct from data).\n\n4. **CLV is essentially zero; lay CLV is marginally negative.** Mean CLV across 8 logged trades = +0.05%. Broken down: lays (n=7) averaged -0.09% CLV; the single back achieved +1.01% CLV. A CLV of -0.09% on lays means the model's lay entries, on average, were priced sli"
-    },
-    {
-      "filename": "2026-09-02.md",
-      "date": "2026-09-02",
-      "content": "# Research Audit \u2014 2026-09-02\n\n## Summary\n\nA quiet day operationally: all 7 scheduled pipeline runs completed with clean exits and no tracebacks. Signal generation was heavily skewed back (35 of 37 total signals), with only 2 lay signals produced across the entire day \u2014 one of which sits in the \u226590% implied-probability band, the known worst-performing segment. Research is running almost entirely off cache (292/300 markets, 97.3%) with zero live Tavily credits consumed. Three resolutions resolved at 66.7% WR and +\u00a33.13, but the day's CLV readings are negative for backs and flat for lays \u2014 no evidence of price-beating entry on either side.\n\n---\n\n## Observations\n\n1. **The model is generating 94.6% back signals, not lay signals.** Of 37 signals produced across 7 runs, 35 are BACK and 2 are LAY. This is not a one-run artefact \u2014 it spans every brief file for the day. The lay-only strategy the project is operating under is therefore filtering almost the entire raw signal output rather than being organically supported by the model's outputs. *Relation to established finding #1:* the one proven-edge side (lays below 65% implied) produced just 1 signal all day (the 65\u201389.99% band lay); the model is structurally oriented toward backing, not laying, which means the post-filter signal rate for the live strategy will remain low unless the model's underlying direction changes. Confidence: high on the observation itself; speculative on cause (the back-skew is consistent with prior documented findings about the Wang transform and calibration bands, but this day's data alone cannot distinguish between them).\n\n2. **One of only two lay signals is in the \u226590% implied-probability band \u2014 the project's single most-documented losing segment.** The data shows `by_lay_market_prob_band: {\"65-89.99%\": {n:1}, \">=90%\": {n:1}}`. *Relation to established finding #2:* the \u226590% band has a historical record of 1W/24L. Whether the bot's floor-suppression logic successfully blocked this signal from reaching the operator is not determinable from this data alone \u2014 the slip counts show 7 signals sent to slip across the day, but signal-to-slip attrition is expected and the breakdown by band is not available at slip level. It is worth verifying explicitly that this signal was suppressed before reaching the operator. n=1 for the day's lay signals at this level; confidence: speculative on outcome, but the presence of the signal in the generator output at all is the thing worth checking, regardless of n.\n\n3. **Research is running on 97.3% cached data, with zero live Tavily credits consumed.** 292 of 300 markets researched returned cache hits; 0 Tavily credits were used. *Relation to established finding #4:* the measured contribution of web research to signal edge is already ~0.13pp on average. If nearly all \"research\" is recycled cached content rather than freshly fetched information about today's markets, even that marginal contribution is likely overstated for this day \u2014 a cached brief abo"
-    },
     {
       "filename": "2026-09-03.md",
       "date": "2026-09-03",
@@ -486,6 +476,31 @@
       "filename": "2026-09-07.md",
       "date": "2026-09-07",
       "content": "# Research Audit \u2014 2026-09-07\n\n## Summary\n\nAll 7 scheduled runs completed with clean exits and zero tracebacks \u2014 a healthy pipeline day on the surface. However, Gemini's daily quota was exhausted before the first run finished (19 x 429 errors, 14 research fallbacks activated), meaning most of the day's analysis ran on Claude Code fallback, not the primary provider. Signal generation produced 24 signals across 7 runs, of which 23 are flagged `back_probe=true` (tracking-only, never placeable) \u2014 a near-total probe classification that is itself worth explaining. Six trades resolved at 66.7% WR and +\u00a33.68, but the consecutive-losses warning held at 6 across every single run, unchanged by those four wins, which suggests the resolutions were probe/paper trades rather than live placements.\n\n## Observations\n\n1. **Gemini daily quota exhausted within the first run.** The first 429 appears at 06:03:32 UTC \u2014 less than an hour into the 06:00 run \u2014 and 19 quota-limit rejections were logged across the day. Research fallback activated 14 times, with Claude Code sessions covering the shortfall (22/22 groups in the first fallback alone). All 7 brief files show status \"ok\", so the fallback did complete without hard failure. Confidence: high (direct log evidence). This is operationally concerning: primary research was unavailable for the bulk of the day. Combined with established finding #4 (web research contributes ~0.13pp of edge on average), the practical signal-quality impact of running on fallback is probably small \u2014 but the pattern of hitting the daily cap on run 1 suggests the quota is structurally too tight for the current schedule (7 runs/day \u00d7 batch sizes shown), and is worth addressing before it degrades to a day with no fallback coverage.\n\n2. **Zero Tavily credits used; 70% of researched markets served from cache.** Of 377 markets researched, 265 were cache hits and 0 Tavily API credits were consumed. This is consistent with established finding #4 \u2014 that Tavily/web research contributes an average of ~0.13pp to a signal's stated edge. On a day where no fresh external searches were paid for, the model's signals rest almost entirely on cached data, the Wang transform, calibration bands, and the unexplained/artifact component identified in the original diagnosis. That is probably the norm rather than an exception, but it directly undercuts any claim that the 24 today's signals reflect live-updated research. Confidence: high (the credit count of 0 and cache count of 265 are unambiguous). Relation to finding #4: consistent with it, and arguably strengthens it \u2014 if research is routinely 70%+ cached and credits are not being spent, the 0.13pp contribution figure may be an overestimate of what today's signals reflect.\n\n3. **All 3 lay signals land in the 65\u201389.99% market-probability band; none in the <65% proven-edge band.** The data shows `by_lay_market_prob_band: {\"65-89.99%\": {\"n\": 3}}` with no other lay-band entries. Established finding #1 states the only demon"
+    },
+    {
+      "filename": "2026-09-08.md",
+      "date": "2026-09-08",
+      "content": "# Research Audit \u2014 2026-09-08\n\n## Summary\n\nAll 7 scheduled pipeline runs completed with clean exits and produced signals, so mechanically the day was unremarkable. The more substantive finding is that every single one of the day's 27 signals \u2014 including the sole lay signal \u2014 carries `back_probe=true`, meaning nothing generated today was ever eligible for manual placement. Combined with a 26-back / 1-lay output ratio and Gemini being exhausted entirely across the last three runs, the day raises one specific operational question worth checking immediately: whether the project-wide probe hold (MOD-335) is still active in config, five weeks past its intended expiry.\n\n## Observations\n\n1. **All 27 signals are tracking-only, including the only lay.** `back_probe_signals = 27` equals `signals_total = 27`, and that includes the single lay recommendation. The field-note accompanying this data explicitly flags this as worth surfacing rather than treating as a labelling artefact. There are two candidate explanations: (a) the project-wide `global_probe_hold` flag introduced for the operator's absence (documented as a ~2026-07-29 to ~2026-08-05/06 temporary measure) was never reverted and is still forcing every signal \u2014 including lays \u2014 into tracking-only mode; or (b) the probe mechanism is incorrectly tagging lay signals in a way that was not intended. If explanation (a) is correct, every lay that should have been placeable since approximately early August has been silently blocked. This cannot be resolved from the data alone, but it is the most operationally consequential question the day raises. Confidence: medium (mechanism is clear; which explanation applies requires a config check).\n\n2. **The model generated 26 back signals and 1 lay \u2014 a 96%/4% ratio.** This continues the structural back-bias documented historically (prior audit sessions noted that ~92% of signals carry zero lay-boost from the keyword model). Today's single lay, in the `>=90%` market-implied-probability band, is exactly the segment identified by established finding #2 as the worst-performing lay band (historically 1W/24L). The back-probe mechanism is catching all 26 backs correctly as tracking-only, which is the right operational outcome; but the 96/4 ratio itself is a reminder that the keyword model is not organically producing lay signals in the way the stated lay-only strategy would ideally require. Confidence: high (the count is from 7 separate research files). Relation to established findings #2 and #3: consistent with both \u2014 the model's output distribution has not shifted toward lays, and the one lay it did generate is in the segment with documented negative EV.\n\n3. **Gemini was fully exhausted and disabled in 3 of the last 4 runs (15:00, 18:00, 20:00).** The error log shows 35 rate-limit 429s, 44 503s, 14 research-fallback activations, and 4 `all models exhausted/failed` events \u2014 the latter all clustered in the afternoon and evening. The 06:00 run hit 429s on `gemini-2.5-flash` re"
+    },
+    {
+      "filename": "2026-09-09.md",
+      "date": "2026-09-09",
+      "content": "# Research Audit \u2014 2026-09-09\n\n## Summary\n\nThe pipeline ran 7/7 cleanly with no tracebacks, but Gemini's daily cap was exhausted in the very first run at 06:05 UTC, triggering 23 x 429 errors and 14 research fallbacks across the day. Signal output was light \u2014 31 total signals, of which 30 were tracking-only probes, leaving effectively one real placeable signal (the single <65% lay). Three trades resolved at 33.3% WR and -\u00a31.52 net, a sample far too small to evaluate. The most structurally notable feature of the day is that the research layer was degraded from the first run onward yet signal generation continued normally \u2014 a pattern that is directly consistent with established finding #4 (research contributing ~0.13pp of edge on average).\n\n## Observations\n\n1. **Gemini cap exhausted in run 1; research was degraded for most of the day.** The 06:00 run hit 23 x 429 errors across gemini-2.5-flash and gemini-2.5-flash-lite within the first two minutes (06:04:58 and 06:05:10 UTC), triggered a \"provider_exhausted\" event, and the first brief file returned status \"error.\" Fourteen research fallbacks fired across the seven runs, and 0 Tavily credits were consumed \u2014 all 378 researched markets were covered via 243 cache hits or Gemini paths that recovered in later runs. Despite this, 8 signals reached the Telegram slip and the five later runs generated signals normally. **Confidence: high \u2014 the error timestamps and fallback counts are explicit.** This is a clean natural experiment for established finding #4: removing most of the live research layer for an entire day produced no visible reduction in signal volume or structure. That is consistent with the claim that the research step's real contribution is close to zero, though 64.3% of markets (243/378) were already cache-served regardless of the Gemini outage, which weakens the experiment \u2014 it is possible cached prior-day research was sufficient and the Gemini failure was largely invisible to output.\n\n2. **Effectively one real lay signal generated across the whole day.** Of 31 total signals, 28 were backs (all tracking-only probe per strategy) and 3 were lays. Of those 3 lays: 2 fell in the 65\u201389.99% market-implied-probability band and 1 fell in the <65% band (the only band with established positive edge per finding #1). With 30 of 31 signals flagged back_probe=true, the single <65% lay is the only candidate for a real placeable trade. **Confidence: high \u2014 signal counts and probe flags are explicit.** The day's lay volume in the proven edge band is minimal. Whether this reflects genuine market scarcity, the Gemini cap degradation suppressing fresh lay-eligible research, or the seasonal calendar cannot be determined from today's data alone; but a rate of 1 real signal per day is worth tracking if it persists.\n\n3. **The one resolved lay was in the unproven 65\u201389.99% band, and it lost.** The three resolutions comprised 1 lay (65\u201389.99%, 0 wins, -\u00a31.76) and 2 backs (1 win, +\u00a30.24). Net P&L: -\u00a31.52 at 33.3% WR. **"
+    },
+    {
+      "filename": "2026-09-10.md",
+      "date": "2026-09-10",
+      "content": "# Research Audit \u2014 2026-09-10\n\n## Summary\n\nA quiet, mechanically healthy day: all 7 runs completed with clean exits, no tracebacks, and no contamination flags. 22 signals were generated but only 5 reached the Telegram slip, with the day's resolved trades (12) producing a 41.7% win rate and -\u00a32.70 net \u2014 a mild loss driven entirely by the lay side going 0/2. The day's lay sample (n=3 generated, n=2 resolved) is far too small to move any standing conclusion, but the back-dominated signal mix and degraded primary research path are worth noting.\n\n## Observations\n\n1. **Signal mix is 86% backs, with only 1 lay in the historically-supported probability band.** Of 22 signals generated, 19 were backs and 3 were lays. Of the 3 lays, 2 fell in the 65\u201389.99% market-probability band and only 1 fell in the <65% band \u2014 the sole zone identified as historically profitable. 20 of 22 signals carried `back_probe=true` (tracking-only), so the live-placeable set was tiny. Confidence: speculative (n=22 total, n=3 lays). This is consistent with the known structural back-bias of the keyword model and the documented lay drought; it neither confirms nor challenges established finding #1, since the <65% lay sample is n=1.\n\n2. **Both resolved lays lost; the <65% band lay lost -\u00a32.00.** The day's 2 resolved lays went 0/2 (0% WR, -\u00a32.80 combined). Broken down: the single <65% lay lost -\u00a32.00; the single 65\u201389.99% lay lost -\u00a30.80. The <65% result is a single data point against established finding #1 (\"lays below 65% are the only proven edge\"), but n=1 is not evidence of anything \u2014 a single loss is exactly what the historical win rate predicts will happen roughly 30\u201340% of the time even in a well-calibrated model. Confidence: speculative (n=2 resolved lays). No action warranted; sample is uninformative.\n\n3. **Primary research path degraded: 26 Gemini 429s, 14 fallback activations, 58% cache rate, 0 Tavily credits.** The Gemini daily cap was hit repeatedly across the day (26 instances), triggering 14 research fallback events. 219 of 378 markets (57.9%) were served from cache rather than fresh research. Zero Tavily credits were used, meaning all live research came from Gemini (where available) or prior cache. This is directly relevant to established finding #4: if the primary research step was constrained for much of the day \u2014 with over half of results from cache and the Gemini quota exhausted early \u2014 the already-negligible ~0.13pp research contribution to edge is likely lower still on days like this. However, since finding #4 says the measured contribution is near-zero regardless, the practical signal-quality impact is probably small. The pipeline health concern is different: consistent daily-cap exhaustion suggests the run schedule is outpacing the Gemini quota, which may cause silent quality degradation that's hard to detect from win-rate data alone. Confidence: medium on the pattern (7 clean runs, consistent 429s).\n\n4. **Overall resolved win rate 41.7% (5/12), with backs at 50%"
+    },
+    {
+      "filename": "2026-09-11.md",
+      "date": "2026-09-11",
+      "content": "# Research Audit \u2014 2026-09-11\n\n## Summary\n\nAll seven scheduled pipeline runs completed with clean exits, and no tracebacks or hard errors were logged \u2014 a healthy operational day by that measure. However, every one of the 28 signals generated was flagged `back_probe=true`, meaning nothing reached the operator as a live placeable bet; the slip sent only 3 signals across the whole day (2 at 06:00, 1 at 22:00) and all were tracking-only. Resolutions were a bad result \u2014 11.1% win rate on 9 settled trades, -\u00a310.38 \u2014 but the sample is far too small to draw conclusions from. The more structurally interesting finding is that the probe-hold flag appears to still be live, and the model's raw output remains overwhelmingly back-skewed even with a lay-only strategy nominally in place.\n\n## Observations\n\n1. **All 28 generated signals, including lays, are flagged tracking-only.** `back_probe_signals = 28`, which equals `signals_total`. The field notes for this audit explicitly flag this as a checkable pattern rather than a labelling artefact: if lays are also probe-flagged, a project-wide probe hold (`global_probe_hold = true`) is the most plausible explanation. The intended revert window was approximately 2026-08-05/06 \u2014 roughly six weeks before this audit date. Either the flag was deliberately kept on beyond that window, or it was never reverted. Confidence: **medium** (the data is unambiguous; the cause requires a config read to confirm).\n\n2. **The model's organic output is 89% backs (25/28 signals), with only 3 lays.** Engaging directly with established finding #1 \u2014 that the only demonstrated edge is lays below 65% implied probability \u2014 the raw signal composition here is near-inverted from that conclusion. Of the 3 lay signals, only 1 fell in the proven <65% band; the other 2 fell in the >=90% band (the 1W/24L segment flagged in established finding #2). The lay-only strategy is a downstream filter suppressing the model's organic output, not a property of the model itself. This is consistent with previously documented structural back-bias (the model boosts favourites in approximately 92% of cases by zero, and rarely generates a genuine negative). Confidence: **medium** (n=28 is small for a single day, but the directional finding is consistent with the pre-existing documented bias, not a one-day anomaly).\n\n3. **Research ran entirely from cache \u2014 zero Tavily credits consumed.** 378 markets were researched, 250 cache hits recorded, and 0 live Tavily queries were made. Engaging with established finding #4 (~0.13 percentage points average research contribution to stated edge): if the research step genuinely contributes almost nothing to signal quality, cache-only operation may be operationally harmless. However, the reason for zero live queries is not explained in this data \u2014 it could be deliberate throttling, a silent API failure, or simply that all queried markets had valid cached briefs. Two of the seven brief files had `status: error`, which may be related. Wor"
+    },
+    {
+      "filename": "2026-09-12.md",
+      "date": "2026-09-12",
+      "content": "# Research Audit \u2014 2026-09-12\n\n## Summary\n\nA technically clean day \u2014 all 7 runs completed, zero tracebacks \u2014 but operationally inert: every one of the 35 signals generated was flagged `back_probe=true`, meaning nothing was placeable. The signal mix continues to run almost entirely backs (32/35), with the three lays falling in the \u226565% market-probability bands rather than the sub-65% zone where the project's historical edge has been claimed. Ten resolutions settled at a 10% win rate (\u2212\u00a312.69), consistent with the ongoing consecutive-loss streak that was sitting at 3 across all seven runs.\n\n## Observations\n\n1. **Every signal is tracking-only \u2014 the bot placed nothing today.** `back_probe_signals` equals `signals_total` (35/35), meaning the probe-hold or per-signal probe flags are firing on 100% of output, including all three lay signals. Whether this reflects a still-active global probe hold or a systematic per-signal trigger is not determinable from this data alone. The practical consequence is zero operator action was possible regardless of signal quality. Confidence: **high** (the numbers are unambiguous; the *cause* of the 100% probe rate is uncertain). This is operationally worth checking: if a probe hold was meant to be temporary and has been forgotten, it is silently suppressing every signal the bot generates.\n\n2. **Lay drought continues: 3 lays out of 35 signals (8.6%), with zero in the <65% market-prob band.** The three lays that did appear land in the \u226590% (n=2) and 65\u201389.99% (n=1) bands. *Relation to Established Finding #1:* the project's claimed lay edge lives below 65% implied probability, yet no signal today hit that band. *Relation to Established Finding #2:* two of the three lays are in the \u226590% band, which has a documented 1W/24L live record \u2014 the structurally worst lay segment. Today's sample (n=3 lays) is far too small to update the historical picture, but the pattern of zero signals in the proven-edge band and two in the known-losing band is worth tracking. Confidence: **speculative** (n=3 lays on one day; directional consistency with prior drought data, not a new finding).\n\n3. **Ten resolutions at 10.0% WR, \u2212\u00a312.69 \u2014 well below any profitable baseline.** The breakdown: backs 7 resolved, 1 win, 14.3% WR, \u2212\u00a39.45; lays 3 resolved, 0 wins, 0.0% WR, \u2212\u00a33.24. The lay sub-breakdown by market-prob band shows all three lay bands losing (\u2212\u00a32.68 in <65%, \u2212\u00a30.46 in 65\u201389.99%, \u2212\u00a30.10 in \u226590%). *Relation to Established Finding #1:* even the supposedly proven sub-65% lay band went 0W/1L today (\u2212\u00a32.68). Single-day resolution counts are not informative \u2014 n=10 total, n=1 per lay band, is essentially noise \u2014 but the consecutive-losses counter was pinned at 3 across all seven runs, confirming the losing streak predates today and did not recover. Confidence: **speculative** (n=10 resolutions; no meaningful update to win-rate estimates).\n\n4. **Gemini rate-limiting is chronic: 29 \u00d7 429 errors and 14 research-fallback activations across 7 runs (~2 fallb"
     }
   ]
 }
