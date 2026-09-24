@@ -1,0 +1,72 @@
+{
+  "target_file": "scripts/analyze_research.py",
+  "finding": "The model's edge signal is anti-correlated with realised win rate above 10pp. On 886 resolved trades, the 7-9pp band (n=643) wins 38.9% for -£0.10/trade, the 10-11pp band (n=98) drops to 32.7% for -£0.14/trade, and the 12pp+ band (n=125) is worst at 30.4% for -£0.55/trade — a 5.5x per-trade loss vs the smallest-edge band. The band the model calls its most confident is its worst performer, absorbing 47.8% of total realised paper loss (-£68.52 of -£143.43) on only 14.1% of trades.",
+  "root_cause": "The current max_credible_edge_pct hard-block sits at 40pp (MOD-293), well above the empirically contaminated zone. The 12-40pp interval is where the documented phantom-edge mechanisms operate: MOD-296's number_of_runners normalisation (fixed at the analyzer but still not populated at researcher.py source, per CLAUDE.md) and MOD-326's Wang transform sign inconsistency (audited, left unchanged for lack of a data-supported fix direction). Both mechanisms mechanically inflate reported edge without any real underlying research signal. The net effect is that as reported edge rises above ~10pp, an increasing fraction of the signal is artifact rather than information, and win rate declines rather than rises.",
+  "proposed_change": "In analyze_research.py, immediately after the existing MOD-293 max_credible_edge block (around line 1923-1928, where `edge_not_credible` is computed against `_max_credible_edge`), add a softer downgrade: if `abs(edge_pp) >= 10.0`, set a new `suspicious_high_edge=True` flag on the signal dict and force `back_probe=True` regardless of sport/segment gating below. Do NOT hard-block; the signal still logs and resolves for continued measurement. The threshold value (10.0) should be a module-level constant `SUSPICIOUS_EDGE_PP = 10.0` at the top of the file so future adjustment is trivial. Slip rendering in digest.py should surface `suspicious_high_edge` alongside the existing probe annotation so the operator sees why a large-edge signal is tracking-only.",
+  "expected_impact": "Directly derived from data: rerouting the 10-11pp (n=98) and 12pp+ (n=125) bands to tracking-only removes 223 trades that returned -£82.17 combined from placeable-signal execution while retaining the 7-9pp band (n=643, -£66.05, -£0.10/trade). Projected forward at the observed 301-trade-per-35-day rate, this would suppress roughly 25-30% of resolved placeable trades. Under the current lay-only-≥1.50 live strategy (MOD-351), impact on live lay execution depends on the lay/edge-band split, which isn't in the pre-computed summary — see caveats. Overall win-rate on the remaining placeable set should rise from 37.1% toward ~38.9%; per-trade P&L should improve by ~£0.35 on the reclassified subset. Estimate confidence: derived from data on WR/P&L direction, but magnitude depends on how many placeable lays currently sit above 10pp.",
+  "confidence": "medium",
+  "risk": "medium",
+  "test_condition": "After deployment, track resolved win rate on signals with 7-9pp edge specifically (not overall WR, which is confounded by the reclassification). The 7-9pp band should hold or exceed 38.9% WR. Separately, log resolved outcomes on the newly-probe-flagged 10pp+ signals and confirm win rate stays below 35% and P&L stays negative — if that band starts winning above 40%, the downgrade was wrong and should be reverted. Minimum sample for a verdict: 150 resolved trades in the 7-9pp band post-change (roughly 20-25 days at current cadence) and 60 resolved in the reclassified 10pp+ bands.",
+  "do_not_touch": [
+    "config/config.toml",
+    "data/paper_tracker.json"
+  ],
+  "evidence": [
+    {
+      "metric": "12pp+ band win rate",
+      "value": "30.4% (38 wins / 125 trades)",
+      "source": "data/logs/improvement_inputs.json — by_band"
+    },
+    {
+      "metric": "10-11pp band win rate",
+      "value": "32.7% (32 wins / 98 trades)",
+      "source": "data/logs/improvement_inputs.json — by_band"
+    },
+    {
+      "metric": "7-9pp band win rate",
+      "value": "38.9% (250 wins / 643 trades)",
+      "source": "data/logs/improvement_inputs.json — by_band"
+    },
+    {
+      "metric": "12pp+ band per-trade P&L",
+      "value": "-£0.548 (-£68.52 / 125)",
+      "source": "computation from by_band.pnl / by_band.n"
+    },
+    {
+      "metric": "10-11pp band per-trade P&L",
+      "value": "-£0.139 (-£13.65 / 98)",
+      "source": "computation from by_band.pnl / by_band.n"
+    },
+    {
+      "metric": "7-9pp band per-trade P&L",
+      "value": "-£0.103 (-£66.05 / 643)",
+      "source": "computation from by_band.pnl / by_band.n"
+    },
+    {
+      "metric": "Share of total loss from 12pp+ band",
+      "value": "47.8% (-£68.52 of -£143.43)",
+      "source": "computation from by_band.pnl / paper_pnl_total"
+    },
+    {
+      "metric": "Share of resolved trades in 12pp+ band",
+      "value": "14.1% (125 of 886)",
+      "source": "computation from by_band.n / resolved_total"
+    },
+    {
+      "metric": "Existing hard-block ceiling (MOD-293)",
+      "value": "max_credible_edge_pct = 40.0",
+      "source": "scripts/analyze_research.py line 1923"
+    },
+    {
+      "metric": "Recent live example — largest edge, lost",
+      "value": "AFL 'Winner W/O Nick Daicos' lay at 19.96pp edge, was_correct=false, -£1.60",
+      "source": "data/logs/improvement_inputs.json — recent_30, 2026-09-21"
+    }
+  ],
+  "alternative_findings": [
+    "Lays overall run at 24.9% WR (n=217, -£11.36) with the ≥90% market-probability sub-band a documented 1W/24L (per external audits). MOD-351 already restricts to lays ≥1.50 decimal — impact should be measurable now; if the ≥90% sub-band is still generating placeable signals after MOD-351, tightening the lay-side band cap in analyze_research.py would be the follow-up.",
+    "Basketball Moneyline backs at ~7pp edge appear repeatedly in recent_30 with a losing skew (roughly 4W/7L observed). basketball:2h probe segment was flagged in CLAUDE.md as looking promotable at n=10 — the fresh sample suggests promotion may be premature.",
+    "The 7-9pp band's 643 trades vs 12pp+'s 125 suggests the analyzer's signal generation itself is right-shifted toward small edges — the model rarely produces large-edge signals, and when it does they're mostly artifact. A researcher.py fix populating number_of_runners at source (still outstanding per CLAUDE.md MOD-296) would attack the mechanism directly but is architectural rather than threshold-level."
+  ],
+  "caveats": "The by_band breakdown in improvement_inputs.json aggregates back and lay signals together; the pre-computed summary does not split edge bands by recommendation side. Given the lay-only-live strategy (MOD-351, 2026-09-03), the practical impact on live placement depends on how many placeable lays currently fall in the 10pp+ zone, which requires reading paper_tracker.json to determine. The 886 total includes trades logged both pre- and post-MOD-351 and pre- and post-MOD-296 (2026-07-02 phantom-edge fix); some of the 12pp+ contamination is historical and would already be reduced going forward. Confidence is medium rather than high for that reason — the historical pattern is unambiguous, but the forward magnitude estimate has real uncertainty. The finding is also directionally consistent with MOD-326's decision to leave the Wang transform unchanged: the contamination is real, but a global rewrite is unsupported by sub-band evidence. A probe-only downgrade is deliberately softer than a rewrite — it preserves the data for future re-evaluation while stopping placement losses now."
+}
